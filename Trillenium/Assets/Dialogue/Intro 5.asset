@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Intro 5
   m_EditorClassIdentifier: 
-  speakerText: 'EMI, the final step towards perfecting AI, will allow people
-
-    to
-    create any form of art, be it books, games, or paintings.'
+  speakerText: EMI, the final step towards perfecting AI, will allow people to create
+    any form of art, be it books, games, or paintings.

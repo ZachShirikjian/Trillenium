@@ -69,7 +69,7 @@ public class CutsceneDialogue : MonoBehaviour
         curPlace++;
         sfxSource.PlayOneShot(audioManager.continueDialogue);
         
-        if(curPlace < cutsceneBG.Length -1)
+        if(curPlace < cutsceneBG.Length)
         {
             currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = dialogue[curPlace].speakerText;
@@ -77,7 +77,7 @@ public class CutsceneDialogue : MonoBehaviour
 
         //Once you reach the 2nd to last point in the cutscene, disable the DialogueBox and Speaker
         //To indicate that the Cutscene has ended.
-        else if(curPlace == cutsceneBG.Length -1)
+        else if(curPlace == cutsceneBG.Length)
         {
             dialogueBox.SetActive(false);
             currentImage.sprite = cutsceneBG[curPlace];

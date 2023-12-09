@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Intro 9
   m_EditorClassIdentifier: 
-  speakerText: 'To lose art is to lose humanity itself.
-
-    Welcome to the start
-    of the 3rd Millenium.'
+  speakerText: To lose art is to lose humanity itself. Welcome to the beginning of
+    the 3rd Millenium.

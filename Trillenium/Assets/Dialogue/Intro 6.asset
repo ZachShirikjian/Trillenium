@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Intro 6
   m_EditorClassIdentifier: 
-  speakerText: 'Khalidi, the mayor of Xubos, plans to launch EMI next month,
-
-    when
-    the new millenia begins.'
+  speakerText: Khalidi, the mayor of Xubos, plans to launch EMI next month, when
+    the new millenia begins.

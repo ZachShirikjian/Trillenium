@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Intro 7
   m_EditorClassIdentifier: 
-  speakerText: 'Zytorum, a drug making people feel the emotions they''ve lost
-
-    from
+  speakerText: 'Zytorum, a drug making people feel the emotions they''ve lost from
     AI controlling their lives, runs rampant. '
