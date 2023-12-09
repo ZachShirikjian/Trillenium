@@ -37,15 +37,22 @@ public class CutsceneDialogue : MonoBehaviour
     //Reference to the DialogueBox
     public GameObject dialogueBox;
 
+    //Reference to SFXSource//
+    public AudioSource sfxSource;
+
+    //Reference to AudioManager//
+    public AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         curPlace = 0;
         currentImage.sprite = cutsceneBG[0];
-        currentDialogue.text = dialogue[curPlace].zortText;
+        currentDialogue.text = dialogue[curPlace].speakerText;
         dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
         dialogueBox.SetActive(true);
         speaker.text = "???";
+        sfxSource.PlayOneShot(audioManager.newDialogue);
     }
 
     // Update is called once per frame
@@ -60,10 +67,12 @@ public class CutsceneDialogue : MonoBehaviour
         //Play DialogueBox animation (eg Persona)
         //When clicking the Continue button, move to the next place in the cutsceneImage array and continue the dialogue
         curPlace++;
+        sfxSource.PlayOneShot(audioManager.continueDialogue);
+        
         if(curPlace < cutsceneBG.Length -1)
         {
             currentImage.sprite = cutsceneBG[curPlace];
-            currentDialogue.text = dialogue[curPlace].zortText;
+            currentDialogue.text = dialogue[curPlace].speakerText;
         }
 
         //Once you reach the 2nd to last point in the cutscene, disable the DialogueBox and Speaker
@@ -80,7 +89,7 @@ public class CutsceneDialogue : MonoBehaviour
         //After seeing the "To Be Continued in Trillenium", clicking the Continue Button again returns you back to the Title Screen.
         else if(curPlace > cutsceneBG.Length -1)
         {
-            SceneManager.LoadScene(0);
+            Debug.Log("END INTRO CUTSCENE");
         }
     }
 }
