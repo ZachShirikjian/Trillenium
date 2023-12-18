@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Intro
   m_EditorClassIdentifier: 
   speakerText: It is the year 2999...
+  personSpeaking: Vahan
+  newPersonSpeaking: 1
+  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}

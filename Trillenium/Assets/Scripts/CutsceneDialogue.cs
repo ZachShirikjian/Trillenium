@@ -31,6 +31,8 @@ public class CutsceneDialogue : MonoBehaviour
     //List of all the Dialogue spoken for the Cutscene. 
     public Dialogue[] dialogue;
 
+    //Reference to the Portrait Image of the current character that's speaking
+    public GameObject portraitImage;
     //Reference to the DialogueBox animator to animate the DialogueBox UI during the cutscene.
     public Animator dialogueAnim;
 
@@ -51,8 +53,10 @@ public class CutsceneDialogue : MonoBehaviour
         currentDialogue.text = dialogue[curPlace].speakerText;
         dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
         dialogueBox.SetActive(true);
-        speaker.text = "???";
         sfxSource.PlayOneShot(audioManager.newDialogue);
+
+        //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
+                portraitImage.GetComponent<Animator>().SetTrigger("New");
     }
 
     // Update is called once per frame
@@ -67,12 +71,29 @@ public class CutsceneDialogue : MonoBehaviour
         //Play DialogueBox animation (eg Persona)
         //When clicking the Continue button, move to the next place in the cutsceneImage array and continue the dialogue
         curPlace++;
-        sfxSource.PlayOneShot(audioManager.continueDialogue);
-        
         if(curPlace < cutsceneBG.Length)
         {
             currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = dialogue[curPlace].speakerText;
+            speaker.text = dialogue[curPlace].personSpeaking;
+            portraitImage.GetComponent<Image>().sprite = dialogue[curPlace].speakerPortait;
+
+            //If a different person is speaking in the Cutscene,
+            //Play the New Dialogue SFX to indicate a different person is speaking (like in Persona 5)
+            //And play the SlideIn animation for the character portrait 
+                if(dialogue[curPlace].newPersonSpeaking == true)
+                {
+                    portraitImage.GetComponent<Animator>().Play("SlideIn");
+                    portraitImage.GetComponent<Animator>().SetTrigger("New");
+                    sfxSource.PlayOneShot(audioManager.newDialogue);
+                    Debug.Log("IF NEW PERSON IS SPEAKING, PLAY PORTRAIT SLIDE IN ANIMATION");
+                }
+
+                //If the current speaker is continuing their dialogue, play the normal continueDialogue SFX
+                else if(dialogue[curPlace].newPersonSpeaking == false)
+                {
+                    sfxSource.PlayOneShot(audioManager.continueDialogue);
+                }
         }
 
         //Once you reach the 2nd to last point in the cutscene, disable the DialogueBox and Speaker

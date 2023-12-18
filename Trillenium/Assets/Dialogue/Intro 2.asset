@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Intro 2
   m_EditorClassIdentifier: 
   speakerText: AI has been nearly perfected, being used in our everyday lives.
+  personSpeaking: Vahan
+  newPersonSpeaking: 0
+  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
