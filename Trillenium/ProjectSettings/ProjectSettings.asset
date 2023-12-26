@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: ZachShirikjian
   productName: Trillenium
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -698,7 +698,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 2297b7db-6e2c-49cb-a38f-aabefe00f578
   framebufferDepthMemorylessMode: 0

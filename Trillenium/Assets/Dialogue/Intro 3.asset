@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: Entertainment, finance, education, retail. Most jobs involving humans
     have been replaced with AI technology.
-  personSpeaking: Vahan
+  personSpeaking: Sylvia
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
