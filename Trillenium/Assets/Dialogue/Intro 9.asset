@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: To lose art is to lose humanity itself. Welcome to the beginning of
     the 3rd Millenium.
-  personSpeaking: Sylvia
+  personSpeaking: ???
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}

@@ -45,6 +45,12 @@ public class CutsceneDialogue : MonoBehaviour
     //Reference to AudioManager//
     public AudioManager audioManager;
 
+    //Reference to ContinueButton//
+    public GameObject continueButton;
+
+    //Reference to Black Square for Fade to Black Animation//
+    public GameObject fadeToBlack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,12 +58,15 @@ public class CutsceneDialogue : MonoBehaviour
         currentImage.sprite = cutsceneBG[0];
         portraitImage.GetComponent<Image>().sprite = dialogue[curPlace].speakerPortait;
         currentDialogue.text = dialogue[curPlace].speakerText;
+        speaker.text = dialogue[curPlace].personSpeaking;
         dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
         dialogueBox.SetActive(true);
         sfxSource.PlayOneShot(audioManager.newDialogue);
 
         //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
-                portraitImage.GetComponent<Animator>().SetTrigger("New");
+        portraitImage.GetComponent<Animator>().SetTrigger("New");
+        continueButton.SetActive(true);
+        fadeToBlack.SetActive(false);
     }
 
     // Update is called once per frame
@@ -99,14 +108,27 @@ public class CutsceneDialogue : MonoBehaviour
 
         //Once you reach the 2nd to last point in the cutscene, disable the DialogueBox and Speaker
         //To indicate that the Cutscene has ended.
-        else if(curPlace == cutsceneBG.Length)
+        else if(curPlace >= cutsceneBG.Length)
         {
             dialogueBox.SetActive(false);
-            currentImage.sprite = cutsceneBG[curPlace];
+            // currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = "";
             dialogueAnim.SetBool("EndDialogue",true);
             speaker.text = "";
             Debug.Log("END CUTSCENE");
+            continueButton.SetActive(false);
+            // portraitImage.GetComponent<Animator>().Play("End");
+            // portraitImage.GetComponent<Animator>().SetTrigger("New");
+            fadeToBlack.SetActive(true);
+            fadeToBlack.GetComponent<Animator>().Play("FadeToBlack");
+            Invoke("LoadScene", 3f);
         }
+    }
+
+    public void LoadScene()
+    {
+        //Loads the next scene (CHANGE THIS TO BE BASED ON THE PROPER SCENE TO LOAD FROM A SPECIFIC CUTSCENE)
+        //Change this for now especially for different gameplay scenes used
+        SceneManager.LoadScene("TestMovement");
     }
 }

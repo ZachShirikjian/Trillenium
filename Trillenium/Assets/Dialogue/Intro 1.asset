@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Intro 1
   m_EditorClassIdentifier: 
   speakerText: Welcome to Xubos, the city of Dreams.
-  personSpeaking: Sylvia
+  personSpeaking: ???
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
