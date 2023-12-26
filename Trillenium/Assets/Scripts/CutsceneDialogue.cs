@@ -50,6 +50,7 @@ public class CutsceneDialogue : MonoBehaviour
     {
         curPlace = 0;
         currentImage.sprite = cutsceneBG[0];
+        portraitImage.GetComponent<Image>().sprite = dialogue[curPlace].speakerPortait;
         currentDialogue.text = dialogue[curPlace].speakerText;
         dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
         dialogueBox.SetActive(true);
@@ -105,12 +106,7 @@ public class CutsceneDialogue : MonoBehaviour
             currentDialogue.text = "";
             dialogueAnim.SetBool("EndDialogue",true);
             speaker.text = "";
-        }
-
-        //After seeing the "To Be Continued in Trillenium", clicking the Continue Button again returns you back to the Title Screen.
-        else if(curPlace > cutsceneBG.Length -1)
-        {
-            Debug.Log("END INTRO CUTSCENE");
+            Debug.Log("END CUTSCENE");
         }
     }
 }
