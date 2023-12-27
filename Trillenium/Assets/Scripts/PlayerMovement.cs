@@ -9,25 +9,31 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal; //references horizontal movement
     private float vertical; //references vertical movement
     private float speed = 5f; //speed of character;
+    public bool isMoving = false; //set to true if input is being made
+    private Vector2 input; //reference to the input vector which normalizes to prevent awkward movement diagonally
 
     //REFERNCES//
     private Rigidbody2D rb2d; 
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>(); 
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Vertical", vertical);
+        Animate();
     }
 
     //FixedUpdate used for physics calculations
     void FixedUpdate()
     {
-        rb2d.velocity = new Vector2(horizontal * speed,vertical * speed);
+        rb2d.velocity = input * speed;
     }
 
 //context.performed used for checking if button is pressed 
@@ -45,5 +51,31 @@ public class PlayerMovement : MonoBehaviour
 
         //Reads the vertical movement of keyboard/gamepad for up/down movement
         vertical = context.ReadValue<Vector2>().y;
+
+        input = new Vector2(horizontal,vertical);
+        input.Normalize(); //normalizes the input so it doesn't move awkwardly in diagonal directions 
+    }
+
+    //Animates the Player 
+    //CODE TAKEN FROM https://www.youtube.com/watch?v=vcDaQy3wBeU&t=0s 
+    public void Animate()
+    {
+        //If the player is moving at all in ANY direction, set isMoving to be true
+        if(input.magnitude > 0.1f || input.magnitude < -0.1f)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+            anim.SetBool("isMoving", false);
+        }
+
+        if(isMoving)
+        {
+            anim.SetFloat("Horizontal", horizontal);
+            anim.SetFloat("Vertical", vertical);
+            anim.SetBool("isMoving", true);
+        }
     }
 }
