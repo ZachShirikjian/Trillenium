@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 //The script used for the Cutscene which plays after beating all the Levels.
 //Displays Dialogue and Background images, which changes after clicking the ContinueButton.
@@ -42,6 +43,9 @@ public class CutsceneDialogue : MonoBehaviour
     //Reference to SFXSource//
     public AudioSource sfxSource;
 
+    //Reference to Dialogue AudioClip//
+    public AudioSource dialogueSource;
+
     //Reference to AudioManager//
     public AudioManager audioManager;
 
@@ -62,11 +66,16 @@ public class CutsceneDialogue : MonoBehaviour
         dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
         dialogueBox.SetActive(true);
         sfxSource.PlayOneShot(audioManager.newDialogue);
+        dialogueSource.PlayOneShot(dialogue[curPlace].audioClip);
 
         //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
         portraitImage.GetComponent<Animator>().SetTrigger("New");
         continueButton.SetActive(true);
         fadeToBlack.SetActive(false);
+
+        //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
+        EventSystem.current.SetSelectedGameObject(continueButton);
+
     }
 
     // Update is called once per frame
@@ -87,7 +96,7 @@ public class CutsceneDialogue : MonoBehaviour
             currentDialogue.text = dialogue[curPlace].speakerText;
             speaker.text = dialogue[curPlace].personSpeaking;
             portraitImage.GetComponent<Image>().sprite = dialogue[curPlace].speakerPortait;
-
+        dialogueSource.PlayOneShot(dialogue[curPlace].audioClip);
             //If a different person is speaking in the Cutscene,
             //Play the New Dialogue SFX to indicate a different person is speaking (like in Persona 5)
             //And play the SlideIn animation for the character portrait 
@@ -104,6 +113,7 @@ public class CutsceneDialogue : MonoBehaviour
                 {
                     sfxSource.PlayOneShot(audioManager.continueDialogue);
                 }
+
         }
 
         //Once you reach the 2nd to last point in the cutscene, disable the DialogueBox and Speaker

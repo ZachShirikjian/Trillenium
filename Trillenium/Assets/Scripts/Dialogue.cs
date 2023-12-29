@@ -12,4 +12,5 @@ public class Dialogue : ScriptableObject
     public string personSpeaking;
     public bool newPersonSpeaking;
     public Sprite speakerPortait;
+    public AudioClip audioClip;
 }

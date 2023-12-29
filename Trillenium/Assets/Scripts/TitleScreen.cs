@@ -2,8 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 public class TitleScreen : MonoBehaviour
 {
+
+    //REFERENCES//
+    public GameObject newGameButton;
+
+    void Start()
+    {
+        //FIX THIS LATER//
+        
+        //Makes first selected button NEWGAME by default
+        EventSystem.current.SetSelectedGameObject(newGameButton);
+    }
     //TEMP METHOD//
 
     //Loads the TestCutscene of the game.
