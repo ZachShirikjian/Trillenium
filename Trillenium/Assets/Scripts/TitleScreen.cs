@@ -18,12 +18,12 @@ public class TitleScreen : MonoBehaviour
     }
     //TEMP METHOD//
 
-    //Loads the TestCutscene of the game.
+    //Loads the Disclaimer of the game.
     //REPLACE THIS WITH LOADING SAVE FILES LATER!!!
     //Put on the New Game button in the Title Screen
     public void NewGame()
     {
-        SceneManager.LoadScene("TestCutscene");
+        SceneManager.LoadScene("Disclaimer");
     }
 
 
