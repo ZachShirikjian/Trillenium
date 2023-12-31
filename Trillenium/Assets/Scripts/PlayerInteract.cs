@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class PlayerInteract : MonoBehaviour
 {
 
@@ -61,6 +61,12 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("INTERACTING");
             // npcScript.enabled = true;
              npcScript.BeginDialogue();            
+        }
+
+        if(canInteract && curObject.tag == "Enemy")
+        {
+            Debug.Log("ENEMY BATTLE ENGAGE!");
+            SceneManager.LoadScene("TestBattle");
         }
     }
 }
