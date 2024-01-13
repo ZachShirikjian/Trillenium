@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: It is the year 2999...
   personSpeaking: ???
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 355c18bc3557b5b44871b37c1443e0a7, type: 3}
   audioClip: {fileID: 8300000, guid: e4da568010cd24676a741550c7e304d6, type: 3}

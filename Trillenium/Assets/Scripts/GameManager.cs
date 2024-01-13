@@ -12,11 +12,11 @@ public class GameManager : MonoBehaviour
     //VARIABLES//
 
     //REFERENCES//
-    public GameObject dialogueBox;
+    public GameObject npcDialogue;
     // Start is called before the first frame update
     void Start()
     {   
-        dialogueBox.SetActive(false);
+        npcDialogue.SetActive(false);
     }
 
     // Update is called once per frame

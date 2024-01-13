@@ -17,5 +17,5 @@ MonoBehaviour:
     a button.
   personSpeaking: ???
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: be4478bc00ded6c4d98ce6ca8d214f47, type: 3}
   audioClip: {fileID: 8300000, guid: bb27c91cb732a4be8a3f23aed9422f6a, type: 3}
