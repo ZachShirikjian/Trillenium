@@ -29,7 +29,7 @@ public class CreateEnemyMenuItem : MonoBehaviour
     {
         GameObject enemyUnitsMenu = GameObject.Find("EnemyUnitsMenu");
 
-        GameObject[] existingItems = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] existingItems = GameObject.FindGameObjectsWithTag("TargetEnemy");
         Vector2 nextPosition = new Vector2(this.initialPosition.x + (existingItems.Length * this.itemDimensions.x), this.initialPosition.y);
 
         //as GameObject casts the UI button Prefab as a GameObject

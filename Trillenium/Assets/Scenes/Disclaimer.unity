@@ -453,7 +453,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 250}
+  m_SizeDelta: {x: 950, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569935537
 MonoBehaviour:
@@ -478,11 +478,11 @@ MonoBehaviour:
   m_text: 'This game is a work of fiction.
 
     Similarities between people living
-    or dead, or real-world events depicted, are purely coincidental.
+    or dead, or any real-world events depicted, are purely coincidental.
 
 
-    Now, let
-    us begin...'
+    Now,
+    let us begin...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
   m_sharedMaterial: {fileID: 8456391783536491035, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}

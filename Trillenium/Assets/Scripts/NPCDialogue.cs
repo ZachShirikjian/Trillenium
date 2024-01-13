@@ -51,6 +51,9 @@ public class NPCDialogue : MonoBehaviour
 
     //Reference to PlayerMovement script 
     private PlayerMovement playerMove;
+
+    //Reference to PlayerParty GameObject
+    public GameObject playerParty;
     // Start is called before the first frame update
     void Start()
     {
@@ -135,7 +138,21 @@ public class NPCDialogue : MonoBehaviour
             playerMove.enabled = true;
 
             portraitImage.GetComponent<Animator>().Play("End");
-             portraitImage.GetComponent<Animator>().SetTrigger("New");
+            portraitImage.GetComponent<Animator>().SetTrigger("New");
+
+            //If NPC is Vahan or Petros, set them as children of Sylvia
+            if(interactScript.curObject.name == "VahanNPC")
+            {
+                Debug.Log("Vahan has joined the party!");
+                interactScript.curObject.transform.parent = playerParty.transform;
+                interactScript.curObject.transform.position = new Vector2(0,-2);
+
+                //Ensures HelpIcon is disabled if an NPC joins your party//
+                interactScript.curObject.transform.GetChild(0).gameObject.SetActive(false);
+
+                //ENABLE ANIMATIONS//
+                interactScript.curObject.GetComponent<Animator>().enabled = true;
+            }
         }
     }
 }

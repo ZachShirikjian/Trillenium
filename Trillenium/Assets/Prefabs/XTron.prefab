@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8348605507948835382}
   - component: {fileID: 6808834181507337682}
   - component: {fileID: 1235629128558587765}
+  - component: {fileID: 1279795101994673957}
+  - component: {fileID: -8085132684675131640}
   m_Layer: 0
   m_Name: XTron
   m_TagString: Enemy
@@ -176,3 +178,33 @@ MonoBehaviour:
   attack: 10
   defense: 10
   speed: 5
+--- !u!114 &1279795101994673957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749941427158611266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571903151d0bd13459113c4aacf7cd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuItem: {fileID: 0}
+--- !u!114 &-8085132684675131640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749941427158611266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12058bcfa88cd94da1a4af182288ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetEnemyPrefab: {fileID: 2263422842093598730, guid: c49e0cbe0a129dd40985ef553325d445, type: 3}
+  menuItemSprite: {fileID: 345519610, guid: 3aa884b7bde197a49b5c0b68571a4ef3, type: 3}
+  initialPosition: {x: -3, y: -2.7}
+  itemDimensions: {x: 3, y: 3}
+  killEnemyScript: {fileID: 1279795101994673957}
