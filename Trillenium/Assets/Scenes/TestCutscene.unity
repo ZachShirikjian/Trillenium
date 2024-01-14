@@ -374,14 +374,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.100436084, g: 0.14573236, b: 0.3490566, a: 1}
+  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5f2d3441e0fb6449bddb4be280fe8f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -544,16 +544,16 @@ MonoBehaviour:
   speaker: {fileID: 2100563040}
   currentImage: {fileID: 309048552}
   cutsceneBG:
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
-  - {fileID: 21300000, guid: ed172be03765341fa850fe856369e1a3, type: 3}
+  - {fileID: 21300000, guid: b5f2d3441e0fb6449bddb4be280fe8f7, type: 3}
+  - {fileID: 21300000, guid: b5f2d3441e0fb6449bddb4be280fe8f7, type: 3}
+  - {fileID: 21300000, guid: 0b382b3d3c308184f8c25e8b9ef9263e, type: 3}
+  - {fileID: 21300000, guid: 0b382b3d3c308184f8c25e8b9ef9263e, type: 3}
+  - {fileID: 21300000, guid: fbf21db791ea5d541ae94056ef2c6946, type: 3}
+  - {fileID: 21300000, guid: 472ff05e9e93317459b116aceff48c2a, type: 3}
+  - {fileID: 21300000, guid: 472ff05e9e93317459b116aceff48c2a, type: 3}
+  - {fileID: 21300000, guid: 78ba0fcd059e7a24a8d20d0452545a3e, type: 3}
+  - {fileID: 21300000, guid: 9cca57398bda27543ba1bdad36d12e88, type: 3}
+  - {fileID: 21300000, guid: 9cca57398bda27543ba1bdad36d12e88, type: 3}
   dialogue:
   - {fileID: 11400000, guid: f2f8eec9de12245db97167a75f923506, type: 2}
   - {fileID: 11400000, guid: 5bafb98872349449484ab4919d1321d4, type: 2}
