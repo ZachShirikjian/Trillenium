@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -675,6 +675,7 @@ MonoBehaviour:
   continueDialogue: {fileID: 8300000, guid: 3aa8b0d2335fe4adb9a73007611be73e, type: 3}
   uiHover: {fileID: 8300000, guid: 82d4978ce23474cafb0ac3e558b2bb5a, type: 3}
   uiClick: {fileID: 8300000, guid: b25a5b551690d423fb97fcc2730501d0, type: 3}
+  uiClose: {fileID: 0}
 --- !u!82 &1260369851
 AudioSource:
   m_ObjectHideFlags: 0
