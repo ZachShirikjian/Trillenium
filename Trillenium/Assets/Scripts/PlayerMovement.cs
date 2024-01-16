@@ -15,19 +15,25 @@ public class PlayerMovement : MonoBehaviour
     //REFERNCES//
     private Rigidbody2D rb2d; 
     private Animator anim;
+    private GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>(); 
         anim = GetComponent<Animator>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Horizontal", horizontal);
-        anim.SetFloat("Vertical", vertical);
-        Animate();
+        if(gm.isPaused == false)
+        {
+            anim.SetFloat("Horizontal", horizontal);
+            anim.SetFloat("Vertical", vertical);
+            Animate();
+        }
+
     }
 
     //FixedUpdate used for physics calculations

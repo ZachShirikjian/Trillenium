@@ -8,6 +8,9 @@ public class TitleScreen : MonoBehaviour
 
     //REFERENCES//
     public GameObject newGameButton;
+    public GameObject controlsButton;
+    public GameObject closeControls;
+    public GameObject controlsPanel;
 
     void Start()
     {
@@ -15,6 +18,7 @@ public class TitleScreen : MonoBehaviour
         
         //Makes first selected button NEWGAME by default
         EventSystem.current.SetSelectedGameObject(newGameButton);
+        controlsPanel.SetActive(false);
     }
     //TEMP METHOD//
 
@@ -39,5 +43,22 @@ public class TitleScreen : MonoBehaviour
         //Closes the Game if QUIT is clicked in a Build of the game.
         #endif
         Application.Quit();
+    }
+
+    //Put on the Controls button in the Main Menu
+    //Opens up the Controls Panel 
+    public void OpenControls()
+    {
+        Debug.Log("OPENING CONTROLS");
+        controlsPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(closeControls);
+    }
+
+    //Put on the Close Button in the ControlsPanel
+    //Closes the ControlsPanel
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(controlsButton);
     }
 }

@@ -139,6 +139,6 @@ public class CutsceneDialogue : MonoBehaviour
     {
         //Loads the next scene (CHANGE THIS TO BE BASED ON THE PROPER SCENE TO LOAD FROM A SPECIFIC CUTSCENE)
         //Change this for now especially for different gameplay scenes used
-        SceneManager.LoadScene("TestMovement");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

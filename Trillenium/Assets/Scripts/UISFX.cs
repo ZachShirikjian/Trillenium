@@ -28,4 +28,10 @@ public class UISFX : MonoBehaviour
     {
         sfxSource.PlayOneShot(audioManager.uiClick);
     }
+
+    //Plays the SFX for closing out of a menu
+    public void PlayCancel()
+    {
+        sfxSource.PlayOneShot(audioManager.uiClose);
+    }
 }

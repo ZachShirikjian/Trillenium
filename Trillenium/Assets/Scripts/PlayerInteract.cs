@@ -11,12 +11,12 @@ public class PlayerInteract : MonoBehaviour
     public GameObject curObject = null; //current interactable object
 
     //REFERENCES//
-   // private GameManager gm; //reference to GameManager
+   private GameManager gm; //reference to GameManager
    public NPCDialogue npcScript;
 
     void Start()
     {
-       // gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+       gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -56,14 +56,14 @@ public class PlayerInteract : MonoBehaviour
     //Calls BeginDialogue() method in NPCDialogue canvas script, using dialogue that's on every individual NPC itself
     public void Interact(InputAction.CallbackContext context)
     {
-        if(canInteract && curObject.tag == "NPC")
+        if(canInteract && curObject.tag == "NPC" && gm.isPaused == false)
         {
             Debug.Log("INTERACTING");
             // npcScript.enabled = true;
              npcScript.BeginDialogue();            
         }
 
-        if(canInteract && curObject.tag == "Enemy")
+        if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
         {
             Debug.Log("ENEMY BATTLE ENGAGE!");
             SceneManager.LoadScene("TestBattle");
