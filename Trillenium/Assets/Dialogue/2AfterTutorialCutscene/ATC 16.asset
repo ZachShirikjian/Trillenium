@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ATC 16
   m_EditorClassIdentifier: 
   speakerText: I think he briefly mentioned a weapon involving *paint*. But this
-    was many years ago, so my memory's a bit vauge.
+    was many years ago, so my memory's a bit vague.
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
-  audioClip: {fileID: 8300000, guid: 3aa8b0d2335fe4adb9a73007611be73e, type: 3}
+  audioClip: {fileID: 8300000, guid: 7f4a4e1d99ff4474bac53d7b8e3378a1, type: 3}
