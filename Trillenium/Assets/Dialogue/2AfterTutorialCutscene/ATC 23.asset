@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 23
   m_EditorClassIdentifier: 
-  speakerText: Khalidi covered up the death so not much was known pubically.Apparently
+  speakerText: Khalidi covered up the death so not much was known pubicly.Apparently
     the last time Brigala used the Paintblade was in the *DREAMERS Factory.*
   personSpeaking: Sylvia
   newPersonSpeaking: 1

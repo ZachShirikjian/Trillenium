@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 18
   m_EditorClassIdentifier: 
-  speakerText: People used to say that the Paintblade allowed Brigala to "transform
+  speakerText: People used to say that this Paintblade allowed Brigala to "transform
     people's emotions". They were the most legendary artist of our time.
   personSpeaking: Sylvia
   newPersonSpeaking: 0
