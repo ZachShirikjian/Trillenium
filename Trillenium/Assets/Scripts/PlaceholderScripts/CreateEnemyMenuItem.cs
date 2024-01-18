@@ -45,8 +45,10 @@ public class CreateEnemyMenuItem : MonoBehaviour
         killEnemyScript.menuItem = targetEnemyUnit;
     }
 
+    //Find PlayerParty and call its attackEnemyTarget() method
     public void selectEnemyTarget()
     {
-
+        GameObject partyData = GameObject.Find("PlayerParty");
+        partyData.GetComponent<SelectUnit>().attackEnemyTarget(this.gameObject);
     }
 }
