@@ -1623,19 +1623,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1320991014723270916, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
   m_PrefabInstance: {fileID: 7125917068859705034}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &721381262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721381261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baba3f0a6d7e5ea45b1c066243ac0ea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyEncounterPrefab: {fileID: 1037027166}
 --- !u!212 &721381263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4657,10 +4644,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  artistPoints: 0
+  mana: 0
   attack: 10
+  magic: 0
   defense: 10
   speed: 5
+  nextActTurn: 0
+  damageTextPrefab: {fileID: 0}
+  damageTextPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1478369488
 GameObject:
   m_ObjectHideFlags: 0
@@ -13524,7 +13515,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1320991014723270916, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: XTron
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320991014723270916, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320991014723270916, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8649931679643341333, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
       propertyPath: m_LocalScale.x
@@ -13587,9 +13586,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1320991014723270916, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 721381263}
-    - targetCorrespondingSourceObject: {fileID: 1320991014723270916, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 721381262}
   m_SourcePrefab: {fileID: 100100000, guid: 0c67bdbb283c11843aa579029cee25c5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

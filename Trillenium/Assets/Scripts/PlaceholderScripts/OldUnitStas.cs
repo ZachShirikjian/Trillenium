@@ -17,9 +17,11 @@ public class UnitStats : MonoBehaviour, IComparable
     public float speed;
     public int nextActTurn;
     private bool dead = false;
+    public bool alreadyAttacked = false;
 
     public GameObject damageTextPrefab;
     public Vector3 damageTextPosition;
+
 
     public void calculateNextActTurn (int currentTurn)
     {
