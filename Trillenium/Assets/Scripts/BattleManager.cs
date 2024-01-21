@@ -25,11 +25,11 @@ public class BattleManager : MonoBehaviour
     //AUDIO REFERENCES//
     public AudioManager audioManager;
     public AudioSource sfxSource;
+    public AudioSource musicSource;
     // Start is called before the first frame update
     void Start()
     {
-        //numEnemiesLeft = enemyEncounter.numEnemies;
-        numEnemiesLeft = 2; //REPLACE THIS SO IT'S BASED ON NUMBER OF ENEMIES SPAWNED IN A SPAWNER LATER//
+       // numEnemiesLeft = 2; //REPLACE THIS SO IT'S BASED ON NUMBER OF ENEMIES SPAWNED IN A SPAWNER LATER//
         curTurn = 0;
         currentEnemy = 0;
         foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -46,22 +46,17 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(numEnemiesLeft == 0)
-        {
-            Invoke("LoadNextCutscene", 3f);
-            battleUI.SetActive(false);
-        }
+
     }
 
     //LATER CHANGE TO RETURN TO THE OVERWORLD IF CURRENT BATTLE ISN'T A CUTSCENE
     public void EndBattle()
     {
-        if(numEnemiesLeft == 0)
-        {
+            Debug.Log("BATTLE WON!");
+            musicSource.Stop();
             battleUI.SetActive(false);
             sfxSource.PlayOneShot(audioManager.battleWon);
             Invoke("LoadNextCutscene", 3f);
-        }
     }
 
     //If # of enemies left = 0, 
@@ -74,40 +69,49 @@ public class BattleManager : MonoBehaviour
      public void NextTurn()
      {
 
-        if(curTurn < 2)
+        //If all enemies have been defeated, End the Battle! 
+        //If there's still at least 1 enemy left, continue battle turns as normal
+        if(enemies.Count == 0)
         {
-                 //If player's HP is 0 or less when it's their turn
-                //Skip their turn and move onto the next turn
-                if(partyMembers[curTurn].GetComponent<TheUnitStats>().health <= 0)
+            EndBattle();
+        }
+        else
+        {
+                if(curTurn < 2)
                 {
-                    partyMembers[curTurn].GetComponent<TheUnitStats>().dead = true;
-                    curTurn++;
+                        //If player's HP is 0 or less when it's their turn
+                        //Skip their turn and move onto the next turn
+                        if(partyMembers[curTurn].GetComponent<TheUnitStats>().health <= 0)
+                        {
+                            partyMembers[curTurn].GetComponent<TheUnitStats>().dead = true;
+                            curTurn++;
+                        }
+                                //If it's Vahan's turn, display his selection circle to indicate it's his turn 
+                        if(curTurn == 1)
+                        {
+                            partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
+                            partyMembers[1].transform.GetChild(0).gameObject.SetActive(true);
+                        }
+                        else if(curTurn == 0)
+                        {
+                            partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
+                            partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
+                        }
                 }
-
-                        //If it's Vahan's turn, display his selection circle to indicate it's his turn 
-                if(curTurn == 1)
+                //For Enemy's Turn, call the Attack method for each enemy to attack the player 
+                if(curTurn >= 2 && curTurn < (enemies.Count + partyMembers.Length))
                 {
-                    partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
-                    partyMembers[1].transform.GetChild(0).gameObject.SetActive(true);
-                }
-                else if(curTurn == 0)
-                {
-                    partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
+                    Debug.Log("ENEMIES' TURN");
                     partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
+                    battleUI.SetActive(false);
+                    enemies[currentEnemy].GetComponent<EnemyAttack>().Attack();
+                }
+                else if(curTurn == (enemies.Count + partyMembers.Length)) //Length of PartyMembers array (goes up to 3 when Petros joins) PLUS # of enemies currently in the scene
+                {
+                    Invoke("ResetTurns", 1f);
                 }
         }
-        //For Enemy's Turn, call the Attack method for each enemy to attack the player 
-        if(curTurn >= 2 && curTurn < (enemies.Count + partyMembers.Length))
-        {
-            Debug.Log("ENEMIES' TURN");
-            partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
-            battleUI.SetActive(false);
-            enemies[currentEnemy].GetComponent<EnemyAttack>().Attack();
-        }
-        else if(curTurn == (enemies.Count + partyMembers.Length)) //Length of PartyMembers array (goes up to 3 when Petros joins) PLUS # of enemies currently in the scene
-        {
-            Invoke("ResetTurns", 1f);
-        }
+
      }
 
     //After all enemies' turns are done,

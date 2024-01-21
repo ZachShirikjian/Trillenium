@@ -10,7 +10,7 @@ public class TheUnitStats : MonoBehaviour
     
     public int talent;
 
-    public float attack;
+    public int attack;
     public float speed;
 
     public bool dead = false;

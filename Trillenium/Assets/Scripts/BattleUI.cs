@@ -40,6 +40,12 @@ public class BattleUI : MonoBehaviour
     public TextMeshProUGUI vahanTPText;
     public TextMeshProUGUI sylviaHPText;
     public TextMeshProUGUI vahanHPText;
+
+    //ENEMY SLIDERS// (REPLACE WITH SLIDERS ATTACHED TO EACH SPAWNED ENEMY LATER)
+    public Slider enemyHPSlider;
+    private int enemyHP;
+    public GameObject targetEnemy; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,21 +55,25 @@ public class BattleUI : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(attackButton);
 
         //CHANGE IT SO THE HP AND TP IS BASED ON UNITSTATS OF EACH PARTY MEMBER
-        sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
-        vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
+        // sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
+        // vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
         sMaxHP = bm.partyMembers[0].GetComponent<TheUnitStats>().maxHealth;
         vMaxHP = bm.partyMembers[1].GetComponent<TheUnitStats>().maxHealth;
 
-        sylviaHP.maxValue = sHP;
-        sylviaHP.value = sHP;
-        vahanHP.maxValue = vHP;
+        sylviaHP.maxValue = sMaxHP;
+        // sylviaHP.value = sHP;
+//        vahanHP.maxValue = vMaxHP;
         vahanHP.value = vHP;
-        vahanTP.value = 0;
-        sylviaTP.value = 0;
-        sylviaTPText.text = sylviaTP.value.ToString();
-        vahanTPText.text = vahanTP.value.ToString();
-        sylviaHPText.text = sylviaHP.value.ToString();
-        vahanHPText.text = vahanHP.value.ToString();
+        // vahanTP.value = 0;
+        // sylviaTP.value = 0;
+        // sylviaTPText.text = sylviaTP.value.ToString();
+        // vahanTPText.text = vahanTP.value.ToString();
+        // sylviaHPText.text = sylviaHP.value.ToString();
+        // vahanHPText.text = vahanHP.value.ToString();
+
+        enemyHP = targetEnemy.GetComponent<TheUnitStats>().health;
+        enemyHPSlider.maxValue = targetEnemy.GetComponent<TheUnitStats>().maxHealth;
+        enemyHPSlider.value = enemyHP;
     }
 
     // Update is called once per frame
@@ -73,10 +83,22 @@ public class BattleUI : MonoBehaviour
         sylviaTP.value = bm.partyMembers[0].GetComponent<TheUnitStats>().talent;
         vahanTPText.text = bm.partyMembers[1].GetComponent<TheUnitStats>().talent.ToString().ToString() + "%";
         vahanTP.value = bm.partyMembers[1].GetComponent<TheUnitStats>().talent;
-        sylviaHPText.text = bm.partyMembers[0].GetComponent<TheUnitStats>().health.ToString() + "/" + sMaxHP.ToString();
-        sylviaHP.value = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
-        vahanHPText.text = bm.partyMembers[1].GetComponent<TheUnitStats>().health.ToString() + "/" + vMaxHP.ToString();
-        vahanHP.value = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
+
+        sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
+        vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
+
+        sylviaHPText.text = sHP.ToString() + "/" + sMaxHP.ToString();
+        sylviaHP.value =  sHP;
+        vahanHPText.text = vHP.ToString() + "/" + vMaxHP.ToString();
+        vahanHP.value = vHP;
+
+        if(targetEnemy != null)
+        {
+            enemyHP = targetEnemy.GetComponent<TheUnitStats>().health;
+            enemyHPSlider.maxValue = targetEnemy.GetComponent<TheUnitStats>().maxHealth;
+            enemyHPSlider.value = enemyHP;
+        }
+
     }
 
 

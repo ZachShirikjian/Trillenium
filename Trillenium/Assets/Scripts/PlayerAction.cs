@@ -8,9 +8,11 @@ public class PlayerAction : MonoBehaviour
 
     //REFERENCES//
     private TheUnitStats unitStats;
+    private SpriteRenderer spriteR;
     void Start()
     {
         unitStats = GetComponent<TheUnitStats>();
+        spriteR = GetComponent<SpriteRenderer>(); //for now, when player takes damage, make their sprite red for a second
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class PlayerAction : MonoBehaviour
     {
         Vector3 attackDir = (targetChar.GetPosition() - GetPosition()).normalized;
         Debug.Log("ATTACKING ENEMY");
+        targetChar.TakeDamage(unitStats.attack);
     }
 
     public void TalentAttack()
@@ -44,6 +47,14 @@ public class PlayerAction : MonoBehaviour
     {
         Debug.Log(this.gameObject.name + " IS TAKING DAMAGE");
         unitStats.health -= damageAmount;
+        spriteR.color = Color.red;
+        Invoke("ResetColor", 0.5f);
+    }
+
+    //Reset color after player has taken damage 
+    public void ResetColor()
+    {
+        spriteR.color = Color.white;
     }
 
 
