@@ -11,15 +11,18 @@ public class BattleUI : MonoBehaviour
 
     //VARIABLES//
     //List of all the party members
-    public GameObject[] partyMembers = new GameObject[2];
     public int sHP;
     public int sMaxHP;
     public int vHP;
     public int vMaxHP;
 
     //REFERENCES//
-    private BattleManager bm;
+    public BattleDialogue battleDialogue;
+    public GameObject tutorialDialoguePanel; 
+
+    public BattleManager bm;
     public GameObject attackButton;
+    public GameObject talentButton;
     public GameObject player;
 
     private Animator playerAnim;
@@ -40,22 +43,25 @@ public class BattleUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        tutorialDialoguePanel.SetActive(false);
+        battleDialogue.enabled = false;
         bm = GameObject.Find("BattleManager").GetComponent<BattleManager>();
         EventSystem.current.SetSelectedGameObject(attackButton);
 
-        sHP = partyMembers[0].GetComponent<TheUnitStats>().health;
-        vHP = partyMembers[1].GetComponent<TheUnitStats>().health;
+        //CHANGE IT SO THE HP AND TP IS BASED ON UNITSTATS OF EACH PARTY MEMBER
 
-        sMaxHP = partyMembers[0].GetComponent<TheUnitStats>().maxHeath;
-        vMaxHP = partyMembers[1].GetComponent<TheUnitStats>().maxHeath;
+        sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
+        vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
+
+        sMaxHP = bm.partyMembers[0].GetComponent<TheUnitStats>().maxHeath;
+        vMaxHP = bm.partyMembers[1].GetComponent<TheUnitStats>().maxHeath;
 
         sylviaHP.maxValue = sHP;
         sylviaHP.value = sHP;
         vahanHP.maxValue = vHP;
         vahanHP.value = vHP;
-        sylviaTP.maxValue = 0;
         vahanTP.value = 0;
+        sylviaTP.value = 0;
         sylviaTPText.text = sylviaTP.value.ToString();
         vahanTPText.text = vahanTP.value.ToString();
         sylviaHPText.text = sylviaHP.value.ToString();
@@ -65,8 +71,10 @@ public class BattleUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sylviaTPText.text = sylviaTP.value.ToString();
-        vahanTPText.text = vahanTP.value.ToString();
+        sylviaTPText.text = bm.partyMembers[0].GetComponent<TheUnitStats>().talent.ToString() + "%";
+        sylviaTP.value = bm.partyMembers[0].GetComponent<TheUnitStats>().talent;
+        vahanTPText.text = bm.partyMembers[1].GetComponent<TheUnitStats>().talent.ToString().ToString() + "%";
+        vahanTP.value = bm.partyMembers[1].GetComponent<TheUnitStats>().talent;
         sylviaHPText.text = sHP.ToString() + "/" + sMaxHP.ToString();
         vahanHPText.text = vHP.ToString() + "/" + vMaxHP.ToString();
     }
@@ -80,27 +88,85 @@ public class BattleUI : MonoBehaviour
             Debug.Log("ATTACK ENEMY");
             //Add in option for selecting enemy to target
 
-            //CHANGE LATER//
+            //CHANGE LATER so it's set to the first enemySelection UI button in the scene from the enemySpawner//
             EventSystem.current.SetSelectedGameObject(enemySelection);
     }
 
+    //FOR PERFORMING TALENT ATTACK
+    //CHECK IF CURRENT PLAYER'S TP IS >=100
+    //IF YES, CALL CONFIRM TALENT
+    //OTHERWISE, TALENT CAN'T BE PERFORMED
+
+    //IF BM.SPECIALBATTLE == TRUE
+    //Open DialogueBox and pause other actions to allow dialogue to play
+    //Otherwise just allow for talent to happen 
+    public void Talent()
+    {
+        if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent >= 100)
+        {
+            Debug.Log("SELECT ENEMY FOR TALENT");
+            //else if true, perform talent based on current character in party 
+        }
+        else
+        {
+            Debug.Log("Not Enough Talent");
+        }
+    }
+
+    public void ActivateTalent()
+    {
+        EventSystem.current.SetSelectedGameObject(talentButton);
+        talentButton.GetComponent<Button>().interactable = true;
+        attackButton.GetComponent<Button>().interactable = false; //temporarily disables attack button
+    }
+
     //Performs an attack on the enemy selected
+    //Calls the PlayerAction script on the player selected to perform the attack and deals damage to the enemy 
     public void ConfirmAttack()
     {
-        Debug.Log("ATTACK");
         //Plays attacking animation after the attack button is selected
-        playerAnim = partyMembers[bm.curTurn].GetComponent<Animator>();
+        playerAnim = bm.partyMembers[bm.curTurn].GetComponent<Animator>();
         playerAnim.SetTrigger("Attacking");
+        bm.partyMembers[bm.curTurn].GetComponent<PlayerAction>().Attack(bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>());
+        EventSystem.current.SetSelectedGameObject(null);
+        Invoke("StartNextTurn", 1f);
 
-        EventSystem.current.SetSelectedGameObject(attackButton);
-        bm.curTurn++;
-        bm.NextTurn();
     }
 
     //If backspace pressed while selecting an enemy
     //Return to having the Attack button be the one that's selected
     public void CancelAttack()
     {
-            EventSystem.current.SetSelectedGameObject(attackButton);
+        EventSystem.current.SetSelectedGameObject(attackButton);
+    }
+
+
+//Delay in between turns so enemies don't attack right away
+//Increases talent by 25% at the end of each player turn
+    public void StartNextTurn()
+    {
+        if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent < 100)
+        {
+            bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent += 25;
+        }
+        bm.curTurn++;
+        bm.NextTurn();
+            //If tutorial hasn't been done yet AND talent is >=100% && cur turn is less than party members length (2 for now)
+            if(bm.curTurn < 2)
+            {
+                if(bm.tutorial == false && bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent == 100)
+                {
+                    Debug.Log("VAHAN TUTORIAL BEGINS");
+                    battleDialogue.enabled = true;
+                    bm.tutorial = true;
+                }
+
+                else
+                {
+                    EventSystem.current.SetSelectedGameObject(attackButton);
+                }
+            }
+
+
     }
 }

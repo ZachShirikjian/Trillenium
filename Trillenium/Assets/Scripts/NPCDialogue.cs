@@ -140,19 +140,19 @@ public class NPCDialogue : MonoBehaviour
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
 
-            //If NPC is Vahan or Petros, set them as children of Sylvia
-            if(interactScript.curObject.name == "VahanNPC")
-            {
-                Debug.Log("Vahan has joined the party!");
-                interactScript.curObject.transform.parent = playerParty.transform;
-                interactScript.curObject.transform.position = new Vector2(0,-2);
+            // //If NPC is Vahan or Petros, set them as children of Sylvia
+            // if(interactScript.curObject.name == "VahanNPC")
+            // {
+            //     Debug.Log("Vahan has joined the party!");
+            //     interactScript.curObject.transform.parent = playerParty.transform;
+            //     interactScript.curObject.transform.position = new Vector2(0,-2);
 
-                //Ensures HelpIcon is disabled if an NPC joins your party//
-                interactScript.curObject.transform.GetChild(0).gameObject.SetActive(false);
+            //     //Ensures HelpIcon is disabled if an NPC joins your party//
+            //     interactScript.curObject.transform.GetChild(0).gameObject.SetActive(false);
 
-                //ENABLE ANIMATIONS//
-                interactScript.curObject.GetComponent<Animator>().enabled = true;
-            }
+            //     //ENABLE ANIMATIONS//
+            //     interactScript.curObject.GetComponent<Animator>().enabled = true;
+            // }
         }
     }
 }

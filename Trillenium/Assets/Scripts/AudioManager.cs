@@ -11,4 +11,5 @@ public class AudioManager : MonoBehaviour
     public AudioClip uiHover;
     public AudioClip uiClick;
     public AudioClip uiClose;
+    public AudioClip battleWon;
 }
