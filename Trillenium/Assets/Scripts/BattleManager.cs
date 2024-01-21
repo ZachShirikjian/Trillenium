@@ -74,14 +74,30 @@ public class BattleManager : MonoBehaviour
      public void NextTurn()
      {
 
-        //If it's Vahan's turn, display his selection circle to indicate it's his turn 
-        if(curTurn == 1)
+        if(curTurn < 2)
         {
-            partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
-            partyMembers[1].transform.GetChild(0).gameObject.SetActive(true);
+                 //If player's HP is 0 or less when it's their turn
+                //Skip their turn and move onto the next turn
+                if(partyMembers[curTurn].GetComponent<TheUnitStats>().health <= 0)
+                {
+                    partyMembers[curTurn].GetComponent<TheUnitStats>().dead = true;
+                    curTurn++;
+                }
+
+                        //If it's Vahan's turn, display his selection circle to indicate it's his turn 
+                if(curTurn == 1)
+                {
+                    partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
+                    partyMembers[1].transform.GetChild(0).gameObject.SetActive(true);
+                }
+                else if(curTurn == 0)
+                {
+                    partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
+                    partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
+                }
         }
         //For Enemy's Turn, call the Attack method for each enemy to attack the player 
-        if(curTurn >= 2 && curTurn < (enemies.Count +2))
+        if(curTurn >= 2 && curTurn < (enemies.Count + partyMembers.Length))
         {
             Debug.Log("ENEMIES' TURN");
             partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);

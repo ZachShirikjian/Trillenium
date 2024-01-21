@@ -12,8 +12,8 @@ public class BattleUI : MonoBehaviour
     //VARIABLES//
     //List of all the party members
     public int sHP;
-    public int sMaxHP;
     public int vHP;
+    public int sMaxHP;
     public int vMaxHP;
 
     //REFERENCES//
@@ -49,12 +49,10 @@ public class BattleUI : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(attackButton);
 
         //CHANGE IT SO THE HP AND TP IS BASED ON UNITSTATS OF EACH PARTY MEMBER
-
         sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
         vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
-
-        sMaxHP = bm.partyMembers[0].GetComponent<TheUnitStats>().maxHeath;
-        vMaxHP = bm.partyMembers[1].GetComponent<TheUnitStats>().maxHeath;
+        sMaxHP = bm.partyMembers[0].GetComponent<TheUnitStats>().maxHealth;
+        vMaxHP = bm.partyMembers[1].GetComponent<TheUnitStats>().maxHealth;
 
         sylviaHP.maxValue = sHP;
         sylviaHP.value = sHP;
@@ -75,8 +73,10 @@ public class BattleUI : MonoBehaviour
         sylviaTP.value = bm.partyMembers[0].GetComponent<TheUnitStats>().talent;
         vahanTPText.text = bm.partyMembers[1].GetComponent<TheUnitStats>().talent.ToString().ToString() + "%";
         vahanTP.value = bm.partyMembers[1].GetComponent<TheUnitStats>().talent;
-        sylviaHPText.text = sHP.ToString() + "/" + sMaxHP.ToString();
-        vahanHPText.text = vHP.ToString() + "/" + vMaxHP.ToString();
+        sylviaHPText.text = bm.partyMembers[0].GetComponent<TheUnitStats>().health.ToString() + "/" + sMaxHP.ToString();
+        sylviaHP.value = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
+        vahanHPText.text = bm.partyMembers[1].GetComponent<TheUnitStats>().health.ToString() + "/" + vMaxHP.ToString();
+        vahanHP.value = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
     }
 
 
@@ -105,6 +105,8 @@ public class BattleUI : MonoBehaviour
         if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent >= 100)
         {
             Debug.Log("SELECT ENEMY FOR TALENT");
+            //CHANGE LATER so it's set to the first enemySelection UI button in the scene from the enemySpawner//
+            EventSystem.current.SetSelectedGameObject(enemySelection);
             //else if true, perform talent based on current character in party 
         }
         else
@@ -118,6 +120,7 @@ public class BattleUI : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(talentButton);
         talentButton.GetComponent<Button>().interactable = true;
         attackButton.GetComponent<Button>().interactable = false; //temporarily disables attack button
+        tutorialDialoguePanel.SetActive(false);
     }
 
     //Performs an attack on the enemy selected
@@ -130,7 +133,6 @@ public class BattleUI : MonoBehaviour
         bm.partyMembers[bm.curTurn].GetComponent<PlayerAction>().Attack(bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>());
         EventSystem.current.SetSelectedGameObject(null);
         Invoke("StartNextTurn", 1f);
-
     }
 
     //If backspace pressed while selecting an enemy
@@ -158,6 +160,7 @@ public class BattleUI : MonoBehaviour
                 {
                     Debug.Log("VAHAN TUTORIAL BEGINS");
                     battleDialogue.enabled = true;
+                    tutorialDialoguePanel.SetActive(true);
                     bm.tutorial = true;
                 }
 

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: TalentTutorial 3
   m_EditorClassIdentifier: 
-  speakerText: Don't worry about holding back or doing anything else right now, just
-    show 'em your Talent!
+  speakerText: Don't worry about holding back for now, just watch and learn!
   personSpeaking: Vahan
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}

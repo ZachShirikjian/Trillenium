@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class EnemyAttack : MonoBehaviour
 {
     //VARIABLES//
-
+    private int randomIndex;
     //REFERENCES//
     private BattleManager bm; //ref to battle manager for getting current turn 
     private Animator anim;
@@ -41,8 +41,8 @@ public class EnemyAttack : MonoBehaviour
         anim.SetTrigger("Attacking");
         Invoke("StartNextTurn", 1f);
 
-        //Math.Random(playerParty[0,1])
-        //playerParty[0].health -= 5;
+        randomIndex = Random.Range(0,2);
+        bm.partyMembers[randomIndex].GetComponent<PlayerAction>().TakeDamage(20);
     }
 
     public void StartNextTurn()

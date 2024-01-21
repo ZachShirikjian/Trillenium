@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerAction : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //VARIABLES//
 
+    //REFERENCES//
+    private TheUnitStats unitStats;
     void Start()
     {
-        
+        unitStats = GetComponent<TheUnitStats>();
     }
 
     // Update is called once per frame
@@ -30,14 +32,18 @@ public class PlayerAction : MonoBehaviour
     {
         Vector3 attackDir = (targetChar.GetPosition() - GetPosition()).normalized;
         Debug.Log("ATTACKING ENEMY");
-        transform.GetChild(0).gameObject.SetActive(false); //disables selectionCircle during attack
-
     }
 
-    //Deals damage to the enemy when attacking
-    public void Damage(int damageAmount)
+    public void TalentAttack()
     {
+        Debug.Log("PERFORMING A TALENT!");
+    }
 
+    //Take Damage from Enemy (called from EnemyAttack or BossAttack scripts)
+    public void TakeDamage(int damageAmount)
+    {
+        Debug.Log(this.gameObject.name + " IS TAKING DAMAGE");
+        unitStats.health -= damageAmount;
     }
 
 
