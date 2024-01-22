@@ -12,4 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip uiClick;
     public AudioClip uiClose;
     public AudioClip battleWon;
+
+    //MUSIC REFS//
+    public AudioClip talentAttack;
+    public AudioClip battleTheme;
 }

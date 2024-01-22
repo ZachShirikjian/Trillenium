@@ -54,7 +54,7 @@ public class EnemyAttack : MonoBehaviour
     //TEMP METHOD TO DAMAGE PLAYER AFTER ANIMATION FINISHES
     public void DamagePlayer()
     {
-        bm.partyMembers[randomIndex].GetComponent<PlayerAction>().TakeDamage(20);
+        bm.partyMembers[randomIndex].GetComponent<PlayerAction>().TakeDamage(30);
     }
     public void TakeDamage(int damageAmount)
     {

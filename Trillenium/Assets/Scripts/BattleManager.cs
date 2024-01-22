@@ -18,9 +18,12 @@ public class BattleManager : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject[] partyMembers = new GameObject[2];
     public bool tutorial = false; //CHANGE LATER -> if tutorial hasn't been activated yet, set this to true when talent is at 100, then false afterwards
+    public bool talentActivated = false;
+    
     //REFERENCES//
     public GameObject battleUI; //reference to player battle UI panel; 
     public GameObject attackButton;
+    public VahanTalent vahanTalentScript;
 
     //AUDIO REFERENCES//
     public AudioManager audioManager;
@@ -30,6 +33,7 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
        // numEnemiesLeft = 2; //REPLACE THIS SO IT'S BASED ON NUMBER OF ENEMIES SPAWNED IN A SPAWNER LATER//
+        vahanTalentScript.enabled = false;
         curTurn = 0;
         currentEnemy = 0;
         foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -41,11 +45,29 @@ public class BattleManager : MonoBehaviour
         //Enables selection circle for Sylvia at start of battle 
         partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
         partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
+        talentActivated = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    //CHANGES MUSIC TO BE TALENT THEME WHEN PERFORMING A TALENT
+    //MIGHT REMOVE
+    public void ChangeMusic()
+    {
+        if(talentActivated == true)
+        {
+            musicSource.Stop();
+            musicSource.PlayOneShot(audioManager.talentAttack);
+        }
+        else if(talentActivated == false)
+        {
+            musicSource.Stop();
+            musicSource.PlayOneShot(audioManager.battleTheme);
+        }
 
     }
 

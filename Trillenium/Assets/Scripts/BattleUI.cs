@@ -46,9 +46,13 @@ public class BattleUI : MonoBehaviour
     private int enemyHP;
     public GameObject targetEnemy; 
 
+    //REFERENCE TO VAHAN TALENT UI PROMPT//
+    public GameObject vahanTalentUIPrompt;
+
     // Start is called before the first frame update
     void Start()
     {
+        vahanTalentUIPrompt.SetActive(false);
         tutorialDialoguePanel.SetActive(false);
         battleDialogue.enabled = false;
         bm = GameObject.Find("BattleManager").GetComponent<BattleManager>();
@@ -63,7 +67,7 @@ public class BattleUI : MonoBehaviour
         sylviaHP.maxValue = sMaxHP;
         // sylviaHP.value = sHP;
 //        vahanHP.maxValue = vMaxHP;
-        vahanHP.value = vHP;
+        vahanHP.maxValue = vMaxHP;
         // vahanTP.value = 0;
         // sylviaTP.value = 0;
         // sylviaTPText.text = sylviaTP.value.ToString();
@@ -128,6 +132,7 @@ public class BattleUI : MonoBehaviour
         {
             Debug.Log("SELECT ENEMY FOR TALENT");
             //CHANGE LATER so it's set to the first enemySelection UI button in the scene from the enemySpawner//
+            bm.talentActivated = true;
             EventSystem.current.SetSelectedGameObject(enemySelection);
             //else if true, perform talent based on current character in party 
         }
@@ -137,6 +142,7 @@ public class BattleUI : MonoBehaviour
         }
     }
 
+    //Makes talent button interactable after Vahan's dialogue finishes (for now, will change later so it's on when a party member's TP is 100%)
     public void ActivateTalent()
     {
         EventSystem.current.SetSelectedGameObject(talentButton);
@@ -151,10 +157,28 @@ public class BattleUI : MonoBehaviour
     {
         //Plays attacking animation after the attack button is selected
         playerAnim = bm.partyMembers[bm.curTurn].GetComponent<Animator>();
-        playerAnim.SetTrigger("Attacking");
-        bm.partyMembers[bm.curTurn].GetComponent<PlayerAction>().Attack(bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>());
         EventSystem.current.SetSelectedGameObject(null);
-        Invoke("StartNextTurn", 1f);
+        if(bm.talentActivated == true)
+        {
+            //ACTIVATES VAHAN'S TALENT IF IT'S HIS TURN, CALL BM CHANGE MUSIC METHOD TO CHANGE BATTLE MUSIC THEME
+
+            //ENABLE SCRIPT TO ALLOW FOR VAHAN TO DO HIS BUTTON MASHING//
+            if(bm.curTurn == 1)
+            {
+                vahanTalentUIPrompt.SetActive(true);
+                bm.ChangeMusic();
+                bm.vahanTalentScript.enabled = true;
+            }
+            //playerAnim.SetTrigger("Talent");
+            bm.partyMembers[bm.curTurn].GetComponent<PlayerAction>().TalentAttack(bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>());
+            Invoke("StartNextTurn", 10f); //16s is duration of Vahan's placeholder Talent BGM
+        }
+        else if(bm.talentActivated == false)
+        {
+            playerAnim.SetTrigger("Attacking");
+            bm.partyMembers[bm.curTurn].GetComponent<PlayerAction>().Attack(bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>());
+            Invoke("StartNextTurn", 1f);
+        }
     }
 
     //If backspace pressed while selecting an enemy
@@ -169,9 +193,20 @@ public class BattleUI : MonoBehaviour
 //Increases talent by 25% at the end of each player turn
     public void StartNextTurn()
     {
-        if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent < 100)
+        if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent < 100 && bm.talentActivated == false)
         {
             bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent += 25;
+        }
+        if(bm.talentActivated == true)
+        {
+            bm.talentActivated = false;
+            vahanTalentUIPrompt.SetActive(false);
+            bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent = 0;
+            bm.ChangeMusic();
+
+            //TEMPORARY FOR FIRST BATTLE ONLY!!!//
+            //For now, after Vahan players must use Sylvia's talent, but future battles will allow attacks and talents to be performed
+            EventSystem.current.SetSelectedGameObject(talentButton);
         }
         bm.curTurn++;
         bm.NextTurn();

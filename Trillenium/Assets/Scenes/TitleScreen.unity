@@ -1044,7 +1044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &545420021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1256,7 +1256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -375, y: 269}
+  m_AnchoredPosition: {x: -400, y: 269}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726410918
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 0.2
+  m_text: FIRST PROTOTYPE DEMO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a14c30a3f8cb5495d9f560f02b38ece5, type: 2}
   m_sharedMaterial: {fileID: -2841591044710732048, guid: a14c30a3f8cb5495d9f560f02b38ece5, type: 2}
@@ -1306,8 +1306,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1761,8 +1761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA92023-2024 Zach Shirikjian & Artists for Humanity, Inc.\nAll Rights
-    Reserved."
+  m_text: "\xA92023-2024 Zach Shirikjian.\nAll Rights Reserved."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
   m_sharedMaterial: {fileID: 8456391783536491035, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}

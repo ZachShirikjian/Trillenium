@@ -37,9 +37,11 @@ public class PlayerAction : MonoBehaviour
         targetChar.TakeDamage(unitStats.attack);
     }
 
-    public void TalentAttack()
+    //Performs a Talent Attack minigame (different for each character)
+    public void TalentAttack(EnemyAttack targetChar)
     {
         Debug.Log("PERFORMING A TALENT!");
+        //ENABLE TALENT ATTACK ASSOCIATED WITH THIS SCRIPT?//
     }
 
     //Take Damage from Enemy (called from EnemyAttack or BossAttack scripts)
