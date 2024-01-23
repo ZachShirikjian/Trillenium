@@ -20,18 +20,92 @@ public class GameManager : MonoBehaviour
     public GameObject controlsButton; 
     public GameObject closeControlsButton;
     public GameObject resumeButton;
+
+    public List<GameObject> playerParty = new List<GameObject>();
+    private GameObject sylvia;
+
+    //DIALOGUE REFERENCE//
+    
+    //The current lines of dialogue which is being spoken.
+        public TextMeshProUGUI dialogueText;
+        public Dialogue afraidToBattleDialogue;
+
+        //The Header for the Dialogue speaker (Sylvia in this case).
+        public TextMeshProUGUI speaker;
+
+        //Reference to the Portrait Image of the current character that's speaking
+        public GameObject portraitImage;
+        //Reference to the DialogueBox animator to animate the DialogueBox UI during the cutscene.
+        public Animator dialogueAnim;
+
+        //Reference to the DialogueBox
+        public GameObject dialogueBox;
+
+        //Reference to Continue Button 
+        public GameObject continueButton;
+
+    //Reference to SFXSource//
+    public AudioSource sfxSource;
+
+    //Reference to Dialogue AudioClip//
+    public AudioSource dialogueSource;
+
+        //Reference to AudioManager//
+    public AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {   
         npcDialogue.SetActive(false);
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
+
+        sylvia = GameObject.Find("Sylvia");
+        playerParty.Add(sylvia);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+
+    //FOR FIRST AREA ONLY//
+    //Indicates to players they can't fight the first enemy alone and must talk to Vahan.
+    public void NoSoloBattle()
+    {
+        continueButton.SetActive(false);
+        npcDialogue.SetActive(true);
+        dialogueBox.SetActive(true);
+        dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
+        portraitImage.GetComponent<Image>().sprite = afraidToBattleDialogue.speakerPortait;
+       //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
+         portraitImage.GetComponent<Animator>().SetTrigger("New");
+        sfxSource.PlayOneShot(audioManager.newDialogue);
+        dialogueText.text = afraidToBattleDialogue.speakerText;
+        dialogueSource.PlayOneShot(afraidToBattleDialogue.audioClip);
+        speaker.text = "Sylvia";
+       
+        Invoke("CloseDialogue", 5f);
+    }
+
+    public void CloseDialogue()
+    {
+        Debug.Log("");
+            // currentImage.sprite = cutsceneBG[curPlace];
+            dialogueText.text = "";
+            dialogueAnim.SetBool("EndDialogue", true);
+            speaker.text = "";
+            Debug.Log("END DIALOGUE");
+            continueButton.SetActive(false);
+
+            //Enables player movement once dialogue is completed 
+
+            portraitImage.GetComponent<Animator>().Play("End");
+            portraitImage.GetComponent<Animator>().SetTrigger("New");
+            sylvia.GetComponentInChildren<PlayerInteract>().currentlyInteracting = false;
+                                npcDialogue.SetActive(false);
     }
 
     //Called on the PlayerInput Script

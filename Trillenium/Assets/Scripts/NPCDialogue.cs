@@ -23,6 +23,8 @@ public class NPCDialogue : MonoBehaviour
     // //List of all the Dialogue spoken for the Cutscene. 
     // public Dialogue[] npcDialogue;
 
+    private GameManager gm;
+
     //Reference to the Portrait Image of the current character that's speaking
     public GameObject portraitImage;
     //Reference to the DialogueBox animator to animate the DialogueBox UI during the cutscene.
@@ -57,7 +59,8 @@ public class NPCDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMove = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+        playerMove = GameObject.Find("Sylvia").GetComponent<PlayerMovement>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     // Update is called once per frame
     void Update()
@@ -134,14 +137,22 @@ public class NPCDialogue : MonoBehaviour
             Debug.Log("END DIALOGUE");
             continueButton.SetActive(false);
 
+
             //Enables player movement once dialogue is completed 
             playerMove.enabled = true;
+            interactScript.currentlyInteracting = false;
 
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
 
-            // //If NPC is Vahan or Petros, set them as children of Sylvia
-            // if(interactScript.curObject.name == "VahanNPC")
+
+
+            // //If NPC is Vahan or Petros, adds them to Player Party List 
+            //Necessary for fighting first battle 
+             if(interactScript.curObject.name == "VahanNPC")
+             {
+                gm.playerParty.Add(interactScript.curObject);
+             }
             // {
             //     Debug.Log("Vahan has joined the party!");
             //     interactScript.curObject.transform.parent = playerParty.transform;

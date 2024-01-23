@@ -7,6 +7,7 @@ public class PlayerInteract : MonoBehaviour
 {
 
     //VARIABLES//
+    public bool currentlyInteracting = false; //if player's currently interacting with NPC, set this to be true
     public bool canInteract = false; //set to true if player is near interactable
     public GameObject curObject = null; //current interactable object
 
@@ -46,6 +47,7 @@ public class PlayerInteract : MonoBehaviour
     //If player exits range of interactable object, set canInteract to be false
     public void OnTriggerExit2D(Collider2D other)
     {
+        currentlyInteracting = false;
         canInteract = false;
         curObject = null;
         Debug.Log("OUT OF RANGE");
@@ -56,17 +58,37 @@ public class PlayerInteract : MonoBehaviour
     //Calls BeginDialogue() method in NPCDialogue canvas script, using dialogue that's on every individual NPC itself
     public void Interact(InputAction.CallbackContext context)
     {
-        if(canInteract && curObject.tag == "NPC" && gm.isPaused == false)
+        if(currentlyInteracting == false)
         {
-            Debug.Log("INTERACTING");
-            // npcScript.enabled = true;
-             npcScript.BeginDialogue();            
+            if(canInteract && curObject.tag == "NPC" && gm.isPaused == false)
+            {
+                Debug.Log("INTERACTING");
+                // npcScript.enabled = true;
+                npcScript.BeginDialogue();        
+                currentlyInteracting = true;    
+            }
+                
+            //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
+            if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+            {
+               if(gm.playerParty.Count > 1) 
+                {
+                    if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+                    {
+                        Debug.Log("ENEMY BATTLE ENGAGE!");
+                        SceneManager.LoadScene("TestBattle");
+                    }
+                }
+                else if(gm.playerParty.Count == 1)
+                {
+                    gm.NoSoloBattle();
+                    Debug.Log("CAN'T FIGHT ALONE");
+                    currentlyInteracting = true;
+                }
+            }
+
         }
 
-        if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
-        {
-            Debug.Log("ENEMY BATTLE ENGAGE!");
-            SceneManager.LoadScene("TestBattle");
-        }
+ 
     }
 }
