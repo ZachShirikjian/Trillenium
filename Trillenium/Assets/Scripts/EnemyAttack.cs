@@ -14,6 +14,12 @@ public class EnemyAttack : MonoBehaviour
     private TheUnitStats enemyUnitStats;
     private SpriteRenderer spriteR;
 
+    //REFERENCE TO ITS HEALTH BAR ABOVE ENEMY (FIX LATER?)
+    public GameObject enemyHP;
+
+    //ALLOWS ENEMY TO BE SELECTED (FIX LATER?)
+    public GameObject enemySelection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +27,9 @@ public class EnemyAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         enemyUnitStats = GetComponent<TheUnitStats>();
         spriteR = GetComponent<SpriteRenderer>();
+
+        enemyHP.SetActive(true);
+        enemySelection.SetActive(true);
     }
 
     // Update is called once per frame
@@ -71,6 +80,8 @@ public class EnemyAttack : MonoBehaviour
             Debug.Log("ENEMY DEFEATED");
             bm.numEnemiesLeft--;
             bm.enemies.Remove(this.gameObject);
+            enemyHP.SetActive(false);
+            enemySelection.SetActive(false);
             Destroy(this.gameObject);
         }
 

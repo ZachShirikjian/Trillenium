@@ -30,7 +30,7 @@ public class VahanTalent : MonoBehaviour
     //Performs button mash on the enemy while a talent is activated 
     public void ButtonMash(InputAction.CallbackContext context)
     {
-        if(bm.talentActivated == true)
+        if(bm.talentActivated == true && bm.enemies[bm.currentEnemy] != null)
         {
             Debug.Log("Dealing Damage");
             enemyScript.TakeDamage(1);

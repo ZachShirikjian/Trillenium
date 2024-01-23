@@ -17,6 +17,7 @@ public class BattleUI : MonoBehaviour
     public int vMaxHP;
 
     //REFERENCES//
+
     public BattleDialogue battleDialogue;
     public GameObject tutorialDialoguePanel; 
 
@@ -59,21 +60,11 @@ public class BattleUI : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(attackButton);
 
         //CHANGE IT SO THE HP AND TP IS BASED ON UNITSTATS OF EACH PARTY MEMBER
-        // sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
-        // vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
         sMaxHP = bm.partyMembers[0].GetComponent<TheUnitStats>().maxHealth;
         vMaxHP = bm.partyMembers[1].GetComponent<TheUnitStats>().maxHealth;
 
         sylviaHP.maxValue = sMaxHP;
-        // sylviaHP.value = sHP;
-//        vahanHP.maxValue = vMaxHP;
         vahanHP.maxValue = vMaxHP;
-        // vahanTP.value = 0;
-        // sylviaTP.value = 0;
-        // sylviaTPText.text = sylviaTP.value.ToString();
-        // vahanTPText.text = vahanTP.value.ToString();
-        // sylviaHPText.text = sylviaHP.value.ToString();
-        // vahanHPText.text = vahanHP.value.ToString();
 
         enemyHP = targetEnemy.GetComponent<TheUnitStats>().health;
         enemyHPSlider.maxValue = targetEnemy.GetComponent<TheUnitStats>().maxHealth;
@@ -106,6 +97,7 @@ public class BattleUI : MonoBehaviour
     }
 
 
+//UI BUTTON METHODS//
     //Reference to Attack button in the scene
     //Switches to the Enemy Buttons so players can choose which enemies they want to attack
     //Then after that the player plays the attack animation, and after 3 seconds, it switches to the next person's turn
@@ -142,6 +134,7 @@ public class BattleUI : MonoBehaviour
         }
     }
 
+//TEMP METHOD FOR TALENT TUTORIAL ONLY!!!//
     //Makes talent button interactable after Vahan's dialogue finishes (for now, will change later so it's on when a party member's TP is 100%)
     public void ActivateTalent()
     {
@@ -161,10 +154,11 @@ public class BattleUI : MonoBehaviour
         if(bm.talentActivated == true)
         {
             //ACTIVATES VAHAN'S TALENT IF IT'S HIS TURN, CALL BM CHANGE MUSIC METHOD TO CHANGE BATTLE MUSIC THEME
-
             //ENABLE SCRIPT TO ALLOW FOR VAHAN TO DO HIS BUTTON MASHING//
-            if(bm.curTurn == 1)
+            
+            if(bm.curTurn < 2)
             {
+                //bm.sylviaTalentScript.enabled = true;
                 vahanTalentUIPrompt.SetActive(true);
                 bm.ChangeMusic();
                 bm.vahanTalentScript.enabled = true;
@@ -183,50 +177,47 @@ public class BattleUI : MonoBehaviour
 
     //If backspace pressed while selecting an enemy
     //Return to having the Attack button be the one that's selected
+    //Make sure to deactivate talent so talentActivated is false
     public void CancelAttack()
     {
+        Debug.Log("ATTACK CANCELLED");  
         EventSystem.current.SetSelectedGameObject(attackButton);
+        bm.talentActivated = false;
     }
 
 
-//Delay in between turns so enemies don't attack right away
-//Increases talent by 25% at the end of each player turn
+//UPDATE THE UI BEFORE STARTING THE NEXT PLAYER OR ENEMY TURN (BEFORE IT RESETS TO SYLVIA)
     public void StartNextTurn()
     {
         if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent < 100 && bm.talentActivated == false)
         {
             bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent += 25;
+            EventSystem.current.SetSelectedGameObject(attackButton);
         }
-        if(bm.talentActivated == true)
+
+        else if(bm.talentActivated == true)
         {
+            Debug.Log("Talent Reset");
+            //TEMPORARY FOR FIRST BATTLE ONLY!!!//
+            //For now, after Vahan players must use Sylvia's talent, but future battles will allow attacks and talents to be performed
+            EventSystem.current.SetSelectedGameObject(talentButton);
             bm.talentActivated = false;
             vahanTalentUIPrompt.SetActive(false);
             bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent = 0;
             bm.ChangeMusic();
-
-            //TEMPORARY FOR FIRST BATTLE ONLY!!!//
-            //For now, after Vahan players must use Sylvia's talent, but future battles will allow attacks and talents to be performed
-            EventSystem.current.SetSelectedGameObject(talentButton);
         }
+
+        //CALL NEXTTURN() TO START THE NEXT PLAYER OR ENEMY TURN
         bm.curTurn++;
         bm.NextTurn();
-            //If tutorial hasn't been done yet AND talent is >=100% && cur turn is less than party members length (2 for now)
-            if(bm.curTurn < 2)
-            {
-                if(bm.tutorial == false && bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent == 100)
-                {
-                    Debug.Log("VAHAN TUTORIAL BEGINS");
-                    battleDialogue.enabled = true;
-                    tutorialDialoguePanel.SetActive(true);
-                    bm.tutorial = true;
-                }
+    }
 
-                else
-                {
-                    EventSystem.current.SetSelectedGameObject(attackButton);
-                }
-            }
-
-
+    //ONLY FOR FIRST BATTLE
+    public void TalentTutorial()
+    {
+        Debug.Log("VAHAN TUTORIAL BEGINS");
+        battleDialogue.enabled = true;
+        tutorialDialoguePanel.SetActive(true);
+        bm.tutorial = true;
     }
 }

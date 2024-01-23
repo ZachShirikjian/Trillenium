@@ -5,6 +5,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
@@ -12,7 +13,10 @@ public class BattleManager : MonoBehaviour
 {
 
     //VARIABLES//
+
+    //DELETE THIS VAR LATER? IT'S UNUSED//
     public int numEnemiesLeft; //the number of enemies that're left in a battle based on that in an enemy encounter prefab
+    
     public int curTurn; //current turn, 0-2 are for party and anything more are for the enemies
     public int currentEnemy; //current enemy attacking, goes up by 1 every time they damage a player
     public List<GameObject> enemies = new List<GameObject>();
@@ -21,9 +25,12 @@ public class BattleManager : MonoBehaviour
     public bool talentActivated = false;
     
     //REFERENCES//
+    public BattleUI battleUIScript;
     public GameObject battleUI; //reference to player battle UI panel; 
     public GameObject attackButton;
+    public GameObject talentButton;
     public VahanTalent vahanTalentScript;
+    public TextMeshProUGUI battleStatusText;
 
     //AUDIO REFERENCES//
     public AudioManager audioManager;
@@ -32,6 +39,7 @@ public class BattleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        battleStatusText.text = "";
        // numEnemiesLeft = 2; //REPLACE THIS SO IT'S BASED ON NUMBER OF ENEMIES SPAWNED IN A SPAWNER LATER//
         vahanTalentScript.enabled = false;
         curTurn = 0;
@@ -77,6 +85,7 @@ public class BattleManager : MonoBehaviour
             Debug.Log("BATTLE WON!");
             musicSource.Stop();
             battleUI.SetActive(false);
+            battleStatusText.text = "VICTORY!";
             sfxSource.PlayOneShot(audioManager.battleWon);
             Invoke("LoadNextCutscene", 3f);
     }
@@ -90,14 +99,13 @@ public class BattleManager : MonoBehaviour
 
      public void NextTurn()
      {
-
         //If all enemies have been defeated, End the Battle! 
         //If there's still at least 1 enemy left, continue battle turns as normal
         if(enemies.Count == 0)
         {
             EndBattle();
         }
-        else
+        else if(enemies.Count > 0)
         {
                 if(curTurn < 2)
                 {
@@ -108,27 +116,36 @@ public class BattleManager : MonoBehaviour
                             partyMembers[curTurn].GetComponent<TheUnitStats>().dead = true;
                             curTurn++;
                         }
-                                //If it's Vahan's turn, display his selection circle to indicate it's his turn 
+
+                        
+                    //FOR SELECTION CIRCLE ON PARTY MEMBERS//
+                        //If curTurn = 1 (Vahan), activate his selection circle
                         if(curTurn == 1)
                         {
                             partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
                             partyMembers[1].transform.GetChild(0).gameObject.SetActive(true);
                         }
+
+                        //if curTurn = 0 (Sylvia), activate her selection circle
                         else if(curTurn == 0)
                         {
                             partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
                             partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
                         }
                 }
+
+                //ENEMY ATTACKS PLAYER
                 //For Enemy's Turn, call the Attack method for each enemy to attack the player 
                 if(curTurn >= 2 && curTurn < (enemies.Count + partyMembers.Length))
                 {
                     Debug.Log("ENEMIES' TURN");
+                  //  partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
                     partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
                     battleUI.SetActive(false);
                     enemies[currentEnemy].GetComponent<EnemyAttack>().Attack();
                 }
-                else if(curTurn == (enemies.Count + partyMembers.Length)) //Length of PartyMembers array (goes up to 3 when Petros joins) PLUS # of enemies currently in the scene
+
+                else if(curTurn >= (enemies.Count + partyMembers.Length)) //Length of PartyMembers array (goes up to 3 when Petros joins) PLUS # of enemies currently in the scene
                 {
                     Invoke("ResetTurns", 1f);
                 }
@@ -136,6 +153,7 @@ public class BattleManager : MonoBehaviour
 
      }
 
+    //RESETS BACK TO PLAYER TURN (Sylvia first)
     //After all enemies' turns are done,
     //Reset to Player's Turn (starting with Sylvia) and re-enable the battle uI
      public void ResetTurns()
@@ -146,6 +164,20 @@ public class BattleManager : MonoBehaviour
         battleUI.SetActive(true);
        //Enables selection circle for Sylvia to indicate it's her turn
         partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(attackButton);
+
+
+        //FOR FIRST BATTLE, ACTIVATE TALENT TUTORIAL AND CALL THE TALENT TUTORIAL() METHOD IN THE BATTLE UI SCRIPT
+        if(partyMembers[curTurn].GetComponent<TheUnitStats>().talent >= 100)
+        {
+            Debug.Log("CAN PERFORM TALENT");
+            if(tutorial == false)
+            {
+                battleUIScript.TalentTutorial();
+            }
+            else if(tutorial == true)
+            {
+                battleUIScript.ActivateTalent();
+            }
+        }
      }
 }
