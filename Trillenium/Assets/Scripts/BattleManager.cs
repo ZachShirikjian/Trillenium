@@ -54,6 +54,7 @@ public class BattleManager : MonoBehaviour
         partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
         partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
         talentActivated = false;
+
     }
 
     // Update is called once per frame

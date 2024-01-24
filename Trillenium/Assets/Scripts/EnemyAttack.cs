@@ -64,6 +64,7 @@ public class EnemyAttack : MonoBehaviour
     public void DamagePlayer()
     {
         bm.partyMembers[randomIndex].GetComponent<PlayerAction>().TakeDamage(30);
+        DamagePopup.Create(bm.partyMembers[randomIndex].transform.position, 30);  
     }
     public void TakeDamage(int damageAmount)
     {

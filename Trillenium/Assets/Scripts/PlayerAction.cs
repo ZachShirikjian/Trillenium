@@ -35,6 +35,7 @@ public class PlayerAction : MonoBehaviour
         Vector3 attackDir = (targetChar.GetPosition() - GetPosition()).normalized;
         Debug.Log("ATTACKING ENEMY");
         targetChar.TakeDamage(unitStats.attack);
+        DamagePopup.Create(targetChar.GetPosition(),unitStats.attack);  
     }
 
     //Performs a Talent Attack minigame (different for each character)
