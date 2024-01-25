@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         dialogueText.text = afraidToBattleDialogue.speakerText;
         dialogueSource.PlayOneShot(afraidToBattleDialogue.audioClip);
         speaker.text = "Sylvia";
+        sylvia.GetComponent<PlayerMovement>().enabled = false; //DISABLE MOVEMENT during the no solo battle dialogue prompt
        
         Invoke("CloseDialogue", 5f);
     }
@@ -105,7 +106,8 @@ public class GameManager : MonoBehaviour
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
             sylvia.GetComponentInChildren<PlayerInteract>().currentlyInteracting = false;
-                                npcDialogue.SetActive(false);
+            npcDialogue.SetActive(false);
+            sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT after the no solo battle dialogue prompt
     }
 
     //Called on the PlayerInput Script

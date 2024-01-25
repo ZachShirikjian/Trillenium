@@ -688,6 +688,7 @@ MonoBehaviour:
   uiClose: {fileID: 0}
   battleWon: {fileID: 0}
   talentAttack: {fileID: 0}
+  sylviaTalentAttack: {fileID: 0}
   battleTheme: {fileID: 0}
 --- !u!82 &1260369851
 AudioSource:
@@ -817,7 +818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427638019
 RectTransform:
   m_ObjectHideFlags: 0

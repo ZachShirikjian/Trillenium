@@ -1157,6 +1157,7 @@ MonoBehaviour:
   uiClose: {fileID: 8300000, guid: d10f1ed24761bec498441bf7b606d38b, type: 3}
   battleWon: {fileID: 8300000, guid: 1857e2c3c334ebc4184afbd11a12c414, type: 3}
   talentAttack: {fileID: 8300000, guid: 9ecde1752677ae74a8ab86a69f764f09, type: 3}
+  sylviaTalentAttack: {fileID: 8300000, guid: 4615626431f6c6944b3a5e6872ef9fe9, type: 3}
   battleTheme: {fileID: 8300000, guid: f1cd7fafb6daf474c900def5c3986d05, type: 3}
 --- !u!82 &746728697
 AudioSource:
@@ -1530,8 +1531,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPerformTalent: 0
-  controls: {fileID: 0}
-  talentAttack2: {fileID: 0}
+  controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  talentAttack: {fileID: -3650474955879159920, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  talentAttack2: {fileID: 7003678328801544150, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  talentAttack3: {fileID: 2818608982759811712, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &893931398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4359,7 +4362,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1718480407}
         m_TargetAssemblyTypeName: TalentScript, Assembly-CSharp
-        m_MethodName: ButtonMash
+        m_MethodName: PerformTalent
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4367,6 +4370,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ButtonMash
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 856509575}
+        m_TargetAssemblyTypeName: TalentScript, Assembly-CSharp
+        m_MethodName: PerformTalent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
     m_ActionId: 23eeff1a-cfd1-4c66-a614-e11656bfb5d4
@@ -4442,14 +4457,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718480400}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c0a89053dae8bb4084e81c5da18e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canPerformTalent: 0
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  talentAttack: {fileID: -3650474955879159920, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   talentAttack2: {fileID: 7003678328801544150, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  talentAttack3: {fileID: 2818608982759811712, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &1744227640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2263422842093598730, guid: c49e0cbe0a129dd40985ef553325d445, type: 3}
