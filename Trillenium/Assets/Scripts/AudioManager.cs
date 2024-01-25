@@ -15,5 +15,6 @@ public class AudioManager : MonoBehaviour
 
     //MUSIC REFS//
     public AudioClip talentAttack;
+    public AudioClip sylviaTalentAttack;
     public AudioClip battleTheme;
 }

@@ -9,10 +9,12 @@ public class PlayerAction : MonoBehaviour
     //REFERENCES//
     private TheUnitStats unitStats;
     private SpriteRenderer spriteR;
+    private TalentScript talentScript;
     void Start()
     {
         unitStats = GetComponent<TheUnitStats>();
         spriteR = GetComponent<SpriteRenderer>(); //for now, when player takes damage, make their sprite red for a second
+        talentScript = GetComponent<TalentScript>(); //reference to talent script associated with this player's GameObject, perform different methods depending on character used
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class PlayerAction : MonoBehaviour
     public void TalentAttack(EnemyAttack targetChar)
     {
         Debug.Log("PERFORMING A TALENT!");
+        talentScript.canPerformTalent = true;
         //ENABLE TALENT ATTACK ASSOCIATED WITH THIS SCRIPT?//
     }
 

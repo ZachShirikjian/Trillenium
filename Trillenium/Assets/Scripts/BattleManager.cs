@@ -29,7 +29,9 @@ public class BattleManager : MonoBehaviour
     public GameObject battleUI; //reference to player battle UI panel; 
     public GameObject attackButton;
     public GameObject talentButton;
-    public VahanTalent vahanTalentScript;
+
+    public TalentScript sylviatalentAttackScript;
+    public TalentScript vahantalentAttackScript;
     public TextMeshProUGUI battleStatusText;
 
     //AUDIO REFERENCES//
@@ -41,7 +43,6 @@ public class BattleManager : MonoBehaviour
     {
         battleStatusText.text = "";
        // numEnemiesLeft = 2; //REPLACE THIS SO IT'S BASED ON NUMBER OF ENEMIES SPAWNED IN A SPAWNER LATER//
-        vahanTalentScript.enabled = false;
         curTurn = 0;
         currentEnemy = 0;
         foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -70,7 +71,14 @@ public class BattleManager : MonoBehaviour
         if(talentActivated == true)
         {
             musicSource.Stop();
-            musicSource.PlayOneShot(audioManager.talentAttack);
+            if(curTurn == 0)
+            {
+                musicSource.PlayOneShot(audioManager.sylviaTalentAttack);
+            }
+            else if(curTurn == 1) 
+            {
+                 musicSource.PlayOneShot(audioManager.talentAttack);
+            }
         }
         else if(talentActivated == false)
         {
@@ -180,5 +188,11 @@ public class BattleManager : MonoBehaviour
                 battleUIScript.ActivateTalent();
             }
         }
+
+        else if(partyMembers[curTurn].GetComponent<TheUnitStats>().talent < 100)
+        {
+            battleUIScript.ResetAttacks();
+        }
+
      }
 }
