@@ -475,9 +475,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "That concludes the First Prototype Demo!\nFeel free to leave a comment
-    on the TRILLENIUM itch page with your feedback. \n\nThe full version of TRILLENIUM
-    will release\non Itch.io and Steam in 2024.\n\nThanks For Playing!"
+  m_text: "That concludes the Playable Demo!\nFeel free to leave a comment on the
+    TRILLENIUM itch page with your feedback. \n\nThe full version of TRILLENIUM will
+    release\non Itch.io and Steam in 2024.\n\nThanks For Playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
   m_sharedMaterial: {fileID: 8456391783536491035, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
@@ -965,6 +965,7 @@ MonoBehaviour:
   uiClose: {fileID: 0}
   battleWon: {fileID: 0}
   talentAttack: {fileID: 0}
+  sylviaTalentAttack: {fileID: 0}
   battleTheme: {fileID: 0}
 --- !u!82 &1123928190
 AudioSource:

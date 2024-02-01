@@ -413,7 +413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &308389574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FIRST PROTOTYPE DEMO
+  m_text: VERSION 0.3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a14c30a3f8cb5495d9f560f02b38ece5, type: 2}
   m_sharedMaterial: {fileID: -2841591044710732048, guid: a14c30a3f8cb5495d9f560f02b38ece5, type: 2}
@@ -1606,7 +1606,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ffec6404c4a2cef4aaeac091673f9bdb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11640a6165a1dd34296bac89819ba737, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1

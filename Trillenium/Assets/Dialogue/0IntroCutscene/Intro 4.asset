@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Intro 4
   m_EditorClassIdentifier: 
-  speakerText: Traditional art as we've come to know it for millenia is on the brink
+  speakerText: Traditional art as we've come to know it for millennia is on the brink
     of extinction.
   personSpeaking: ???
   newPersonSpeaking: 1

@@ -34,6 +34,8 @@ public class BattleManager : MonoBehaviour
     public TalentScript vahantalentAttackScript;
     public TextMeshProUGUI battleStatusText;
 
+    public GameObject transitionScreen;
+
     //AUDIO REFERENCES//
     public AudioManager audioManager;
     public AudioSource sfxSource;
@@ -55,6 +57,7 @@ public class BattleManager : MonoBehaviour
         partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
         partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
         talentActivated = false;
+        transitionScreen.SetActive(false);
 
     }
 
@@ -96,6 +99,8 @@ public class BattleManager : MonoBehaviour
             battleUI.SetActive(false);
             battleStatusText.text = "VICTORY!";
             sfxSource.PlayOneShot(audioManager.battleWon);
+            transitionScreen.SetActive(true);
+            transitionScreen.GetComponent<Animator>().Play("Loading");
             Invoke("LoadNextCutscene", 3f);
     }
 
