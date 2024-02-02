@@ -3271,6 +3271,12 @@ MonoBehaviour:
   battleUI: {fileID: 971428326}
   attackButton: {fileID: 151538714}
   talentButton: {fileID: 1869938921}
+  sylviaPortrait: {fileID: 1977091613}
+  vahanPortrait: {fileID: 1792878908}
+  sylviaDefault: {fileID: 21300000, guid: d6fc01ec56537f543865670f61cfdfcd, type: 3}
+  sylviaAction: {fileID: 21300000, guid: 9b6c4a9e129a60148bac22299f917b62, type: 3}
+  vahanDefault: {fileID: 21300000, guid: 235cf93f5c9dc6e4485815e5003a0e4e, type: 3}
+  vahanAction: {fileID: 21300000, guid: dfbdea27085047b45ad0b831327d28d3, type: 3}
   sylviatalentAttackScript: {fileID: 1718480407}
   vahantalentAttackScript: {fileID: 856509575}
   battleStatusText: {fileID: 2099173886}
@@ -4925,6 +4931,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5797064242757502536, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
   m_PrefabInstance: {fileID: 1771968953}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1792878908 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8445771811516315360, guid: 04f2a1831dbea4d4083d4729356569f2, type: 3}
+  m_PrefabInstance: {fileID: 7297118556378367926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1793333079
 GameObject:
   m_ObjectHideFlags: 0
@@ -8630,6 +8647,17 @@ Transform:
   - {fileID: 856509572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1977091613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2454845437074900936, guid: 83b1bf6f43a14f94994c786ad6e39afc, type: 3}
+  m_PrefabInstance: {fileID: 2412517892183385196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977917835
 GameObject:
   m_ObjectHideFlags: 0
@@ -8955,6 +8983,10 @@ PrefabInstance:
       value: 325
       objectReference: {fileID: 0}
     - target: {fileID: 2719121438253775566, guid: 83b1bf6f43a14f94994c786ad6e39afc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719275367685367256, guid: 83b1bf6f43a14f94994c786ad6e39afc, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

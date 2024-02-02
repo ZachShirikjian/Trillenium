@@ -29,6 +29,14 @@ public class BattleManager : MonoBehaviour
     public GameObject battleUI; //reference to player battle UI panel; 
     public GameObject attackButton;
     public GameObject talentButton;
+    
+    //CHARACTER PORTRAITS
+    public Image sylviaPortrait;
+    public Image vahanPortrait;
+    public Sprite sylviaDefault;
+    public Sprite sylviaAction;
+    public Sprite vahanDefault;
+    public Sprite vahanAction;
 
     public TalentScript sylviatalentAttackScript;
     public TalentScript vahantalentAttackScript;
@@ -56,6 +64,10 @@ public class BattleManager : MonoBehaviour
         //Enables selection circle for Sylvia at start of battle 
         partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
         partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
+
+        sylviaPortrait.sprite = sylviaAction;
+        vahanPortrait.sprite = vahanDefault;
+
         talentActivated = false;
         transitionScreen.SetActive(false);
 
@@ -138,6 +150,11 @@ public class BattleManager : MonoBehaviour
                         {
                             partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
                             partyMembers[1].transform.GetChild(0).gameObject.SetActive(true);
+
+                            //Display front-facing portrait when it's a character's turn 
+                            sylviaPortrait.sprite = sylviaDefault;
+                            vahanPortrait.sprite = vahanAction;
+                            
                         }
 
                         //if curTurn = 0 (Sylvia), activate her selection circle
@@ -145,6 +162,9 @@ public class BattleManager : MonoBehaviour
                         {
                             partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
                             partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
+
+                            sylviaPortrait.sprite = sylviaAction;
+                            vahanPortrait.sprite = vahanDefault;
                         }
                 }
 
@@ -153,6 +173,8 @@ public class BattleManager : MonoBehaviour
                 if(curTurn >= 2 && curTurn < (enemies.Count + partyMembers.Length))
                 {
                     Debug.Log("ENEMIES' TURN");
+                    sylviaPortrait.sprite = sylviaDefault;
+                    vahanPortrait.sprite = vahanDefault;
                   //  partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
                     partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
                     battleUI.SetActive(false);
@@ -178,7 +200,8 @@ public class BattleManager : MonoBehaviour
         battleUI.SetActive(true);
        //Enables selection circle for Sylvia to indicate it's her turn
         partyMembers[0].transform.GetChild(0).gameObject.SetActive(true);
-
+        sylviaPortrait.sprite = sylviaAction;
+        vahanPortrait.sprite = vahanDefault;
 
         //FOR FIRST BATTLE, ACTIVATE TALENT TUTORIAL AND CALL THE TALENT TUTORIAL() METHOD IN THE BATTLE UI SCRIPT
         if(partyMembers[curTurn].GetComponent<TheUnitStats>().talent >= 100)
