@@ -3040,7 +3040,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &1279421625
 MonoBehaviour:
@@ -3731,7 +3731,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1279421623}
@@ -3834,6 +3834,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 23eeff1a-cfd1-4c66-a614-e11656bfb5d4
     m_ActionName: UI/TalentAttack[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 34275923-fbe7-4d13-9204-8c8a43c75e63
+    m_ActionName: UI/TalentAttack2[/Keyboard/k,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7182d3d9-4f07-4c10-9b57-b13ee758bcc1
+    m_ActionName: UI/TalentAttack3[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Overworld
@@ -3915,14 +3923,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.3671875, y: 2.34375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.3}
+  m_Size: {x: 1.3671875, y: 2.34375}
   m_EdgeRadius: 0
 --- !u!95 &1459262681
 Animator:
