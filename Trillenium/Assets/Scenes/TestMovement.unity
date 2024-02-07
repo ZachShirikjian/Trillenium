@@ -236,18 +236,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
-        - m_Target: {fileID: 1938926526}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: CloseControls
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
   - eventID: 15
     callback:
       m_PersistentCalls:
@@ -264,6 +252,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 1938926526}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: CloseControls
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &160317189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1287,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.59375, y: 4.375}
+  m_Size: {x: 4.5, y: 4.5}
   m_EdgeRadius: 0
 --- !u!212 &774919373
 SpriteRenderer:
@@ -2606,7 +2606,7 @@ GameObject:
   - component: {fileID: 1220539823}
   - component: {fileID: 1220539822}
   m_Layer: 5
-  m_Name: DaysUntilPlaceholder
+  m_Name: DaysUntilUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2621,15 +2621,15 @@ RectTransform:
   m_GameObject: {fileID: 1220539820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 1}
+  m_LocalScale: {x: 0.17, y: 0.17, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1865241276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: 30}
-  m_SizeDelta: {x: 694, y: 300}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2560.8088, y: 1583}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1220539822
 MonoBehaviour:
@@ -2644,14 +2644,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.54343474, g: 1, b: 0.48490566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7402ae7f829b943e28e4f5416f02bc67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa4e590a40a9297498a8aa63cd8bbe6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3040,7 +3040,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.35, y: 2.35}
+  m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &1279421625
 MonoBehaviour:
@@ -3576,7 +3576,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.96875, y: 4.5}
+  m_Size: {x: 7, y: 4.5}
   m_EdgeRadius: 0
 --- !u!212 &1426279698
 SpriteRenderer:
@@ -3710,7 +3710,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1657991461, guid: 0c0fb38e1d8d67f429c0b9866954c16d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f88f9ffb9373c943957439031f1edbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3885,7 +3885,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1459262680
 BoxCollider2D:
@@ -3930,7 +3930,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.35, y: 2.35}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!95 &1459262681
 Animator:
@@ -11918,7 +11918,7 @@ GameObject:
   - component: {fileID: 1799508770}
   - component: {fileID: 1799508769}
   m_Layer: 5
-  m_Name: DatePlaceholder
+  m_Name: DateUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11963,7 +11963,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f52bda59f494e4b09b884aebc12c700d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64cc7abeb75985e4391b48f7db17325d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
