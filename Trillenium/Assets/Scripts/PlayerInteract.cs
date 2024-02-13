@@ -15,9 +15,15 @@ public class PlayerInteract : MonoBehaviour
    private GameManager gm; //reference to GameManager
    public NPCDialogue npcScript;
 
+   //FOR NEW INPUT SYSTEM//
+    public InputActionAsset controls;
+
+    public InputActionReference interactButton;
+
     void Start()
     {
        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+       OnEnable();
     }
 
     // Update is called once per frame
@@ -53,6 +59,22 @@ public class PlayerInteract : MonoBehaviour
         Debug.Log("OUT OF RANGE");
     }
 
+    //FOR ENABLING INTERACT INPUT
+    private void OnEnable()
+    {
+        interactButton.action.performed += Interact;
+        interactButton.action.Enable();
+    }
+
+    //FOR DISABLING INTERACT INPUT//
+    private void OnDisable()
+    {
+        Debug.Log("DISABLE INPUT");
+        interactButton.action.performed -= Interact;
+        interactButton.action.Disable();
+    }
+
+
     //Interacts with an NPC, called with INTERACT button (A on Xbox, Space on PC)
     //Called on the Player Input methods in Inspector of Player GameObject
     //Calls BeginDialogue() method in NPCDialogue canvas script, using dialogue that's on every individual NPC itself
@@ -60,33 +82,35 @@ public class PlayerInteract : MonoBehaviour
     {
         if(currentlyInteracting == false)
         {
-            if(canInteract && curObject.tag == "NPC" && gm.isPaused == false)
+            if(interactButton.action.triggered)
             {
-                Debug.Log("INTERACTING");
-                // npcScript.enabled = true;
-                npcScript.BeginDialogue();        
-                currentlyInteracting = true;    
-            }
-                
-            //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
-            if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
-            {
-               if(gm.playerParty.Count > 1) 
+                if(canInteract && curObject.tag == "NPC" && gm.isPaused == false)
                 {
-                    if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+                    Debug.Log("INTERACTING");
+                    // npcScript.enabled = true;
+                    npcScript.BeginDialogue();        
+                    currentlyInteracting = true;    
+                }
+                    
+                //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
+                if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+                {
+                if(gm.playerParty.Count > 1) 
                     {
-                        Debug.Log("ENEMY BATTLE ENGAGE!");
-                        SceneManager.LoadScene("TestBattle");
+                        if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+                        {
+                            Debug.Log("ENEMY BATTLE ENGAGE!");
+                            SceneManager.LoadScene("TestBattle");
+                        }
+                    }
+                    else if(gm.playerParty.Count == 1)
+                    {
+                        gm.NoSoloBattle();
+                        Debug.Log("CAN'T FIGHT ALONE");
+                        currentlyInteracting = true;
                     }
                 }
-                else if(gm.playerParty.Count == 1)
-                {
-                    gm.NoSoloBattle();
-                    Debug.Log("CAN'T FIGHT ALONE");
-                    currentlyInteracting = true;
-                }
             }
-
         }
 
  
