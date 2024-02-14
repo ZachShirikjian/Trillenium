@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 public class TitleScreen : MonoBehaviour
 {
+
+    //VARIABLES//
 
     //REFERENCES//
     public GameObject newGameButton;
     public GameObject controlsButton;
     public GameObject closeControls;
     public GameObject controlsPanel;
+
+    
+    public InputActionAsset controls;
+    public InputActionReference closeMenu;
 
     void Start()
     {
@@ -19,7 +26,22 @@ public class TitleScreen : MonoBehaviour
         //Makes first selected button NEWGAME by default
         EventSystem.current.SetSelectedGameObject(newGameButton);
         controlsPanel.SetActive(false);
+        OnDisable(); //Disables backspace from being pressed until controls OR settings menu is open
     }
+
+    //Enable input for closing out of controls menu using the Backspace button (B on Xbox controller)
+    private void OnEnable()
+    {
+        closeMenu.action.performed += CloseMenu;
+        closeMenu.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        closeMenu.action.performed -= CloseMenu;
+        closeMenu.action.Disable();
+    }
+
     //TEMP METHOD//
 
     //Loads the Disclaimer of the game.
@@ -52,13 +74,15 @@ public class TitleScreen : MonoBehaviour
         Debug.Log("OPENING CONTROLS");
         controlsPanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(closeControls);
+        OnEnable();
     }
 
-    //Put on the Close Button in the ControlsPanel
-    //Closes the ControlsPanel
-    public void CloseControls()
+    //Close the controls panel if backspace is pressed (like how most games handle exitting out of menus)
+    public void CloseMenu(InputAction.CallbackContext context)
     {
         controlsPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(controlsButton);
+        OnDisable();
     }
+
 }

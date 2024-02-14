@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> playerParty = new List<GameObject>();
     private GameObject sylvia;
 
+    public InputActionAsset controls;
+    public InputActionReference closeMenu;
+
     //DIALOGUE REFERENCE//
     
     //The current lines of dialogue which is being spoken.
@@ -62,6 +65,9 @@ public class GameManager : MonoBehaviour
 
         sylvia = GameObject.Find("Sylvia");
         playerParty.Add(sylvia);
+
+    //FOR CONTROLS PANEL//
+        OnDisable(); //Disables backspace from being pressed until controls OR settings menu is open
     }
 
     // Update is called once per frame
@@ -69,6 +75,33 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    //FOR ALLOWING BACKSPACE TO BE PRESSED DURING CONTROLS MENU
+    //FOR ENABLING INTERACT INPUT
+    private void OnEnable()
+    {
+        closeMenu.action.performed += CloseMenu;
+        closeMenu.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        closeMenu.action.performed -= CloseMenu;
+        closeMenu.action.Disable();
+    }
+
+    // //LOADING SCREEN FOR THE BATTLE
+    // public void LoadingScreeen()
+    // {
+
+    // }
+
+    // IEnumerator LoadSceneAsync()
+    // {
+    //     //AsyncOperation runs in the background
+    //     AsyncOperation operation = SceneManager.LoadSceneAsync("TestBattle");
+
+    // }
 
 
     //FOR FIRST AREA ONLY//
@@ -158,11 +191,19 @@ public class GameManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(closeControlsButton);
         controlsMenu.SetActive(true);
+        OnEnable(); //For allowing backspace to close out of menus
     }
 
-    public void CloseControls()
+    // public void CloseControls()
+    // {
+    //     controlsMenu.SetActive(false);
+    //     EventSystem.current.SetSelectedGameObject(controlsButton);
+    // }
+
+        public void CloseMenu(InputAction.CallbackContext context)
     {
         controlsMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(controlsButton);
+        OnDisable();
     }
 }

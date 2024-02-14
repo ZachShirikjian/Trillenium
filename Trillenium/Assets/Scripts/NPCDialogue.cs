@@ -105,6 +105,7 @@ public class NPCDialogue : MonoBehaviour
             currentDialogue.text = npcRef.dialogue[curPlace].speakerText;
             speaker.text = npcRef.dialogue[curPlace].personSpeaking;
             portraitImage.GetComponent<Image>().sprite = npcRef.dialogue[curPlace].speakerPortait;
+            dialogueSource.Stop();
             dialogueSource.PlayOneShot(npcRef.dialogue[curPlace].audioClip);
             //If a different person is speaking in the Cutscene,
            // Play the New Dialogue SFX to indicate a different person is speaking (like in Persona 5)
@@ -129,6 +130,7 @@ public class NPCDialogue : MonoBehaviour
         //To indicate that the Cutscene has ended.
         else if (curPlace >= npcRef.dialogue.Length)
         {
+            dialogueSource.Stop();
             dialogueBox.SetActive(false);
             // currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = "";

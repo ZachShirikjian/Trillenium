@@ -96,7 +96,8 @@ public class CutsceneDialogue : MonoBehaviour
             currentDialogue.text = dialogue[curPlace].speakerText;
             speaker.text = dialogue[curPlace].personSpeaking;
             portraitImage.GetComponent<Image>().sprite = dialogue[curPlace].speakerPortait;
-        dialogueSource.PlayOneShot(dialogue[curPlace].audioClip);
+            dialogueSource.Stop();
+            dialogueSource.PlayOneShot(dialogue[curPlace].audioClip);
             //If a different person is speaking in the Cutscene,
             //Play the New Dialogue SFX to indicate a different person is speaking (like in Persona 5)
             //And play the SlideIn animation for the character portrait 
@@ -121,6 +122,7 @@ public class CutsceneDialogue : MonoBehaviour
         else if(curPlace >= cutsceneBG.Length)
         {
             dialogueBox.SetActive(false);
+            dialogueSource.Stop();
             // currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = "";
             dialogueAnim.SetBool("EndDialogue",true);

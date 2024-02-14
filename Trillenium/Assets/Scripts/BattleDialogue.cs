@@ -75,6 +75,7 @@ public class BattleDialogue : MonoBehaviour
             currentDialogue.text = battleDialogue[curPlace].speakerText;
             speaker.text = battleDialogue[curPlace].personSpeaking;
             portraitImage.GetComponent<Image>().sprite = battleDialogue[curPlace].speakerPortait;
+            dialogueSource.Stop();
             dialogueSource.PlayOneShot(battleDialogue[curPlace].audioClip);
             //If a different person is speaking in the Cutscene,
            // Play the New Dialogue SFX to indicate a different person is speaking (like in Persona 5)

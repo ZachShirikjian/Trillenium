@@ -95,21 +95,23 @@ public class PlayerInteract : MonoBehaviour
                 //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
                 if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
                 {
-                if(gm.playerParty.Count > 1) 
-                    {
-                        if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
-                        {
-                            Debug.Log("ENEMY BATTLE ENGAGE!");
-                            SceneManager.LoadScene("TestBattle");
+                        if(gm.playerParty.Count > 1) 
+                            {
+                                if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+                                {
+                                    Debug.Log("ENEMY BATTLE ENGAGE!");
+
+                                    //gm.LoadingScreen();
+                                    SceneManager.LoadScene("TestBattle");
+                                }
+                            }
+                            else if(gm.playerParty.Count == 1)
+                            {
+                                gm.NoSoloBattle();
+                                Debug.Log("CAN'T FIGHT ALONE");
+                                currentlyInteracting = true;
+                            }
                         }
-                    }
-                    else if(gm.playerParty.Count == 1)
-                    {
-                        gm.NoSoloBattle();
-                        Debug.Log("CAN'T FIGHT ALONE");
-                        currentlyInteracting = true;
-                    }
-                }
             }
         }
 
