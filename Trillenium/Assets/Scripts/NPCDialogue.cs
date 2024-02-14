@@ -45,14 +45,14 @@ public class NPCDialogue : MonoBehaviour
     //Reference to ContinueButton//
     public GameObject continueButton;
 
-    //Reference to PlayerInteract script//
-    public PlayerInteract interactScript;
-
     //Reference to NPC script//
     public NPC npcRef;
 
     //Reference to PlayerMovement script 
     private PlayerMovement playerMove;
+
+    //Reference to PlayerInteract script//
+    private PlayerInteract interactScript;
 
     //Reference to PlayerParty GameObject
     public GameObject playerParty;
@@ -60,6 +60,7 @@ public class NPCDialogue : MonoBehaviour
     void Start()
     {
         playerMove = GameObject.Find("Sylvia").GetComponent<PlayerMovement>();
+        interactScript = GameObject.Find("Sylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     // Update is called once per frame
@@ -76,22 +77,33 @@ public class NPCDialogue : MonoBehaviour
              npcRef = interactScript.curObject.GetComponent<NPC>();
          }
 
-        Debug.Log("BEGIN DIALOGUE");
-        playerMove.enabled = false;
-        curPlace = 0;
-        portraitImage.GetComponent<Image>().sprite = npcRef.dialogue[curPlace].speakerPortait;
-        currentDialogue.text = npcRef.dialogue[curPlace].speakerText;
-        speaker.text = npcRef.dialogue[curPlace].personSpeaking;
-        dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
-        dialogueBox.SetActive(true);
-        sfxSource.PlayOneShot(audioManager.newDialogue);
-        dialogueSource.PlayOneShot(npcRef.dialogue[curPlace].audioClip);
+        //IF ALREADY SPOKEN TOO, PREVENT DIALOGUE FROM STARTING FROM BEGINNING
+        if(npcRef.alreadySpokenTo == false)
+        {
+            Debug.Log("BEGIN DIALOGUE");
+            playerMove.enabled = false;
+            curPlace = 0;
+            portraitImage.GetComponent<Image>().sprite = npcRef.dialogue[curPlace].speakerPortait;
+            currentDialogue.text = npcRef.dialogue[curPlace].speakerText;
+            speaker.text = npcRef.dialogue[curPlace].personSpeaking;
+            dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
+            dialogueBox.SetActive(true);
+            sfxSource.PlayOneShot(audioManager.newDialogue);
+            dialogueSource.PlayOneShot(npcRef.dialogue[curPlace].audioClip);
 
-       //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
-         portraitImage.GetComponent<Animator>().SetTrigger("New");
-         continueButton.SetActive(true);
-       //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
-        EventSystem.current.SetSelectedGameObject(continueButton);
+        //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
+            portraitImage.GetComponent<Animator>().SetTrigger("New");
+            continueButton.SetActive(true);
+        //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
+            EventSystem.current.SetSelectedGameObject(continueButton);
+        }
+
+        else if(npcRef.alreadySpokenTo == true)
+        {
+            Debug.Log("You already talked to this NPC!");
+        }
+
+      
     }
 
     // //This method gets called every time the ContinueButton is clicked when players are talking with the NPCs. 
@@ -130,6 +142,11 @@ public class NPCDialogue : MonoBehaviour
         //To indicate that the Cutscene has ended.
         else if (curPlace >= npcRef.dialogue.Length)
         {
+
+            //Ensures NPC dialogue doesn't repeat again
+            npcRef.alreadySpokenTo = true;
+            npcRef.helpIcon.SetActive(false);
+
             dialogueSource.Stop();
             dialogueBox.SetActive(false);
             // currentImage.sprite = cutsceneBG[curPlace];
@@ -139,15 +156,12 @@ public class NPCDialogue : MonoBehaviour
             Debug.Log("END DIALOGUE");
             continueButton.SetActive(false);
 
-
             //Enables player movement once dialogue is completed 
             playerMove.enabled = true;
             interactScript.currentlyInteracting = false;
 
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
-
-
 
             // //If NPC is Vahan or Petros, adds them to Player Party List 
             //Necessary for fighting first battle 

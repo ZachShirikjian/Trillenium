@@ -1580,6 +1580,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4510b58fefba48e41801172af5f19985, type: 2}
   - {fileID: 11400000, guid: e5b8c6971020849a9a883b544456a2ca, type: 2}
   - {fileID: 11400000, guid: d98a78b2082f74cd28ca0ecb87e3e732, type: 2}
+  alreadySpokenTo: 0
+  helpIcon: {fileID: 0}
 --- !u!95 &804033185
 Animator:
   serializedVersion: 5
@@ -2275,7 +2277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1131366313
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3804,6 +3806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 0
+  vahan: {fileID: 0}
 --- !u!50 &1459262679
 Rigidbody2D:
   serializedVersion: 4
@@ -12116,8 +12119,8 @@ RectTransform:
   m_Children:
   - {fileID: 1799508768}
   - {fileID: 1220539821}
-  - {fileID: 1131366313}
   - {fileID: 1323940104}
+  - {fileID: 1131366313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12147,7 +12150,6 @@ MonoBehaviour:
   dialogueSource: {fileID: 1545547144}
   audioManager: {fileID: 1924727725}
   continueButton: {fileID: 1224600997}
-  interactScript: {fileID: 1459262682}
   npcRef: {fileID: 0}
   playerParty: {fileID: 2055077530}
 --- !u!114 &1865241278
@@ -12493,6 +12495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
+  inCutscene: 0
   npcDialogue: {fileID: 1211537297}
   pauseMenu: {fileID: 1131366312}
   controlsMenu: {fileID: 1105135611}

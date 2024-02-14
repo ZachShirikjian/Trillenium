@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     //VARIABLES//
     public bool isPaused = false; //set to true if the game is paused, but false by default
+    public bool inCutscene = false;
 
     //REFERENCES//
     public GameObject npcDialogue;
@@ -59,7 +60,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        npcDialogue.SetActive(false);
+
+        //TEMPORARY SOLUJTION
+        //If GameManager GameObject doesn't have an OverworldCutsceneComponent attached to it (if it has no children)
+        //Disable npcDialogue, overworld cutscene takes precedent
+        if(transform.childCount == 0)
+        {
+            npcDialogue.SetActive(false);
+        }
+
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
 
@@ -145,9 +154,10 @@ public class GameManager : MonoBehaviour
 
     //Called on the PlayerInput Script
     //Pauses the Game during the Movement and Battle scenes.
+    //Prevents Paused from being called during Dialogue sequences.
     public void Pause(InputAction.CallbackContext context)
     {
-        if(isPaused == false)
+        if(isPaused == false && inCutscene == false)
         {
             EventSystem.current.SetSelectedGameObject(resumeButton);
             Debug.Log("PauseGame");

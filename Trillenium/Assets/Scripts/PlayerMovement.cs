@@ -12,10 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving = false; //set to true if input is being made
     private Vector2 input; //reference to the input vector which normalizes to prevent awkward movement diagonally
 
-    //REFERNCES//
+    //REFERENCES//
     private Rigidbody2D rb2d; 
     private Animator anim;
     private GameManager gm;
+
+    //Reference to Vahan/Petros Party Memebrs
+    public GameObject vahan;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
         //Detects movement based on D-Pad or WASD input for both horizontal AND vertical
         // movementInput = context.ReadValue<Vector2>();
 
-
         horizontal = context.ReadValue<Vector2>().x;
 
         //Reads the vertical movement of keyboard/gamepad for up/down movement
@@ -60,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
 
         input = new Vector2(horizontal,vertical);
         input.Normalize(); //normalizes the input so it doesn't move awkwardly in diagonal directions 
+    
+        //SET POSITION OF VAHAN TO BE BASED ON INPUT VALUES OF PLAYER CHARACTER
+        //vahan.transform.position = new Vector2(horizontal, vertical);
     }
 
     //Animates the Player 

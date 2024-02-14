@@ -13,10 +13,16 @@ public class NPC : MonoBehaviour
     //List of all Dialogue an NPC has//
     public Dialogue[] dialogue;
 
+    public bool alreadySpokenTo = false;
+
+    //REFERENCES//
+    public GameObject helpIcon; //Icon to indicate you can talk to this NPC
+
     // Start is called before the first frame update
     void Start()
     {
-
+        helpIcon = this.transform.GetChild(0).gameObject; //ALWAYS is 1st child of NPC if it's a speakable NPC 
+        helpIcon.SetActive(true);
     }
 
     // Update is called once per frame

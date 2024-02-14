@@ -13,6 +13,8 @@ public class PlayerInteract : MonoBehaviour
 
     //REFERENCES//
    private GameManager gm; //reference to GameManager
+  // private GameObject shopUI; //reference to Chill Topic (Lizzy's Shop)
+  //TODO: ADD REFERENCE TO SHOP UI SCRIPT, WHICH GETS ENABLED WHEN PRESSING INTERACT AT LIZZY'S SHOP
    public NPCDialogue npcScript;
 
    //FOR NEW INPUT SYSTEM//
@@ -23,6 +25,8 @@ public class PlayerInteract : MonoBehaviour
     void Start()
     {
        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+       //shopUI = GameObject.Find("ShopUI");
+       //shopUI.SetActive(false);
        OnEnable();
     }
 
@@ -47,6 +51,13 @@ public class PlayerInteract : MonoBehaviour
             canInteract = true;
             curObject = other.gameObject;
             Debug.Log("CAN FIGHT");
+        }
+
+        else if(other.tag == "Door")
+        {
+            canInteract = true;
+            curObject = other.gameObject;
+            Debug.Log("CAN ENTER DOOR");
         }
     }
 
@@ -84,12 +95,30 @@ public class PlayerInteract : MonoBehaviour
         {
             if(interactButton.action.triggered)
             {
+
+                //FOR DOORS//
+                if(canInteract && curObject.tag == "Door" && gm.isPaused == false)
+                {
+                    Debug.Log("OPENING DOOR");
+                    currentlyInteracting = true;
+                }
+
+
+                //FOR NPCS//
                 if(canInteract && curObject.tag == "NPC" && gm.isPaused == false)
                 {
                     Debug.Log("INTERACTING");
                     // npcScript.enabled = true;
                     npcScript.BeginDialogue();        
                     currentlyInteracting = true;    
+                }
+
+                //FOR LIZZY//
+                if(canInteract && curObject.tag == "Shop" && gm.isPaused == false)
+                {
+                    Debug.Log("ENTERING SHOP");
+                    currentlyInteracting = true;
+                    //shopUI.SetActive(true);
                 }
                     
                 //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
