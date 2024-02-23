@@ -1581,7 +1581,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5b8c6971020849a9a883b544456a2ca, type: 2}
   - {fileID: 11400000, guid: d98a78b2082f74cd28ca0ecb87e3e732, type: 2}
   alreadySpokenTo: 0
-  helpIcon: {fileID: 0}
+  helpIcon: {fileID: 1738645927}
 --- !u!95 &804033185
 Animator:
   serializedVersion: 5
