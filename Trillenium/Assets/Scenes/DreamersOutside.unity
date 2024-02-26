@@ -4099,6 +4099,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7554827631796354968, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 550
+      objectReference: {fileID: 0}
     - target: {fileID: 8935971492200165627, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_text
       value: LIZZY
