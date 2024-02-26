@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 12
   m_EditorClassIdentifier: 
-  speakerText: Glad we're on the same page. There've been rumblings about this legendary
-    artist who used to take Xubos by storm. They used a special tool unlike any other.
+  speakerText: "Although, if you\u2019ve followed the news lately\u2026"
   personSpeaking: Vahan
-  newPersonSpeaking: 1
+  newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
   audioClip: {fileID: 8300000, guid: 036ee9c1e6339df408e9cfa8d34d1e81, type: 3}

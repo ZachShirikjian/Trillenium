@@ -4825,7 +4825,6 @@ MonoBehaviour:
   dialogueSource: {fileID: 1545547144}
   audioManager: {fileID: 1924727725}
   continueButton: {fileID: 360463716}
-  interactScript: {fileID: 0}
   npcRef: {fileID: 0}
   playerParty: {fileID: 2055077530}
 --- !u!114 &1865241278
@@ -4896,6 +4895,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b9637ad25f0e0d34fa9b41546b027dfb, type: 2}
   - {fileID: 11400000, guid: 0ef06f40838346d41a6cf4102a94620a, type: 2}
   - {fileID: 11400000, guid: 195fa11f4541b444e81d18d3b4b5e540, type: 2}
+  - {fileID: 11400000, guid: fae70dbe8a83e7d41bd4b2571507e60d, type: 2}
   portraitImage: {fileID: 1626762435}
   dialogueAnim: {fileID: 525104087}
   dialogueBox: {fileID: 525104085}

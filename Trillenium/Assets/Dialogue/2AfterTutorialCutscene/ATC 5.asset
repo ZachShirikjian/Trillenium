@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 5
   m_EditorClassIdentifier: 
-  speakerText: EMI right? Can't believe people're letting that bastard launch it
-    as-is.
-  personSpeaking: Sylvia
+  speakerText: "Yeah. It\u2019s almost been 15 years since someone really important
+    to me died, and I wanted to honor them in a way I couldn\u2019t myself. "
+  personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
   audioClip: {fileID: 8300000, guid: 4369df4397819da4e91e957cbbe26d9e, type: 3}

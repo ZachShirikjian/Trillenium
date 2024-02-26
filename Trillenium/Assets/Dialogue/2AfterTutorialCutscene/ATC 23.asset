@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 23
   m_EditorClassIdentifier: 
-  speakerText: Khalidi covered up the death so not much was known pubicly.Apparently
-    the last time the Paintblade was used was in the *DREAMERS Factory.*
+  speakerText: 'Sounds good. Now, where was the Paintblade made? '
   personSpeaking: Sylvia
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}

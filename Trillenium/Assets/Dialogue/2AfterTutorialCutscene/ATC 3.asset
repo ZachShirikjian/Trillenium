@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 3
   m_EditorClassIdentifier: 
-  speakerText: Khalidi closed it down a month ago. But my dad owns this place, so
-    he gave me a spare key just in case.
+  speakerText: "I\u2019m sorry, please hear me out! Something really bad is going
+    to happen soon, and I need your help before then."
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 2
   m_EditorClassIdentifier: 
-  speakerText: I haven't seen a restaurant like this since I was a kid. I'm surprised
-    I never heard of it before.
+  speakerText: "More importantly, the hell did you drag me out here for? The XTrons
+    aren\u2019t something you should mess with, you know. "
   personSpeaking: Sylvia
-  newPersonSpeaking: 1
+  newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
   audioClip: {fileID: 8300000, guid: 0f03dd869eced0140953e120c2cfac96, type: 3}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 8
   m_EditorClassIdentifier: 
-  speakerText: That's why EMI worries me. Khalidi found a breakthough in haptic technology
-    that will recreate human touch.
+  speakerText: "Brigala, my adoptive father. My mom\u2019s nice and all, but she
+    can\u2019t match my dad.\r"
   personSpeaking: Vahan
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}

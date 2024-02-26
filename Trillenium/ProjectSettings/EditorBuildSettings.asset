@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Disclaimer.unity
     guid: c5be84d03d531409997383a3e481b4b8
   - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: 093c030e5b9015a4a9d8cbe416a90abc
+  - enabled: 0
     path: Assets/Scenes/TestCutscene.unity
     guid: c89f2f6320d1148ec87bcde7372ea491
   - enabled: 1

@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 7
   m_EditorClassIdentifier: 
-  speakerText: What you just saw? That wasn't just a fun workout; I'm a sculptor
-    and modeler. AI has been perfected for digital art, but it can't match the touch
-    of a human hand.
+  speakerText: "\u2026"
   personSpeaking: Vahan
-  newPersonSpeaking: 0
+  newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
   audioClip: {fileID: 8300000, guid: c8cefb68d8ce02c4e978305ff6ce1fa3, type: 3}

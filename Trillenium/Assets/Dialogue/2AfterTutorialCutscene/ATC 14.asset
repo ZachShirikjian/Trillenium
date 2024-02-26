@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 14
   m_EditorClassIdentifier: 
-  speakerText: That sounds familiar, but that's all my dad was able to tell me. He's...no
-    longer with us.
+  speakerText: Yeah, once it comes out 3 days from now,  any physical work of art
+    imaginable can be made.
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}

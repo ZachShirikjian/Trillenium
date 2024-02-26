@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 15
   m_EditorClassIdentifier: 
-  speakerText: I-I'm sorry to hear that Vahan. But do you remember anything else?
-  personSpeaking: Sylvia
-  newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
+  speakerText: "Art will be fully created by AI, and there\u2019s nothing we can
+    do to stop it, or so I thought."
+  personSpeaking: Vahan
+  newPersonSpeaking: 0
+  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
   audioClip: {fileID: 8300000, guid: 716e217c2c4a6d44584a52676880be01, type: 3}
