@@ -2793,14 +2793,14 @@ RectTransform:
   m_GameObject: {fileID: 1180385572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8749629, y: 1.8749629, z: 1.0000156}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1771968954}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1562.4691, y: 599.9881}
+  m_AnchoredPosition: {x: -1560, y: 540}
   m_SizeDelta: {x: 602, y: 786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1180385574
@@ -2844,7 +2844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e05a7b590a6d6164ebe727e39c021d71, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4732,6 +4732,10 @@ PrefabInstance:
     - target: {fileID: 5797064242757502536, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_Name
       value: TutorialDialogueBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797064242757502536, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6997848077061828373, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_Pivot.x

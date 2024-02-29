@@ -18,7 +18,7 @@ public class SplashScreen : MonoBehaviour
     void LoadLogo()
     {
         OwlsNestLogo.SetActive(true);
-        Invoke("LoadTitleScreen", 3f); //increase this if more logos are added
+        Invoke("LoadTitleScreen", 4f); //increase this if more logos are added
     }
 
     void LoadTitleScreen()
