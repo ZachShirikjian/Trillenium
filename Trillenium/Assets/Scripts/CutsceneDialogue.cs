@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 //The script used for the Cutscene which plays after beating all the Levels.
 //Displays Dialogue and Background images, which changes after clicking the ContinueButton.
@@ -55,6 +56,10 @@ public class CutsceneDialogue : MonoBehaviour
     //Reference to Black Square for Fade to Black Animation//
     public GameObject fadeToBlack;
 
+        //INPUT//
+    public InputActionAsset controls;
+    public InputActionReference skipDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +87,22 @@ public class CutsceneDialogue : MonoBehaviour
     void Update()
     {
         
+    }
+
+    
+    //FOR ENABLING SKIP CUTSCENE INPUT
+    public void OnEnable()
+    {
+        skipDialogue.action.performed += Skip;
+        skipDialogue.action.Enable();
+    }
+
+    //FOR DISABLING INTERACT INPUT//
+    public void OnDisable()
+    {
+        Debug.Log("DISABLE PLAYER INPUT");
+        skipDialogue.action.performed -= Skip;
+        skipDialogue.action.Disable();
     }
 
     //This method gets called every time the ContinueButton is clicked in the cutscene. 
@@ -142,5 +163,25 @@ public class CutsceneDialogue : MonoBehaviour
         //Loads the next scene (CHANGE THIS TO BE BASED ON THE PROPER SCENE TO LOAD FROM A SPECIFIC CUTSCENE)
         //Change this for now especially for different gameplay scenes used
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    //CUTSCENES CAN BE PRESSED IF YOU PRESS SHIFT (KEYBOARD)
+    public void Skip(InputAction.CallbackContext context)
+    {
+            Debug.Log("SKIP DIALOGUE");
+            curPlace = dialogue.Length;
+            dialogueBox.SetActive(false);
+            dialogueSource.Stop();
+            // currentImage.sprite = cutsceneBG[curPlace];
+            currentDialogue.text = "";
+            dialogueAnim.SetBool("EndDialogue",true);
+            speaker.text = "";
+            Debug.Log("END CUTSCENE");
+            continueButton.SetActive(false);
+            // portraitImage.GetComponent<Animator>().Play("End");
+            // portraitImage.GetComponent<Animator>().SetTrigger("New");
+            fadeToBlack.SetActive(true);
+            fadeToBlack.GetComponent<Animator>().Play("FadeToBlack");
+            Invoke("LoadScene", 3f);
     }
 }

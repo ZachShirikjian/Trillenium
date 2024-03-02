@@ -12,12 +12,15 @@ public class TitleScreen : MonoBehaviour
     //REFERENCES//
     public GameObject newGameButton;
     public GameObject controlsButton;
-    public GameObject closeControls;
+  //  public GameObject closeControls;
     public GameObject controlsPanel;
 
     
     public InputActionAsset controls;
     public InputActionReference closeMenu;
+
+    public AudioSource sfxSource;
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -73,7 +76,9 @@ public class TitleScreen : MonoBehaviour
     {
         Debug.Log("OPENING CONTROLS");
         controlsPanel.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(closeControls);
+
+        //TODO CHANGE THIS TO KEYBOARD TAB SO IT DISPLAYS CONTROLLER INPUTS
+        EventSystem.current.SetSelectedGameObject(null);
         OnEnable();
     }
 
@@ -82,6 +87,7 @@ public class TitleScreen : MonoBehaviour
     {
         controlsPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(controlsButton);
+        sfxSource.PlayOneShot(audioManager.uiClose);
         OnDisable();
     }
 

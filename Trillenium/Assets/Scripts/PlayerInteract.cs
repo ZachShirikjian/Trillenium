@@ -75,16 +75,16 @@ public class PlayerInteract : MonoBehaviour
     }
 
     //FOR ENABLING INTERACT INPUT
-    private void OnEnable()
+    public void OnEnable()
     {
         interactButton.action.performed += Interact;
         interactButton.action.Enable();
     }
 
     //FOR DISABLING INTERACT INPUT//
-    private void OnDisable()
+    public void OnDisable()
     {
-        Debug.Log("DISABLE INPUT");
+        Debug.Log("DISABLE PLAYER INPUT");
         interactButton.action.performed -= Interact;
         interactButton.action.Disable();
     }
@@ -122,7 +122,8 @@ public class PlayerInteract : MonoBehaviour
                 {
                     Debug.Log("ENTERING SHOP");
                     currentlyInteracting = true;
-                    gm.OpenShop();
+                    curObject.GetComponent<ChillTopicShop>().enabled = true;
+                    curObject.GetComponent<ChillTopicShop>().OpenShop();
                 }
                     
                 //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 

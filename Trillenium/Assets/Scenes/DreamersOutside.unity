@@ -691,6 +691,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263987662}
   m_CullTransparentMesh: 1
+--- !u!1 &310850390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310850391}
+  - component: {fileID: 310850393}
+  - component: {fileID: 310850392}
+  m_Layer: 5
+  m_Name: PurchaseConfirmation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &310850391
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310850390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 406523980}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 600, y: 100}
+  m_SizeDelta: {x: 500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &310850392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310850390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &310850393
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310850390}
+  m_CullTransparentMesh: 1
 --- !u!1 &332096867
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +1049,7 @@ RectTransform:
   m_Children:
   - {fileID: 1922869303}
   - {fileID: 1980860030}
+  - {fileID: 1363185527}
   m_Father: {fileID: 1311290137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1241,6 +1317,58 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+--- !u!1 &372589262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372589263}
+  - component: {fileID: 372589264}
+  m_Layer: 5
+  m_Name: ItemInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &372589263
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372589262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 422927645}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &372589264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372589262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c6e73226183e947bd0f32577a91a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: ComboCrush Can
+  itemDescription: Once used by an early 2000s skateboarder. For Sylvia.
+  itemCost: 100
+  itemSprite: {fileID: 21300000, guid: 5791f0b95c290fc4dbb06d06a0412fab, type: 3}
 --- !u!1 &406120226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1540,7 @@ RectTransform:
   - {fileID: 2117482947}
   - {fileID: 7864520665164094167}
   - {fileID: 31736820}
+  - {fileID: 310850391}
   m_Father: {fileID: 1865241276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1546,6 +1675,7 @@ GameObject:
   - component: {fileID: 422927648}
   - component: {fileID: 422927647}
   - component: {fileID: 422927646}
+  - component: {fileID: 422927649}
   m_Layer: 5
   m_Name: SylviaOptionButton
   m_TagString: Untagged
@@ -1567,6 +1697,7 @@ RectTransform:
   m_Children:
   - {fileID: 406120227}
   - {fileID: 1986534001}
+  - {fileID: 372589263}
   m_Father: {fileID: 1311290137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1656,6 +1787,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422927644}
   m_CullTransparentMesh: 1
+--- !u!114 &422927649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422927644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 804033186}
+          m_TargetAssemblyTypeName: ChillTopicShop, Assembly-CSharp
+          m_MethodName: ConfirmPurchase
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &436829017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2256,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600735383}
   m_CullTransparentMesh: 1
+--- !u!1 &614594676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614594677}
+  - component: {fileID: 614594678}
+  m_Layer: 5
+  m_Name: ItemInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &614594677
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614594676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1382234012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &614594678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614594676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c6e73226183e947bd0f32577a91a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Violet Gauntlets
+  itemDescription: Lightweight violet gloves. For Vahan.
+  itemCost: 100
+  itemSprite: {fileID: 21300000, guid: 31b683c706b664847b2e45428f65b6db, type: 3}
 --- !u!1 &690684326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,6 +2787,7 @@ GameObject:
   - component: {fileID: 804033182}
   - component: {fileID: 804033183}
   - component: {fileID: 804033185}
+  - component: {fileID: 804033186}
   m_Layer: 0
   m_Name: Lizzy
   m_TagString: Shop
@@ -2715,6 +2956,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &804033186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804033179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efca2023b824b4478ddeb97c949d380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currency: 0
+  buyingItem: 0
+  shopUI: {fileID: 406523979}
+  currencyText: {fileID: 31736821}
+  dialogueText: {fileID: 2952848003245098534}
+  dialogueSource: {fileID: 1545547144}
+  lizzyDialogue:
+  - {fileID: 11400000, guid: b8858edda473dec469c646a6af60e2dc, type: 2}
+  - {fileID: 11400000, guid: 358c42d7c6471684bbd0916e277bcb49, type: 2}
+  - {fileID: 11400000, guid: 0dae055fb2b05dc428641ff1548f1eb0, type: 2}
+  - {fileID: 11400000, guid: 1a0a954c4cd20344b83dd8f970c3abe5, type: 2}
+  - {fileID: 11400000, guid: cbcf646caa136a044b0d4c2f0ecc4171, type: 2}
+  - {fileID: 11400000, guid: 793bc522247952a469dbb72baca28b70, type: 2}
+  curSelectedButton: {fileID: 0}
+  purchaseConfirmation: {fileID: 310850390}
+  controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  buyItem: {fileID: 9174919146641247689, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  cancelPurchase: {fileID: 8831244380251110864, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &869498129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,7 +3109,7 @@ GameObject:
   - component: {fileID: 966845788}
   - component: {fileID: 966845789}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: OverworldCutscene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2910,6 +3181,8 @@ MonoBehaviour:
   dialogueSource: {fileID: 1545547144}
   audioManager: {fileID: 1924727725}
   continueButton: {fileID: 1224600997}
+  controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  skipDialogue: {fileID: 2835208142217101966, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &970017260
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,6 +4693,58 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8374363768650140351, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
   m_PrefabInstance: {fileID: 1323940103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1363185526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363185527}
+  - component: {fileID: 1363185528}
+  m_Layer: 5
+  m_Name: ItemInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1363185527
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363185526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 345885215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1363185528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363185526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c6e73226183e947bd0f32577a91a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: AquaTwist Soda
+  itemDescription: A grape/blueberry soda popular in Xubos. Restores 10 HP.
+  itemCost: 25
+  itemSprite: {fileID: 21300000, guid: 8453cfb76209c66469ff9e3f885a5043, type: 3}
 --- !u!1 &1382234011
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,6 +4778,7 @@ RectTransform:
   m_Children:
   - {fileID: 1655613369}
   - {fileID: 1977904171}
+  - {fileID: 614594677}
   m_Father: {fileID: 1311290137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5775,6 +6101,7 @@ RectTransform:
   m_Children:
   - {fileID: 263987663}
   - {fileID: 2093810671}
+  - {fileID: 1994486528}
   m_Father: {fileID: 1311290137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -13631,7 +13958,6 @@ GameObject:
   - component: {fileID: 1865241274}
   - component: {fileID: 1865241273}
   - component: {fileID: 1865241278}
-  - component: {fileID: 1865241279}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -13740,28 +14066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 1924727726}
   audioManager: {fileID: 1924727725}
---- !u!114 &1865241279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865241272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efca2023b824b4478ddeb97c949d380, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currency: 150
-  currencyText: {fileID: 31736821}
-  dialogueText: {fileID: 2952848003245098534}
-  dialogueSource: {fileID: 1545547144}
-  lizzyDialogue:
-  - {fileID: 11400000, guid: b8858edda473dec469c646a6af60e2dc, type: 2}
-  - {fileID: 11400000, guid: 358c42d7c6471684bbd0916e277bcb49, type: 2}
-  - {fileID: 11400000, guid: 0dae055fb2b05dc428641ff1548f1eb0, type: 2}
-  - {fileID: 11400000, guid: 1a0a954c4cd20344b83dd8f970c3abe5, type: 2}
-  - {fileID: 11400000, guid: 793bc522247952a469dbb72baca28b70, type: 2}
 --- !u!1 &1909422172
 GameObject:
   m_ObjectHideFlags: 0
@@ -14300,6 +14604,8 @@ MonoBehaviour:
   dialogueSource: {fileID: 1545547144}
   audioManager: {fileID: 1924727725}
   continueButton: {fileID: 1224600997}
+  controls: {fileID: 0}
+  skipDialogue: {fileID: 0}
 --- !u!1 &1940508744
 GameObject:
   m_ObjectHideFlags: 0
@@ -14903,6 +15209,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986534000}
   m_CullTransparentMesh: 1
+--- !u!1 &1994486527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1994486528}
+  - component: {fileID: 1994486529}
+  m_Layer: 5
+  m_Name: ItemInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1994486528
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994486527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1725721935}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1994486529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994486527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c6e73226183e947bd0f32577a91a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Coco Chocolate
+  itemDescription: An artificial chocolate bar created with zytorum. Restores 50
+    HP.
+  itemCost: 50
+  itemSprite: {fileID: 21300000, guid: b1e2cd31ecd86fa4692bd72c47c6e461, type: 3}
 --- !u!1 &2055077530
 GameObject:
   m_ObjectHideFlags: 0

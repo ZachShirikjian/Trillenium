@@ -4483,6 +4483,8 @@ MonoBehaviour:
   audioManager: {fileID: 1924727725}
   continueButton: {fileID: 1023032914}
   fadeToBlack: {fileID: 335938752}
+  controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  skipDialogue: {fileID: 2835208142217101966, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &1924727724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,6 +4524,7 @@ MonoBehaviour:
   talentAttack: {fileID: 0}
   sylviaTalentAttack: {fileID: 0}
   battleTheme: {fileID: 0}
+  shopTheme: {fileID: 0}
 --- !u!82 &1924727726
 AudioSource:
   m_ObjectHideFlags: 0

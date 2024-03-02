@@ -51,6 +51,10 @@ public class OverworldCutscene : MonoBehaviour
     //Reference to PlayerInteract script//
     private PlayerInteract interactScript;
 
+    //INPUT//
+    public InputActionAsset controls;
+    public InputActionReference skipDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +86,22 @@ public class OverworldCutscene : MonoBehaviour
     {
         
     }
+
+    //FOR ENABLING INTERACT INPUT
+    public void OnEnable()
+    {
+        skipDialogue.action.performed += Skip;
+        skipDialogue.action.Enable();
+    }
+
+    //FOR DISABLING INTERACT INPUT//
+    public void OnDisable()
+    {
+        Debug.Log("DISABLE PLAYER INPUT");
+        skipDialogue.action.performed -= Skip;
+        skipDialogue.action.Disable();
+    }
+
 
     //This method gets called every time the ContinueButton is clicked in the cutscene. 
     public void ContinueDialogue()
@@ -132,9 +152,34 @@ public class OverworldCutscene : MonoBehaviour
             playerMove.enabled = true;
             interactScript.enabled = true;
             interactScript.currentlyInteracting = false;
+            interactScript.OnEnable();
 
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
         }
+    }
+
+    //By pressing SHIFT on the keyboard, skips all dialogue in a dialogue sequence
+    public void Skip(InputAction.CallbackContext context)
+    {
+            Debug.Log("SKIP DIALOGUE");
+            curPlace = dialogue.Length;
+            dialogueBox.SetActive(false);
+            dialogueSource.Stop();
+            // currentImage.sprite = cutsceneBG[curPlace];
+            currentDialogue.text = "";
+            dialogueAnim.SetBool("EndDialogue",true);
+            speaker.text = "";
+            Debug.Log("END CUTSCENE");
+            continueButton.SetActive(false);
+
+            //Enables player movement once dialogue is completed 
+            playerMove.enabled = true;
+            interactScript.enabled = true;
+            interactScript.currentlyInteracting = false;
+            interactScript.OnEnable();
+
+            portraitImage.GetComponent<Animator>().Play("End");
+            portraitImage.GetComponent<Animator>().SetTrigger("New");
     }
 }
