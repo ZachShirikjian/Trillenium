@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public GameObject closeControlsButton;
     public GameObject resumeButton;
 
+    private GameObject shopUI;
+    //private ShopScript shopScript
+
     public List<GameObject> playerParty = new List<GameObject>();
     private GameObject sylvia;
 
@@ -48,6 +51,9 @@ public class GameManager : MonoBehaviour
         //Reference to Continue Button 
         public GameObject continueButton;
 
+    //Reference to MusicSource//
+    public AudioSource musicSource; 
+    
     //Reference to SFXSource//
     public AudioSource sfxSource;
 
@@ -74,6 +80,12 @@ public class GameManager : MonoBehaviour
 
         sylvia = GameObject.Find("Sylvia");
         playerParty.Add(sylvia);
+
+        shopUI = GameObject.Find("ShopUI");
+        if(shopUI != null)
+        {
+            shopUI.SetActive(false);
+        }
 
     //FOR CONTROLS PANEL//
         OnDisable(); //Disables backspace from being pressed until controls OR settings menu is open
@@ -150,6 +162,33 @@ public class GameManager : MonoBehaviour
             sylvia.GetComponentInChildren<PlayerInteract>().currentlyInteracting = false;
             npcDialogue.SetActive(false);
             sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT after the no solo battle dialogue prompt
+    }
+
+    //SHOP METHODS//
+    //OPENS UP CHILL TOPIC SHOP AND DISABLES PLAYER MOVEMENT//
+    public void OpenShop()
+    {
+        Debug.Log("OPENING SHOP");
+        musicSource.Stop();
+        musicSource.PlayOneShot(audioManager.shopTheme);
+        //TODO: Set action map to be UI and disable player movement UI
+        shopUI.SetActive(true);
+
+        //Set current selected object to first item in the list and begin the shop script 
+        EventSystem.current.SetSelectedGameObject(shopUI.transform.GetChild(0).GetChild(0).gameObject);
+
+        //Enable shop script (which will handle all inputs and values and such)
+        //When the Shop is active, whenever an item is bought, subtract from current Xollar total and remove that image from shop UI menu
+
+        //Temporarily Disable Player Movement 
+        sylvia.GetComponent<PlayerMovement>().enabled = false; //RE-ENABLE MOVEMENT after the no solo battle dialogue prompt
+    }
+
+    public void CloseShop()
+    {
+        Debug.Log("CLOSING SHOP");
+        musicSource.Stop();
+        sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT after the no solo battle dialogue prompt
     }
 
     //Called on the PlayerInput Script

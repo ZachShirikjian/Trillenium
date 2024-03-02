@@ -17,4 +17,5 @@ public class AudioManager : MonoBehaviour
     public AudioClip talentAttack;
     public AudioClip sylviaTalentAttack;
     public AudioClip battleTheme;
+    public AudioClip shopTheme;
 }

@@ -13,8 +13,7 @@ public class PlayerInteract : MonoBehaviour
 
     //REFERENCES//
    private GameManager gm; //reference to GameManager
-  // private GameObject shopUI; //reference to Chill Topic (Lizzy's Shop)
-  //TODO: ADD REFERENCE TO SHOP UI SCRIPT, WHICH GETS ENABLED WHEN PRESSING INTERACT AT LIZZY'S SHOP
+
    public NPCDialogue npcScript;
 
    //FOR NEW INPUT SYSTEM//
@@ -25,8 +24,6 @@ public class PlayerInteract : MonoBehaviour
     void Start()
     {
        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-       //shopUI = GameObject.Find("ShopUI");
-       //shopUI.SetActive(false);
        OnEnable();
     }
 
@@ -58,6 +55,13 @@ public class PlayerInteract : MonoBehaviour
             canInteract = true;
             curObject = other.gameObject;
             Debug.Log("CAN ENTER DOOR");
+        }
+
+        else if(other.tag == "Shop")
+        {
+            canInteract = true;
+            curObject = other.gameObject;
+            Debug.Log("CAN ENTER SHOP");
         }
     }
 
@@ -118,7 +122,7 @@ public class PlayerInteract : MonoBehaviour
                 {
                     Debug.Log("ENTERING SHOP");
                     currentlyInteracting = true;
-                    //shopUI.SetActive(true);
+                    gm.OpenShop();
                 }
                     
                 //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
