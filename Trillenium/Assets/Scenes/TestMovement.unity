@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 517032436}
   - component: {fileID: 517032437}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: OverworldCutscene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -979,6 +979,8 @@ MonoBehaviour:
   dialogueSource: {fileID: 1545547144}
   audioManager: {fileID: 1924727725}
   continueButton: {fileID: 1803174715}
+  controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  skipDialogue: {fileID: 2835208142217101966, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &690684326
 GameObject:
   m_ObjectHideFlags: 0
@@ -12236,6 +12238,7 @@ MonoBehaviour:
   talentAttack: {fileID: 0}
   sylviaTalentAttack: {fileID: 0}
   battleTheme: {fileID: 0}
+  shopTheme: {fileID: 0}
 --- !u!82 &1924727726
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12410,6 +12413,7 @@ MonoBehaviour:
   dialogueAnim: {fileID: 8374363767749915576}
   dialogueBox: {fileID: 5797064241911938895}
   continueButton: {fileID: 5721685819436419301}
+  musicSource: {fileID: 0}
   sfxSource: {fileID: 1924727726}
   dialogueSource: {fileID: 1545547144}
   audioManager: {fileID: 1924727725}

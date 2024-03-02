@@ -69,12 +69,17 @@ public class VideoController : MonoBehaviour
     {
         pauseCutscene.action.performed += VideoPause;
         pauseCutscene.action.Enable();
+
+        skipCutscene.action.performed += SkipVideo;
+        skipCutscene.action.Enable();
     }
 
     private void OnDisable()
     {
         pauseCutscene.action.performed -= VideoPause;
         pauseCutscene.action.Disable();
+        skipCutscene.action.performed -= SkipVideo;
+        skipCutscene.action.Disable();
     }
 
     void Update()
@@ -112,6 +117,18 @@ public class VideoController : MonoBehaviour
                     // The video is playing.
                     videoState = 1;
                 }
+        }
+    }
+
+    void SkipVideo(InputAction.CallbackContext context)
+    {
+        if(end == false)
+        {
+                    player.Pause();
+                    gamePaused = true;
+                    // The video is paused.
+                    videoState = 0;
+                    LoadNextScene();
         }
     }
 

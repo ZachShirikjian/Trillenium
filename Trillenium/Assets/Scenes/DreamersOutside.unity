@@ -649,7 +649,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1028,6 +1028,7 @@ GameObject:
   - component: {fileID: 345885218}
   - component: {fileID: 345885217}
   - component: {fileID: 345885216}
+  - component: {fileID: 345885219}
   m_Layer: 5
   m_Name: OptionButton2
   m_TagString: Untagged
@@ -1121,7 +1122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7831429978188a24f8a0b759a0be4fb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b47d7e84f7d5f784b8ba37a17461bd94, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1139,6 +1140,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345885214}
   m_CullTransparentMesh: 1
+--- !u!114 &345885219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345885214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 804033186}
+          m_TargetAssemblyTypeName: ChillTopicShop, Assembly-CSharp
+          m_MethodName: ConfirmPurchase
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &361093407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,7 +1519,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2789,7 +2847,7 @@ GameObject:
   - component: {fileID: 804033185}
   - component: {fileID: 804033186}
   m_Layer: 0
-  m_Name: Lizzy
+  m_Name: ChillTopicShop
   m_TagString: Shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2968,7 +3026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efca2023b824b4478ddeb97c949d380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 0
+  currency: 150
   buyingItem: 0
   shopUI: {fileID: 406523979}
   currencyText: {fileID: 31736821}
@@ -2980,6 +3038,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0dae055fb2b05dc428641ff1548f1eb0, type: 2}
   - {fileID: 11400000, guid: 1a0a954c4cd20344b83dd8f970c3abe5, type: 2}
   - {fileID: 11400000, guid: cbcf646caa136a044b0d4c2f0ecc4171, type: 2}
+  - {fileID: 11400000, guid: cf23093e04e2b25439f322b3f16a1e89, type: 2}
   - {fileID: 11400000, guid: 793bc522247952a469dbb72baca28b70, type: 2}
   curSelectedButton: {fileID: 0}
   purchaseConfirmation: {fileID: 310850390}
@@ -4757,6 +4816,7 @@ GameObject:
   - component: {fileID: 1382234015}
   - component: {fileID: 1382234014}
   - component: {fileID: 1382234013}
+  - component: {fileID: 1382234016}
   m_Layer: 5
   m_Name: VahanOptionButton
   m_TagString: Untagged
@@ -4868,6 +4928,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382234011}
   m_CullTransparentMesh: 1
+--- !u!114 &1382234016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382234011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 804033186}
+          m_TargetAssemblyTypeName: ChillTopicShop, Assembly-CSharp
+          m_MethodName: ConfirmPurchase
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &1389296466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,7 +5131,7 @@ GameObject:
   - component: {fileID: 1426279698}
   - component: {fileID: 1426279697}
   m_Layer: 0
-  m_Name: ChillTopic
+  m_Name: CTStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6026,7 +6143,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6080,6 +6197,7 @@ GameObject:
   - component: {fileID: 1725721938}
   - component: {fileID: 1725721937}
   - component: {fileID: 1725721936}
+  - component: {fileID: 1725721939}
   m_Layer: 5
   m_Name: OptionButton
   m_TagString: Untagged
@@ -6173,7 +6291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7831429978188a24f8a0b759a0be4fb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b47d7e84f7d5f784b8ba37a17461bd94, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6191,6 +6309,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725721934}
   m_CullTransparentMesh: 1
+--- !u!114 &1725721939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725721934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865241278}
+          m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 804033186}
+          m_TargetAssemblyTypeName: ChillTopicShop, Assembly-CSharp
+          m_MethodName: ConfirmPurchase
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &1738645927
 GameObject:
   m_ObjectHideFlags: 0
@@ -14292,7 +14467,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -14495,7 +14670,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1938926525}
   - component: {fileID: 1938926526}
-  - component: {fileID: 1938926527}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14553,59 +14727,6 @@ MonoBehaviour:
   sfxSource: {fileID: 1924727726}
   dialogueSource: {fileID: 1545547144}
   audioManager: {fileID: 1924727725}
---- !u!114 &1938926527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938926524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 391f7a74c51560742956cfe8ffe7da8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curPlace: 0
-  currentDialogue: {fileID: 1521341264}
-  speaker: {fileID: 2082336227}
-  dialogue:
-  - {fileID: 11400000, guid: 7bad2f7c11088fc4f977ff1c72e62839, type: 2}
-  - {fileID: 11400000, guid: 1c5a7f9969ed07949be87e852b7083f0, type: 2}
-  - {fileID: 11400000, guid: 96ccb9f9751c12246bfe099308c25e0b, type: 2}
-  - {fileID: 11400000, guid: df565115e30e2bb4f9c6283425b1bf61, type: 2}
-  - {fileID: 11400000, guid: 58b31999041d1c9449a0cf53b0e6cbf1, type: 2}
-  - {fileID: 11400000, guid: 3aec754758014b842a819c843eb7687b, type: 2}
-  - {fileID: 11400000, guid: 995da77da97746c48afbf97646b7b47f, type: 2}
-  - {fileID: 11400000, guid: a1bd66b4be72081408f7ef354b0a5065, type: 2}
-  - {fileID: 11400000, guid: d86c8921980ddac42be3032fbc9c6681, type: 2}
-  - {fileID: 11400000, guid: a24c13ab677f8f7489f074d2d16e8834, type: 2}
-  - {fileID: 11400000, guid: 85a17fc2939226b429e1831889d26eeb, type: 2}
-  - {fileID: 11400000, guid: 197761b3f43431a4c9daf4d5b6e9f2da, type: 2}
-  - {fileID: 11400000, guid: 64ad802b8199d0547bad68a2023f5a42, type: 2}
-  - {fileID: 11400000, guid: 0888af68b16af984f9f3cba1cc573fa9, type: 2}
-  - {fileID: 11400000, guid: 4ade13515b51cb542b761fb8f8100d68, type: 2}
-  - {fileID: 11400000, guid: 605725c691234a14abc6660c3f03bc2d, type: 2}
-  - {fileID: 11400000, guid: fb9468239f0288a4bba4f68c591e7c63, type: 2}
-  - {fileID: 11400000, guid: a41c3e25597c22f43b773565b305130a, type: 2}
-  - {fileID: 11400000, guid: 7f198169f02d3064ba5145f4ea3227f1, type: 2}
-  - {fileID: 11400000, guid: 2749927a1718531499b1625842f72c16, type: 2}
-  - {fileID: 11400000, guid: 5ceebc1250425c94da670eff32967571, type: 2}
-  - {fileID: 11400000, guid: edcaaea6be686e3499acc65cc15785d1, type: 2}
-  - {fileID: 11400000, guid: 43f84369d9c8d5849ae69a9f032a94fb, type: 2}
-  - {fileID: 11400000, guid: 01e0f5bce3d858842a1fcd96ab9adbeb, type: 2}
-  - {fileID: 11400000, guid: c8978870ca26eec45aa28f2f5cb8f476, type: 2}
-  - {fileID: 11400000, guid: df75304bc62fb0b47adbb85e5517f6a0, type: 2}
-  - {fileID: 11400000, guid: 235f902244d4f5048beb6bbf3db8f30f, type: 2}
-  - {fileID: 11400000, guid: 1b141a17ee28d804dba8049ffbf27a76, type: 2}
-  portraitImage: {fileID: 2127349216}
-  dialogueAnim: {fileID: 1323940107}
-  dialogueBox: {fileID: 1211537297}
-  sfxSource: {fileID: 1924727726}
-  dialogueSource: {fileID: 1545547144}
-  audioManager: {fileID: 1924727725}
-  continueButton: {fileID: 1224600997}
-  controls: {fileID: 0}
-  skipDialogue: {fileID: 0}
 --- !u!1 &1940508744
 GameObject:
   m_ObjectHideFlags: 0
@@ -14841,7 +14962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230, y: 0}
+  m_AnchoredPosition: {x: 260, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977904172
@@ -14975,7 +15096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230, y: 0}
+  m_AnchoredPosition: {x: 260.00012, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1980860031
@@ -15109,7 +15230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230, y: 0}
+  m_AnchoredPosition: {x: 260.00012, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986534002
@@ -15414,7 +15535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230, y: 0}
+  m_AnchoredPosition: {x: 260.00012, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093810672

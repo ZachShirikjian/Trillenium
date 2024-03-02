@@ -88,7 +88,8 @@ public class ChillTopicShop : MonoBehaviour
         buyingItem = false;
 
         gm.musicSource.Stop();
-        gm.musicSource.PlayOneShot(gm.audioManager.shopTheme);
+        gm.musicSource.clip = gm.audioManager.shopTheme;
+        gm.musicSource.Play();
         shopUI.SetActive(true);
 
         //Temporarily Disable Player Movement 
@@ -98,10 +99,12 @@ public class ChillTopicShop : MonoBehaviour
 
     }
 
+  //CLOSES THE SHOP ONCE YOU'RE ALL DONE SHOPPING
     public void CloseShop()
     {
         Debug.Log("CLOSING SHOP");
         gm.musicSource.Stop();
+        dialogueText.text = lizzyDialogue[5].speakerText;
         shopUI.SetActive(false);
         sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT AFTER EXITTING THE SHOP
         this.enabled = false;
@@ -121,7 +124,6 @@ public class ChillTopicShop : MonoBehaviour
         dialogueText.text = lizzyDialogue[1].speakerText;
         buyingItem = true;
         purchaseConfirmation.SetActive(true);
-        OnEnable();
       }
       else
       {
@@ -148,15 +150,28 @@ public class ChillTopicShop : MonoBehaviour
           currency -= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost; 
           currencyText.text = currency.ToString();
           curSelectedButton.GetComponent<Button>().interactable = false; //prevents button from being interacted with again
-         // Invoke("ResetShop", 1f); //Prevents accidentally buying too quickly 
+
+          //TODO: REMOVE ITEM FROM THE SHOP DISPLAY ITSELF 
+
+          Invoke("ResetShop", 1f); //Prevents accidentally buying too quickly 
         }
     }
 
+  //RESETS DIALOGUE AFTER MAKING PURCHASE OR CANCELING PURCHASE
+    public void ResetShop()
+    {
+       EventSystem.current.SetSelectedGameObject(shopUI.transform.GetChild(0).GetChild(0).gameObject);
+       dialogueText.text = lizzyDialogue[5].speakerText;
+       OnDisable();
+    }
+
+    //METHOD FOR CANCELING A PURCHASE
     public void CancelPurchase(InputAction.CallbackContext context)
     {
-
+      Debug.Log("CANCELING PURCHASE");
+      purchaseConfirmation.SetActive(false);
+      dialogueText.text = lizzyDialogue[3].speakerText;
+             EventSystem.current.SetSelectedGameObject(shopUI.transform.GetChild(0).GetChild(0).gameObject);
+      //Invoke("ResetShop", 1f);
     }
-    //METHOD FOR CANCELING A PURCHASE
-
-    //METHOD FOR LEAVING SHOP
 }

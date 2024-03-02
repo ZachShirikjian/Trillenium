@@ -97,7 +97,7 @@ public class OverworldCutscene : MonoBehaviour
     //FOR DISABLING INTERACT INPUT//
     public void OnDisable()
     {
-        Debug.Log("DISABLE PLAYER INPUT");
+        Debug.Log("DISABLE CUTSCENE INPUT");
         skipDialogue.action.performed -= Skip;
         skipDialogue.action.Disable();
     }
