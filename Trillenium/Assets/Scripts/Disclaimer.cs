@@ -33,13 +33,13 @@ public class Disclaimer : MonoBehaviour
     //Loads 1st cutscene after disclaimer plays
     void LoadCutscene()
     {
-        SceneManager.LoadScene("TestCutscene");
+        SceneManager.LoadScene("IntroCutscene");
     }
 
     //If Enter is pressed during disclaimer, instantly load 1st cutscene and skip disclaimer
     public void SkipDisclaimer(InputAction.CallbackContext context)
     {
-        SceneManager.LoadScene("TestCutscene");
+        SceneManager.LoadScene("IntroCutscene");
     }
 
 

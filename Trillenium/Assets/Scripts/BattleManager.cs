@@ -117,10 +117,10 @@ public class BattleManager : MonoBehaviour
     }
 
     //If # of enemies left = 0, 
-    //Load the OwlsNestCutscene after 3 seconds
+    //Load the next scene in build index after 3 seconds
     public void LoadNextCutscene()
     {
-        SceneManager.LoadScene("OwlsNest");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
      public void NextTurn()

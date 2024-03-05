@@ -3433,7 +3433,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.2, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3444,7 +3444,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7, y: 4.5}
+  m_Size: {x: 10, y: 6}
   m_EdgeRadius: 0
 --- !u!212 &1426279698
 SpriteRenderer:
@@ -3618,7 +3618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 1955331606}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3693,7 +3693,19 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7182d3d9-4f07-4c10-9b57-b13ee758bcc1
     m_ActionName: UI/TalentAttack3[/Keyboard/l]
-  m_NeverAutoSwitchControlSchemes: 1
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b6c4d04f-78eb-4b9d-a0dd-eab5798bc24a
+    m_ActionName: UI/Skip[/Keyboard/shift,/XInputControllerWindows/select]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 752f3d53-ff64-4ba4-8f68-68c6b813090a
+    m_ActionName: Cutscene/Pause[/XInputControllerWindows/start,/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8fb62d92-4d75-42ba-84e9-055e28d179d5
+    m_ActionName: Cutscene/Skip[/Keyboard/shift,/XInputControllerWindows/select]
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Overworld
   m_SplitScreenIndex: -1

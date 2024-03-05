@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     //Reference to Vahan/Petros Party Memebrs
     public GameObject vahan;
+
+    //REFERENCE to Main Player's Melee Attack Collider 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -89,4 +92,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isMoving", true);
         }
     }
+
+    //FOR DUNGEON 
+    //If you're in a dungeon, perform melee attack on enemies
 }

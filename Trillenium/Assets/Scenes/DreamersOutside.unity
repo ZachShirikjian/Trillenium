@@ -3179,6 +3179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currency: 150
   buyingItem: 0
+  shopOpen: 0
   shopUI: {fileID: 406523979}
   currencyText: {fileID: 31736821}
   dialogueText: {fileID: 2952848003245098534}
@@ -3198,7 +3199,7 @@ MonoBehaviour:
   navigate: {fileID: -575104532007817599, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   buyItem: {fileID: 9174919146641247689, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   cancelPurchase: {fileID: 2835208142217101966, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
-  closeShop: {fileID: 2835208142217101966, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  closeupShop: {fileID: 1899094823995063187, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &869498129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,6 +5020,10 @@ PrefabInstance:
       propertyPath: m_text
       value: LIZZY
       objectReference: {fileID: 0}
+    - target: {fileID: 9183859356372783072, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5729,7 +5734,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b6c4d04f-78eb-4b9d-a0dd-eab5798bc24a
     m_ActionName: UI/Skip[/Keyboard/shift]
-  m_NeverAutoSwitchControlSchemes: 1
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Overworld
   m_SplitScreenIndex: -1

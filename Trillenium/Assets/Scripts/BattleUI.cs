@@ -84,9 +84,11 @@ public class BattleUI : MonoBehaviour
         sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
         vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
 
-        sylviaHPText.text = sHP.ToString() + "/" + sMaxHP.ToString();
+        //sylviaHPText.text = sHP.ToString() + "/" + sMaxHP.ToString();
+        sylviaHPText.text = sHP.ToString();
         sylviaHP.value =  sHP;
-        vahanHPText.text = vHP.ToString() + "/" + vMaxHP.ToString();
+        vahanHPText.text = vHP.ToString();
+        //vahanHPText.text = vHP.ToString() + "/" + vMaxHP.ToString();
         vahanHP.value = vHP;
 
         if(targetEnemy != null)

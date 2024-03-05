@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public InputActionAsset controls;
     public InputActionReference closeMenu;
 
+    private ChillTopicShop shopRef;
+
     //DIALOGUE REFERENCE//
     
     //The current lines of dialogue which is being spoken.
@@ -78,7 +80,15 @@ public class GameManager : MonoBehaviour
         sylvia = GameObject.Find("Sylvia");
         playerParty.Add(sylvia);
 
-    //FOR CONTROLS PANEL//
+        //For scenes with shop UI 
+      //  shopRef = GameObject.Find("ChillTopicShop").GetComponent<ChillTopicShop>();
+      //  if(shopRef != null)
+      //  {
+      //      Debug.Log("Disable Shop script");
+      //      shopRef.enabled = false;
+      //  }
+
+        //FOR CONTROLS PANEL//
         OnDisable(); //Disables backspace from being pressed until controls OR settings menu is open
     }
 

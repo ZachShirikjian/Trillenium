@@ -16,6 +16,7 @@ public class ChillTopicShop : MonoBehaviour
     //VARIABLES//
     public int currency; 
     public bool buyingItem = false;
+    public bool shopOpen = false; //prevents curSelectedButton from being set to continue button 
 
     //REFERENCES//
     public GameObject shopUI; 
@@ -36,10 +37,7 @@ public class ChillTopicShop : MonoBehaviour
     public InputActionReference navigate;
     public InputActionReference buyItem;
     public InputActionReference cancelPurchase;
-    public InputActionReference closeShop; 
-
-    //SHOP ITEM LIST//
-   // public List<ShopItem> shopItems = new List<ShopItem>();
+    public InputActionReference closeupShop; 
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +45,8 @@ public class ChillTopicShop : MonoBehaviour
         //TODO: Set current currency to currency in UnitStats or GameManager (which is saved between scenes)
 
         //TODO: Set the name, text, and cost of each item in the buttons via script instead of via scene  
+        shopOpen = false;
+
         purchaseConfirmation.SetActive(false);
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         sylvia = GameObject.Find("Sylvia");
@@ -68,9 +68,8 @@ public class ChillTopicShop : MonoBehaviour
       cancelPurchase.action.performed += CancelPurchase;
 
       navigate.action.performed -= UpdateSelectedItem;
-      closeShop.action.performed -= CloseShop;
-      //  closeMenu.action.performed += CloseMenu;
-      //  closeMenu.action.Enable();
+      closeupShop.action.performed -= CloseShop;
+
     }
 
     private void OnDisable()
@@ -80,18 +79,19 @@ public class ChillTopicShop : MonoBehaviour
 
       //This is enabled during normal menu selection, NOT when an item is selected to be purchased
       navigate.action.performed += UpdateSelectedItem;
-      closeShop.action.performed += CloseShop;
-
-      //  closeMenu.action.performed -= CloseMenu;
-      //  closeMenu.action.Disable();
+      closeupShop.action.performed += CloseShop;
     }
 
     //UPDATES CURSELECTEDITEM BASED ON ONE THAT'S IN THE CURSELECTEDGAMEOBJECT
     public void UpdateSelectedItem(InputAction.CallbackContext context)
     {
       //Sets currently hovered over button to be one you're selecting for purchase
-        curSelectedButton = EventSystem.current.currentSelectedGameObject;
-        Debug.Log(curSelectedButton);
+      if(shopOpen == true)
+      {
+          curSelectedButton = EventSystem.current.currentSelectedGameObject;
+          Debug.Log(curSelectedButton);
+      }
+
     }
 
     //BEGIN SHOPPING SCRIPT//
@@ -107,27 +107,33 @@ public class ChillTopicShop : MonoBehaviour
         gm.musicSource.clip = gm.audioManager.shopTheme;
         gm.musicSource.Play();
         shopUI.SetActive(true);
-        Invoke("EnableShopMenu", 0.5f);
+
         //Temporarily Disable Player Movement 
         sylvia.GetComponent<PlayerMovement>().enabled = false; //DISABLE MOVEMENT DURING SHOPPING
+        shopOpen = true;
+
+        Invoke("EnableShopMenu", 0.5f);
+  
     }
 
   //CLOSES THE SHOP ONCE YOU'RE ALL DONE SHOPPING
     public void CloseShop(InputAction.CallbackContext context)
     {
-      if(buyingItem == false)
-      {
-        Debug.Log("CLOSING SHOP");
+      Debug.Log("CLOSING SHOP");
         gm.musicSource.Stop();
         dialogueText.text = lizzyDialogue[5].speakerText;
         Invoke("ResetMovement", 2f);
-      }
+      // if(buyingItem == false)
+      // {
+
+      // }
     }
 
   public void ResetMovement()
   {
       shopUI.SetActive(false);
       sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT AFTER EXITTING THE SHOP
+      shopOpen = false;
       this.enabled = false;
   }
 
@@ -142,6 +148,11 @@ public class ChillTopicShop : MonoBehaviour
     //METHOD FOR CONFIRMING A PURCHASE (put for the submit event on each button)
     public void ConfirmPurchase()
     {
+      if(shopOpen == true)
+      {
+          curSelectedButton = EventSystem.current.currentSelectedGameObject;
+          Debug.Log(curSelectedButton);
+      }
       if(currency >= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost)
       {
         Debug.Log("Do you want to purchase this?");
