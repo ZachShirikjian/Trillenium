@@ -218,3 +218,4 @@ MonoBehaviour:
   attack: 10
   speed: 2
   dead: 0
+  talentValue: 2

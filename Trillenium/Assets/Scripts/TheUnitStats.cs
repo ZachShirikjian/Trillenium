@@ -14,6 +14,7 @@ public class TheUnitStats : MonoBehaviour
     public float speed;
 
     public bool dead = false;
+    public int talentValue; //# of TP that player receives after defeating an enemy 
     // Start is called before the first frame update
     void Start()
     {

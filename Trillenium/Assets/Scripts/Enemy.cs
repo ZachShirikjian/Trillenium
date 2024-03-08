@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//ONLY USE THIS SCRIPT FOR DUNGEON OVERWORLD ENEMIES! 
+//ENEMYATTACK IS USED FOR BOSS ENEMIES (TURN-BASED BATTLES)
 public class Enemy : MonoBehaviour
 {
 
@@ -52,6 +54,11 @@ public class Enemy : MonoBehaviour
            // bm.numEnemiesLeft--;
            // bm.enemies.Remove(this.gameObject);
            // enemyHP.SetActive(false);
+        
+    
+           //After an enemy is killed, its TP value gets doubled
+
+            enemyUnitStats.talentValue *= 2; 
             Destroy(this.gameObject);
         }
 

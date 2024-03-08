@@ -11,6 +11,9 @@ public class PlayerAttack : MonoBehaviour
 {
 
     //VARIABLES//
+
+    //Reference the player this script is on 
+    [SerializeField] private TheUnitStats playerStats; //Reference the player's stats for adding talent when damaging an enemy 
     [SerializeField]private Animator anim; //reference to Player's animation 
 
     [SerializeField]private float meleeSpeed; //speed of Player's attack
@@ -30,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         damage = GetComponent<TheUnitStats>().attack; //ensures attack in TheUnitStats is set to damage of your attack
+        playerStats = GetComponent<TheUnitStats>();
     }
 
     // Update is called once per frame
@@ -86,6 +90,9 @@ public class PlayerAttack : MonoBehaviour
         {
             Debug.Log("Enemy taking damage");
             other.GetComponent<Enemy>().TakeDamage(damage);
+
+            //Each time you deal damage, add to your talent meter
+            playerStats.talent += other.GetComponent<TheUnitStats>().talentValue;
         }
     }
 }
