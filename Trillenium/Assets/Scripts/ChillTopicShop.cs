@@ -26,6 +26,8 @@ public class ChillTopicShop : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     public AudioSource dialogueSource;
+    public AudioSource sfxSource;
+    private AudioManager audioManager;
     public List<Dialogue> lizzyDialogue = new List<Dialogue>(); //holds all of Lizzy's dialogue that plays during cutscene
 
     public GameObject curSelectedButton;
@@ -50,6 +52,7 @@ public class ChillTopicShop : MonoBehaviour
         purchaseConfirmation.SetActive(false);
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         sylvia = GameObject.Find("Sylvia");
+        audioManager = sfxSource.GetComponent<AudioManager>();
         shopUI.SetActive(false);
         shopMenu.SetActive(false);
         OnDisable();
@@ -190,6 +193,7 @@ public class ChillTopicShop : MonoBehaviour
         {
           Debug.Log("Thanks for buying!");
           dialogueText.text = lizzyDialogue[2].speakerText;
+          sfxSource.PlayOneShot(audioManager.buyItem);
           currency -= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost; 
           currencyText.text = currency.ToString();
           curSelectedButton.GetComponentInChildren<ShopItem>().itemSprite.SetActive(false); //prevents button from being interacted with again
@@ -204,7 +208,7 @@ public class ChillTopicShop : MonoBehaviour
     {
        EventSystem.current.SetSelectedGameObject(shopUI.transform.GetChild(0).GetChild(0).gameObject);
        dialogueText.text = lizzyDialogue[5].speakerText;
-      buyingItem = false;
+       buyingItem = false;
        OnDisable();
     }
 
@@ -216,7 +220,7 @@ public class ChillTopicShop : MonoBehaviour
         Debug.Log("CANCELING PURCHASE");
         purchaseConfirmation.SetActive(false);
         dialogueText.text = lizzyDialogue[3].speakerText;
-        EventSystem.current.SetSelectedGameObject(shopUI.transform.GetChild(0).GetChild(0).gameObject);
+        //EventSystem.current.SetSelectedGameObject(null);
         buyingItem = false;
         Invoke("ResetShop", 1f);
       }

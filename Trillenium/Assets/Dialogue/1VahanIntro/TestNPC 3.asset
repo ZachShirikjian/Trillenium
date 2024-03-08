@@ -17,4 +17,4 @@ MonoBehaviour:
   personSpeaking: Guard XTron
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 626a504f25edd9c45abee7d8bd013273, type: 3}
-  audioClip: {fileID: 8300000, guid: 7084089419ad1b948b0edc24c71713b5, type: 3}
+  audioClip: {fileID: 0}

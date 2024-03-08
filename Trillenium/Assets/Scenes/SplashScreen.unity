@@ -396,7 +396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c1e40ef754433459e7e1e92093a40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OwlsNestLogo: {fileID: 1089873472}
 --- !u!1 &853061230
 GameObject:
   m_ObjectHideFlags: 0

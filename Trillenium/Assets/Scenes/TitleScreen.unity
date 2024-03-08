@@ -857,8 +857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newDialogue: {fileID: 8300000, guid: e650e50ed610f4012813602f720fff7e, type: 3}
   continueDialogue: {fileID: 0}
-  uiHover: {fileID: 8300000, guid: 82d4978ce23474cafb0ac3e558b2bb5a, type: 3}
-  uiClick: {fileID: 8300000, guid: b25a5b551690d423fb97fcc2730501d0, type: 3}
+  uiHover: {fileID: 8300000, guid: 64b58e01ae0ceb34f83c49636d03550d, type: 3}
+  uiClick: {fileID: 8300000, guid: 10dec784c9581604ba29e47fa46c098a, type: 3}
   uiClose: {fileID: 8300000, guid: d10f1ed24761bec498441bf7b606d38b, type: 3}
   battleWon: {fileID: 0}
   talentAttack: {fileID: 0}
@@ -1602,7 +1602,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newGameButton: {fileID: 313993326}
   controlsButton: {fileID: 1623425210}
-  closeControls: {fileID: 0}
   controlsPanel: {fileID: 425138116}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   closeMenu: {fileID: 8831244380251110864, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}

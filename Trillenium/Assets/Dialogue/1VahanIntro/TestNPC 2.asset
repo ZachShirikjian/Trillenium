@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: TestNPC 2
   m_EditorClassIdentifier: 
-  speakerText: "You're clearly about to vandalize our beautiful city! Why be destructive
-    when you can feel much better drinking a sip of zytorum?\r"
-  personSpeaking: Guard XTron
+  speakerText: 'I can''t drink that stuff anymore! It burnt half my face! '
+  personSpeaking: Half-Burnt Man
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 626a504f25edd9c45abee7d8bd013273, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
   audioClip: {fileID: 8300000, guid: def51c7311671c444987c1a34b393494, type: 3}

@@ -10,6 +10,12 @@ public class PlayerAction : MonoBehaviour
     private TheUnitStats unitStats;
     private SpriteRenderer spriteR;
     private TalentScript talentScript;
+    
+    //USE THIS FOR ADDING DAMAGED PORTRAITS
+    public Image battlePortrait;
+    public Sprite damagedSprite;
+    public Sprite neutralSprite; 
+
     void Start()
     {
         unitStats = GetComponent<TheUnitStats>();
@@ -52,6 +58,7 @@ public class PlayerAction : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         Debug.Log(this.gameObject.name + " IS TAKING DAMAGE");
+        battlePortrait.sprite = damagedSprite;
         unitStats.health -= damageAmount;
         spriteR.color = Color.red;
         Invoke("ResetColor", 0.5f);
@@ -61,6 +68,7 @@ public class PlayerAction : MonoBehaviour
     public void ResetColor()
     {
         spriteR.color = Color.white;
+        battlePortrait.sprite = neutralSprite;
     }
 
 

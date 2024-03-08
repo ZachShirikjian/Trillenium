@@ -518,7 +518,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cf08dbec6222c6d428081e6ea94b79a2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1057,11 +1057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6954672395808276721, guid: c49e0cbe0a129dd40985ef553325d445, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -22
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 6954672395808276721, guid: c49e0cbe0a129dd40985ef553325d445, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 59
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6954672395808276721, guid: c49e0cbe0a129dd40985ef553325d445, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1570,13 +1570,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newDialogue: {fileID: 8300000, guid: e650e50ed610f4012813602f720fff7e, type: 3}
   continueDialogue: {fileID: 8300000, guid: 3aa8b0d2335fe4adb9a73007611be73e, type: 3}
-  uiHover: {fileID: 8300000, guid: 82d4978ce23474cafb0ac3e558b2bb5a, type: 3}
-  uiClick: {fileID: 8300000, guid: b25a5b551690d423fb97fcc2730501d0, type: 3}
+  uiHover: {fileID: 8300000, guid: 64b58e01ae0ceb34f83c49636d03550d, type: 3}
+  uiClick: {fileID: 8300000, guid: 10dec784c9581604ba29e47fa46c098a, type: 3}
   uiClose: {fileID: 8300000, guid: d10f1ed24761bec498441bf7b606d38b, type: 3}
+  buyItem: {fileID: 0}
   battleWon: {fileID: 8300000, guid: 1857e2c3c334ebc4184afbd11a12c414, type: 3}
   talentAttack: {fileID: 8300000, guid: 9ecde1752677ae74a8ab86a69f764f09, type: 3}
   sylviaTalentAttack: {fileID: 8300000, guid: 4615626431f6c6944b3a5e6872ef9fe9, type: 3}
-  battleTheme: {fileID: 8300000, guid: f1cd7fafb6daf474c900def5c3986d05, type: 3}
+  battleTheme: {fileID: 8300000, guid: cf08dbec6222c6d428081e6ea94b79a2, type: 3}
   shopTheme: {fileID: 0}
 --- !u!82 &746728697
 AudioSource:
@@ -1937,6 +1938,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0078a174329fdf14eb2ce7cd4021c968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battlePortrait: {fileID: 1792878908}
+  damagedSprite: {fileID: 21300000, guid: 8f4f350011881c14cad4a405e844e718, type: 3}
+  neutralSprite: {fileID: 21300000, guid: 1be8569c8fa38ea4e97f682f43fdd8cc, type: 3}
 --- !u!114 &856509575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,10 +2100,10 @@ MonoBehaviour:
   vahanHP: {fileID: 107608086}
   sylviaTP: {fileID: 1512169826}
   vahanTP: {fileID: 1377308485}
-  sylviaTPText: {fileID: 57828313}
-  vahanTPText: {fileID: 830915966}
   sylviaHPText: {fileID: 1308135778}
   vahanHPText: {fileID: 2042120746}
+  sylviaTPText: {fileID: 57828313}
+  vahanTPText: {fileID: 830915966}
   enemyHPSlider: {fileID: 1275426924}
   targetEnemy: {fileID: 2749941425687983388}
   vahanTalentUIPrompt: {fileID: 1598004012}
@@ -2416,8 +2420,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7bd56d514cd54462180507a60cc652b2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 16aa09f432fb6214797d08fbd4c30780, type: 3}
+  m_Color: {r: 1, g: 0.82452834, b: 0.82452834, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2437,7 +2441,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.91, y: 0.33, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3274,10 +3278,10 @@ MonoBehaviour:
   talentButton: {fileID: 1869938921}
   sylviaPortrait: {fileID: 1977091613}
   vahanPortrait: {fileID: 1792878908}
-  sylviaDefault: {fileID: 21300000, guid: d6fc01ec56537f543865670f61cfdfcd, type: 3}
+  sylviaDefault: {fileID: 21300000, guid: cea6096b22485e34fb3fabc266aeddc3, type: 3}
   sylviaAction: {fileID: 21300000, guid: 9b6c4a9e129a60148bac22299f917b62, type: 3}
-  vahanDefault: {fileID: 21300000, guid: 235cf93f5c9dc6e4485815e5003a0e4e, type: 3}
-  vahanAction: {fileID: 21300000, guid: dfbdea27085047b45ad0b831327d28d3, type: 3}
+  vahanDefault: {fileID: 21300000, guid: 1be8569c8fa38ea4e97f682f43fdd8cc, type: 3}
+  vahanAction: {fileID: 21300000, guid: 8bbb410ebd8e5f140babcbdd39afd9fd, type: 3}
   sylviatalentAttackScript: {fileID: 1718480407}
   vahantalentAttackScript: {fileID: 856509575}
   battleStatusText: {fileID: 2099173886}
@@ -3332,7 +3336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40, y: -94}
+  m_AnchoredPosition: {x: -40, y: 75}
   m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1275426924
@@ -3708,7 +3712,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 550, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1383818945
@@ -3920,7 +3924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0836e04593f50bf4982fd4aca998effb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 947533b1f798e034ea7d36af0c015aa9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3955,7 +3959,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 838.8179}
+  m_SizeDelta: {x: 0, y: 838.3976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1414403216
 GameObject:
@@ -4135,7 +4139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 550, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1624771994
@@ -4559,6 +4563,42 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7182d3d9-4f07-4c10-9b57-b13ee758bcc1
     m_ActionName: UI/TalentAttack3[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cdbedb11-b35e-4766-94e6-9b8952b82a61
+    m_ActionName: Dungeon/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d7e22a4-31be-4a3a-964b-be25bb3bdfe1
+    m_ActionName: Dungeon/TalentAttack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c714cdea-76c7-4c9f-a374-06b1fffca3f4
+    m_ActionName: Dungeon/Interact[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: be35185a-4715-4243-8e26-5e99bde681a3
+    m_ActionName: Dungeon/Pause[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 515766f2-2e13-4b16-ac6c-f37843c94e47
+    m_ActionName: Dungeon/MeleeAttack[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b6c4d04f-78eb-4b9d-a0dd-eab5798bc24a
+    m_ActionName: UI/Skip[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43de4f34-9f11-400b-8a6a-b476bb255de9
+    m_ActionName: UI/CloseMenu[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 752f3d53-ff64-4ba4-8f68-68c6b813090a
+    m_ActionName: Cutscene/Pause[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8fb62d92-4d75-42ba-84e9-055e28d179d5
+    m_ActionName: Cutscene/Skip[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: UI
@@ -4615,6 +4655,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0078a174329fdf14eb2ce7cd4021c968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battlePortrait: {fileID: 1977091613}
+  damagedSprite: {fileID: 21300000, guid: 6537743f25d88d6478c44cd199482d54, type: 3}
+  neutralSprite: {fileID: 21300000, guid: cea6096b22485e34fb3fabc266aeddc3, type: 3}
 --- !u!114 &1718480407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9375,6 +9418,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8445771811516315360, guid: 04f2a1831dbea4d4083d4729356569f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1be8569c8fa38ea4e97f682f43fdd8cc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9479,8 +9526,8 @@ Transform:
   m_GameObject: {fileID: 2749941425687983388}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: -2.5, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: -0.25, y: -2, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

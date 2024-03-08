@@ -960,13 +960,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newDialogue: {fileID: 8300000, guid: e650e50ed610f4012813602f720fff7e, type: 3}
   continueDialogue: {fileID: 8300000, guid: 3aa8b0d2335fe4adb9a73007611be73e, type: 3}
-  uiHover: {fileID: 8300000, guid: 82d4978ce23474cafb0ac3e558b2bb5a, type: 3}
-  uiClick: {fileID: 8300000, guid: b25a5b551690d423fb97fcc2730501d0, type: 3}
+  uiHover: {fileID: 8300000, guid: 64b58e01ae0ceb34f83c49636d03550d, type: 3}
+  uiClick: {fileID: 8300000, guid: 10dec784c9581604ba29e47fa46c098a, type: 3}
   uiClose: {fileID: 0}
   battleWon: {fileID: 0}
   talentAttack: {fileID: 0}
   sylviaTalentAttack: {fileID: 0}
   battleTheme: {fileID: 0}
+  shopTheme: {fileID: 0}
 --- !u!82 &1123928190
 AudioSource:
   m_ObjectHideFlags: 0

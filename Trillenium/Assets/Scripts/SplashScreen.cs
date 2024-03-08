@@ -11,7 +11,8 @@ public class SplashScreen : MonoBehaviour
     void Start()
     {
         //OwlsNestLogo.SetActive(false);
-        Invoke("LoadTitleScreen", 11.5f); //Maybe adjust this later for Content Warning about AI, Drug Abuse, and Suicide.
+        //17 seconds total time to load all the logos, disclaimer, and content warning
+        Invoke("LoadTitleScreen", 18f); 
     }
 
     //Popup ON logo (& add others if needed later) then loads title screen after splash screen ends

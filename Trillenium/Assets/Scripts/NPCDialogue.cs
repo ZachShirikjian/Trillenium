@@ -77,12 +77,29 @@ public class NPCDialogue : MonoBehaviour
              npcRef = interactScript.curObject.GetComponent<NPC>();
          }
 
-        //IF ALREADY SPOKEN TOO, PREVENT DIALOGUE FROM STARTING FROM BEGINNING
+        //ADD DELAY TO PREVENT SPAMMING AND PREVENTING FIRST DIALOGUE FROM APPEARING
         if(npcRef.alreadySpokenTo == false)
         {
+            Invoke("StartDialogue", 0.25f);
+                        playerMove.enabled = false;
+
+        }
+
+        //IF ALREADY SPOKEN TOO, PREVENT DIALOGUE FROM STARTING FROM BEGINNING
+
+        else if(npcRef.alreadySpokenTo == true)
+        {
+            Debug.Log("You already talked to this NPC!");
+        }
+
+      
+    }
+
+    public void StartDialogue()
+    {
             Debug.Log("BEGIN DIALOGUE");
-            playerMove.enabled = false;
             curPlace = 0;
+            Debug.Log(curPlace);
             portraitImage.GetComponent<Image>().sprite = npcRef.dialogue[curPlace].speakerPortait;
             currentDialogue.text = npcRef.dialogue[curPlace].speakerText;
             speaker.text = npcRef.dialogue[curPlace].personSpeaking;
@@ -96,14 +113,6 @@ public class NPCDialogue : MonoBehaviour
             continueButton.SetActive(true);
         //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
             EventSystem.current.SetSelectedGameObject(continueButton);
-        }
-
-        else if(npcRef.alreadySpokenTo == true)
-        {
-            Debug.Log("You already talked to this NPC!");
-        }
-
-      
     }
 
     // //This method gets called every time the ContinueButton is clicked when players are talking with the NPCs. 
@@ -111,6 +120,7 @@ public class NPCDialogue : MonoBehaviour
     {
         //Play DialogueBox animation (eg Persona)
         //When clicking the Continue button, move to the next place in the cutsceneImage array and continue the dialogue
+        Debug.Log(curPlace);
         curPlace++;
         if (curPlace < npcRef.dialogue.Length)
         {
@@ -165,9 +175,12 @@ public class NPCDialogue : MonoBehaviour
 
             // //If NPC is Vahan or Petros, adds them to Player Party List 
             //Necessary for fighting first battle 
+
+            //Load the first battle scene 
              if(interactScript.curObject.name == "VahanNPC")
              {
                 gm.playerParty.Add(interactScript.curObject);
+                gm.LoadBattleScene("TestBattle");
              }
             // {
             //     Debug.Log("Vahan has joined the party!");

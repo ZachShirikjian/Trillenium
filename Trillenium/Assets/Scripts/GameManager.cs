@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool inCutscene = false;
 
     //REFERENCES//
+    public GameObject loadingScreen; //reference to loading screen transition
     public GameObject npcDialogue;
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
     public GameObject controlsMenu;
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-
+        loadingScreen.SetActive(false);
         //TEMPORARY SOLUJTION
         //If GameManager GameObject doesn't have an OverworldCutsceneComponent attached to it (if it has no children)
         //Disable npcDialogue, overworld cutscene takes precedent
@@ -79,6 +80,8 @@ public class GameManager : MonoBehaviour
 
         sylvia = GameObject.Find("Sylvia");
         playerParty.Add(sylvia);
+
+        //TODO: Get GameObject.FindWithTag("Player") and add it to the PlayerParty so when Vahan and Petros get added they g
 
         //For scenes with shop UI 
       //  shopRef = GameObject.Find("ChillTopicShop").GetComponent<ChillTopicShop>();
@@ -112,18 +115,27 @@ public class GameManager : MonoBehaviour
         closeMenu.action.Disable();
     }
 
-    // //LOADING SCREEN FOR THE BATTLE
-    // public void LoadingScreeen()
-    // {
+    //LOAD THE PROPER BATTLE SCENE WHEN INTERACTING WITH A BOSS
+    //PARAMETER IS SCENENAME OF THE BOSS BATTLE SCENE 
+    public void LoadBattleScene(string sceneName)
+    {
+        StartCoroutine(LoadSceneAsync(sceneName));
+    }
 
-    // }
-
-    // IEnumerator LoadSceneAsync()
-    // {
-    //     //AsyncOperation runs in the background
-    //     AsyncOperation operation = SceneManager.LoadSceneAsync("TestBattle");
-
-    // }
+    IEnumerator LoadSceneAsync(string sceneToLoad)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
+        loadingScreen.SetActive(true);
+        while(!operation.isDone)
+        {
+            yield return null;
+        }
+        if(operation.isDone)
+        {
+            loadingScreen.SetActive(false);
+            yield return new WaitForSeconds(1f); //delay before new scene loads
+        }
+    }
 
 
     //FOR FIRST AREA ONLY//
@@ -148,7 +160,6 @@ public class GameManager : MonoBehaviour
 
     public void CloseDialogue()
     {
-        Debug.Log("");
             // currentImage.sprite = cutsceneBG[curPlace];
             dialogueText.text = "";
             dialogueAnim.SetBool("EndDialogue", true);
