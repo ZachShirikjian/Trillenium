@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 
     //VARIABLES//
-    private float horizontal; //references horizontal movement
-    private float vertical; //references vertical movement
+    public float horizontal; //references horizontal movement
+    public float vertical; //references vertical movement
     private float speed = 5f; //speed of character;
     public bool isMoving = false; //set to true if input is being made
     private Vector2 input; //reference to the input vector which normalizes to prevent awkward movement diagonally

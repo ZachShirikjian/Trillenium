@@ -23655,6 +23655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3de72f51f874778a9fa6308d6d6d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   isMoving: 0
   vahan: {fileID: 0}
 --- !u!50 &1459262679
@@ -23799,6 +23801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48a9edf7fee16346b08bb3300465070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackWeapon: {fileID: 0}
+  movementScript: {fileID: 0}
   playerStats: {fileID: 0}
   anim: {fileID: 1459262681}
   meleeSpeed: 1
@@ -24234,6 +24238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3de72f51f874778a9fa6308d6d6d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   isMoving: 0
   vahan: {fileID: 0}
 --- !u!50 &1581750450

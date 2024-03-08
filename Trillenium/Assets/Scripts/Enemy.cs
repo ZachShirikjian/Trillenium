@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
    // private Animator anim;
     private TheUnitStats enemyUnitStats;
     private SpriteRenderer spriteR;
+    
 
     //REFERENCE TO ITS HEALTH BAR ABOVE ENEMY (FIX LATER?)
     //public GameObject enemyHP;

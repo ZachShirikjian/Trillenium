@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
     //VARIABLES//
 
     //Reference the player this script is on 
+   // [SerializeField] private GameObject attackWeapon;
+   // [SerializeField] private PlayerMovement movementScript;
     [SerializeField] private TheUnitStats playerStats; //Reference the player's stats for adding talent when damaging an enemy 
     [SerializeField]private Animator anim; //reference to Player's animation 
 
@@ -34,6 +36,10 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         damage = GetComponent<TheUnitStats>().attack; //ensures attack in TheUnitStats is set to damage of your attack
         playerStats = GetComponent<TheUnitStats>();
+       // movementScript = GetComponent<PlayerMovement>();
+
+        //TEMP METHOD FOR FINDING PLAYER'S ATTACK WEAPON (CHILD OF ITS PARENT)
+      //  attackWeapon = transform.Find("MeleeAttack").gameObject;
     }
 
     // Update is called once per frame
@@ -78,6 +84,8 @@ public class PlayerAttack : MonoBehaviour
     {
             Debug.Log("ATTACKING");
             attacking = true;
+            //ROTATES THE ATTACK BASED ON THE PLAYER'S CURRENT DIRECTION 
+            //attackWeapon.transform.position = new Vector3(movementScript.horizontal, movementScript.vertical, 0);
             anim.SetTrigger("Attack");
             timeUntilMelee = meleeSpeed; //Reset the cooldown 
     }
