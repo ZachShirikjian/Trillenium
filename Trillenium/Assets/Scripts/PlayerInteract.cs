@@ -43,12 +43,12 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("CAN SPEAK");
         }
 
-        else if(other.tag == "Enemy")
-        {
-            canInteract = true;
-            curObject = other.gameObject;
-            Debug.Log("CAN FIGHT");
-        }
+        // else if(other.tag == "Enemy")
+        // {
+        //     canInteract = true;
+        //     curObject = other.gameObject;
+        //     Debug.Log("CAN FIGHT");
+        // }
 
         else if(other.tag == "Door")
         {
@@ -126,26 +126,27 @@ public class PlayerInteract : MonoBehaviour
                     curObject.GetComponent<ChillTopicShop>().OpenShop();
                 }
                     
-                //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
-                if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
-                {
-                        if(gm.playerParty.Count > 1) 
-                            {
-                                if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
-                                {
-                                    Debug.Log("ENEMY BATTLE ENGAGE!");
+                //UNUSED SINCE ALL BOSS FIGHTS AUTOMATICALLY HAPPEN AFTER A CUTSCENE//
+                // //TO PREVENT BATTLE FROM STARTING BEFORE TALKING TO VAHAN, CHECK FOR LENGTH OF PARTY MEMBERS ARRAY 
+                // if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+                // {
+                //         if(gm.playerParty.Count > 1) 
+                //             {
+                //                 if(canInteract && curObject.tag == "Enemy" && gm.isPaused == false)
+                //                 {
+                //                     Debug.Log("ENEMY BATTLE ENGAGE!");
 
-                                    //gm.LoadingScreen();
-                                    SceneManager.LoadScene("TestBattle");
-                                }
-                            }
-                            else if(gm.playerParty.Count == 1)
-                            {
-                                gm.NoSoloBattle();
-                                Debug.Log("CAN'T FIGHT ALONE");
-                                currentlyInteracting = true;
-                            }
-                        }
+                //                     //gm.LoadingScreen();
+                //                     SceneManager.LoadScene("TestBattle");
+                //                 }
+                //             }
+                //             else if(gm.playerParty.Count == 1)
+                //             {
+                //                 gm.NoSoloBattle();
+                //                 Debug.Log("CAN'T FIGHT ALONE");
+                //                 currentlyInteracting = true;
+                //             }
+                //         }
             }
         }
 
