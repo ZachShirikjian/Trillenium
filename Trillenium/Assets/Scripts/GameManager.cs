@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     //VARIABLES//
     public bool isPaused = false; //set to true if the game is paused, but false by default
     public bool inCutscene = false;
+    public bool controlsMenuOpen = false; //set to true if you open controls menu in Pause menu
 
     //REFERENCES//
     public GameObject loadingScreen; //reference to loading screen transition
@@ -66,6 +67,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        isPaused = false;
+        controlsMenuOpen = false;
         loadingScreen.SetActive(false);
         //TEMPORARY SOLUJTION
         //If GameManager GameObject doesn't have an OverworldCutsceneComponent attached to it (if it has no children)
@@ -92,7 +95,7 @@ public class GameManager : MonoBehaviour
       //  }
 
         //FOR CONTROLS PANEL//
-        OnDisable(); //Disables backspace from being pressed until controls OR settings menu is open
+        OnEnable(); //Disables backspace from being pressed until controls OR settings menu is open (set to OnEnable as disabling this breaks backspace input elsewhere)
     }
 
     // Update is called once per frame
@@ -225,6 +228,7 @@ public class GameManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(closeControlsButton);
         controlsMenu.SetActive(true);
+        controlsMenuOpen = true;
         OnEnable(); //For allowing backspace to close out of menus
     }
 
@@ -234,10 +238,36 @@ public class GameManager : MonoBehaviour
     //     EventSystem.current.SetSelectedGameObject(controlsButton);
     // }
 
-        public void CloseMenu(InputAction.CallbackContext context)
+    public void CloseMenu(InputAction.CallbackContext context)
     {
-        controlsMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(controlsButton);
-        OnDisable();
+        //Ensures this only runs when menu is paused
+        if(isPaused == true)
+        {
+            //If on the PauseMenu
+            //Close the PauseMenu
+            if(controlsMenuOpen == false)
+            {
+                Debug.Log("UnpauseGame");
+                sfxSource.PlayOneShot(audioManager.uiClose);
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
+                isPaused = false;
+            }
+
+            //If on the controlsMenu (or a different menu for that matter)
+            //close out of that current menu
+            //play the cancel SFX 
+            //and set curSelectedButton to be back on main one 
+            else if(controlsMenuOpen == true)
+            {
+                controlsMenu.SetActive(false);
+                EventSystem.current.SetSelectedGameObject(controlsButton);
+                sfxSource.PlayOneShot(audioManager.uiCancel);
+                controlsMenuOpen = false;
+                //OnDisable();
+            }
+
+        }
+
     }
 }

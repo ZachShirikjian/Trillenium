@@ -3809,6 +3809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3de72f51f874778a9fa6308d6d6d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   isMoving: 0
   vahan: {fileID: 0}
 --- !u!50 &1459262679
@@ -23079,13 +23081,14 @@ MonoBehaviour:
   continueDialogue: {fileID: 8300000, guid: 3aa8b0d2335fe4adb9a73007611be73e, type: 3}
   uiHover: {fileID: 8300000, guid: 64b58e01ae0ceb34f83c49636d03550d, type: 3}
   uiClick: {fileID: 8300000, guid: 10dec784c9581604ba29e47fa46c098a, type: 3}
-  uiClose: {fileID: 8300000, guid: d10f1ed24761bec498441bf7b606d38b, type: 3}
-  buyItem: {fileID: 0}
+  uiClose: {fileID: 8300000, guid: a036c0215a9387443ace9edcc3e0896b, type: 3}
+  uiCancel: {fileID: 8300000, guid: 2905db656cd8c5342820fb67b001911d, type: 3}
+  buyItem: {fileID: 8300000, guid: ea2fcaac90f4dc7438ba0b0250e11dea, type: 3}
   battleWon: {fileID: 0}
   talentAttack: {fileID: 0}
   sylviaTalentAttack: {fileID: 0}
   battleTheme: {fileID: 0}
-  shopTheme: {fileID: 0}
+  shopTheme: {fileID: 8300000, guid: 74f2098734e07734a9944517872f09e6, type: 3}
 --- !u!82 &1924727726
 AudioSource:
   m_ObjectHideFlags: 0
