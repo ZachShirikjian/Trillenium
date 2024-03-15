@@ -80,7 +80,7 @@ public class NPCDialogue : MonoBehaviour
         //ADD DELAY TO PREVENT SPAMMING AND PREVENTING FIRST DIALOGUE FROM APPEARING
         if(npcRef.alreadySpokenTo == false)
         {
-            Invoke("StartDialogue", 0.25f);
+                        Invoke("StartDialogue", 0.25f);
                         playerMove.enabled = false;
 
         }
@@ -97,6 +97,8 @@ public class NPCDialogue : MonoBehaviour
 
     public void StartDialogue()
     {
+            //Prevents pausing during dialogue
+            gm.inCutscene = true;
             Debug.Log("BEGIN DIALOGUE");
             curPlace = 0;
             Debug.Log(curPlace);
@@ -180,8 +182,9 @@ public class NPCDialogue : MonoBehaviour
              if(interactScript.curObject.name == "VahanNPC")
              {
                 gm.playerParty.Add(interactScript.curObject);
-                gm.LoadBattleScene("TestBattle");
+                gm.LoadBattleScene("FirstBattle");
              }
+             gm.inCutscene = false;
             // {
             //     Debug.Log("Vahan has joined the party!");
             //     interactScript.curObject.transform.parent = playerParty.transform;

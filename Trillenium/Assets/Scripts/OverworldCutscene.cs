@@ -21,6 +21,8 @@ public class OverworldCutscene : MonoBehaviour
     public TextMeshProUGUI speaker;
 
     //REFERENCES//
+    //GameManager Reference//
+    private GameManager gm;
 
     //List of all the Dialogue spoken for the Cutscene. 
     public Dialogue[] dialogue;
@@ -58,6 +60,8 @@ public class OverworldCutscene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gm.inCutscene = true;
         playerMove = GameObject.Find("Sylvia").GetComponent<PlayerMovement>();
         interactScript = GameObject.Find("Sylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
         playerMove.enabled = false;
@@ -156,6 +160,8 @@ public class OverworldCutscene : MonoBehaviour
 
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
+
+            gm.inCutscene = false;
         }
     }
 
@@ -181,5 +187,7 @@ public class OverworldCutscene : MonoBehaviour
 
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
+
+            gm.inCutscene = false;
     }
 }

@@ -16,6 +16,7 @@ public class FollowScript : MonoBehaviour
     // On start, set targetPosition distance behind player (assumes player is facing down) and set self position to targetPosition.
     void Start()
     {
+        player.lastKey = -1;
         targetPosition = new Vector3(player.transform.position.x, player.transform.position.y + distance);
         self.transform.position = targetPosition;
     }

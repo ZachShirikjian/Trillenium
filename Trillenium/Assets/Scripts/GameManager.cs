@@ -23,10 +23,14 @@ public class GameManager : MonoBehaviour
     public GameObject itemsButton;
 
      //PAUSE MENU REFS//
+    public GameObject itemMenu;
+    public GameObject statsMenu;
     public GameObject journalMenu;
     public GameObject systemMenu;
     public GameObject controlsMenu;
 
+    public GameObject itemButton;
+    public GameObject statsButton;
     public GameObject journalButton;
     public GameObject systemButton;
     public GameObject controlsButton; 
@@ -236,13 +240,23 @@ public class GameManager : MonoBehaviour
     //ITEMS//
     public void OpenItems()
     {
-
+        //TODO: SET SELECTED BUTTON TO FIRST ITEM MENU OPTION SO IT CAN BE SCROLLED DOWN, USED, ETC.
+        EventSystem.current.SetSelectedGameObject(null);
+        itemMenu.SetActive(true);
+        currentMenu = itemMenu;
+        secondMenuOpen = true;
+        OnEnable();
     }
 
     //STATS//
     public void OpenStats()
     {
-
+        //TODO: SET SELECTED BUTTON TO FIRST ITEM MENU OPTION SO IT CAN BE SCROLLED DOWN, USED, ETC.
+        EventSystem.current.SetSelectedGameObject(null);
+        statsMenu.SetActive(true);
+        currentMenu = statsMenu;
+        secondMenuOpen = true;
+        OnEnable();
     }
 
     //JOURNAL//
@@ -345,12 +359,24 @@ public void OpenSystem()
                 Debug.Log("Close 2nd Menu");
                 sfxSource.PlayOneShot(audioManager.uiCancel);
 
-                if(currentMenu == systemMenu)
+                if(currentMenu == itemMenu)
                 {
+                    Debug.Log("CLOSE STATS");
+                    //TODO: Add animation of sylvia looking up after menu is closed
                     currentMenu.SetActive(false);
                     pauseMenu.SetActive(true);
-                    EventSystem.current.SetSelectedGameObject(systemButton);
-                    //disables current menu & sets current menu to one that's on screen
+                    EventSystem.current.SetSelectedGameObject(itemsButton);
+                    currentMenu = pauseMenu;
+                    secondMenuOpen = false;
+                }
+
+                else if(currentMenu == statsMenu)
+                {
+                    Debug.Log("CLOSE STATS");
+                    //TODO: Add animation of sylvia looking up after menu is closed
+                    currentMenu.SetActive(false);
+                    pauseMenu.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(statsButton);
                     currentMenu = pauseMenu;
                     secondMenuOpen = false;
                 }
@@ -362,6 +388,16 @@ public void OpenSystem()
                     currentMenu.SetActive(false);
                     pauseMenu.SetActive(true);
                     EventSystem.current.SetSelectedGameObject(journalButton);
+                    currentMenu = pauseMenu;
+                    secondMenuOpen = false;
+                }
+
+                else if(currentMenu == systemMenu)
+                {
+                    currentMenu.SetActive(false);
+                    pauseMenu.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(systemButton);
+                    //disables current menu & sets current menu to one that's on screen
                     currentMenu = pauseMenu;
                     secondMenuOpen = false;
                 }
