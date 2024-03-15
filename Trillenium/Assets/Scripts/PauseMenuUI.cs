@@ -10,8 +10,8 @@ public class PauseMenuUI : MonoBehaviour
 {
 
     //REFERENCES//
-    private TextMeshProUGUI optionText;
-    private TextMeshProUGUI optionDesc;
+    public TextMeshProUGUI optionText;
+    public TextMeshProUGUI optionDesc;
     private GameManager gm;
 
     public InputActionAsset controls;

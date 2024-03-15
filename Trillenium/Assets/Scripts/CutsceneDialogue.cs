@@ -22,13 +22,13 @@ public class CutsceneDialogue : MonoBehaviour
     //The Header for the Dialogue speaker (Zort).
     public TextMeshProUGUI speaker;
 
-    //The current Background Image which is being displayed.
+    //The current Background Image which is being displayed.(ONLY for cutscenes with backgrounds!)
     public Image currentImage; 
 
     //REFERENCES//
 
-    //List of all the Background Images used for the Cutscene.
-    public Sprite[] cutsceneBG; 
+    //List of all the Background Images used for the Cutscene (ONLY for cutscenes with backgrounds!)
+   // public Sprite[] cutsceneBG; 
 
     //List of all the Dialogue spoken for the Cutscene. 
     public Dialogue[] dialogue;
@@ -64,7 +64,7 @@ public class CutsceneDialogue : MonoBehaviour
     void Start()
     {
         curPlace = 0;
-        currentImage.sprite = cutsceneBG[0];
+       // currentImage.sprite = cutsceneBG[0];
         portraitImage.GetComponent<Image>().sprite = dialogue[curPlace].speakerPortait;
         currentDialogue.text = dialogue[curPlace].speakerText;
         speaker.text = dialogue[curPlace].personSpeaking;
@@ -111,9 +111,9 @@ public class CutsceneDialogue : MonoBehaviour
         //Play DialogueBox animation (eg Persona)
         //When clicking the Continue button, move to the next place in the cutsceneImage array and continue the dialogue
         curPlace++;
-        if(curPlace < cutsceneBG.Length)
+        if(curPlace < dialogue.Length)
         {
-            currentImage.sprite = cutsceneBG[curPlace];
+           // currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = dialogue[curPlace].speakerText;
             speaker.text = dialogue[curPlace].personSpeaking;
             portraitImage.GetComponent<Image>().sprite = dialogue[curPlace].speakerPortait;
@@ -140,7 +140,7 @@ public class CutsceneDialogue : MonoBehaviour
 
         //Once you reach the 2nd to last point in the cutscene, disable the DialogueBox and Speaker
         //To indicate that the Cutscene has ended.
-        else if(curPlace >= cutsceneBG.Length)
+        else if(curPlace >= dialogue.Length)
         {
             dialogueBox.SetActive(false);
             dialogueSource.Stop();

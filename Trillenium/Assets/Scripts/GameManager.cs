@@ -13,18 +13,27 @@ public class GameManager : MonoBehaviour
     //VARIABLES//
     public bool isPaused = false; //set to true if the game is paused, but false by default
     public bool inCutscene = false;
-    public bool controlsMenuOpen = false; //set to true if you open controls menu in Pause menu
+    public bool secondMenuOpen = false; //set to true if you open any of the secondary menus (Item, Journal, System, etc.)
+    public bool thirdMenuOpen = false; //only set to true if you open up a third menu (Controls, Settings, etc)
 
     //REFERENCES//
     public GameObject loadingScreen; //reference to loading screen transition
     public GameObject npcDialogue;
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
     public GameObject itemsButton;
+
+     //PAUSE MENU REFS//
+    public GameObject journalMenu;
+    public GameObject systemMenu;
     public GameObject controlsMenu;
+
+    public GameObject journalButton;
+    public GameObject systemButton;
     public GameObject controlsButton; 
     public GameObject closeControlsButton;
+    //Reference to current menu being displayed//
+    public GameObject currentMenu;
 
-    public GameObject systemMenu;
 
     public List<GameObject> playerParty = new List<GameObject>();
     private GameObject sylvia;
@@ -72,10 +81,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
+        audioManager = sfxSource.GetComponent<AudioManager>();
         isPaused = false;
         pauseUI = GameObject.Find("Canvas").GetComponent<PauseMenuUI>();
         pauseUI.enabled = false;
-        controlsMenuOpen = false;
+        secondMenuOpen = false;
+        thirdMenuOpen = false;
         loadingScreen.SetActive(false);
         //TEMPORARY SOLUJTION
         //If GameManager GameObject doesn't have an OverworldCutsceneComponent attached to it (if it has no children)
@@ -88,6 +100,7 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
         systemMenu.SetActive(false);
+        journalMenu.SetActive(false);
 
         sylvia = GameObject.Find("Sylvia");
         playerParty.Add(sylvia);
@@ -197,6 +210,7 @@ public class GameManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(itemsButton);
             Debug.Log("PauseGame");
             pauseMenu.SetActive(true);
+            currentMenu = pauseMenu;
             Time.timeScale = 0f;
             isPaused = true;
             pauseUI.enabled = true;
@@ -214,28 +228,56 @@ public class GameManager : MonoBehaviour
 
     //PAUSE MENU UI BUTTONS//
 
-    // //RESUME GAME
-    //     public void ResumeGame()
-    //     {
-    //         isPaused = false;
-    //         pauseMenu.SetActive(false);
-    //         Time.timeScale = 1f;
-    //     }
+    //When you select an option in the Pause Menu
+    //Set currentMenu to the menu that's displayed on screen
+    //When pressing backspace, you disable the currentMenu that's being played
+    //To close back to the menu you're currently on 
+
+    //ITEMS//
+    public void OpenItems()
+    {
+
+    }
+
+    //STATS//
+    public void OpenStats()
+    {
+
+    }
+
+    //JOURNAL//
+    public void OpenJournal()
+    {
+        //TODO: SET SELECTED BUTTON TO NAVIGATE BETWEEN DIFFERENT JOURNAL ENTRY DATES
+        EventSystem.current.SetSelectedGameObject(null);
+        journalMenu.SetActive(true);
+        currentMenu = journalMenu;
+        secondMenuOpen = true;
+        OnEnable();
+    }
 
 //OPENS SYSTEM MENU
 //INCLUDES: CONTROLS, SETTINGS, AND RETURN TO TITLE
 public void OpenSystem()
 {
     systemMenu.SetActive(true);
+    currentMenu = systemMenu;
     EventSystem.current.SetSelectedGameObject(controlsButton);
+    secondMenuOpen = true;
+    OnEnable();
 
 }
 //CONTROLS PANEL, SAME AS THE ONE IN THE TITLE SCREEN TO SHOW YOU CONTROLS!!!//
     public void OpenControls()
     {
-        EventSystem.current.SetSelectedGameObject(closeControlsButton);
+        //TODO: CHANGE THIS TO SELECT KEYBOARD BUTTON, SWITCH BETWEEN KEYBOARD AND GAMEPAD INPUT
+       // EventSystem.current.SetSelectedGameObject(closeControlsButton);
+               EventSystem.current.SetSelectedGameObject(null);
+
+        currentMenu = controlsMenu;
         controlsMenu.SetActive(true);
-        controlsMenuOpen = true;
+        systemMenu.SetActive(false);
+        thirdMenuOpen = true;
         OnEnable(); //For allowing backspace to close out of menus
     }
 
@@ -257,9 +299,8 @@ public void OpenSystem()
         //Ensures this only runs when menu is paused
         if(isPaused == true)
         {
-            //If on the PauseMenu
-            //Close the PauseMenu
-            if(controlsMenuOpen == false)
+            //If you're on the main Pause menu (not in Controls, Items, System, etc.)
+            if(secondMenuOpen == false && thirdMenuOpen == false)
             {
                 Debug.Log("UnpauseGame");
                 sfxSource.PlayOneShot(audioManager.uiClose);
@@ -268,19 +309,68 @@ public void OpenSystem()
                 isPaused = false;
             }
 
-            //If on the controlsMenu (or a different menu for that matter)
-            //close out of that current menu
-            //play the cancel SFX 
-            //and set curSelectedButton to be back on main one 
-            else if(controlsMenuOpen == true)
+            //If closing out of 3rd menu (controls, settings, etc)
+            else if(thirdMenuOpen == true)
             {
-                controlsMenu.SetActive(false);
-                EventSystem.current.SetSelectedGameObject(controlsButton);
+                Debug.Log("Close 3rd Menu");
                 sfxSource.PlayOneShot(audioManager.uiCancel);
-                controlsMenuOpen = false;
-                //OnDisable();
+
+                //Brings you back to correct 2nd menu & makes selected button controls button
+                if(currentMenu == controlsMenu)
+                {
+                    Debug.Log("CLOSE CONTROLS");
+                     //disables current menu & sets current menu to one that's on screen
+                     currentMenu.SetActive(false);
+                     systemMenu.SetActive(true);
+                     EventSystem.current.SetSelectedGameObject(controlsButton);
+                     currentMenu = systemMenu;
+                     thirdMenuOpen = false;
+                }
+
+               // else if(currentMenu == settingsMenu)
+              //  {
+            //
+            //    }
+
+                //ENSURES TO UPDATE THE PAUSE MENU UI BASED ON THE CURRENT BUTTON SELECTED
+                pauseUI.optionText.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonName;
+                pauseUI.optionDesc.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonDescription;
             }
 
+            //If closing out of 2nd Menu (Items, Journal, System, etc)
+            //Disable the 2nd menu and 
+            //Return to Main Menu
+            else if(secondMenuOpen == true)
+            {
+                Debug.Log("Close 2nd Menu");
+                sfxSource.PlayOneShot(audioManager.uiCancel);
+
+                if(currentMenu == systemMenu)
+                {
+                    currentMenu.SetActive(false);
+                    pauseMenu.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(systemButton);
+                    //disables current menu & sets current menu to one that's on screen
+                    currentMenu = pauseMenu;
+                    secondMenuOpen = false;
+                }
+
+                else if(currentMenu == journalMenu)
+                {
+                    Debug.Log("CLOSE JOURNAL");
+                    //TODO: Add animation of sylvia closing her book after the menu is being closed
+                    currentMenu.SetActive(false);
+                    pauseMenu.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(journalButton);
+                    currentMenu = pauseMenu;
+                    secondMenuOpen = false;
+                }
+
+                 //ENSURES TO UPDATE THE PAUSE MENU UI BASED ON THE CURRENT BUTTON SELECTED
+                pauseUI.optionText.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonName;
+                pauseUI.optionDesc.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonDescription;
+            }
+            
         }
 
     }

@@ -10,6 +10,7 @@ public class TitleScreen : MonoBehaviour
     //VARIABLES//
 
     //REFERENCES//
+    public GameObject menuButtons;
     public GameObject newGameButton;
     public GameObject controlsButton;
   //  public GameObject closeControls;
@@ -24,7 +25,11 @@ public class TitleScreen : MonoBehaviour
 
     void Start()
     {
-        //FIX THIS LATER//
+       // menuButtons.SetActive(false);
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
+        audioManager = sfxSource.GetComponent<AudioManager>();
+
+        //TO DO: PRESS ANY BUTTON BEFORE THE MENU BUTTONS APPEAR//
         
         //Makes first selected button NEWGAME by default
         EventSystem.current.SetSelectedGameObject(newGameButton);

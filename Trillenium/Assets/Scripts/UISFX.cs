@@ -14,6 +14,11 @@ public class UISFX : MonoBehaviour
     public AudioManager audioManager;
 
 
+    void Start()
+    {
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
+        audioManager = sfxSource.GetComponent<AudioManager>();
+    }
     //Called on PointerEnter EventTrigger
     //Play UIHoverSFX when hovering over a UI Button in a Menu.
 
