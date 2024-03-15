@@ -19,10 +19,12 @@ public class GameManager : MonoBehaviour
     public GameObject loadingScreen; //reference to loading screen transition
     public GameObject npcDialogue;
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
+    public GameObject itemsButton;
     public GameObject controlsMenu;
     public GameObject controlsButton; 
     public GameObject closeControlsButton;
-    public GameObject resumeButton;
+
+    public GameObject systemMenu;
 
     public List<GameObject> playerParty = new List<GameObject>();
     private GameObject sylvia;
@@ -31,6 +33,9 @@ public class GameManager : MonoBehaviour
     public InputActionReference closeMenu;
 
     private ChillTopicShop shopRef;
+
+    //Reference to the PauseMenuUI script, which gets enabled when the Pause Menu is active
+    public PauseMenuUI pauseUI;
 
     //DIALOGUE REFERENCE//
     
@@ -68,6 +73,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {   
         isPaused = false;
+        pauseUI = GameObject.Find("Canvas").GetComponent<PauseMenuUI>();
+        pauseUI.enabled = false;
         controlsMenuOpen = false;
         loadingScreen.SetActive(false);
         //TEMPORARY SOLUJTION
@@ -80,6 +87,7 @@ public class GameManager : MonoBehaviour
 
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
+        systemMenu.SetActive(false);
 
         sylvia = GameObject.Find("Sylvia");
         playerParty.Add(sylvia);
@@ -186,43 +194,42 @@ public class GameManager : MonoBehaviour
     {
         if(isPaused == false && inCutscene == false)
         {
-            EventSystem.current.SetSelectedGameObject(resumeButton);
+            EventSystem.current.SetSelectedGameObject(itemsButton);
             Debug.Log("PauseGame");
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
+            pauseUI.enabled = true;
         }
 
         else if(isPaused == true)
         {
             Debug.Log("UnpauseGame");
             pauseMenu.SetActive(false);
+            pauseUI.enabled = false;
             Time.timeScale = 1f;
             isPaused = false;
         }
     }
-
 
     //PAUSE MENU UI BUTTONS//
 
-    //RESUME GAME
-        public void ResumeGame()
-        {
-            isPaused = false;
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
-        }
+    // //RESUME GAME
+    //     public void ResumeGame()
+    //     {
+    //         isPaused = false;
+    //         pauseMenu.SetActive(false);
+    //         Time.timeScale = 1f;
+    //     }
 
+//OPENS SYSTEM MENU
+//INCLUDES: CONTROLS, SETTINGS, AND RETURN TO TITLE
+public void OpenSystem()
+{
+    systemMenu.SetActive(true);
+    EventSystem.current.SetSelectedGameObject(controlsButton);
 
-    //QuitGame
-
-    //TODO: Replace this with "Are You Sure You Want to Quit? All Unsaved Progress will be Lost." text
-    public void ReturnToTitle()
-    {
-        SceneManager.LoadScene("TitleScreen");
-    }
-
-
+}
 //CONTROLS PANEL, SAME AS THE ONE IN THE TITLE SCREEN TO SHOW YOU CONTROLS!!!//
     public void OpenControls()
     {
@@ -237,6 +244,13 @@ public class GameManager : MonoBehaviour
     //     controlsMenu.SetActive(false);
     //     EventSystem.current.SetSelectedGameObject(controlsButton);
     // }
+
+    //TODO: Replace this with "Are You Sure You Want to Quit? All Unsaved Progress will be Lost." text
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
 
     public void CloseMenu(InputAction.CallbackContext context)
     {
