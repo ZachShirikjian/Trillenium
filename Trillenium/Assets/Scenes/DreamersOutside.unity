@@ -2756,7 +2756,7 @@ GameObject:
   - component: {fileID: 1311058985}
   - component: {fileID: 1311058984}
   - component: {fileID: 1311058982}
-  - component: {fileID: 1311058981}
+  - component: {fileID: 1311058986}
   m_Layer: 0
   m_Name: Vahan
   m_TagString: Player
@@ -2773,26 +2773,12 @@ Transform:
   m_GameObject: {fileID: 1311058979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -2.99, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2055077531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1311058981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311058979}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daa45ff536ae0554a9455259dee33891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sylvia: {fileID: 1459262679}
-  numFrames: 10
 --- !u!95 &1311058982
 Animator:
   serializedVersion: 5
@@ -2821,7 +2807,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311058979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2911,6 +2897,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1311058986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311058979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b699c6e4979114692aeec36c9d9c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1459262678}
+  self: {fileID: 1311058979}
+  rate: 2
+  distance: 1
 --- !u!1 &1311290136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7314172099697414044, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
@@ -3488,6 +3490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3de72f51f874778a9fa6308d6d6d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastKey: 0
   horizontal: 0
   vertical: 0
   isMoving: 0

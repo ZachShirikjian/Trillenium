@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     //VARIABLES//
+    public int lastKey; // Keeps track of the way the player is facing. Directions are numbered 0-3 and are based on clockwise rotation (up, right, down, left) for easier readability.
     public float horizontal; //references horizontal movement
     public float vertical; //references vertical movement
     private float speed = 5f; //speed of character;
@@ -28,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>(); 
         anim = GetComponent<Animator>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        lastKey = -1;
     }
 
     // Update is called once per frame
@@ -65,6 +68,31 @@ public class PlayerMovement : MonoBehaviour
 
         input = new Vector2(horizontal,vertical);
         input.Normalize(); //normalizes the input so it doesn't move awkwardly in diagonal directions 
+
+        if(horizontal >= 1 && vertical == 0)
+        {
+            lastKey = 1;
+        }
+
+        else if(horizontal <= -1 && vertical == 0)
+        {
+            lastKey = 3;
+        }
+
+        else if(horizontal == 0 && vertical >= 1)
+        {
+            lastKey = 0;
+        }
+
+        else if(horizontal == 0 && vertical <= -1)
+        {
+            lastKey = 2;
+        }
+
+        else if(horizontal == 0 && vertical == 0)
+        {
+            lastKey = -1;
+        }
     
         //SET POSITION OF VAHAN TO BE BASED ON INPUT VALUES OF PLAYER CHARACTER
         //vahan.transform.position = new Vector2(horizontal, vertical);
