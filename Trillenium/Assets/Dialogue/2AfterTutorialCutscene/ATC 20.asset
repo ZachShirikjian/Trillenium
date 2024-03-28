@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 20
   m_EditorClassIdentifier: 
-  speakerText: Well, it cured people who overdosed on zytorum. So if EMI is powered
+  speakerText: Well, it cured people who overdosed on zytorum. So if AVA is powered
     by zytorum like everything else in the city then the Paintblade could shut it
     down before launch.
   personSpeaking: Vahan

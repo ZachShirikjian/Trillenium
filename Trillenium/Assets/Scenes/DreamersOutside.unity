@@ -13016,13 +13016,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865241272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d946f477547abb4ba6cda3baa567d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionText: {fileID: 0}
-  optionDesc: {fileID: 0}
+  optionText: {fileID: 7260168785981163665}
+  optionDesc: {fileID: 8596504911506386807}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   navigate: {fileID: -575104532007817599, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &1878962962
@@ -17230,7 +17230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &8083055040440842436
 CanvasRenderer:
   m_ObjectHideFlags: 0

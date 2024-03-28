@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ATC 25
   m_EditorClassIdentifier: 
   speakerText: "Let\u2019s take the next skytrain ride there and see if we can find
-    any clues. I\u2019m sure EMI\u2019s development is connected to the Paintblade
+    any clues. I\u2019m sure AVA\u2019s development is connected to the Paintblade
     somehow.\r\r"
   personSpeaking: Sylvia
   newPersonSpeaking: 1

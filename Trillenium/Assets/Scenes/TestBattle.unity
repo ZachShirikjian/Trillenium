@@ -8857,6 +8857,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 893931402}
     m_Modifications:
+    - target: {fileID: 630065067617929384, guid: 83b1bf6f43a14f94994c786ad6e39afc, type: 3}
+      propertyPath: m_text
+      value: AP
+      objectReference: {fileID: 0}
     - target: {fileID: 3018477777941653042, guid: 83b1bf6f43a14f94994c786ad6e39afc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9241,6 +9245,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 893931402}
     m_Modifications:
+    - target: {fileID: 215249543376942442, guid: 04f2a1831dbea4d4083d4729356569f2, type: 3}
+      propertyPath: m_text
+      value: AP
+      objectReference: {fileID: 0}
     - target: {fileID: 1431255622619987085, guid: 04f2a1831dbea4d4083d4729356569f2, type: 3}
       propertyPath: m_Name
       value: VahanInfo
