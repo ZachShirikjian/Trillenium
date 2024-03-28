@@ -477,7 +477,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "That concludes the Playable Demo!\nFeel free to leave a comment on the
     TRILLENIUM Itch.io page with your feedback. \n\nThe full version of TRILLENIUM
-    will release\non Itch.io and Steam in Winter 2024/Early 2025.\n\nThanks For Playing!"
+    will release\non Itch.io and Steam in Winter 2024/2025.\n\nThanks For Playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
   m_sharedMaterial: {fileID: 8456391783536491035, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
