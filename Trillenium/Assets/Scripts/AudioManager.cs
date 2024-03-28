@@ -14,10 +14,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip uiCancel;
     public AudioClip buyItem;
     public AudioClip battleWon;
-
-    //MUSIC REFS//
     public AudioClip talentAttack;
     public AudioClip sylviaTalentAttack;
+    public AudioClip playerAttack;
+   // public AudioClip vahanAttack;
+    public AudioClip enemyAttack;
+
+    //MUSIC REFS//
     public AudioClip battleTheme;
     public AudioClip shopTheme;
 }

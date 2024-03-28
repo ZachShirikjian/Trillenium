@@ -10,6 +10,10 @@ public class PlayerAction : MonoBehaviour
     private TheUnitStats unitStats;
     private SpriteRenderer spriteR;
     private TalentScript talentScript;
+
+    //AUDIO REFERENCES//
+    public AudioManager audioManager;
+    public AudioSource sfxSource;
     
     //USE THIS FOR ADDING DAMAGED PORTRAITS
     public Image battlePortrait;
@@ -21,6 +25,9 @@ public class PlayerAction : MonoBehaviour
         unitStats = GetComponent<TheUnitStats>();
         spriteR = GetComponent<SpriteRenderer>(); //for now, when player takes damage, make their sprite red for a second
         talentScript = GetComponent<TalentScript>(); //reference to talent script associated with this player's GameObject, perform different methods depending on character used
+    
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
+        audioManager = sfxSource.GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -41,10 +48,22 @@ public class PlayerAction : MonoBehaviour
     public void Attack(EnemyAttack targetChar)
     {
         Vector3 attackDir = (targetChar.GetPosition() - GetPosition()).normalized;
+
+        sfxSource.PlayOneShot(audioManager.playerAttack);
         Debug.Log("ATTACKING ENEMY");
-        targetChar.TakeDamage(unitStats.attack);
-        DamagePopup.Create(targetChar.GetPosition(),unitStats.attack);  
+        
+        StopAllCoroutines();
+        StartCoroutine(DamageEnemy(targetChar));
     }
+
+        //TODO: Adjust based on length of player char's animation (damage enemy after animation ends)
+    public IEnumerator DamageEnemy(EnemyAttack enemyToDamage)
+    {
+        yield return new WaitForSeconds(0.5f);
+        enemyToDamage.TakeDamage(unitStats.attack);
+        DamagePopup.Create(enemyToDamage.GetPosition(), unitStats.attack);  
+    }
+
 
     //Performs a Talent Attack minigame (different for each character)
     public void TalentAttack(EnemyAttack targetChar)

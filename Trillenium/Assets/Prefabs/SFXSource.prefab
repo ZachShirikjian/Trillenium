@@ -148,8 +148,10 @@ MonoBehaviour:
   uiClose: {fileID: 8300000, guid: a036c0215a9387443ace9edcc3e0896b, type: 3}
   uiCancel: {fileID: 8300000, guid: f46ecee35d62c8d4ba71125137c554bf, type: 3}
   buyItem: {fileID: 8300000, guid: ea2fcaac90f4dc7438ba0b0250e11dea, type: 3}
-  battleWon: {fileID: 0}
+  battleWon: {fileID: 8300000, guid: 1857e2c3c334ebc4184afbd11a12c414, type: 3}
   talentAttack: {fileID: 0}
   sylviaTalentAttack: {fileID: 0}
+  playerAttack: {fileID: 8300000, guid: 8ad70f8961cc6534a8ca04e48845e7e2, type: 3}
+  enemyAttack: {fileID: 8300000, guid: d792ad7208e06af469c3a031c2cbcdce, type: 3}
   battleTheme: {fileID: 8300000, guid: cf08dbec6222c6d428081e6ea94b79a2, type: 3}
   shopTheme: {fileID: 8300000, guid: 43d4889378e06d7448c6d21c6a57000d, type: 3}

@@ -14,6 +14,10 @@ public class EnemyAttack : MonoBehaviour
     private TheUnitStats enemyUnitStats;
     private SpriteRenderer spriteR;
 
+    //AUDIO REFERENCES//
+    public AudioManager audioManager;
+    public AudioSource sfxSource;
+
     //REFERENCE TO ITS HEALTH BAR ABOVE ENEMY (FIX LATER?)
     public GameObject enemyHP;
 
@@ -27,6 +31,9 @@ public class EnemyAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         enemyUnitStats = GetComponent<TheUnitStats>();
         spriteR = GetComponent<SpriteRenderer>();
+
+        sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
+        audioManager = sfxSource.GetComponent<AudioManager>();
 
         enemyHP.SetActive(true);
         enemySelection.SetActive(true);
@@ -57,12 +64,13 @@ public class EnemyAttack : MonoBehaviour
 
         //TEMP METHOD: DAMAGE PLAYER AFTER 0.5 SECONDS (AFTER ANIMATION IS DONE PLAYING)
         Invoke("DamagePlayer", 1f);
-        Invoke("StartNextTurn", 1f);
+        Invoke("StartNextTurn", 1.5f);
     }
 
     //TEMP METHOD TO DAMAGE PLAYER AFTER ANIMATION FINISHES
     public void DamagePlayer()
     {
+        sfxSource.PlayOneShot(audioManager.enemyAttack);
         bm.partyMembers[randomIndex].GetComponent<PlayerAction>().TakeDamage(30);
         DamagePopup.Create(bm.partyMembers[randomIndex].transform.position, 30);  
     }
