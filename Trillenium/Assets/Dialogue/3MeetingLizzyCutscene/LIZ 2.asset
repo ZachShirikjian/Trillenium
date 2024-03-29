@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LIZ 2
   m_EditorClassIdentifier: 
   speakerText: '*sighs* Finally, customers. Yo! Over here, come check out the goods! '
-  personSpeaking: ???
+  personSpeaking: Goth Clerk
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 9c3291546575fbe4da0482d5c28b22e7, type: 3}

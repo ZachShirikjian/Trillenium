@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 0
   m_EditorClassIdentifier: 
-  speakerText: "*pant* Damnit now we\u2019re BOTH wanted by the XTron force! What\u2019re
+  speakerText: "*pant* Damnit now we\u2019re BOTH wanted by the XTrons! What are 
     we gonna do? "
   personSpeaking: Vahan
   newPersonSpeaking: 1

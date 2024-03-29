@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: LIZ 20
   m_EditorClassIdentifier: 
-  speakerText: "\u2026.SHUT UP! That doesn\u2019t matter! Oh yeah, I forgot. Name\u2019s
-    Lizzy."
+  speakerText: "\u2026.SHUT UP! That doesn\u2019t matter! "
   personSpeaking: Lizzy
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: a1cea2b75c197cf4f8cdad5d2d65e8eb, type: 3}

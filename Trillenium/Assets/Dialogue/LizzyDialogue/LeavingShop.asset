@@ -16,4 +16,4 @@ MonoBehaviour:
   personSpeaking: 
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 45792391e05a546458c414404a527d87, type: 3}

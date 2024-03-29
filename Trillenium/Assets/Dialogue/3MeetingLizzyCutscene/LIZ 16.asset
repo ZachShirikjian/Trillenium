@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: LIZ 16
   m_EditorClassIdentifier: 
-  speakerText: "Khalidi reuploaded my post on XZ, and used AI to mimic my voice and
-    make botphobic slurs about Nami! Like, what the hell, I wasn\u2019t trying to
-    be offensive."
-  personSpeaking: ???
+  speakerText: 'Khalidi reuploaded my post on XZ, and used AI to mimic my voice and
+    make botphobic slurs about Nami! '
+  personSpeaking: Goth Clerk
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 041388f93547fad4cb5da06348d99d0b, type: 3}

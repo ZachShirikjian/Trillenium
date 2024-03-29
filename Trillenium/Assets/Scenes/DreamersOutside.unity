@@ -1291,7 +1291,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4e211c03db2cc9949829039756bee3b6, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.35
   m_Pitch: 1
@@ -2475,11 +2475,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64ad802b8199d0547bad68a2023f5a42, type: 2}
   - {fileID: 11400000, guid: 0888af68b16af984f9f3cba1cc573fa9, type: 2}
   - {fileID: 11400000, guid: 4ade13515b51cb542b761fb8f8100d68, type: 2}
+  - {fileID: 11400000, guid: 6c1533f263cc0dd40b3073dc219e486f, type: 2}
   - {fileID: 11400000, guid: 605725c691234a14abc6660c3f03bc2d, type: 2}
+  - {fileID: 11400000, guid: b77825366a56add45bf9673b5b9a4e4e, type: 2}
   - {fileID: 11400000, guid: fb9468239f0288a4bba4f68c591e7c63, type: 2}
   - {fileID: 11400000, guid: a41c3e25597c22f43b773565b305130a, type: 2}
+  - {fileID: 11400000, guid: d6b05c99812f8634ca7a828e30eb6d00, type: 2}
   - {fileID: 11400000, guid: 7f198169f02d3064ba5145f4ea3227f1, type: 2}
   - {fileID: 11400000, guid: 2749927a1718531499b1625842f72c16, type: 2}
+  - {fileID: 11400000, guid: 260a1a14962d48345a951791d128adb7, type: 2}
   - {fileID: 11400000, guid: 5ceebc1250425c94da670eff32967571, type: 2}
   - {fileID: 11400000, guid: edcaaea6be686e3499acc65cc15785d1, type: 2}
   - {fileID: 11400000, guid: 43f84369d9c8d5849ae69a9f032a94fb, type: 2}
@@ -2487,6 +2491,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c8978870ca26eec45aa28f2f5cb8f476, type: 2}
   - {fileID: 11400000, guid: df75304bc62fb0b47adbb85e5517f6a0, type: 2}
   - {fileID: 11400000, guid: 235f902244d4f5048beb6bbf3db8f30f, type: 2}
+  - {fileID: 11400000, guid: 1b141a17ee28d804dba8049ffbf27a76, type: 2}
   - {fileID: 11400000, guid: 1b141a17ee28d804dba8049ffbf27a76, type: 2}
   portraitImage: {fileID: 2127349216}
   dialogueAnim: {fileID: 1323940107}
@@ -3513,9 +3518,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2649143261479695332, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_text
-      value: "So in my last short, I was like \u201CNami\u2019s a fake, she doesn\u2019t
-        have real skin and curves like me!\u201D And you wanna know what happened?
-        \r\n"
+      value: "Yeah, those bitches are TOUGH. You\u2019re a\u2026painter and sculptor
+        right? I should have what you need, take a look. "
       objectReference: {fileID: 0}
     - target: {fileID: 5797064242757502536, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_Name
@@ -4546,7 +4550,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -17389,7 +17393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &8083055040440842436
 CanvasRenderer:
   m_ObjectHideFlags: 0

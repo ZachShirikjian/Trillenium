@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LIZ 15
   m_EditorClassIdentifier: 
   speakerText: "So in my last short, I was like \u201CNami\u2019s a fake, she doesn\u2019t
-    have real skin and curves like me!\u201D And you wanna know what happened? \r\n"
-  personSpeaking: ???
+    have real skin and curves like me!\u201D"
+  personSpeaking: Goth Clerk
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 616002920b53fef4d906a77880f8c344, type: 3}

@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: LIZ 18
   m_EditorClassIdentifier: 
   speakerText: "He\u2019s putting us beauty stars out of business! He claims AI girlfriends
-    are the future. But perfection is boring right? And they don\u2019t have the
-    same\u2026feel to them as we do."
-  personSpeaking: ???
+    are the future. "
+  personSpeaking: Goth Clerk
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 958d1ce0d1f2c6247a820dad04d2df70, type: 3}

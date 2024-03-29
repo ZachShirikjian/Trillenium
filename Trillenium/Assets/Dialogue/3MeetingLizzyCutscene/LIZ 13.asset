@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: Thought so too. Used to be a beauty star, hell, the best in Xubos.
     Until that damn AI bimbo Nami showed up.
-  personSpeaking: ???
+  personSpeaking: Goth Clerk
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 708d1cfc00ce7a449a1c08c5f525cc7a, type: 3}

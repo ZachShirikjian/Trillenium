@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestMovement.unity
     guid: 23ba17a1f4059411f8e08a1fb62a5a87
   - enabled: 1
-    path: Assets/Scenes/TestBattle.unity
+    path: Assets/Scenes/FirstBattle.unity
     guid: 0ee0dfefe85214d1495aedd107c5fb95
   - enabled: 1
     path: Assets/Scenes/OwlsNestCutscene.unity
