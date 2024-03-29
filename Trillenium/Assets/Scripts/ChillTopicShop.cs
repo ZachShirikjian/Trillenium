@@ -72,6 +72,7 @@ public class ChillTopicShop : MonoBehaviour
     //  buyItem.action.performed += BuyItem;
      // cancelPurchase.action.performed += CancelPurchase;
 
+      Debug.Log("Enable");
       navigate.action.performed -= UpdateSelectedItem;
       //closeShop.action.performed -= CloseShop;
 
@@ -83,6 +84,7 @@ public class ChillTopicShop : MonoBehaviour
       //cancelPurchase.action.performed -= CancelPurchase;
 
       //This is enabled during normal menu selection, NOT when an item is selected to be purchased
+      Debug.Log("Disable");
       navigate.action.performed += UpdateSelectedItem;
       closeShop.action.performed += CloseShop;
     }
