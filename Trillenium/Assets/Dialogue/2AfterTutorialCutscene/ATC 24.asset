@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 24
   m_EditorClassIdentifier: 
-  speakerText: "At the DREAMERS Factory, where my Dad and Brigala used to work. Khalidi
-    shut it down but it hasn\u2019t been demolished yet. \r"
+  speakerText: "At the DREAMERS Technologies Factory, where my Dad and Brigala used
+    to work.\r"
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
-  audioClip: {fileID: 8300000, guid: 1d4477b4c8225f7469de67f7a8e55696, type: 3}
+  audioClip: {fileID: 8300000, guid: 8f244ac324beccd40b2bd120883f2b60, type: 3}

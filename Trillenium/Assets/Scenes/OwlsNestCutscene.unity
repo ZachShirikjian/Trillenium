@@ -2373,7 +2373,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2845,6 +2845,10 @@ PrefabInstance:
     - target: {fileID: 4820491472730088265, guid: 5c71e1351193ebd4c9a1d1437e785c54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789662927920193204, guid: 5c71e1351193ebd4c9a1d1437e785c54, type: 3}
+      propertyPath: m_text
+      value: "I\u2019m sorry, please hear me out! "
       objectReference: {fileID: 0}
     - target: {fileID: 6789662927920193204, guid: 5c71e1351193ebd4c9a1d1437e785c54, type: 3}
       propertyPath: m_fontColor.b
@@ -5105,29 +5109,36 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb7a862cc91e2a84e8e6cb1cd681236d, type: 2}
   - {fileID: 11400000, guid: 79bd72270c1651e40bd241132007cf19, type: 2}
   - {fileID: 11400000, guid: 8d41b6b53f027f54085cc7d1b2ae399b, type: 2}
+  - {fileID: 11400000, guid: d910ecde90acf0b47a8a48c7b27a61e2, type: 2}
   - {fileID: 11400000, guid: 47b523a1ab6597d42af8709079745f22, type: 2}
   - {fileID: 11400000, guid: 42f1789874888234e976e7bf3b4a04ad, type: 2}
+  - {fileID: 11400000, guid: f0375932dd5bee040b953e51179a016a, type: 2}
   - {fileID: 11400000, guid: 87c434aac207c4740b2e961cb6d5ddeb, type: 2}
   - {fileID: 11400000, guid: 92a9045a965728e4380373bcae595aa0, type: 2}
   - {fileID: 11400000, guid: 848b1994a9bbb954281bcdbdae5fcb4e, type: 2}
   - {fileID: 11400000, guid: 45dce35283c7be04c831607809922a5b, type: 2}
   - {fileID: 11400000, guid: 5a0f3d7f135df0d4c8fb0f2126a3a824, type: 2}
   - {fileID: 11400000, guid: 5215c5106673fce419a98633f2aa35c7, type: 2}
+  - {fileID: 11400000, guid: 55762bd25e4b0cd48ae5563b3464d720, type: 2}
   - {fileID: 11400000, guid: 681c3a4faaa38c94ab483dc43f9f719e, type: 2}
   - {fileID: 11400000, guid: d99f93e58f007ca40bcf9c8ee229ba2e, type: 2}
   - {fileID: 11400000, guid: ce69ce0c9ea4e3e4599573c7b01b87d4, type: 2}
   - {fileID: 11400000, guid: a484fc36188139842b791621c058a530, type: 2}
-  - {fileID: 11400000, guid: f53ab4cd14bb1b24a8efb46eae62b429, type: 2}
+  - {fileID: 11400000, guid: 267224e27fbbbcc4a80fea935d5586ac, type: 2}
   - {fileID: 11400000, guid: 0ba21d00b34d72d42b762d44b0b9c1d7, type: 2}
+  - {fileID: 11400000, guid: 14ee8194bf08c914db91a769a44d5f02, type: 2}
   - {fileID: 11400000, guid: 8398ab3f40d433142907e20325e88709, type: 2}
   - {fileID: 11400000, guid: 64849da3d2eb0b8428b740b23ca4d7f6, type: 2}
   - {fileID: 11400000, guid: 6bee1484dea122c40b2ff378ee414772, type: 2}
   - {fileID: 11400000, guid: fe39709c8c9d8b8469ccf107fa47b834, type: 2}
+  - {fileID: 11400000, guid: a8568b2c0b273c5458685f549f1abced, type: 2}
   - {fileID: 11400000, guid: 2b198d89fbd9a0249bf3359c15f6b9ca, type: 2}
   - {fileID: 11400000, guid: b9637ad25f0e0d34fa9b41546b027dfb, type: 2}
   - {fileID: 11400000, guid: 0ef06f40838346d41a6cf4102a94620a, type: 2}
   - {fileID: 11400000, guid: 195fa11f4541b444e81d18d3b4b5e540, type: 2}
+  - {fileID: 11400000, guid: 33756c1ae3cfe6a4b90fb75e72fcf722, type: 2}
   - {fileID: 11400000, guid: fae70dbe8a83e7d41bd4b2571507e60d, type: 2}
+  - {fileID: 11400000, guid: 56eb87f9989d84c498f390da2caad913, type: 2}
   portraitImage: {fileID: 830960406}
   dialogueAnim: {fileID: 1782702106}
   dialogueBox: {fileID: 1782702103}

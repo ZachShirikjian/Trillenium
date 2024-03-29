@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: ATC 25
   m_EditorClassIdentifier: 
   speakerText: "Let\u2019s take the next skytrain ride there and see if we can find
-    any clues. I\u2019m sure AVA\u2019s development is connected to the Paintblade
-    somehow.\r\r"
+    any clues.\r\r"
   personSpeaking: Sylvia
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
-  audioClip: {fileID: 8300000, guid: 1d4477b4c8225f7469de67f7a8e55696, type: 3}
+  audioClip: {fileID: 0}

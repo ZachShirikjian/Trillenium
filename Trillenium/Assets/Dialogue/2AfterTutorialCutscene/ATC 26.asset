@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 26
   m_EditorClassIdentifier: 
-  speakerText: Or so I thought.
-  personSpeaking: Vahan
+  speakerText: "I\u2019m sure AVA\u2019s development is connected to the Paintblade
+    somehow.\r\r"
+  personSpeaking: Sylvia
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 3109ba56ecbd85942a7b1fd9a850e386, type: 3}
-  audioClip: {fileID: 8300000, guid: 716e217c2c4a6d44584a52676880be01, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
+  audioClip: {fileID: 0}

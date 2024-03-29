@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: 0
   m_EditorClassIdentifier: 
   speakerText: "Alright, moving onto the next commission. I\u2019m supposed to meet
-    them at\u2026Owl\u2019s Nest? Huh. Never heard of it before. Better not be a
-    stupid sting operation. "
+    them at\u2026Owl\u2019s Nest?"
   personSpeaking: Sylvia
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: cea1b9deb8bebde40a9cc8e73a104181, type: 3}

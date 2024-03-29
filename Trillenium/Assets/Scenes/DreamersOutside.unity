@@ -3518,8 +3518,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2649143261479695332, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_text
-      value: "Yeah, those bitches are TOUGH. You\u2019re a\u2026painter and sculptor
-        right? I should have what you need, take a look. "
+      value: "Let\u2019s take the next skytrain ride there and see if we can find
+        any clues"
       objectReference: {fileID: 0}
     - target: {fileID: 5797064242757502536, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_Name
@@ -3556,6 +3556,14 @@ PrefabInstance:
     - target: {fileID: 6997848077061828373, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1857
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997848077061828373, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997848077061828373, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6997848077061828373, guid: c7092849b3f20c740b42bf4a8377f5b5, type: 3}
       propertyPath: m_LocalPosition.x

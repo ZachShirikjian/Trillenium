@@ -17,4 +17,4 @@ MonoBehaviour:
   personSpeaking: Vahan
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
-  audioClip: {fileID: 8300000, guid: 1fbbe9e2fb044e443a564e5caba22a20, type: 3}
+  audioClip: {fileID: 8300000, guid: bd7beef189231a340b4322f272ab43de, type: 3}

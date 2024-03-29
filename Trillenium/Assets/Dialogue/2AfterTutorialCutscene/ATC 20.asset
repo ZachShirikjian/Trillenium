@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: ATC 20
   m_EditorClassIdentifier: 
   speakerText: Well, it cured people who overdosed on zytorum. So if AVA is powered
-    by zytorum like everything else in the city then the Paintblade could shut it
-    down before launch.
+    by zytorum like everything else in the city...
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
-  audioClip: {fileID: 8300000, guid: 3c50082da5444c6458c38fce9fe07a82, type: 3}
+  audioClip: {fileID: 8300000, guid: 1949e15975a79b24594b7b1ec243b6fc, type: 3}

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 16
   m_EditorClassIdentifier: 
-  speakerText: When they were alive, Brigala told me about this magic tool they always
-    used when creating art. Sounded like the coolest thing ever.
+  speakerText: 'When they were alive, Brigala told me about this magic tool they
+    always used when creating art. '
   personSpeaking: Vahan
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
-  audioClip: {fileID: 8300000, guid: 7f4a4e1d99ff4474bac53d7b8e3378a1, type: 3}
+  audioClip: {fileID: 8300000, guid: 3b5d503bd56f3db47acbecbd8f171cc5, type: 3}

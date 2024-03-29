@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 11
   m_EditorClassIdentifier: 
-  speakerText: "What you just saw? That wasn't just a fun workout; I'm a sculptor.
-    AI\u2019s been perfected for digital art, but it\u2019s never matched the touch
-    of a human hand."
+  speakerText: What you just saw? That wasn't just a fun workout; I'm a sculptor.
   personSpeaking: Vahan
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
-  audioClip: {fileID: 8300000, guid: f164b189c6b288847afc26b656fe39c0, type: 3}
+  audioClip: {fileID: 8300000, guid: 9c4a4577e36d6ee43a1a79eb2f4aa66a, type: 3}
