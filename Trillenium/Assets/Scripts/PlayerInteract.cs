@@ -130,6 +130,9 @@ public class PlayerInteract : MonoBehaviour
                     currentlyInteracting = true;
                     curObject.GetComponent<ChillTopicShop>().enabled = true;
                     curObject.GetComponent<ChillTopicShop>().OpenShop();
+
+                    //DISABLE MOVEMENT//
+                    
                 }
                     
                 //UNUSED SINCE ALL BOSS FIGHTS AUTOMATICALLY HAPPEN AFTER A CUTSCENE//

@@ -58,44 +58,48 @@ public class PlayerMovement : MonoBehaviour
     //References the InputAction when an action is triggererd
     public void Move(InputAction.CallbackContext context)
     {
-        //Detects movement based on D-Pad or WASD input for both horizontal AND vertical
-        // movementInput = context.ReadValue<Vector2>();
-
-        horizontal = context.ReadValue<Vector2>().x;
-
-        //Reads the vertical movement of keyboard/gamepad for up/down movement
-        vertical = context.ReadValue<Vector2>().y;
-
-        input = new Vector2(horizontal,vertical);
-        input.Normalize(); //normalizes the input so it doesn't move awkwardly in diagonal directions 
-
-        if(horizontal >= 1 && vertical == 0)
+        //ONLY MOVE WHEN GAME ISN'T PAUSED
+        if(gm.isPaused == false)
         {
-            lastKey = 1;
-        }
+            //Detects movement based on D-Pad or WASD input for both horizontal AND vertical
+            // movementInput = context.ReadValue<Vector2>();
 
-        else if(horizontal <= -1 && vertical == 0)
-        {
-            lastKey = 3;
-        }
+            horizontal = context.ReadValue<Vector2>().x;
 
-        else if(horizontal == 0 && vertical >= 1)
-        {
-            lastKey = 0;
-        }
+            //Reads the vertical movement of keyboard/gamepad for up/down movement
+            vertical = context.ReadValue<Vector2>().y;
 
-        else if(horizontal == 0 && vertical <= -1)
-        {
-            lastKey = 2;
-        }
+            input = new Vector2(horizontal,vertical);
+            input.Normalize(); //normalizes the input so it doesn't move awkwardly in diagonal directions 
 
-        else if(horizontal == 0 && vertical == 0)
-        {
-            lastKey = -1;
+            if(horizontal >= 1 && vertical == 0)
+            {
+                lastKey = 1;
+            }
+
+            else if(horizontal <= -1 && vertical == 0)
+            {
+                lastKey = 3;
+            }
+
+            else if(horizontal == 0 && vertical >= 1)
+            {
+                lastKey = 0;
+            }
+
+            else if(horizontal == 0 && vertical <= -1)
+            {
+                lastKey = 2;
+            }
+
+            else if(horizontal == 0 && vertical == 0)
+            {
+                lastKey = -1;
+            }
+        
+            //SET POSITION OF VAHAN TO BE BASED ON INPUT VALUES OF PLAYER CHARACTER
+            //vahan.transform.position = new Vector2(horizontal, vertical);
         }
-    
-        //SET POSITION OF VAHAN TO BE BASED ON INPUT VALUES OF PLAYER CHARACTER
-        //vahan.transform.position = new Vector2(horizontal, vertical);
     }
 
     //Animates the Player 

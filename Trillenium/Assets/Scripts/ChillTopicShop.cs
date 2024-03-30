@@ -108,8 +108,10 @@ public class ChillTopicShop : MonoBehaviour
         shopUI.SetActive(true); //entire UI parent of the Shop UI
         shopMenu.SetActive(false); //just the option buttons for buying stuff in the Shop UI 
 
-                //Temporarily Disable Player Movement 
-        sylvia.GetComponent<PlayerMovement>().enabled = false; //DISABLE MOVEMENT DURING SHOPPING
+                //Temporarily Disable Player Movement
+                gm.isPaused = true;
+       // sylvia.GetComponent<PlayerMovement>().canMove = false; //DISABLE MOVEMENT DURING SHOPPING
+        //sylvia.GetComponent<PlayerMovement>().enabled = false; //DISABLE MOVEMENT DURING SHOPPING
         shopOpen = true;
 
         //Ensures first dialogue line is first one in the list (changes each day)
@@ -156,7 +158,9 @@ public class ChillTopicShop : MonoBehaviour
   public void ResetMovement()
   {
       shopUI.SetActive(false);
-      sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT AFTER EXITTING THE SHOP
+      gm.isPaused = false;
+      //sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT AFTER EXITTING THE SHOP
+      //sylvia.GetComponent<PlayerMovement>().canMove = true; //DISABLE MOVEMENT DURING SHOPPING
       shopOpen = false;
       this.enabled = false;
   }
