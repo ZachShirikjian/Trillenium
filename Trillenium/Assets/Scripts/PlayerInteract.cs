@@ -15,6 +15,7 @@ public class PlayerInteract : MonoBehaviour
    private GameManager gm; //reference to GameManager
 
    public NPCDialogue npcScript;
+   public DoorScript doorScript;
 
    //FOR NEW INPUT SYSTEM//
     public InputActionAsset controls;
@@ -41,6 +42,7 @@ public class PlayerInteract : MonoBehaviour
             canInteract = true;
             curObject = other.gameObject;
             Debug.Log("CAN SPEAK");
+            //npcScript = other.gameObject.GetComponent<NPCScript>();
         }
 
         // else if(other.tag == "Enemy")
@@ -54,6 +56,7 @@ public class PlayerInteract : MonoBehaviour
         {
             canInteract = true;
             curObject = other.gameObject;
+            doorScript = other.gameObject.GetComponent<DoorScript>();
             Debug.Log("CAN ENTER DOOR");
         }
 
@@ -71,6 +74,8 @@ public class PlayerInteract : MonoBehaviour
         currentlyInteracting = false;
         canInteract = false;
         curObject = null;
+        doorScript = null;
+        //npcScript = null;
         Debug.Log("OUT OF RANGE");
     }
 
@@ -104,6 +109,7 @@ public class PlayerInteract : MonoBehaviour
                 if(canInteract && curObject.tag == "Door" && gm.isPaused == false)
                 {
                     Debug.Log("OPENING DOOR");
+                    doorScript.LoadScene();
                     currentlyInteracting = true;
                 }
 
