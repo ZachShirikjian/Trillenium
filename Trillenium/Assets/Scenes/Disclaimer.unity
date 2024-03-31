@@ -242,7 +242,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 034197588af574548970ad097b04800f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8ff1ebbc5f6a79549992c8a24102dd1e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -400,17 +400,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This game is a work of fiction.
-
-    Similarities between people living
-    or dead, any real-world events depicted, or terms used, are purely coincidental.
-
-
-    Now,
-    let us begin...'
+  m_text: "This game is a work of fiction.\nSimilarities between people living or
+    dead, \nreal-world events depicted, or any terms used,\nare purely coincidental.\n\nNow,
+    let us begin..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
-  m_sharedMaterial: {fileID: 8456391783536491035, guid: d8ec68b329c70401faa37e7eb6907dd8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a31af53cc274f48f7ad639666fb33afd, type: 2}
+  m_sharedMaterial: {fileID: -8139637183949828704, guid: a31af53cc274f48f7ad639666fb33afd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -440,7 +435,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535

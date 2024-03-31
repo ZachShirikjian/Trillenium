@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: TestNPC 1
   m_EditorClassIdentifier: 
-  speakerText: "You're vandalizing our beautiful city? Why be destructive when you
+  speakerText: "You're vandalizing our beautiful city! Why be destructive when you
     can drink zytorum instead?\r"
   personSpeaking: Guard XTron
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 626a504f25edd9c45abee7d8bd013273, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 992f042db7cc87f46ae9c7050905fc77, type: 3}
