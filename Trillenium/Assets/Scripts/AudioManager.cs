@@ -23,4 +23,5 @@ public class AudioManager : MonoBehaviour
     //MUSIC REFS//
     public AudioClip battleTheme;
     public AudioClip shopTheme;
+    public AudioClip gameOver;
 }

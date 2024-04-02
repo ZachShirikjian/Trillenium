@@ -92,10 +92,55 @@ public class BattleUI : MonoBehaviour
         sHP = bm.partyMembers[0].GetComponent<TheUnitStats>().health;
         vHP = bm.partyMembers[1].GetComponent<TheUnitStats>().health;
 
-        sylviaHPText.text = sHP.ToString();
-        sylviaHP.value =  sHP;
-        vahanHPText.text = vHP.ToString();
-        vahanHP.value = vHP;
+        if(sHP > 0)
+        {
+            sylviaHPText.text = sHP.ToString();
+            sylviaHP.value =  sHP;
+        }
+
+        else if(sHP <= 0)
+        {
+            sylviaHPText.text = "0";
+            sylviaHP.value = 0;
+        }
+
+        else if(vHP <= 0)
+        {
+            vahanHPText.text = "0";
+            vahanHP.value = 0;
+        }
+
+        if(vHP > 0)
+        {
+            vahanHPText.text = vHP.ToString();
+            vahanHP.value = vHP;
+        }
+
+
+
+        //Ensures that HP on screen is NEVER negative!
+        if(sHP <= 0)
+        {
+            sylviaHPText.text = "0";
+            sylviaHP.value = 0;
+        }
+        if(vHP <= 0)
+        {
+            vahanHPText.text = "0";
+            vahanHP.value = 0;
+        }
+
+        else if(sHP > 0)
+        {
+            Debug.Log(sHP);
+  
+        }
+
+        else if(vHP > 0)
+        {
+            Debug.Log(vHP);
+   
+        }
 
         if(targetEnemy != null)
         {
@@ -190,7 +235,7 @@ public class BattleUI : MonoBehaviour
                 bm.ChangeMusic();
                 bm.sylviatalentAttackScript.enabled = false;
                 bm.vahantalentAttackScript.enabled = true;
-                Invoke("StartNextTurn", 10f); //16s is duration of Vahan's placeholder Talent BGM
+                Invoke("StartNextTurn", 5f); //16s is duration of Vahan's placeholder Talent BGM
             }
             //playerAnim.SetTrigger("Talent");
             bm.partyMembers[bm.curTurn].GetComponent<PlayerAction>().TalentAttack(bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>());
@@ -218,6 +263,8 @@ public class BattleUI : MonoBehaviour
 //UPDATE THE UI BEFORE STARTING THE NEXT PLAYER OR ENEMY TURN (BEFORE IT RESETS TO SYLVIA)
     public void StartNextTurn()
     {
+        //Prevents method from running twice
+        //If the Talent was correctly performed
         if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent < 100 && bm.talentActivated == false)
         {
             bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent += 25;

@@ -29,6 +29,9 @@ public class BattleManager : MonoBehaviour
     public GameObject battleUI; //reference to player battle UI panel; 
     public GameObject attackButton;
     public GameObject talentButton;
+    public GameObject gameOverMenu;
+    public GameObject restartButton;
+    public GameObject playerActions;
     
     //CHARACTER PORTRAITS
     public Image sylviaPortrait;
@@ -51,6 +54,8 @@ public class BattleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerActions.SetActive(true);
+        gameOverMenu.SetActive(false);
         battleStatusText.text = "";
        // numEnemiesLeft = 2; //REPLACE THIS SO IT'S BASED ON NUMBER OF ENEMIES SPAWNED IN A SPAWNER LATER//
         curTurn = 0;
@@ -133,17 +138,26 @@ public class BattleManager : MonoBehaviour
         }
         else if(enemies.Count > 0)
         {
+            
+                //If both members in the party are dead
+                //Call GameOver() to end the battle and try again 
+                if(partyMembers[0].GetComponent<TheUnitStats>().health <= 0 && partyMembers[1].GetComponent<TheUnitStats>().health <= 0)
+                {
+                    Debug.Log("GAME OVER");
+                    GameOver();
+                }
+
                 if(curTurn < 2)
                 {
                         //If player's HP is 0 or less when it's their turn
                         //Skip their turn and move onto the next turn
                         if(partyMembers[curTurn].GetComponent<TheUnitStats>().health <= 0)
                         {
+                            Debug.Log(partyMembers[curTurn].ToString() + "is dead");
                             partyMembers[curTurn].GetComponent<TheUnitStats>().dead = true;
                             curTurn++;
                         }
 
-                        
                     //FOR SELECTION CIRCLE ON PARTY MEMBERS//
                         //If curTurn = 1 (Vahan), activate his selection circle
                         if(curTurn == 1)
@@ -223,4 +237,27 @@ public class BattleManager : MonoBehaviour
         }
 
      }
+
+     //If both party members are dead, call GameOver()
+     //GameOverPanel appears so you can either restart the battle or quit the game 
+     public void GameOver()
+     {
+        playerActions.SetActive(false);
+        gameOverMenu.SetActive(true);
+        musicSource.Stop();
+        musicSource.PlayOneShot(audioManager.gameOver);
+        EventSystem.current.SetSelectedGameObject(restartButton);
+     }
+
+    //TODO: Add loading screen before battle restarts
+    public void RestartBattle()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    //TODO: Replace this with "Are You Sure You Want to Quit? All Unsaved Progress will be Lost." text
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
 }

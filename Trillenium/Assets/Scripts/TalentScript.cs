@@ -9,6 +9,7 @@ public class TalentScript : MonoBehaviour
     //REFERENCES//
     private EnemyAttack enemyScript;
     private BattleManager bm;
+    private BattleUI bUI;
     public bool canPerformTalent = true; 
     public InputActionAsset controls;
 
@@ -22,6 +23,7 @@ public class TalentScript : MonoBehaviour
         //controls.UI.TalentAttack.performed += ctx => ButtonMash();
 
         bm = GameObject.Find("BattleManager").GetComponent<BattleManager>();
+        bUI = GameObject.Find("Canvas").GetComponent<BattleUI>();
         enemyScript = bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>();
         canPerformTalent = true;
         //talentAttack2.Enable();
@@ -38,6 +40,7 @@ public class TalentScript : MonoBehaviour
     //ENABLE K AND L KEYS FOR SYLVIA'S TALENT DURING TALENT ACTIVATION
     private void OnEnable()
     {
+        talentAttack.action.performed += SlashAttack;
         talentAttack3.action.performed += SlashAttack;
         talentAttack2.action.performed += SlashAttack;
         talentAttack2.action.Enable();
@@ -57,11 +60,17 @@ public class TalentScript : MonoBehaviour
     //TEMOPORARY, WILL BE CHANGED LATER
     public void SlashAttack(InputAction.CallbackContext context)
     {
-        if(talentAttack.action.triggered && talentAttack2.action.triggered && talentAttack3.action.triggered)
+        if(canPerformTalent == true)
         {
-                enemyScript.TakeDamage(100);
-                canPerformTalent = false;
+            if(talentAttack.action.triggered && talentAttack2.action.triggered && talentAttack3.action.triggered)
+            {
+                    Debug.Log("Talent Performed!!!");
+                    enemyScript.TakeDamage(200);
+                    bUI.StartNextTurn();
+                    canPerformTalent = false;
+            }
         }
+
     }
 
     //SYLVIA'S TALENT//
@@ -78,7 +87,7 @@ public class TalentScript : MonoBehaviour
         if(talentAttack.action.triggered)
         {
             enemyScript = bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>();
-            enemyScript.TakeDamage(2);
+            enemyScript.TakeDamage(5);
         }
 
     }

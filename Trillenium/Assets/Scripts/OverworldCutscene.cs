@@ -55,7 +55,7 @@ public class OverworldCutscene : MonoBehaviour
 
     //INPUT//
     public InputActionAsset controls;
-    public InputActionReference skipDialogue;
+   // public InputActionReference skipDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -94,16 +94,16 @@ public class OverworldCutscene : MonoBehaviour
     //FOR ENABLING INTERACT INPUT
     public void OnEnable()
     {
-        skipDialogue.action.performed += Skip;
-        skipDialogue.action.Enable();
+        //skipDialogue.action.performed += Skip;
+        //skipDialogue.action.Enable();
     }
 
     //FOR DISABLING INTERACT INPUT//
     public void OnDisable()
     {
         Debug.Log("DISABLE CUTSCENE INPUT");
-        skipDialogue.action.performed -= Skip;
-        skipDialogue.action.Disable();
+        //skipDialogue.action.performed -= Skip;
+        //skipDialogue.action.Disable();
     }
 
 
@@ -166,8 +166,8 @@ public class OverworldCutscene : MonoBehaviour
     }
 
     //By pressing SHIFT on the keyboard, skips all dialogue in a dialogue sequence
-    public void Skip(InputAction.CallbackContext context)
-    {
+    //public void Skip(InputAction.CallbackContext context)
+   /* {
             Debug.Log("SKIP DIALOGUE");
             curPlace = dialogue.Length;
             dialogueBox.SetActive(false);
@@ -188,6 +188,7 @@ public class OverworldCutscene : MonoBehaviour
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
 
-            gm.inCutscene = false;
-    }
+    //       gm.inCutscene = false;
+    //}
+   */ 
 }

@@ -2525,7 +2525,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df75304bc62fb0b47adbb85e5517f6a0, type: 2}
   - {fileID: 11400000, guid: 235f902244d4f5048beb6bbf3db8f30f, type: 2}
   - {fileID: 11400000, guid: 1b141a17ee28d804dba8049ffbf27a76, type: 2}
-  - {fileID: 11400000, guid: 1b141a17ee28d804dba8049ffbf27a76, type: 2}
   portraitImage: {fileID: 2127349216}
   dialogueAnim: {fileID: 1323940107}
   dialogueBox: {fileID: 1211537297}
