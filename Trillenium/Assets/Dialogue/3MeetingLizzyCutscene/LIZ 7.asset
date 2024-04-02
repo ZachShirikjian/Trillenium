@@ -16,5 +16,5 @@ MonoBehaviour:
     down a long time ago? \r"
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 3109ba56ecbd85942a7b1fd9a850e386, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 8901879cab8adfa469ba6183c9dad441, type: 3}
   audioClip: {fileID: 8300000, guid: bcefec429d685ab48b91395d043b29ce, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Hey! You\u2019ve built up enough energy to use your Talent! "
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 6a30496793ad5a049924bb5bb3f264ce, type: 3}
   audioClip: {fileID: 8300000, guid: 9550b5b783ce0224da7de7f1f8935bcb, type: 3}
