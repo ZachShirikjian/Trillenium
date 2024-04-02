@@ -138,15 +138,6 @@ public class BattleManager : MonoBehaviour
         }
         else if(enemies.Count > 0)
         {
-            
-                //If both members in the party are dead
-                //Call GameOver() to end the battle and try again 
-                if(partyMembers[0].GetComponent<TheUnitStats>().health <= 0 && partyMembers[1].GetComponent<TheUnitStats>().health <= 0)
-                {
-                    Debug.Log("GAME OVER");
-                    GameOver();
-                }
-
                 if(curTurn < 2)
                 {
                         //If player's HP is 0 or less when it's their turn
@@ -183,16 +174,30 @@ public class BattleManager : MonoBehaviour
                 }
 
                 //ENEMY ATTACKS PLAYER
-                //For Enemy's Turn, call the Attack method for each enemy to attack the player 
+                //For Enemy's Turn, call the Attack method for each enemy to attack the player (assuming both players are alive) 
                 if(curTurn >= 2 && curTurn < (enemies.Count + partyMembers.Length))
                 {
-                    Debug.Log("ENEMIES' TURN");
-                    sylviaPortrait.sprite = sylviaDefault;
-                    vahanPortrait.sprite = vahanDefault;
-                  //  partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
-                    partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
-                    battleUI.SetActive(false);
-                    enemies[currentEnemy].GetComponent<EnemyAttack>().Attack();
+                    //If both members in the party are dead
+                    //Call GameOver() to end the battle and try again 
+                    if(partyMembers[0].GetComponent<TheUnitStats>().health <= 0 && partyMembers[1].GetComponent<TheUnitStats>().health <= 0)
+                    {
+                        Debug.Log("GAME OVER");
+                        GameOver();
+                    }
+
+                    //If either party member is still alive
+                    //Then enemy can attack
+                    else 
+                    {
+                        Debug.Log("ENEMIES' TURN");
+                        sylviaPortrait.sprite = sylviaDefault;
+                        vahanPortrait.sprite = vahanDefault;
+                    //  partyMembers[0].transform.GetChild(0).gameObject.SetActive(false);
+                        partyMembers[1].transform.GetChild(0).gameObject.SetActive(false);
+                        battleUI.SetActive(false);
+                        enemies[currentEnemy].GetComponent<EnemyAttack>().Attack();
+                        }
+
                 }
 
                 else if(curTurn >= (enemies.Count + partyMembers.Length)) //Length of PartyMembers array (goes up to 3 when Petros joins) PLUS # of enemies currently in the scene
@@ -234,6 +239,15 @@ public class BattleManager : MonoBehaviour
         else if(partyMembers[curTurn].GetComponent<TheUnitStats>().talent < 100)
         {
             battleUIScript.ResetAttacks();
+        }
+
+        //Prevents Sylvia from acting during her turn
+        if(partyMembers[0].GetComponent<TheUnitStats>().health <= 0)
+        {
+           Debug.Log(partyMembers[curTurn].ToString() + "is dead");
+           partyMembers[curTurn].GetComponent<TheUnitStats>().dead = true;
+           curTurn++;
+           NextTurn();
         }
 
      }

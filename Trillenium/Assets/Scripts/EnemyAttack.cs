@@ -73,14 +73,14 @@ public class EnemyAttack : MonoBehaviour
         sfxSource.PlayOneShot(audioManager.enemyAttack);
 
             //If player's HP is <= 0, they're dead, so enemy attacks other character
-        if(bm.partyMembers[randomIndex].GetComponent<TheUnitStats>().health <= 0)
+        if(bm.partyMembers[randomIndex].GetComponent<TheUnitStats>().dead == true)
         {
             Debug.Log(bm.partyMembers[randomIndex].ToString() + " is already dead!");
         }
 
         //If chosen unit's HP is above 0 
         //Attack them
-        else if (bm.partyMembers[randomIndex].GetComponent<TheUnitStats>().health > 0)
+        else if (bm.partyMembers[randomIndex].GetComponent<TheUnitStats>().dead == false)
         {
             bm.partyMembers[randomIndex].GetComponent<PlayerAction>().TakeDamage(20);
             DamagePopup.Create(bm.partyMembers[randomIndex].transform.position, 20);  
