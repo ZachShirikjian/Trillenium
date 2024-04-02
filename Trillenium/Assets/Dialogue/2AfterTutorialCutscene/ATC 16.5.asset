@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: Sounded like the coolest thing ever.
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 6a30496793ad5a049924bb5bb3f264ce, type: 3}
   audioClip: {fileID: 8300000, guid: 5dac0accc90e6d549aa76832830a1e08, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Although, if you\u2019ve followed the news lately\u2026"
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 9aa1e22ee3ebcae45bb550277488340b, type: 3}
   audioClip: {fileID: 8300000, guid: 63c10615dd05f4442a80637d5f65ceb0, type: 3}

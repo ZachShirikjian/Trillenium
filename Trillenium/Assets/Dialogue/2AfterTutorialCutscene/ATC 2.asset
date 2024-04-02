@@ -16,5 +16,5 @@ MonoBehaviour:
     aren\u2019t something you should mess with!"
   personSpeaking: Sylvia
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
+  speakerPortait: {fileID: 21300000, guid: ea1cf4743c7a43240ba5d230f7a0db48, type: 3}
   audioClip: {fileID: 0}

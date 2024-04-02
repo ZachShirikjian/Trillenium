@@ -16,5 +16,5 @@ MonoBehaviour:
     He probably packed it full of XTrons, so we should prepare just in case. '
   personSpeaking: Sylvia
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 94a942b0d0c2e4d309bb763642366ff3, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}
   audioClip: {fileID: 0}

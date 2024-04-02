@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: '*sigh* Do we really have time for this?'
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: f03ba07e156eeff44bc1e210360f3079, type: 3}
   audioClip: {fileID: 8300000, guid: 1b17eef2b5941554eb67b4b20add9aa8, type: 3}

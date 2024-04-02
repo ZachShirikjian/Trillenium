@@ -16,5 +16,5 @@ MonoBehaviour:
     imaginable can be made.
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 9aa1e22ee3ebcae45bb550277488340b, type: 3}
   audioClip: {fileID: 8300000, guid: b14bb3a8f1e7c2047ad08a6f9b7a49a9, type: 3}

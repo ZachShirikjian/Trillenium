@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Sure, don\u2019t worry about making that until we stop AVA though. "
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 6a30496793ad5a049924bb5bb3f264ce, type: 3}
   audioClip: {fileID: 8300000, guid: 987ba2fa85e13894b9a73ff866c9c996, type: 3}

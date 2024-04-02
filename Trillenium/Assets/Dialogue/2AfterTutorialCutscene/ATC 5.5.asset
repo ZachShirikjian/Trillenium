@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "And I wanted to honor them in a way I couldn\u2019t myself. "
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: dfb2f3ebf0a2103418dce9cf75357a82, type: 3}
   audioClip: {fileID: 8300000, guid: d359f8f993bf4b44ea70cc4992938859, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: How would you know? Did you try one out?
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 175820f1be69343cf9c5629f44e753e1, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 6a30496793ad5a049924bb5bb3f264ce, type: 3}
   audioClip: {fileID: 8300000, guid: 665a9ce5634ee8642bd5e7ae2c7b379e, type: 3}
