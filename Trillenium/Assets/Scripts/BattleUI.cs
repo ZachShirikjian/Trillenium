@@ -223,19 +223,19 @@ public class BattleUI : MonoBehaviour
             if(bm.curTurn == 0)
             {
                 sylviaTalentUIPrompt.SetActive(true);
-                bm.ChangeMusic();
+                //bm.ChangeMusic();
                 bm.sylviatalentAttackScript.enabled = true;
                 bm.vahantalentAttackScript.enabled = false;
-                Invoke("StartNextTurn", 3f); //16s is duration of Vahan's placeholder Talent BGM
+                Invoke("StartNextTurn", 3f); 
             }
             else if(bm.curTurn == 1)
             {
                 //bm.sylviaTalentScript.enabled = true;
                 vahanTalentUIPrompt.SetActive(true);
-                bm.ChangeMusic();
+                //bm.ChangeMusic();
                 bm.sylviatalentAttackScript.enabled = false;
                 bm.vahantalentAttackScript.enabled = true;
-                Invoke("StartNextTurn", 5f); //16s is duration of Vahan's placeholder Talent BGM
+                Invoke("StartNextTurn", 5f); 
             }
             //playerAnim.SetTrigger("Talent");
             bm.partyMembers[bm.curTurn].GetComponent<PlayerAction>().TalentAttack(bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>());
@@ -282,14 +282,17 @@ public class BattleUI : MonoBehaviour
             sylviaTalentUIPrompt.SetActive(false);
             vahanTalentUIPrompt.SetActive(false);
             bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent = 0;
-            bm.ChangeMusic();
+           // bm.ChangeMusic();
             bm.sylviatalentAttackScript.enabled = false;
             bm.vahantalentAttackScript.enabled = false;
         }
 
         //CALL NEXTTURN() TO START THE NEXT PLAYER OR ENEMY TURN
-        bm.curTurn++;
-        bm.NextTurn();
+        //AFTER THE TIME LIMIT IS UP, MOVE TO THE NEXT TURN
+            Debug.Log("Talent was performed");
+            bm.talentPerformed = false;
+            bm.curTurn++;
+            bm.NextTurn();
 
         if(bm.curTurn < 2)
         {

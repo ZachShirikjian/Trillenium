@@ -401,8 +401,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "This game is a work of fiction.\nSimilarities between people living or
-    dead, \nreal-world events depicted, or any terms used,\nare purely coincidental.\n\nNow,
-    let us begin..."
+    dead, any \nreal-world events depicted, or any terminology used,\nare purely
+    coincidental.\n\nNow, let us begin..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a31af53cc274f48f7ad639666fb33afd, type: 2}
   m_sharedMaterial: {fileID: -8139637183949828704, guid: a31af53cc274f48f7ad639666fb33afd, type: 2}

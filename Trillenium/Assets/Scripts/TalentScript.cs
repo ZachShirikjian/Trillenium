@@ -66,7 +66,8 @@ public class TalentScript : MonoBehaviour
             {
                     Debug.Log("Talent Performed!!!");
                     enemyScript.TakeDamage(200);
-                    bUI.StartNextTurn();
+                    bm.talentPerformed = true;
+                   // bUI.StartNextTurn();
                     canPerformTalent = false;
             }
         }
@@ -88,6 +89,7 @@ public class TalentScript : MonoBehaviour
         {
             enemyScript = bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>();
             enemyScript.TakeDamage(5);
+            bm.talentPerformed = true;
         }
 
     }

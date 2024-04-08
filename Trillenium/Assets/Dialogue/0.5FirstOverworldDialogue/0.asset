@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
-  speakerText: "Alright, moving onto the next commission. I\u2019m supposed to meet
-    them at\u2026Owl\u2019s Nest?"
+  speakerText: "Alright, moving on to the next commission. Remembering correctly,
+    the notes specify for me to meet them at\u2026Owl\u2019s Nest? "
   personSpeaking: Sylvia
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}

@@ -1219,7 +1219,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: file://D:/__GITHUBREPROS/Trillenium/Trillenium/Assets/AnimatedCutscenes/TrilleniumTeaserFINAL.mp4
+  m_Url: file://D:/__GITHUBREPROS/Trillenium/Trillenium/Assets/AnimatedCutscenes/TrilleniumTeaser1.5.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1

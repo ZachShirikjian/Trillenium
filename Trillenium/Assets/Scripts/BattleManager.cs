@@ -23,6 +23,7 @@ public class BattleManager : MonoBehaviour
     public GameObject[] partyMembers = new GameObject[2];
     public bool tutorial = false; //CHANGE LATER -> if tutorial hasn't been activated yet, set this to true when talent is at 100, then false afterwards
     public bool talentActivated = false;
+    public bool talentPerformed = false; //was there any input during the talent sequence? 
     
     //REFERENCES//
     public BattleUI battleUIScript;
@@ -74,8 +75,8 @@ public class BattleManager : MonoBehaviour
         vahanPortrait.sprite = vahanDefault;
 
         talentActivated = false;
+        talentPerformed = false;
         transitionScreen.SetActive(false);
-
     }
 
     // Update is called once per frame

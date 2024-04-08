@@ -12,7 +12,7 @@ public class SplashScreen : MonoBehaviour
     {
         //OwlsNestLogo.SetActive(false);
         //17 seconds total time to load all the logos, disclaimer, and content warning
-        Invoke("LoadTitleScreen", 18f); 
+        Invoke("LoadTitleScreen", 19f); 
     }
 
     //Popup ON logo (& add others if needed later) then loads title screen after splash screen ends

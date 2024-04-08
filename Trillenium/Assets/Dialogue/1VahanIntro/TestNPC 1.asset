@@ -16,5 +16,5 @@ MonoBehaviour:
     can drink zytorum instead?\r"
   personSpeaking: Guard XTron
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 626a504f25edd9c45abee7d8bd013273, type: 3}
+  speakerPortait: {fileID: 21300000, guid: f199c849e240fed4c9a22078cce36ea2, type: 3}
   audioClip: {fileID: 8300000, guid: 992f042db7cc87f46ae9c7050905fc77, type: 3}
