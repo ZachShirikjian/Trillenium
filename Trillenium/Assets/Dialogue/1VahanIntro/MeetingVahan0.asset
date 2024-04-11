@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: Damn! So this was a trap after all!
   personSpeaking: Violet Woman
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 9aa1e22ee3ebcae45bb550277488340b, type: 3}
+  speakerPortait: {fileID: 21300000, guid: ea1cf4743c7a43240ba5d230f7a0db48, type: 3}
   audioClip: {fileID: 8300000, guid: c462f859e60f6e644809ef9a9458312f, type: 3}

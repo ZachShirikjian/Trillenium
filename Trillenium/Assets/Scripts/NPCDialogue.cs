@@ -179,11 +179,16 @@ public class NPCDialogue : MonoBehaviour
             //Necessary for fighting first battle 
 
             //Load the first battle scene 
-             if(interactScript.curObject.name == "VahanNPC")
-             {
-                gm.playerParty.Add(interactScript.curObject);
-                gm.LoadBattleScene("FirstBattle");
-             }
+            
+            if(interactScript != null)
+            {
+                if(interactScript.curObject.name == "VahanNPC")
+                {
+                    gm.playerParty.Add(interactScript.curObject);
+                    gm.LoadBattleScene("FirstBattle");
+                }
+            }
+
              gm.inCutscene = false;
             // {
             //     Debug.Log("Vahan has joined the party!");

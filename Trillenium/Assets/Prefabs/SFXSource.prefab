@@ -153,5 +153,6 @@ MonoBehaviour:
   sylviaTalentAttack: {fileID: 0}
   playerAttack: {fileID: 8300000, guid: 8ad70f8961cc6534a8ca04e48845e7e2, type: 3}
   enemyAttack: {fileID: 8300000, guid: d792ad7208e06af469c3a031c2cbcdce, type: 3}
-  battleTheme: {fileID: 8300000, guid: cf08dbec6222c6d428081e6ea94b79a2, type: 3}
-  shopTheme: {fileID: 8300000, guid: 43d4889378e06d7448c6d21c6a57000d, type: 3}
+  battleTheme: {fileID: 8300000, guid: 5072b6d2c77edd54987ce3cfd929c751, type: 3}
+  shopTheme: {fileID: 8300000, guid: 62eb70dcade15ec469ef04399bcc7e22, type: 3}
+  gameOver: {fileID: 0}
