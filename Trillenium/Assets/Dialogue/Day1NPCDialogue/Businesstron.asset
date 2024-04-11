@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
+  m_Name: Businesstron
+  m_EditorClassIdentifier: 
+  speakerText: I contemplate why we are programmed to feel pain. I still don't know.
+  personSpeaking: Businesstron
+  newPersonSpeaking: 1
+  speakerPortait: {fileID: 21300000, guid: 7c85917cbaac1484e964d0a5005acf5c, type: 3}
+  audioClip: {fileID: 0}
