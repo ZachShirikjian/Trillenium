@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   speakerText: "*sigh* Well, they seem genuine about their hate of AI, and need proof
-    that I\u2019m not a random bot."
-  personSpeaking: Sylvia
+    that I\u2019m not a random robot."
+  personSpeaking: Violet Woman
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 46fb392bc73dcd5458073d5941666e70, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 9ea2d18d1a3be734f853768ed6408697, type: 3}

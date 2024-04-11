@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   speakerText: At the very least, I'll scope it out.
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 4ce62f0e5cd442744aeab78ad9b29fd5, type: 3}

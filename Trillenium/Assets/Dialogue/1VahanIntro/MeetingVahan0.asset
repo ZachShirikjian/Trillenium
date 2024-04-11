@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: MeetingVahan0
   m_EditorClassIdentifier: 
-  speakerText: AH! Get away from me!
-  personSpeaking: Half-Burnt Man
-  newPersonSpeaking: 0
+  speakerText: Damn! So this was a trap after all!
+  personSpeaking: Violet Woman
+  newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 9aa1e22ee3ebcae45bb550277488340b, type: 3}
-  audioClip: {fileID: 8300000, guid: d0324d8664d2aac498395d1626088056, type: 3}
+  audioClip: {fileID: 8300000, guid: c462f859e60f6e644809ef9a9458312f, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: "It\u2019s not often people want to meet face to face, so it better
     not be a stupid sting operation. "
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 46fb392bc73dcd5458073d5941666e70, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 9a581ea408b21ec479785763b7bc4afa, type: 3}

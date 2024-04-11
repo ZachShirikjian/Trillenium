@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   speakerText: " Huh. Never heard of it before, but it\u2019s down the road. "
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: f3826bf6c91ca824eb6998325e18906e, type: 3}
