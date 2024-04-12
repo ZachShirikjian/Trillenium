@@ -23,7 +23,7 @@ public class CutsceneDialogue : MonoBehaviour
     public TextMeshProUGUI speaker;
 
     //The current Background Image which is being displayed.(ONLY for cutscenes with backgrounds!)
-    public Image currentImage; 
+    //public Image currentImage; 
 
     //REFERENCES//
 
@@ -56,6 +56,9 @@ public class CutsceneDialogue : MonoBehaviour
     //Reference to Black Square for Fade to Black Animation//
     public GameObject fadeToBlack;
 
+    //Reference to skytrain UI object for loading screens//
+    public GameObject skytrainSprite;
+
         //INPUT//
     public InputActionAsset controls;
     public InputActionReference skipDialogue;
@@ -77,6 +80,7 @@ public class CutsceneDialogue : MonoBehaviour
         portraitImage.GetComponent<Animator>().SetTrigger("New");
         continueButton.SetActive(true);
         fadeToBlack.SetActive(false);
+        skytrainSprite.SetActive(false);
 
         //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
         EventSystem.current.SetSelectedGameObject(continueButton);
@@ -152,9 +156,9 @@ public class CutsceneDialogue : MonoBehaviour
             continueButton.SetActive(false);
             // portraitImage.GetComponent<Animator>().Play("End");
             // portraitImage.GetComponent<Animator>().SetTrigger("New");
-            fadeToBlack.SetActive(true);
-            fadeToBlack.GetComponent<Animator>().Play("FadeToBlack");
-            Invoke("LoadScene", 3f);
+
+            //TEMP METHOD FOR THE SKYTRAIN LOADING SCREEN//
+            SkytrainLoadingScreen();
         }
     }
 
@@ -180,8 +184,19 @@ public class CutsceneDialogue : MonoBehaviour
             continueButton.SetActive(false);
             // portraitImage.GetComponent<Animator>().Play("End");
             // portraitImage.GetComponent<Animator>().SetTrigger("New");
+
+            //TEMP METHOD FOR THE SKYTRAIN LOADING SCREEN//
+            SkytrainLoadingScreen();
+
+    }
+
+    //TEMP METHOD FOR GETTING THE SKYTRAIN LOADING SCREEN TO APPEAR WHEN TRANSPORTING TO A NEW LOCATION//
+    //ONLY USED FOR LEAVING OWL'S NEST FOR NOW//
+    public void SkytrainLoadingScreen()
+    {
             fadeToBlack.SetActive(true);
             fadeToBlack.GetComponent<Animator>().Play("FadeToBlack");
-            Invoke("LoadScene", 3f);
+            skytrainSprite.SetActive(true);
+            Invoke("LoadScene", 6f);
     }
 }

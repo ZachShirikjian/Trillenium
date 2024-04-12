@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: 'I can''t drink that stuff anymore! It burnt half my face! '
   personSpeaking: Half-Burnt Man
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 9aa1e22ee3ebcae45bb550277488340b, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 91527bdb8882bd342b221a588073b35e, type: 3}
   audioClip: {fileID: 8300000, guid: def51c7311671c444987c1a34b393494, type: 3}

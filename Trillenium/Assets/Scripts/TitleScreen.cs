@@ -15,6 +15,7 @@ public class TitleScreen : MonoBehaviour
     public GameObject controlsButton;
   //  public GameObject closeControls;
     public GameObject controlsPanel;
+    public GameObject creditsPanel;
 
     
     public InputActionAsset controls;
@@ -34,6 +35,7 @@ public class TitleScreen : MonoBehaviour
         //Makes first selected button NEWGAME by default
         EventSystem.current.SetSelectedGameObject(newGameButton);
         controlsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
         OnDisable(); //Disables backspace from being pressed until controls OR settings menu is open
     }
 
@@ -87,10 +89,20 @@ public class TitleScreen : MonoBehaviour
         OnEnable();
     }
 
+    //TEMPORARY METHOD FOR THE IDGA CLARK DEMO EXCLUSIVELY//
+    //DISPLAY THE CREDITS OF THE CURRENT TEAM MEMBERS//
+    public void OpenCredits()
+    {
+        creditsPanel.SetActive(true);
+        
+        OnEnable();
+    }
+
     //Close the controls panel if backspace is pressed (like how most games handle exitting out of menus)
     public void CloseMenu(InputAction.CallbackContext context)
     {
         controlsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(controlsButton);
         sfxSource.PlayOneShot(audioManager.uiClose);
         OnDisable();

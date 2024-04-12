@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Of course, it\u2019s always AI ruining everything."
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: f03ba07e156eeff44bc1e210360f3079, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 415e9fdaeb04aed42958e27f70579e70, type: 3}
   audioClip: {fileID: 8300000, guid: c7e2742df6dac4345a8271dd27b5456d, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Heh, small world right? But I wasn\u2019t like them.\r"
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 6a30496793ad5a049924bb5bb3f264ce, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 8ab4a49dd59a8604ca8c7c86145b37bd, type: 3}
   audioClip: {fileID: 8300000, guid: e1877ef078ebbd04088bf27ad8ca3641, type: 3}

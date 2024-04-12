@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Hell yeah! We won\u2019t let AVA launch! "
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 05563a63079e75f47ba97874eeef5c24, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 5cc053b8aaf0e2f49aadcf3c1fe123cd, type: 3}
   audioClip: {fileID: 8300000, guid: 86e03e6c6484bde4c8ed8642c0111530, type: 3}

@@ -16,5 +16,5 @@ MonoBehaviour:
     by zytorum like everything else in the city...
   personSpeaking: Vahan
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 6a30496793ad5a049924bb5bb3f264ce, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 8ab4a49dd59a8604ca8c7c86145b37bd, type: 3}
   audioClip: {fileID: 8300000, guid: 1949e15975a79b24594b7b1ec243b6fc, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: Or so I thought.
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 8901879cab8adfa469ba6183c9dad441, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 7062b680971cffb4d95fed48494b6e5c, type: 3}
   audioClip: {fileID: 8300000, guid: 12f0a6c4010d2164ba898a834e01fac3, type: 3}

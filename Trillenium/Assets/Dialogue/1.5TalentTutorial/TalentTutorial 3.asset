@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Don\u2019t hold back! Show it what you can do! "
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 05563a63079e75f47ba97874eeef5c24, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 5cc053b8aaf0e2f49aadcf3c1fe123cd, type: 3}
   audioClip: {fileID: 8300000, guid: c4fc30971090e3948a079193ee616d65, type: 3}

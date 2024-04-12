@@ -16,5 +16,5 @@ MonoBehaviour:
     can\u2019t match my dad.\r"
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: dfb2f3ebf0a2103418dce9cf75357a82, type: 3}
+  speakerPortait: {fileID: 21300000, guid: d6091b66d58c0534a81315f2a15e59fb, type: 3}
   audioClip: {fileID: 8300000, guid: bd7beef189231a340b4322f272ab43de, type: 3}

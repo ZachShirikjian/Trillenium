@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: We can use the Paintblade to shut it down before launch.
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 6a30496793ad5a049924bb5bb3f264ce, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 8ab4a49dd59a8604ca8c7c86145b37bd, type: 3}
   audioClip: {fileID: 8300000, guid: 7ee3b14954a3eea458c265899ea155ea, type: 3}

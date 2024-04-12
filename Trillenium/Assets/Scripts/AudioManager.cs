@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip playerAttack;
    // public AudioClip vahanAttack;
     public AudioClip enemyAttack;
+    public AudioClip skytrain;
 
     //MUSIC REFS//
     public AudioClip battleTheme;
