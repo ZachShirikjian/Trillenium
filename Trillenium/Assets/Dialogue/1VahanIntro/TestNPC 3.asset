@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: It's a cool look on you, why not burn some more?
   personSpeaking: Guard XTron
-  newPersonSpeaking: 0
+  newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: f199c849e240fed4c9a22078cce36ea2, type: 3}
   audioClip: {fileID: 8300000, guid: 1aa3ea7555f46f047853c4332973b268, type: 3}
