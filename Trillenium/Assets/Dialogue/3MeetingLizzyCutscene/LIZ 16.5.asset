@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "Like, what the hell?! I wasn\u2019t trying to be offensive."
   personSpeaking: Goth Clerk
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 10639c87486d72a48a9faff5331d95ed, type: 3}
   audioClip: {fileID: 8300000, guid: 0e6d69d56a230844d832d59dd8847401, type: 3}

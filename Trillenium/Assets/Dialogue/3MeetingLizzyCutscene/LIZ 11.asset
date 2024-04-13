@@ -16,5 +16,5 @@ MonoBehaviour:
     online. \r\n"
   personSpeaking: Goth Clerk
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 9adfe13d828d4694caeb62fe35fb16db, type: 3}
   audioClip: {fileID: 8300000, guid: 5c3d9e1aef2c7364eb61b15c2d802e72, type: 3}

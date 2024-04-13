@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: LIZ 3
   m_EditorClassIdentifier: 
-  speakerText: '*sigh* Do we really have time for this?'
+  speakerText: Do we really have time for this?
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 415e9fdaeb04aed42958e27f70579e70, type: 3}

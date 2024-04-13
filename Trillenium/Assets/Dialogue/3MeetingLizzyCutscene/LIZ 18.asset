@@ -16,5 +16,5 @@ MonoBehaviour:
     are the future. "
   personSpeaking: Goth Clerk
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
+  speakerPortait: {fileID: 21300000, guid: 10639c87486d72a48a9faff5331d95ed, type: 3}
   audioClip: {fileID: 8300000, guid: 958d1ce0d1f2c6247a820dad04d2df70, type: 3}

@@ -16,5 +16,5 @@ MonoBehaviour:
     right? I should have what you need, take a look. "
   personSpeaking: Lizzy
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
+  speakerPortait: {fileID: 21300000, guid: fb2ae476a85c39f44bbae1c7351acc84, type: 3}
   audioClip: {fileID: 8300000, guid: 944b9a5cd5257364d9869fad4b144691, type: 3}

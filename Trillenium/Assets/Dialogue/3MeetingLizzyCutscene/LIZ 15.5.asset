@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: "And you wanna know what happened? \r\n"
   personSpeaking: Goth Clerk
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 7b3ad04fb19529d4a883f251aa0251a4, type: 3}
+  speakerPortait: {fileID: 21300000, guid: f81392aed19f4914da3c04dea7ccdc74, type: 3}
   audioClip: {fileID: 8300000, guid: afeea4419788c5e4a8d6aeb6a821346c, type: 3}
