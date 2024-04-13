@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: LIZ 26
   m_EditorClassIdentifier: 
-  speakerText: Whatever. Oh, you wanna stop Khalidi right? Do me a favor and give
+  speakerText: Whatever. Hey, you wanna stop Khalidi right? Do me a favor and give
     that bastard a big punch for me.
   personSpeaking: Lizzy
   newPersonSpeaking: 1

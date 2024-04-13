@@ -211,7 +211,8 @@ public class GameManager : MonoBehaviour
     {
         if(isPaused == false && inCutscene == false)
         {
-            EventSystem.current.SetSelectedGameObject(itemsButton);
+            //CHANGE THIS TO ITEMS AFTER IDGA CLARK DEMO
+            EventSystem.current.SetSelectedGameObject(journalButton);
             Debug.Log("PauseGame");
             pauseMenu.SetActive(true);
             currentMenu = pauseMenu;

@@ -600,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackSquare: {fileID: 1874426494}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
-  skipIntro: {fileID: 9174919146641247689, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  skipIntro: {fileID: 2835208142217101966, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &1008978632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e91c607ec708fc04aab9d7df18521924, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdab8bf5df1f2b24dbf7735e78438ee6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

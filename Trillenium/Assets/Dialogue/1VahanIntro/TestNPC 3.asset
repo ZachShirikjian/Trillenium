@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: TestNPC 3
   m_EditorClassIdentifier: 
-  speakerText: It's a cool look on you, why not burn some more?
+  speakerText: It's a good look on you, why not burn some more?
   personSpeaking: Guard XTron
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: f199c849e240fed4c9a22078cce36ea2, type: 3}

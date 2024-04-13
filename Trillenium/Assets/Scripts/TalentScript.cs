@@ -67,7 +67,7 @@ public class TalentScript : MonoBehaviour
                     Debug.Log("Talent Performed!!!");
                     enemyScript.TakeDamage(200);
                     bm.talentPerformed = true;
-                   // bUI.StartNextTurn();
+                    bUI.StartNextTurn();
                     canPerformTalent = false;
             }
         }

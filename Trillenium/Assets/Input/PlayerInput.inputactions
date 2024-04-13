@@ -221,17 +221,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8d5e595c-5d8e-482d-bb71-14f88c6408c3",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8926fb7c-7de7-485b-9c22-57b49bdce801",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
@@ -256,6 +245,17 @@
                     "name": "",
                     "id": "4b7e12c1-7711-463d-b1f7-5928793f0098",
                     "path": "<DualShockGamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f48a3e6-99a8-46df-bf83-cbff750ed809",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -527,17 +527,6 @@
                 },
                 {
                     "name": "",
-                    "id": "2d399cd1-c604-495f-b0da-abe7aa8b1eda",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "37a6f3ac-c82a-4fe9-a92a-c5ca54562cf1",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
@@ -599,17 +588,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7bc02aa8-f0a6-470e-a71e-6315850aebed",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "MeleeAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -979,30 +957,8 @@
                 },
                 {
                     "name": "",
-                    "id": "3f6feb24-b4ed-426f-86f4-42b6b36dc86e",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2dddd19a-163c-4175-9c00-09a1fee41419",
                     "path": "<DualShockGamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a92eeab3-725e-4579-a713-614632688188",
-                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -1023,12 +979,12 @@
                 },
                 {
                     "name": "",
-                    "id": "7af75ea7-9c78-4264-a88b-a9b9643e6c9e",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "f034b324-fa3b-4368-a724-f05ac283401b",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad;Joystick",
-                    "action": "Cancel",
+                    "groups": "Gamepad",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1067,7 +1023,7 @@
                 },
                 {
                     "name": "",
-                    "id": "677ad4ca-ef40-4a39-83fc-b39b0a073e8c",
+                    "id": "46def74f-c92d-4117-90cf-6603ac56b689",
                     "path": "<SwitchProControllerHID>/buttonSouth",
                     "interactions": "",
                     "processors": "",
@@ -1083,17 +1039,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "TalentAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0c83cd90-60f5-426c-85a6-3d57a2193675",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad;Joystick",
                     "action": "TalentAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1138,17 +1083,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "TalentAttack2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4b82080d-ac61-4fd1-b6eb-f4ae86ac97dd",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad;Joystick",
                     "action": "TalentAttack2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1265,17 +1199,6 @@
                 },
                 {
                     "name": "",
-                    "id": "0ac4fe78-977b-488e-9f8f-8469a51de4a0",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "CloseMenu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f470ec0f-491a-47be-848c-b5b47fcdd8fd",
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
@@ -1325,17 +1248,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "CloseShop",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c4668da-bc61-45fc-8807-efe5e3ec3677",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
                     "action": "CloseShop",
                     "isComposite": false,
                     "isPartOfComposite": false
