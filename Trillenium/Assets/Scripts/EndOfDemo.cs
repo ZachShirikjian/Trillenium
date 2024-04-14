@@ -12,16 +12,18 @@ public class EndOfDemo : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(quitButton);
     }
-    //TEMP method, quits out of the game on the button press
+    //TEMP method, returns back to title screen 
     public void QuitGame()
     {
-               //Exits Play Mode if QUIT is clicked during Play Mode (Editor).
-        # if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene(1);
+
+      //         //Exits Play Mode if QUIT is clicked during Play Mode (Editor).
+      //  # if UNITY_EDITOR
+      //  UnityEditor.EditorApplication.isPlaying = false;
 
 
         //Closes the Game if QUIT is clicked in a Build of the game.
-        #endif
-        Application.Quit();
+       // #endif
+       // Application.Quit();
     }
 }
