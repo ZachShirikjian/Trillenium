@@ -38,11 +38,24 @@ public class GameManager : MonoBehaviour
     //Reference to current menu being displayed//
     public GameObject currentMenu;
 
+    //CONTROLS MENU BUTTONS//
+    public Image keyboardButton;
+    public Image gamepadButton;
+    public Sprite keyboardSelected;
+    public Sprite gamepadSelected;
+    public Sprite keyboardNeutral;
+    public Sprite gamepadNeutral;
+    public Image controlsInfographic;
+    public Sprite keyboardSprite;
+    public Sprite gamepadSprite;
+
 
     public List<GameObject> playerParty = new List<GameObject>();
     private GameObject sylvia;
 
     public InputActionAsset controls;
+    public InputActionReference switchTabLeft;
+    public InputActionReference switchTabRight;
     public InputActionReference closeMenu;
 
     private ChillTopicShop shopRef;
@@ -129,18 +142,25 @@ public class GameManager : MonoBehaviour
         
     }
 
-    //FOR ALLOWING BACKSPACE TO BE PRESSED DURING CONTROLS MENU
-    //FOR ENABLING INTERACT INPUT
+    //FOR ALLOWING BACKSPACE TO BE PRESSED DURING CONTROLS MENU & tabs to be switched during controls menu
     private void OnEnable()
     {
+        switchTabLeft.action.performed += MoveTabLeft;
+        switchTabRight.action.performed += MoveTabRight;
         closeMenu.action.performed += CloseMenu;
         closeMenu.action.Enable();
+        switchTabLeft.action.Enable();
+        switchTabRight.action.Enable();
     }
 
     private void OnDisable()
     {
+        switchTabLeft.action.performed -= MoveTabLeft;
+        switchTabRight.action.performed -= MoveTabRight;
         closeMenu.action.performed -= CloseMenu;
         closeMenu.action.Disable();
+        switchTabLeft.action.Disable();
+        switchTabRight.action.Disable();
     }
 
     //LOAD THE PROPER BATTLE SCENE WHEN INTERACTING WITH A BOSS
@@ -285,15 +305,31 @@ public void OpenSystem()
 //CONTROLS PANEL, SAME AS THE ONE IN THE TITLE SCREEN TO SHOW YOU CONTROLS!!!//
     public void OpenControls()
     {
-        //TODO: CHANGE THIS TO SELECT KEYBOARD BUTTON, SWITCH BETWEEN KEYBOARD AND GAMEPAD INPUT
-       // EventSystem.current.SetSelectedGameObject(closeControlsButton);
-               EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(null);
 
         currentMenu = controlsMenu;
         controlsMenu.SetActive(true);
         systemMenu.SetActive(false);
         thirdMenuOpen = true;
         OnEnable(); //For allowing backspace to close out of menus
+    }
+
+    //FOR DISPLAYING KEYBOARD CONTROLS ON SCREEN//
+    public void MoveTabLeft(InputAction.CallbackContext context)
+    {
+        //TODO: For future journal entries/menus, change this to be an array of tabs to switch between.
+        //Pressing LB moves back 1 in the array of tabs, Pressing RB moves up 1 in array of tabs (until it's reached array length to avoid errors)
+        controlsInfographic.sprite = gamepadSprite;
+        keyboardButton.sprite = keyboardNeutral;
+        gamepadButton.sprite = gamepadSelected;
+    }
+
+    //FOR DISPLAYING GAMEPAD CONTROLS ON SCREEN//
+    public void MoveTabRight(InputAction.CallbackContext context)
+    {
+        controlsInfographic.sprite = keyboardSprite;
+        keyboardButton.sprite = keyboardSelected;
+        gamepadButton.sprite = gamepadNeutral;
     }
 
     // public void CloseControls()
