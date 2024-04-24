@@ -5,6 +5,11 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
+    //VO for the Intro Disclaimer depending on the player's choice (TEMP)
+  //  public AudioClip yesDialogue;
+   // public AudioClip noDialogue;
+    public AudioClip promptPlayer;
+    
     //LIST OF ALL SFX FOR GAMEPLAY//
     public AudioClip newDialogue;
     public AudioClip continueDialogue;
