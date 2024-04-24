@@ -17,4 +17,4 @@ MonoBehaviour:
   personSpeaking: Sylvia
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 16fe37868ad59bc49875b9ed65a66c43, type: 3}
