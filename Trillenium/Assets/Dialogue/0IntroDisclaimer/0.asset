@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
-  speakerText: The world you are about to enter, known as [XUBOS], exists only within
+  speakerText: The world you are about to enter, known as [XUBOS], exists only in
     this story.
   personSpeaking: The Creator
   newPersonSpeaking: 0
