@@ -1378,9 +1378,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4f5bd51313066cf4ba03090ba8966f27, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e4201d09587e48640b3084a1bde0d82c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2255,7 +2255,9 @@ MonoBehaviour:
   sfxSource: {fileID: 1924727726}
   lizzyDialogue:
   - {fileID: 11400000, guid: b8858edda473dec469c646a6af60e2dc, type: 2}
+  - {fileID: 11400000, guid: 6e34098b38a385f40bc965730e7d9e21, type: 2}
   - {fileID: 11400000, guid: 358c42d7c6471684bbd0916e277bcb49, type: 2}
+  - {fileID: 11400000, guid: f6175ef0356750d4daa3a7582c0c2618, type: 2}
   - {fileID: 11400000, guid: 0dae055fb2b05dc428641ff1548f1eb0, type: 2}
   - {fileID: 11400000, guid: 1a0a954c4cd20344b83dd8f970c3abe5, type: 2}
   - {fileID: 11400000, guid: cbcf646caa136a044b0d4c2f0ecc4171, type: 2}
@@ -4535,7 +4537,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4838,7 +4840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1712519207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12803,8 +12805,8 @@ RectTransform:
   - {fileID: 1799508768}
   - {fileID: 1220539821}
   - {fileID: 1323940104}
-  - {fileID: 406523980}
   - {fileID: 1712519207}
+  - {fileID: 406523980}
   - {fileID: 8681446970802110128}
   - {fileID: 1228057075}
   m_Father: {fileID: 0}
@@ -16142,7 +16144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7260168785981163665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16402,6 +16404,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 804033186}
+    - target: {fileID: 3697486117445097278, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -592
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486117445097278, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 4846224135350821477, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -16562,6 +16572,22 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 804033186}
+    - target: {fileID: 7966028595624855301, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
+      propertyPath: m_text
+      value: Changed your mind? Fine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966028595624855301, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
+      propertyPath: m_margin.z
+      value: -1357.8112
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966028595624855301, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165578218875855742, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8273952605039271369, guid: 0e616bb6b83d36e49942bac638d44cff, type: 3}
       propertyPath: m_Name
       value: ShopUI
@@ -16724,7 +16750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8088098046315047697
 GameObject:
   m_ObjectHideFlags: 0

@@ -116,6 +116,7 @@ public class ChillTopicShop : MonoBehaviour
 
         //Ensures first dialogue line is first one in the list (changes each day)
         dialogueText.text = lizzyDialogue[0].speakerText;
+        dialogueSource.PlayOneShot(lizzyDialogue[0].audioClip);
         currencyText.text = currency.ToString();
         buyingItem = false;
 
@@ -134,11 +135,13 @@ public class ChillTopicShop : MonoBehaviour
       //Sets currently hovered over button to be one you're selecting for purchase
       if(shopOpen == true && buyingItem == false)
       {
-          curSelectedButton = EventSystem.current.currentSelectedGameObject;
+        curSelectedButton = EventSystem.current.currentSelectedGameObject;
         Debug.Log("CLOSING SHOP");
         sfxSource.PlayOneShot(audioManager.uiClose);
         gm.musicSource.Stop();
-        dialogueText.text = lizzyDialogue[6].speakerText; //index 6 = leavingshop dialogue
+        dialogueSource.Stop();
+        dialogueText.text = lizzyDialogue[8].speakerText; //index 8 = leavingshop dialogue
+        dialogueSource.PlayOneShot(lizzyDialogue[8].audioClip);
         Invoke("ResetMovement", 2f);
           Debug.Log(curSelectedButton);
       }
@@ -148,7 +151,9 @@ public class ChillTopicShop : MonoBehaviour
         Debug.Log("CANCELING PURCHASE");
         sfxSource.PlayOneShot(audioManager.uiCancel);
         purchaseConfirmation.SetActive(false);
-        dialogueText.text = lizzyDialogue[3].speakerText;
+        dialogueSource.Stop();
+        dialogueText.text = lizzyDialogue[5].speakerText;
+        dialogueSource.PlayOneShot(lizzyDialogue[5].audioClip);
         //EventSystem.current.SetSelectedGameObject(null);
         buyingItem = false;
         Invoke("ResetShop", 1f);
@@ -185,11 +190,18 @@ public class ChillTopicShop : MonoBehaviour
       {
         Debug.Log("Do you want to purchase this?");
         OnEnable();
-        //1 = Checking to see if you want to purchase
-        //2 = Purchase is made, Lizzy thanks you 
-        //4 = Not Enough Money 
-        //5 = Leaving Shop
-        dialogueText.text = lizzyDialogue[1].speakerText;
+        //1-3  = Checking to see if you want to purchase (VARIATIONS)
+        //4 = Purchase is made, Lizzy thanks you 
+        //5 = Canceling purchase
+        //6 = Not Enough Money 
+        //7 = Do you want more items?
+        //8 = Leaving Shop
+        
+        //Randomly pick 1 of the variations for seeing if you want to purchase item from Lizzy so it's not just the same line
+        int randomVO = Random.Range(1,4);
+        dialogueSource.Stop();
+        dialogueText.text = lizzyDialogue[randomVO].speakerText;
+        dialogueSource.PlayOneShot(lizzyDialogue[randomVO].audioClip);
         buyingItem = true;
         purchaseConfirmation.SetActive(true);
 
@@ -199,7 +211,9 @@ public class ChillTopicShop : MonoBehaviour
       else
       {
           Debug.Log("You're out of funds!");
-          dialogueText.text = lizzyDialogue[4].speakerText;
+          dialogueSource.Stop();
+          dialogueText.text = lizzyDialogue[6].speakerText;
+          dialogueSource.PlayOneShot(lizzyDialogue[6].audioClip);
           buyingItem = false;
       }
 
@@ -218,7 +232,9 @@ public class ChillTopicShop : MonoBehaviour
       if(buyingItem == true)
       {
           Debug.Log("Thanks for buying!");
-          dialogueText.text = lizzyDialogue[2].speakerText;
+          dialogueSource.Stop();
+          dialogueText.text = lizzyDialogue[4].speakerText;
+          dialogueSource.PlayOneShot(lizzyDialogue[4].audioClip);
           sfxSource.PlayOneShot(audioManager.buyItem);
           currency -= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost; 
           currencyText.text = currency.ToString();
@@ -226,7 +242,7 @@ public class ChillTopicShop : MonoBehaviour
           curSelectedButton.GetComponent<Button>().interactable = false; //prevents button from being interacted with again
           purchaseConfirmation.SetActive(false);
           EventSystem.current.SetSelectedGameObject(null);
-          Invoke("ResetShop", 0.5f); //Prevents accidentally buying too quickly 
+          Invoke("ResetShop", 3f); //Prevents accidentally buying too quickly 
         }
       }
 
@@ -238,10 +254,12 @@ public class ChillTopicShop : MonoBehaviour
         Debug.Log("CANCELING PURCHASE");
         sfxSource.PlayOneShot(audioManager.uiCancel);
         purchaseConfirmation.SetActive(false);
-        dialogueText.text = lizzyDialogue[3].speakerText;
+        dialogueSource.Stop();
+        dialogueText.text = lizzyDialogue[5].speakerText;
+        dialogueSource.PlayOneShot(lizzyDialogue[5].audioClip);
         //EventSystem.current.SetSelectedGameObject(null);
         buyingItem = false;
-        Invoke("ResetShop", 1f);
+        Invoke("ResetShop", 4f);
       }
     }
 
@@ -249,7 +267,9 @@ public class ChillTopicShop : MonoBehaviour
     public void ResetShop()
     {
        EventSystem.current.SetSelectedGameObject(shopUI.transform.GetChild(0).GetChild(0).gameObject);
-       dialogueText.text = lizzyDialogue[5].speakerText;
+       dialogueSource.Stop();
+       dialogueText.text = lizzyDialogue[7].speakerText;
+       dialogueSource.PlayOneShot(lizzyDialogue[7].audioClip);
        buyingItem = false;
        OnDisable();
     }

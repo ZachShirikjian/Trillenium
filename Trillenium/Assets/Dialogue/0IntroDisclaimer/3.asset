@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  speakerText: Are purely unintentional, for the past, present, and future.
+  speakerText: Are purely coincidental, for the past, present, or future.
   personSpeaking: The Creator
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}

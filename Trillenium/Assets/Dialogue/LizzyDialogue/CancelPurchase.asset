@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: CancelPurchase
   m_EditorClassIdentifier: 
-  speakerText: Changed your mind? Whatever.
+  speakerText: Changed your mind? Fine.
   personSpeaking: 
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}

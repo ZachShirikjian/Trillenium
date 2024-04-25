@@ -16,5 +16,5 @@ MonoBehaviour:
     art or whatever."
   personSpeaking: Zackie's Employee
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 66cca86ab770ef44bb5693d0af20f5ce, type: 3}
+  speakerPortait: {fileID: 0}
   audioClip: {fileID: 0}

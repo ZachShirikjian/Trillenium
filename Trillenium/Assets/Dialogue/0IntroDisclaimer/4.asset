@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: 4
   m_EditorClassIdentifier: 
-  speakerText: At the tone, please inform me if you are prepared to proceed.
+  speakerText: 'At the tone, please inform us if you are prepared to proceed with
+    this story:'
   personSpeaking: The Creator
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}

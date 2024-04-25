@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerText: Can't believe you left Zackie's. It's gonna be boring without you.
   personSpeaking: Zackie's Employee
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: 9184d6dac5accb145a280bed5dd90e99, type: 3}
+  speakerPortait: {fileID: 0}
   audioClip: {fileID: 0}

@@ -16,5 +16,5 @@ MonoBehaviour:
     at Paradisal!
   personSpeaking: Girl XTron
   newPersonSpeaking: 1
-  speakerPortait: {fileID: 21300000, guid: c742b65ac2947d14db78625043f41200, type: 3}
+  speakerPortait: {fileID: 0}
   audioClip: {fileID: 8300000, guid: ad7714c38b0d75a4f855cc48d063e6cc, type: 3}
