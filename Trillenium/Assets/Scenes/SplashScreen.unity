@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 308457228}
   m_Layer: 5
   m_Name: Disclaimer
-  m_TagString: Untagged
+  m_TagString: Logos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -628,9 +628,10 @@ GameObject:
   - component: {fileID: 1089873476}
   - component: {fileID: 1089873475}
   - component: {fileID: 1089873474}
+  - component: {fileID: 1089873477}
   m_Layer: 5
   m_Name: Logos
-  m_TagString: Untagged
+  m_TagString: Logos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -713,6 +714,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089873472}
   m_CullTransparentMesh: 1
+--- !u!114 &1089873477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089873472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c393003751bfe21459edaa1ff7311cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1542889756
 GameObject:
   m_ObjectHideFlags: 0

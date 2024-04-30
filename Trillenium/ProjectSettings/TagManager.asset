@@ -9,6 +9,7 @@ TagManager:
   - TargetEnemy
   - Door
   - Shop
+  - Logos
   layers:
   - Default
   - TransparentFX
