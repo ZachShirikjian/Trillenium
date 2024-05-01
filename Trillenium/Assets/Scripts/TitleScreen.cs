@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 public class TitleScreen : MonoBehaviour
 {
 
@@ -17,9 +18,21 @@ public class TitleScreen : MonoBehaviour
     public GameObject controlsPanel;
     public GameObject creditsPanel;
 
+  //CONTROLS MENU BUTTONS//
+    public Image keyboardButton;
+    public Image gamepadButton;
+    public Sprite keyboardSelected;
+    public Sprite gamepadSelected;
+    public Sprite keyboardNeutral;
+    public Sprite gamepadNeutral;
+    public Image controlsInfographic;
+    public Sprite keyboardSprite;
+    public Sprite gamepadSprite;
     
     public InputActionAsset controls;
     public InputActionReference closeMenu;
+    public InputActionReference switchTabLeft;
+    public InputActionReference switchTabRight;
 
     public AudioSource sfxSource;
     public AudioManager audioManager;
@@ -42,14 +55,41 @@ public class TitleScreen : MonoBehaviour
     //Enable input for closing out of controls menu using the Backspace button (B on Xbox controller)
     private void OnEnable()
     {
+        switchTabLeft.action.performed += MoveTabLeft;
+        switchTabRight.action.performed += MoveTabRight;
         closeMenu.action.performed += CloseMenu;
         closeMenu.action.Enable();
+        switchTabLeft.action.Enable();
+        switchTabRight.action.Enable();
+
     }
 
     private void OnDisable()
     {
+        switchTabLeft.action.performed -= MoveTabLeft;
+        switchTabRight.action.performed -= MoveTabRight;
         closeMenu.action.performed -= CloseMenu;
         closeMenu.action.Disable();
+        switchTabLeft.action.Disable();
+        switchTabRight.action.Disable();
+    }
+
+    //FOR DISPLAYING KEYBOARD CONTROLS ON SCREEN//
+    public void MoveTabLeft(InputAction.CallbackContext context)
+    {
+        //TODO: For future journal entries/menus, change this to be an array of tabs to switch between.
+        //Pressing LB moves back 1 in the array of tabs, Pressing RB moves up 1 in array of tabs (until it's reached array length to avoid errors)
+        controlsInfographic.sprite = gamepadSprite;
+        keyboardButton.sprite = keyboardNeutral;
+        gamepadButton.sprite = gamepadSelected;
+    }
+
+    //FOR DISPLAYING GAMEPAD CONTROLS ON SCREEN//
+    public void MoveTabRight(InputAction.CallbackContext context)
+    {
+        controlsInfographic.sprite = keyboardSprite;
+        keyboardButton.sprite = keyboardSelected;
+        gamepadButton.sprite = gamepadNeutral;
     }
 
     //TEMP METHOD//

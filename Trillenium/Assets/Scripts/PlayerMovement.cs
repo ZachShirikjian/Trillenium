@@ -21,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
     //Reference to Vahan/Petros Party Memebrs
     public GameObject vahan;
 
-    //REFERENCE to Main Player's Melee Attack Collider 
+    //Reference to Player Interact Collider
+    public GameObject interactCollider;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>(); 
         anim = GetComponent<Animator>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        //InteractCollider = 1st Child of Sylvia GameObject
+        //interactCollider = transform.GetChild(0);
 
         lastKey = -1;
     }
@@ -72,26 +76,38 @@ public class PlayerMovement : MonoBehaviour
             input = new Vector2(horizontal,vertical);
             input.Normalize(); //normalizes the input so it doesn't move awkwardly in diagonal directions 
 
+            //LocalPosition = the object always gets set to a value relative to its parent so it's constant 
+            //eg when facing right the box is going to be +1 in front of the character 
+            
+            //RIGHT//
             if(horizontal >= 1 && vertical == 0)
             {
                 lastKey = 1;
+                interactCollider.transform.localPosition = new Vector2(1,0);
             }
 
+            //LEFT
             else if(horizontal <= -1 && vertical == 0)
             {
                 lastKey = 3;
+                interactCollider.transform.localPosition = new Vector2(-1,0);
             }
 
+            //UP
             else if(horizontal == 0 && vertical >= 1)
             {
                 lastKey = 0;
+                interactCollider.transform.localPosition = new Vector2(0,1);
             }
 
+            //DOWN
             else if(horizontal == 0 && vertical <= -1)
             {
                 lastKey = 2;
+                interactCollider.transform.localPosition = new Vector2(0,-1);
             }
 
+            //NEUTRAL//
             else if(horizontal == 0 && vertical == 0)
             {
                 lastKey = -1;

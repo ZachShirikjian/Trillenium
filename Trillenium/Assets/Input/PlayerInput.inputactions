@@ -1360,6 +1360,17 @@
                 },
                 {
                     "name": "",
+                    "id": "72fc98d8-c325-4d9e-a5b3-0a2ad71008af",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SwitchTabRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7cef9b79-9b9e-4343-bd8d-0e0ceab85aba",
                     "path": "<XInputController>/leftShoulder",
                     "interactions": "",
@@ -1387,6 +1398,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "SwitchTabLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d9b509e-0a91-4f8f-a45b-ed33ff7027d6",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "SwitchTabLeft",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -1699,7 +1699,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1459262676}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2946,7 +2946,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3b4bb04b6478ff4792cc79e62ef45a3, type: 2}
   - {fileID: 11400000, guid: 34aa96043f0cc584d966cfec48a2707c, type: 2}
   - {fileID: 11400000, guid: 077ea4dfd6e745c43974648a6be09089, type: 2}
-  alreadySpokenTo: 0
+  specialNPC: 0
   helpIcon: {fileID: 392513095}
 --- !u!95 &1188482624
 Animator:
@@ -3230,7 +3230,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3371,7 +3371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &1279421625
 MonoBehaviour:
@@ -4485,6 +4485,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 8ba9a918-9f47-4f00-8b2b-829bdc8488d3
     m_ActionName: UI/CloseShop[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 81044eaa-45f2-43cd-8f4c-3f5367582d45
+    m_ActionName: UI/SwitchTabRight[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 061ad0a5-b6be-4651-9ed6-371256e5a558
+    m_ActionName: UI/SwitchTabLeft[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Overworld
@@ -4507,6 +4515,7 @@ MonoBehaviour:
   vertical: 0
   isMoving: 0
   vahan: {fileID: 1311058979}
+  interactCollider: {fileID: 0}
 --- !u!50 &1459262679
 Rigidbody2D:
   serializedVersion: 4
@@ -4566,7 +4575,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4577,7 +4586,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 1, y: 0.75}
   m_EdgeRadius: 0
 --- !u!95 &1459262681
 Animator:
@@ -16926,7 +16935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8088098046315047697
 GameObject:
   m_ObjectHideFlags: 0

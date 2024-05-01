@@ -13,7 +13,7 @@ public class NPC : MonoBehaviour
     //List of all Dialogue an NPC has//
     public Dialogue[] dialogue;
 
-    public bool alreadySpokenTo = false;
+   // public bool alreadySpokenTo = false;
     public bool specialNPC = false; //If this is a special NPC, it has a portrait (eg Vahan talking w/ Brigala memorial)
 
     //REFERENCES//
