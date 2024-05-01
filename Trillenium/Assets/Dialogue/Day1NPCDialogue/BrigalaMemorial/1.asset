@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
-  m_Name: 0 2
+  m_Name: 1
   m_EditorClassIdentifier: 
-  speakerText: Rest easy Brigala, we artists ain't going anywhere no matter what!
+  speakerText: Glad to see it's still well kept after all these years.
   personSpeaking: Vahan
   newPersonSpeaking: 0
-  speakerPortait: {fileID: 21300000, guid: 5cc053b8aaf0e2f49aadcf3c1fe123cd, type: 3}
+  speakerPortait: {fileID: 21300000, guid: d6091b66d58c0534a81315f2a15e59fb, type: 3}
   audioClip: {fileID: 0}
