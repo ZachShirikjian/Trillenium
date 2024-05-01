@@ -11,6 +11,7 @@ public class TalentScript : MonoBehaviour
     private BattleManager bm;
     private BattleUI bUI;
     public bool canPerformTalent = true; 
+    public bool enemySelected = false; 
     public InputActionAsset controls;
 
     public InputActionReference talentAttack;
@@ -60,7 +61,7 @@ public class TalentScript : MonoBehaviour
     //TEMOPORARY, WILL BE CHANGED LATER
     public void SlashAttack(InputAction.CallbackContext context)
     {
-        if(canPerformTalent == true)
+        if(canPerformTalent == true && enemySelected == true)
         {
             if(talentAttack.action.triggered && talentAttack2.action.triggered && talentAttack3.action.triggered)
             {
@@ -85,7 +86,7 @@ public class TalentScript : MonoBehaviour
     //VAHAN'S TALENT//
     public void ButtonMash()
     {
-        if(talentAttack.action.triggered)
+        if(talentAttack.action.triggered && enemySelected == true)
         {
             enemyScript = bm.enemies[bm.currentEnemy].GetComponent<EnemyAttack>();
             enemyScript.TakeDamage(5);
@@ -100,7 +101,7 @@ public class TalentScript : MonoBehaviour
     //PERFORM HIS TALENT AS NORMAL (BUTTON MASH UNTIL ENEMY IS DEAD)
     public void PerformTalent(InputAction.CallbackContext context)
     {
-        if(canPerformTalent == true && bm.talentActivated == true && bm.enemies[bm.currentEnemy] != null)
+        if(canPerformTalent == true && bm.talentActivated == true && bm.enemies[bm.currentEnemy] != null && enemySelected == true)
         {
             if(bm.curTurn == 0)
             {

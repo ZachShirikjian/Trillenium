@@ -215,6 +215,10 @@ public class BattleUI : MonoBehaviour
         //Plays attacking animation after the attack button is selected
         playerAnim = bm.partyMembers[bm.curTurn].GetComponent<Animator>();
         EventSystem.current.SetSelectedGameObject(null);
+
+        //Sets enemySelected to be true to prevent talent attacks from being activated before enemy is selected//
+        bm.sylviatalentAttackScript.enemySelected = true;
+        bm.vahantalentAttackScript.enemySelected = true;
         if(bm.talentActivated == true)
         {
             //ACTIVATES VAHAN'S TALENT IF IT'S HIS TURN, CALL BM CHANGE MUSIC METHOD TO CHANGE BATTLE MUSIC THEME
@@ -264,6 +268,11 @@ public class BattleUI : MonoBehaviour
     public void StartNextTurn()
     {
         //Prevents method from running twice
+
+        //Prevents talent attack buttons from being pressed by setting enemySelected to be false
+        bm.sylviatalentAttackScript.enemySelected = false;
+        bm.vahantalentAttackScript.enemySelected = false;
+
         //If the Talent was correctly performed
         if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent < 100 && bm.talentActivated == false)
         {

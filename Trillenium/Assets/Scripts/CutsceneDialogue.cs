@@ -77,6 +77,7 @@ public class CutsceneDialogue : MonoBehaviour
         dialogueSource.PlayOneShot(dialogue[curPlace].audioClip);
 
         //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
+        portraitImage.SetActive(true);
         portraitImage.GetComponent<Animator>().SetTrigger("New");
         continueButton.SetActive(true);
         fadeToBlack.SetActive(false);

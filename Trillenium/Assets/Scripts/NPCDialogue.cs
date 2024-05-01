@@ -69,6 +69,15 @@ public class NPCDialogue : MonoBehaviour
 
     }
 
+    //To prevent dialogue boxes from closing too fast
+    //Make ContinueButton appear 0.5s after interacting with an NPC 
+    public void CloseBoxDelay()
+    {
+         continueButton.SetActive(true);
+        //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
+        EventSystem.current.SetSelectedGameObject(continueButton);
+    }
+
     //Call this method every time players speak to a new NPC in the PlayerInteract script when pressing Interact button
     public void BeginDialogue()
     {
@@ -77,20 +86,23 @@ public class NPCDialogue : MonoBehaviour
              npcRef = interactScript.curObject.GetComponent<NPC>();
          }
 
-        //ADD DELAY TO PREVENT SPAMMING AND PREVENTING FIRST DIALOGUE FROM APPEARING
-        if(npcRef.alreadySpokenTo == false)
-        {
-                        Invoke("StartDialogue", 0.25f);
-                        playerMove.enabled = false;
+         //Invoke("StartDialogue", 0.25f);
+         StartDialogue();
+         playerMove.enabled = false;
 
-        }
+        //ADD DELAY TO PREVENT SPAMMING AND PREVENTING FIRST DIALOGUE FROM APPEARING
+        //if(npcRef.alreadySpokenTo == false)
+       // {
+        //
+
+        //}
 
         //IF ALREADY SPOKEN TOO, PREVENT DIALOGUE FROM STARTING FROM BEGINNING
 
-        else if(npcRef.alreadySpokenTo == true)
-        {
-            Debug.Log("You already talked to this NPC!");
-        }
+       // else if(npcRef.alreadySpokenTo == true)
+       // {
+       //     Debug.Log("You already talked to this NPC!");
+       //}
 
       
     }
@@ -102,7 +114,18 @@ public class NPCDialogue : MonoBehaviour
             Debug.Log("BEGIN DIALOGUE");
             curPlace = 0;
             Debug.Log(curPlace);
-            portraitImage.GetComponent<Image>().sprite = npcRef.dialogue[curPlace].speakerPortait;
+
+            //Disable the Portrait UI if the NPC is not a special NPC
+            if(npcRef.specialNPC == true)
+            {
+                portraitImage.GetComponent<Image>().sprite = npcRef.dialogue[curPlace].speakerPortait;
+            }
+            
+            else if(npcRef.specialNPC == false)
+            {
+                portraitImage.SetActive(false);
+            }
+
             currentDialogue.text = npcRef.dialogue[curPlace].speakerText;
             speaker.text = npcRef.dialogue[curPlace].personSpeaking;
             dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
@@ -112,9 +135,8 @@ public class NPCDialogue : MonoBehaviour
 
         //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
             portraitImage.GetComponent<Animator>().SetTrigger("New");
-            continueButton.SetActive(true);
-        //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
-            EventSystem.current.SetSelectedGameObject(continueButton);
+
+            Invoke("CloseBoxDelay", 0.5f);
     }
 
     // //This method gets called every time the ContinueButton is clicked when players are talking with the NPCs. 
@@ -136,7 +158,7 @@ public class NPCDialogue : MonoBehaviour
            // And play the SlideIn animation for the character portrait 
                  if(npcRef.dialogue[curPlace].newPersonSpeaking == true)
                  {
-                     portraitImage.GetComponent<Animator>().Play("SlideIn");
+                    portraitImage.GetComponent<Animator>().Play("SlideIn");
                      portraitImage.GetComponent<Animator>().SetTrigger("New");
                      sfxSource.PlayOneShot(audioManager.newDialogue);
                      Debug.Log("IF NEW PERSON IS SPEAKING, PLAY PORTRAIT SLIDE IN ANIMATION");
@@ -156,8 +178,8 @@ public class NPCDialogue : MonoBehaviour
         {
 
             //Ensures NPC dialogue doesn't repeat again
-            npcRef.alreadySpokenTo = true;
-            npcRef.helpIcon.SetActive(false);
+            //npcRef.alreadySpokenTo = true;
+            //npcRef.helpIcon.SetActive(false);
 
             dialogueSource.Stop();
             dialogueBox.SetActive(false);
