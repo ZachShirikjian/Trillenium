@@ -18,6 +18,7 @@ public class VideoController : MonoBehaviour
     public InputActionAsset controls;
     public InputActionReference pauseCutscene;
     public InputActionReference skipCutscene;
+    public GameObject blackSquare;
     #endregion
 
     void Awake()
@@ -94,9 +95,11 @@ public class VideoController : MonoBehaviour
     //After a cutscene's done, load the next scene in the build index after 1 second.
     void EndReached(UnityEngine.Video.VideoPlayer vp)
     {
+        Debug.Log("VIDEO IS OVER");
         end = true;
         // *****INSERT CODE FOR TRANSITIONING INTO NEXT SCENE*****
-        Invoke("LoadNextScene", 1f);
+        //Invoke("LoadNextScene", 1f);
+        FadeToBlack();
     }
 
     void VideoPause(InputAction.CallbackContext context)
@@ -118,6 +121,19 @@ public class VideoController : MonoBehaviour
                     videoState = 1;
                 }
         }
+        else if(end == true)
+        {
+            Debug.Log("CAN'T PAUSE NOW");
+            gamePaused = false;
+        }
+    }
+
+    //Fades screen to black after cutscene ends OR after skipping cutscene
+    void FadeToBlack()
+    {
+        blackSquare.SetActive(true);
+        blackSquare.GetComponent<Animator>().Play("FadeToBlack");
+        Invoke("LoadNextScene", 2f);
     }
 
     void SkipVideo(InputAction.CallbackContext context)
@@ -128,7 +144,8 @@ public class VideoController : MonoBehaviour
                     gamePaused = true;
                     // The video is paused.
                     videoState = 0;
-                    LoadNextScene();
+                    FadeToBlack();
+                    //LoadNextScene();
         }
     }
 
