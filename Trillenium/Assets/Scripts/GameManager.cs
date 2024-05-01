@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject journalButton;
     public GameObject systemButton;
     public GameObject controlsButton; 
-    public GameObject closeControlsButton;
+    //public GameObject closeControlsButton;
     //Reference to current menu being displayed//
     public GameObject currentMenu;
 
@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviour
 
         //Reference to Continue Button 
         public GameObject continueButton;
+
 
     //Reference to MusicSource//
     public AudioSource musicSource; 

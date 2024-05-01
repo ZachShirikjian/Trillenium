@@ -80,7 +80,6 @@ public class OverworldCutscene : MonoBehaviour
         portraitImage.SetActive(true);
         portraitImage.GetComponent<Animator>().SetTrigger("New");
         continueButton.SetActive(true);
-
         //Ensures continue button is automatically selected object so it can be pressed with gamepad/keyboard button
         EventSystem.current.SetSelectedGameObject(continueButton);
 
