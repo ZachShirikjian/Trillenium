@@ -3180,7 +3180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 1829, y: 2277.0771}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &971428328
@@ -4549,6 +4549,7 @@ GameObject:
   - component: {fileID: 1387810173}
   - component: {fileID: 1387810172}
   - component: {fileID: 1387810171}
+  - component: {fileID: 1387810176}
   m_Layer: 5
   m_Name: LoadingScreenTransition
   m_TagString: Untagged
@@ -4648,6 +4649,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 838.3976}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1387810176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387810170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c393003751bfe21459edaa1ff7311cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signalMessage: 
 --- !u!1 &1414403216
 GameObject:
   m_ObjectHideFlags: 0
@@ -5649,6 +5663,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 8ba9a918-9f47-4f00-8b2b-829bdc8488d3
     m_ActionName: UI/CloseShop[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 81044eaa-45f2-43cd-8f4c-3f5367582d45
+    m_ActionName: UI/SwitchTabRight
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 061ad0a5-b6be-4651-9ed6-371256e5a558
+    m_ActionName: UI/SwitchTabLeft
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: UI

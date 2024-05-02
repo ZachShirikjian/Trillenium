@@ -53,6 +53,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> playerParty = new List<GameObject>();
     private GameObject sylvia;
 
+    //used for battles
+    private string sceneToLoadNext;
+
     public InputActionAsset controls;
     public InputActionReference switchTabLeft;
     public InputActionReference switchTabRight;
@@ -139,7 +142,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(sceneToLoadNext != null)
+        {
+            if(loadingScreen.GetComponent<Alert>() != null)
+            {
+                if(loadingScreen.GetComponent<Alert>().signalMessage == "LoadingDone")
+                {
+                    LoadBattle(sceneToLoadNext);
+                    sceneToLoadNext = "";
+                }
+            }
+        }
     }
 
     //FOR ALLOWING BACKSPACE TO BE PRESSED DURING CONTROLS MENU & tabs to be switched during controls menu
@@ -170,12 +183,23 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadSceneAsync(sceneName));
     }
 
+    public void LoadBattle(string sceneName)
+    {
+        Debug.Log("Called");
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+    }
+
     IEnumerator LoadSceneAsync(string sceneToLoad)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
         loadingScreen.SetActive(true);
+        sceneToLoadNext = sceneToLoad;
+        //AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
+        yield return null;
+        //loadingScreen.SetActive(true);
+        /*
         while(!operation.isDone)
         {
+            loadingScreen.SetActive(true);
             yield return null;
         }
         if(operation.isDone)
@@ -183,6 +207,7 @@ public class GameManager : MonoBehaviour
             loadingScreen.SetActive(false);
             yield return new WaitForSeconds(1f); //delay before new scene loads
         }
+        */
     }
 
 
