@@ -118,6 +118,7 @@ public class NPCDialogue : MonoBehaviour
             //Disable the Portrait UI if the NPC is not a special NPC
             if(npcRef.specialNPC == true)
             {
+                portraitImage.SetActive(true);
                 portraitImage.GetComponent<Image>().sprite = npcRef.dialogue[curPlace].speakerPortait;
             }
             
