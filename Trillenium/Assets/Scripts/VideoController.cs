@@ -133,7 +133,7 @@ public class VideoController : MonoBehaviour
     {
         blackSquare.SetActive(true);
         blackSquare.GetComponent<Animator>().Play("FadeToBlack");
-        Invoke("LoadNextScene", 1f);
+        Invoke("LoadNextScene", 1.5f);
     }
 
     void SkipVideo(InputAction.CallbackContext context)

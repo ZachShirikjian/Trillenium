@@ -44,6 +44,22 @@ public class SplashScreen : MonoBehaviour
                 }
             }
         }
+
+        //If no button's been pressed, automatically load the Title Screen after 19 seconds
+        else if(!Input.GetButton("Submit"))
+        {
+            foreach (GameObject logo in logoAnimator)
+            {
+                logo.GetComponent<Animator>().speed = 1f;
+                if (logo.GetComponent<Alert>() != null)
+                {
+                    if (logo.GetComponent<Alert>().signalMessage == "LogosDone")
+                    {
+                        Invoke("LoadTitleScreen", .1f);
+                    }
+                }
+            }
+        }
     }
 
     void LoadTitleScreen()
