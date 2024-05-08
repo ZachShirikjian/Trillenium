@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
     public GameObject itemsButton;
 
+    //OBJECTIVE UI//
+    public GameObject objectiveMarker;
+    public TextMeshProUGUI currentObjectiveText; //text displaying the current game objective
+
      //PAUSE MENU REFS//
     public GameObject itemMenu;
     public GameObject statsMenu;
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
     public GameObject journalButton;
     public GameObject systemButton;
     public GameObject controlsButton; 
+
     //public GameObject closeControlsButton;
     //Reference to current menu being displayed//
     public GameObject currentMenu;
@@ -48,7 +53,6 @@ public class GameManager : MonoBehaviour
     public Image controlsInfographic;
     public Sprite keyboardSprite;
     public Sprite gamepadSprite;
-
 
     public List<GameObject> playerParty = new List<GameObject>();
     private GameObject sylvia;
@@ -126,6 +130,11 @@ public class GameManager : MonoBehaviour
         sylvia = GameObject.Find("Sylvia");
         playerParty.Add(sylvia);
 
+        //Set the current Objective text to be empty && make it blank.
+        //TODO: Automatically change it for scenes w/ no OverworldCutscene.
+        objectiveMarker.SetActive(false);
+        currentObjectiveText.text = "";
+
         //TODO: Get GameObject.FindWithTag("Player") and add it to the PlayerParty so when Vahan and Petros get added they g
 
         //For scenes with shop UI 
@@ -175,6 +184,13 @@ public class GameManager : MonoBehaviour
         closeMenu.action.Disable();
         switchTabLeft.action.Disable();
         switchTabRight.action.Disable();
+    }
+
+    //UPDATE THE UI TO DISPLAY THE CURRENT GAME OBJECITVE//
+    public void ChangeObjective(Objective currentTask)
+    {
+        objectiveMarker.SetActive(true);
+        currentObjectiveText.text = currentTask.objectiveText;
     }
 
     //LOAD THE PROPER BATTLE SCENE WHEN INTERACTING WITH A BOSS

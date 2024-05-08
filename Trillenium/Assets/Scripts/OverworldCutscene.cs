@@ -141,6 +141,7 @@ public class OverworldCutscene : MonoBehaviour
 
         //Once you reach the 2nd to last point in the cutscene, disable the DialogueBox and Speaker
         //To indicate that the Cutscene has ended.
+        //Set the currentObjective text to the text in the Dialogue's Objective variable.
         else if(curPlace >= dialogue.Length)
         {
             dialogueBox.SetActive(false);
@@ -161,6 +162,15 @@ public class OverworldCutscene : MonoBehaviour
             portraitImage.GetComponent<Animator>().Play("End");
             portraitImage.GetComponent<Animator>().SetTrigger("New");
 
+            //IF THIS CUTSCENE HAS AN OBJECTIVE
+            //MAKE THE OBJECTIVE MARKER UI APPEAR 
+            //ADDED CURPLACE -1 TO PREVENT INDEXOUTOFBOUNDSARRAY
+
+            //OTHERWISE, LEAVE IT BE.
+            if (dialogue[curPlace -1].currentObjective != null)
+            {
+                gm.ChangeObjective(dialogue[curPlace -1].currentObjective);
+            }
             gm.inCutscene = false;
         }
     }

@@ -13,4 +13,5 @@ public class Dialogue : ScriptableObject
     public bool newPersonSpeaking;
     public Sprite speakerPortait;
     public AudioClip audioClip;
+    public Objective currentObjective;
 }
