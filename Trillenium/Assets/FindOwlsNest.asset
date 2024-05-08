@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aa4046eaff2294b9fe5e99b2b429a9, type: 3}
   m_Name: FindOwlsNest
   m_EditorClassIdentifier: 
-  objectiveText: '[LOCATE OWL''S NEST.]'
+  objectiveText: '[LOCATE OWL''S NEST]'
