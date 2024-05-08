@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject npcDialogue;
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
     public GameObject itemsButton;
+   // public JournalScrollScript journalScrollScript;
 
     //OBJECTIVE UI//
     public GameObject objectiveMarker;
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
         sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
         audioManager = sfxSource.GetComponent<AudioManager>();
         isPaused = false;
@@ -113,7 +114,9 @@ public class GameManager : MonoBehaviour
         pauseUI.enabled = false;
         secondMenuOpen = false;
         thirdMenuOpen = false;
+       // journalScrollScript.enabled = false;
         loadingScreen.SetActive(false);
+
         //TEMPORARY SOLUJTION
         //If GameManager GameObject doesn't have an OverworldCutsceneComponent attached to it (if it has no children)
         //Disable npcDialogue, overworld cutscene takes precedent
@@ -275,6 +278,9 @@ public class GameManager : MonoBehaviour
         {
             //CHANGE THIS TO ITEMS AFTER IDGA CLARK DEMO
             EventSystem.current.SetSelectedGameObject(journalButton);
+            pauseUI.optionText.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonName;
+            pauseUI.optionDesc.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonDescription;
+
             Debug.Log("PauseGame");
             pauseMenu.SetActive(true);
             currentMenu = pauseMenu;
@@ -330,6 +336,9 @@ public class GameManager : MonoBehaviour
         journalMenu.SetActive(true);
         currentMenu = journalMenu;
         secondMenuOpen = true;
+
+        //Open the JournalScrollScript and activate it. 
+        //journalScrollScript.enabled = true;
         OnEnable();
     }
 
@@ -428,6 +437,7 @@ public void OpenSystem()
                 //ENSURES TO UPDATE THE PAUSE MENU UI BASED ON THE CURRENT BUTTON SELECTED
                 pauseUI.optionText.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonName;
                 pauseUI.optionDesc.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonDescription;
+                pauseUI.ReenablePauseUIUpdate();
             }
 
             //If closing out of 2nd Menu (Items, Journal, System, etc)
@@ -484,8 +494,10 @@ public void OpenSystem()
                  //ENSURES TO UPDATE THE PAUSE MENU UI BASED ON THE CURRENT BUTTON SELECTED
                 pauseUI.optionText.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonName;
                 pauseUI.optionDesc.text = EventSystem.current.currentSelectedGameObject.GetComponent<PauseMenuButton>().buttonDescription;
+                pauseUI.ReenablePauseUIUpdate();
+
             }
-            
+
         }
 
     }
