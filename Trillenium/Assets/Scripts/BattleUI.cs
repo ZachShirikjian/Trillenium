@@ -276,7 +276,7 @@ public class BattleUI : MonoBehaviour
         //If the Talent was correctly performed
         if(bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent < 100 && bm.talentActivated == false)
         {
-            bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent += 25;
+            bm.partyMembers[bm.curTurn].GetComponent<TheUnitStats>().talent += 50;
             EventSystem.current.SetSelectedGameObject(attackButton);
             bm.sylviatalentAttackScript.enabled = false;
             bm.vahantalentAttackScript.enabled = false;

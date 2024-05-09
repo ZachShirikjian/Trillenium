@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 13
   m_EditorClassIdentifier: 
-  speakerText: "You\u2019re talking about AVA right? Can\u2019t believe people are
-    going to let that bastard launch it as it is."
+  speakerText: "You\u2019re talking about <color=blue>AVA</color>right? Can\u2019t
+    believe people are going to let that bastard launch it as it is."
   personSpeaking: Sylvia
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 46fb392bc73dcd5458073d5941666e70, type: 3}
   audioClip: {fileID: 8300000, guid: a8d2512c11e00b845aa8952187078b38, type: 3}
+  currentObjective: {fileID: 0}

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 18
   m_EditorClassIdentifier: 
-  speakerText: "It was called the Paintblade, a sword welded together with a paintbrush.
-    \r\n"
+  speakerText: "It was called the <color=red>Paintblade</color>, a sword welded together
+    with a paintbrush. \r\n"
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: d6091b66d58c0534a81315f2a15e59fb, type: 3}
   audioClip: {fileID: 8300000, guid: 00f72e6d125904f44a7369e9c2459dde, type: 3}
+  currentObjective: {fileID: 0}

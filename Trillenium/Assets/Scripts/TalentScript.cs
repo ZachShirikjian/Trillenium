@@ -66,7 +66,7 @@ public class TalentScript : MonoBehaviour
             if(talentAttack.action.triggered && talentAttack2.action.triggered && talentAttack3.action.triggered)
             {
                     Debug.Log("Talent Performed!!!");
-                    enemyScript.TakeDamage(200);
+                    enemyScript.TakeDamage(50);
                     bm.talentPerformed = true;
                     bUI.StartNextTurn();
                     canPerformTalent = false;

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 3.5
   m_EditorClassIdentifier: 
-  speakerText: I'm Vahan, and something really bad is going to happen soon, and I
-    need your help before then.
+  speakerText: I'm <color=red>Vahan</color>, and something really bad is going to
+    happen soon, and I need your help before then.
   personSpeaking: Vahan
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 91527bdb8882bd342b221a588073b35e, type: 3}
   audioClip: {fileID: 8300000, guid: aff6f0922e67f2f498083c1dfdc52241, type: 3}
+  currentObjective: {fileID: 0}
