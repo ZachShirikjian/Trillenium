@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ZackysEmployee2
   m_EditorClassIdentifier: 
-  speakerText: Can't believe you left Zacky's. It's gonna be boring without you.
+  speakerText: I won't lie, its gonna be really boring without you cracking jokes
+    all the time.
   personSpeaking: Zackie's Employee
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 8213eb33f4a7b634fa7ef85474965e22, type: 3}
+  currentObjective: {fileID: 0}

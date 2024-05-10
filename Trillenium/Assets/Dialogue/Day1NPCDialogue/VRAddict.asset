@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: VRAddict
   m_EditorClassIdentifier: 
-  speakerText: Yes....YES...YES! VR with zytorum is the best combo ever!
+  speakerText: 'Woah! Zytorum is awesome! Who knew VR could be even MORE immersive?
+
+'
   personSpeaking: VR Addict
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 831b7700a246c4c499fd7805a0a548bb, type: 3}
+  currentObjective: {fileID: 0}

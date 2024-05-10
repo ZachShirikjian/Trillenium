@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: FacePizza
   m_EditorClassIdentifier: 
-  speakerText: I hope AVA can make me a cute sweater. I'm tired of having to wear
-    this chef apron all the time.
+  speakerText: I sure hope AVA can make me a cool sweater to wear. I'm tired of having
+    to wear this chef apron all the time.
   personSpeaking: Mr. Pizza
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: f18ecf5be7504f24e8fe3072db854f94, type: 3}
+  currentObjective: {fileID: 0}

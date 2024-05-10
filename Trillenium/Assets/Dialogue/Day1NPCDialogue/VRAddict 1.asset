@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
-  m_Name: Treble
+  m_Name: VRAddict 1
   m_EditorClassIdentifier: 
-  speakerText: You guys,*hic* all know what this means.
-  personSpeaking: Treble
-  newPersonSpeaking: 1
+  speakerText: "If I knew zyotrum was this cool, I would\u2019ve kicked my home console
+    years ago. \r\n"
+  personSpeaking: VR Addict
+  newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
-  audioClip: {fileID: 8300000, guid: 7957b910443879c48bd48fec701d5ad7, type: 3}
+  audioClip: {fileID: 8300000, guid: 4dc30f97b2ea2d349a7596f1b6617ce6, type: 3}
   currentObjective: {fileID: 0}
