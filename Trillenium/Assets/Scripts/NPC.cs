@@ -9,7 +9,11 @@ using UnityEngine.UI;
 public class NPC : MonoBehaviour
 {
 
-   //VARIABLES//
+    //VARIABLES//
+
+    //Name of the NPC you can talk to//
+    public string npcName;
+
     //List of all Dialogue an NPC has//
     public Dialogue[] dialogue;
 

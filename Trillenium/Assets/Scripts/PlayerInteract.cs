@@ -15,6 +15,7 @@ public class PlayerInteract : MonoBehaviour
    private GameManager gm; //reference to GameManager
 
    public NPCDialogue npcScript;
+    public NPC soloNPC;
    public DoorScript doorScript;
 
    //FOR NEW INPUT SYSTEM//
@@ -42,7 +43,15 @@ public class PlayerInteract : MonoBehaviour
             canInteract = true;
             curObject = other.gameObject;
             Debug.Log("CAN SPEAK");
-            //npcScript = other.gameObject.GetComponent<NPCScript>();
+
+            soloNPC = other.gameObject.GetComponent<NPC>();
+
+            //Enable GameManager's InteractPrompt UI on screen
+            //Set the InteractPromptUI to the other's name/text (if it has one) 
+            gm.interactPrompt.SetActive(true);
+
+            //Set the interactPrompt text's text to the name of the NPC you can talk to.
+            gm.interactPromptText.text = soloNPC.npcName;
         }
 
         // else if(other.tag == "Enemy")
@@ -75,7 +84,9 @@ public class PlayerInteract : MonoBehaviour
         canInteract = false;
         curObject = null;
         doorScript = null;
-        //npcScript = null;
+        soloNPC = null;
+        gm.interactPromptText.text = "";
+        gm.interactPrompt.SetActive(false);
         Debug.Log("OUT OF RANGE");
     }
 
@@ -104,9 +115,12 @@ public class PlayerInteract : MonoBehaviour
         {
             if(interactButton.action.triggered)
             {
+                //Disable interact prompt when interacting with an object
+                gm.interactPromptText.text = "";
+                gm.interactPrompt.SetActive(false);
 
                 //FOR DOORS//
-                if(canInteract && curObject.tag == "Door" && gm.isPaused == false)
+                if (canInteract && curObject.tag == "Door" && gm.isPaused == false)
                 {
                     Debug.Log("OPENING DOOR");
                     doorScript.LoadScene();

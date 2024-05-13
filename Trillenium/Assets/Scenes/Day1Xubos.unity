@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Boy XTron
   dialogue:
   - {fileID: 11400000, guid: 7ef71bc1ca21dce4c88acffd1349fca7, type: 2}
   specialNPC: 0
@@ -679,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Zacky's Employee #2
   dialogue:
   - {fileID: 11400000, guid: 0bf3168f0afe351498d8e11f87ad8d5c, type: 2}
   - {fileID: 11400000, guid: baf57d79e32b78d4a9b2c87ba4daa919, type: 2}
@@ -923,6 +925,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 58, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &288768582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288768583}
+  m_Layer: 5
+  m_Name: InteractPrompt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &288768583
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288768582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1777164160}
+  m_Father: {fileID: 1865241280}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 103, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &300466474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,6 +4338,140 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7038234552220319246, guid: e567adad25c4520429356f92763be4a5, type: 3}
   m_PrefabInstance: {fileID: 733908451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &432765002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432765003}
+  - component: {fileID: 432765005}
+  - component: {fileID: 432765004}
+  m_Layer: 5
+  m_Name: InteractableName
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &432765003
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432765002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1777164160}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 60, y: -4}
+  m_SizeDelta: {x: 200, y: 15}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &432765004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432765002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Zacky's Employee
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 17119ca4f55e53f4786cfbf29dd3ee2a, type: 2}
+  m_sharedMaterial: {fileID: -3918985602525181585, guid: 17119ca4f55e53f4786cfbf29dd3ee2a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &432765005
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432765002}
+  m_CullTransparentMesh: 1
 --- !u!1 &436829017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,6 +5883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: VR Addict
   dialogue:
   - {fileID: 11400000, guid: d0f2638cb14d1654e96e5c42ab91ece4, type: 2}
   - {fileID: 11400000, guid: cacaab462931749459f8e422003849e4, type: 2}
@@ -6735,6 +6908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Half-Burnt Man
   dialogue:
   - {fileID: 11400000, guid: f5bc9cc74382d6942ab406c282c55d9e, type: 2}
   - {fileID: 11400000, guid: 8da5f84abd5cb49408f90e7c5f9d21c2, type: 2}
@@ -8091,7 +8265,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 0.65, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &1279421625
 MonoBehaviour:
@@ -8109,6 +8283,7 @@ MonoBehaviour:
   canInteract: 0
   curObject: {fileID: 0}
   npcScript: {fileID: 1865241277}
+  soloNPC: {fileID: 0}
   doorScript: {fileID: 0}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   interactButton: {fileID: -983230796809572190, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
@@ -8145,6 +8320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Businesstron
   dialogue:
   - {fileID: 11400000, guid: bcc11d2b7e73bbc418ae2564c859ac30, type: 2}
   specialNPC: 0
@@ -9163,6 +9339,7 @@ MonoBehaviour:
   canInteract: 0
   curObject: {fileID: 0}
   npcScript: {fileID: 1865241277}
+  soloNPC: {fileID: 0}
   doorScript: {fileID: 0}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   interactButton: {fileID: -983230796809572190, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
@@ -9261,6 +9438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Girl XTron
   dialogue:
   - {fileID: 11400000, guid: 4cc87cad37f18184ca5e61550c9d5073, type: 2}
   specialNPC: 0
@@ -9494,6 +9672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Zacky's Employee #1
   dialogue:
   - {fileID: 11400000, guid: 6e1e83a5bf269a843b36341b43c4c42d, type: 2}
   specialNPC: 0
@@ -9766,6 +9945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Treble
   dialogue:
   - {fileID: 11400000, guid: 12a4a7f423b3c93419062a599237712d, type: 2}
   specialNPC: 0
@@ -29736,6 +29916,82 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1777164159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1777164160}
+  - component: {fileID: 1777164162}
+  - component: {fileID: 1777164161}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1777164160
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777164159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 432765003}
+  m_Father: {fileID: 288768583}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -110, y: -162}
+  m_SizeDelta: {x: 250, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1777164161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777164159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: aa94d8c9e7a8efe4881fbdfdc591dc32, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1777164162
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777164159}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1788000305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30257,6 +30513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102345a88acfb40b18b4a2c77b7d9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Mr. Pizza
   dialogue:
   - {fileID: 11400000, guid: 50b5cff37f2d5ee418a69e749ba678b3, type: 2}
   - {fileID: 11400000, guid: 6130284debdf0da418188a8c221de428, type: 2}
@@ -30450,6 +30707,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d946f477547abb4ba6cda3baa567d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1865241280 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1244168189378402736, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+  m_PrefabInstance: {fileID: 3230881272357191679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1874093135
 GameObject:
   m_ObjectHideFlags: 0
@@ -30748,6 +31010,8 @@ MonoBehaviour:
   npcDialogue: {fileID: 5797064241911938895}
   pauseMenu: {fileID: 4087867643053242601}
   itemsButton: {fileID: 7978286568409231816}
+  interactPrompt: {fileID: 288768582}
+  interactPromptText: {fileID: 432765004}
   objectiveMarker: {fileID: 811947448}
   currentObjectiveText: {fileID: 974226430}
   itemMenu: {fileID: 1259149944323610741}
@@ -32177,13 +32441,20 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 517032437}
+    - target: {fileID: 7942186136326780294, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9196845443709272946, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1938926526}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1244168189378402736, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 288768583}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
 --- !u!1001 &3433268139409834782

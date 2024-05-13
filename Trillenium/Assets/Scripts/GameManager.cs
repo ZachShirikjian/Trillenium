@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public GameObject npcDialogue;
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
     public GameObject itemsButton;
+
+    public GameObject interactPrompt;
+    public TextMeshProUGUI interactPromptText;
    // public JournalScrollScript journalScrollScript;
 
     //OBJECTIVE UI//
@@ -107,6 +110,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Find the Interact Prompt UI in the UI 
+        //Set the InteractPromptText to be blank, and turn off the Interact Prompt when loading a scene
+       // interactPrompt = GameObject.Find("InteractPrompt");
+        //interactPromptText = interactPrompt.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        interactPromptText.text = "";
+        interactPrompt.SetActive(false);
+
         sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
         audioManager = sfxSource.GetComponent<AudioManager>();
         isPaused = false;

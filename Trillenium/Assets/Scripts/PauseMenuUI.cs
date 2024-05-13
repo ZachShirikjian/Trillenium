@@ -53,7 +53,7 @@ public class PauseMenuUI : MonoBehaviour
     private void OnEnable()
     {
         navigate.action.performed += UpdatePauseMenuUI;
-        navigate.action.performed += Scroll;
+        navigate.action.performed -= Scroll;
         navigate.action.Enable();
     }
 
@@ -82,7 +82,8 @@ public class PauseMenuUI : MonoBehaviour
 
         else if(gm.secondMenuOpen == true)
         {
-            Debug.Log("UPDATE PAUSE MENU UI");
+            Debug.Log("ALLOW JOURNAL UI SCROLLING");
+            OnDisable();
         }
     }
 
