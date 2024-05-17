@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6455475156605355460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579388073399888338}
+  - component: {fileID: 6891324238167372983}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579388073399888338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455475156605355460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6891324238167372983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455475156605355460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd4a5477cb0cd54d97f71f6fbda7102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numEnemiesLeft: 1
+  curTurn: 0
+  currentEnemy: 0
+  enemies: []
+  partyMembers:
+  - {fileID: 0}
+  - {fileID: 0}
+  tutorial: 0
+  talentActivated: 0
+  talentPerformed: 0
+  battleUIScript: {fileID: 0}
+  battleUI: {fileID: 0}
+  attackButton: {fileID: 0}
+  talentButton: {fileID: 0}
+  gameOverMenu: {fileID: 0}
+  restartButton: {fileID: 0}
+  playerActions: {fileID: 0}
+  sylviaPortrait: {fileID: 0}
+  vahanPortrait: {fileID: 0}
+  sylviaDefault: {fileID: 21300000, guid: cea6096b22485e34fb3fabc266aeddc3, type: 3}
+  sylviaAction: {fileID: 21300000, guid: 9b6c4a9e129a60148bac22299f917b62, type: 3}
+  vahanDefault: {fileID: 21300000, guid: 1be8569c8fa38ea4e97f682f43fdd8cc, type: 3}
+  vahanAction: {fileID: 21300000, guid: 8bbb410ebd8e5f140babcbdd39afd9fd, type: 3}
+  sylviatalentAttackScript: {fileID: 0}
+  vahantalentAttackScript: {fileID: 0}
+  battleStatusText: {fileID: 0}
+  transitionScreen: {fileID: 0}
+  audioManager: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicSource: {fileID: 0}
