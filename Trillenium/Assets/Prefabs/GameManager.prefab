@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5987647154114296004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6771821473957211027}
+  - component: {fileID: 7869569727043112130}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6771821473957211027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987647154114296004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6466359749688323207}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7869569727043112130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987647154114296004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1465a94c9480344dcab5a13881500247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPaused: 0
+  inCutscene: 0
+  secondMenuOpen: 0
+  thirdMenuOpen: 0
+  loadingScreen: {fileID: 0}
+  npcDialogue: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  itemsButton: {fileID: 0}
+  interactPrompt: {fileID: 0}
+  interactPromptText: {fileID: 0}
+  objectiveMarker: {fileID: 0}
+  currentObjectiveText: {fileID: 0}
+  itemMenu: {fileID: 0}
+  statsMenu: {fileID: 0}
+  journalMenu: {fileID: 0}
+  systemMenu: {fileID: 0}
+  controlsMenu: {fileID: 0}
+  itemButton: {fileID: 0}
+  statsButton: {fileID: 0}
+  journalButton: {fileID: 0}
+  systemButton: {fileID: 0}
+  controlsButton: {fileID: 0}
+  currentMenu: {fileID: 0}
+  keyboardButton: {fileID: 0}
+  gamepadButton: {fileID: 0}
+  keyboardSelected: {fileID: 21300000, guid: c440cc61ac4438d49a863cfd87fecac1, type: 3}
+  gamepadSelected: {fileID: 21300000, guid: 7d46a84b719858443b3e32aa948aff2c, type: 3}
+  keyboardNeutral: {fileID: 21300000, guid: ece3d448ff0c38040b126ecc18d485dd, type: 3}
+  gamepadNeutral: {fileID: 21300000, guid: 8cc7d3dce7d37f44eafbe9ae18da8889, type: 3}
+  controlsInfographic: {fileID: 0}
+  keyboardSprite: {fileID: 21300000, guid: 920b03bcd21a3ad41ab5980b901c8c9a, type: 3}
+  gamepadSprite: {fileID: 21300000, guid: 067c4a234c26f16479dc6726adc33b17, type: 3}
+  playerParty: []
+  controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  switchTabLeft: {fileID: 5296571498779362361, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  switchTabRight: {fileID: -9043337213262632351, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  closeMenu: {fileID: 8831244380251110864, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
+  pauseUI: {fileID: 0}
+  dialogueText: {fileID: 0}
+  afraidToBattleDialogue: {fileID: 11400000, guid: dea0b3db157af4548b14694e94c85f4e, type: 2}
+  speaker: {fileID: 0}
+  portraitImage: {fileID: 0}
+  dialogueAnim: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  continueButton: {fileID: 0}
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  dialogueSource: {fileID: 0}
+  audioManager: {fileID: 0}
+--- !u!1 &6654496329219913036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6466359749688323207}
+  - component: {fileID: 1075994022470747928}
+  m_Layer: 0
+  m_Name: OverworldCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6466359749688323207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654496329219913036}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6771821473957211027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1075994022470747928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654496329219913036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391f7a74c51560742956cfe8ffe7da8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curPlace: 0
+  currentDialogue: {fileID: 0}
+  speaker: {fileID: 0}
+  dialogue:
+  - {fileID: 11400000, guid: c262e1f2ea9f0af489d7bccdd7013f22, type: 2}
+  - {fileID: 11400000, guid: a8ccc6c6371887e4b9e142e31d68faac, type: 2}
+  - {fileID: 11400000, guid: 8253eeb685597b340aaf4b8007f5d33f, type: 2}
+  - {fileID: 11400000, guid: f04a70bd301ea9447a01b00826a0693e, type: 2}
+  - {fileID: 11400000, guid: 8288753fe37c6554c8d7b169f87f2f07, type: 2}
+  portraitImage: {fileID: 0}
+  dialogueAnim: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  sfxSource: {fileID: 0}
+  dialogueSource: {fileID: 0}
+  audioManager: {fileID: 0}
+  continueButton: {fileID: 0}
+  controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}

@@ -59,8 +59,8 @@ public class NPCDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMove = GameObject.Find("Sylvia").GetComponent<PlayerMovement>();
-        interactScript = GameObject.Find("Sylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
+        playerMove = GameObject.Find("OverworldSylvia").GetComponent<PlayerMovement>();
+        interactScript = GameObject.Find("OverworldSylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     // Update is called once per frame

@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public GameObject loadingScreen; //reference to loading screen transition
     public GameObject npcDialogue;
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
-    public GameObject itemsButton;
 
     public GameObject interactPrompt;
     public TextMeshProUGUI interactPromptText;
@@ -78,7 +77,6 @@ public class GameManager : MonoBehaviour
     
     //The current lines of dialogue which is being spoken.
         public TextMeshProUGUI dialogueText;
-        public Dialogue afraidToBattleDialogue;
 
         //The Header for the Dialogue speaker (Sylvia in this case).
         public TextMeshProUGUI speaker;
@@ -120,7 +118,7 @@ public class GameManager : MonoBehaviour
         sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
         audioManager = sfxSource.GetComponent<AudioManager>();
         isPaused = false;
-        pauseUI = GameObject.Find("Canvas").GetComponent<PauseMenuUI>();
+        pauseUI = GameObject.Find("OverworldCanvas").GetComponent<PauseMenuUI>();
         pauseUI.enabled = false;
         secondMenuOpen = false;
         thirdMenuOpen = false;
@@ -238,27 +236,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f); //delay before new scene loads
         }
         */
-    }
-
-
-    //FOR FIRST AREA ONLY//
-    //Indicates to players they can't fight the first enemy alone and must talk to Vahan.
-    public void NoSoloBattle()
-    {
-        continueButton.SetActive(false);
-        npcDialogue.SetActive(true);
-        dialogueBox.SetActive(true);
-        dialogueAnim.SetTrigger("NewDialogue"); //Play the initial DialogueBox animation, which switches to its Idle state after it appears.
-        portraitImage.GetComponent<Image>().sprite = afraidToBattleDialogue.speakerPortait;
-       //Initalize the Trigger so the Portrait slides in for every time a different speaker says something
-         portraitImage.GetComponent<Animator>().SetTrigger("New");
-        sfxSource.PlayOneShot(audioManager.newDialogue);
-        dialogueText.text = afraidToBattleDialogue.speakerText;
-        dialogueSource.PlayOneShot(afraidToBattleDialogue.audioClip);
-        speaker.text = "Sylvia";
-        sylvia.GetComponent<PlayerMovement>().enabled = false; //DISABLE MOVEMENT during the no solo battle dialogue prompt
-       
-        Invoke("CloseDialogue", 5f);
     }
 
     public void CloseDialogue()
@@ -464,7 +441,7 @@ public void OpenSystem()
                     //TODO: Add animation of sylvia looking up after menu is closed
                     currentMenu.SetActive(false);
                     pauseMenu.SetActive(true);
-                    EventSystem.current.SetSelectedGameObject(itemsButton);
+                    EventSystem.current.SetSelectedGameObject(itemButton);
                     currentMenu = pauseMenu;
                     secondMenuOpen = false;
                 }

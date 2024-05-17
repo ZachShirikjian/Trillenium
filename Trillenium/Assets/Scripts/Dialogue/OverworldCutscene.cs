@@ -62,8 +62,8 @@ public class OverworldCutscene : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         gm.inCutscene = true;
-        playerMove = GameObject.Find("Sylvia").GetComponent<PlayerMovement>();
-        interactScript = GameObject.Find("Sylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
+        playerMove = GameObject.Find("OverworldSylvia").GetComponent<PlayerMovement>();
+        interactScript = GameObject.Find("OverworldSylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
         playerMove.enabled = false;
         interactScript.enabled = false;
 
