@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
         audioManager = sfxSource.GetComponent<AudioManager>();
         isPaused = false;
-        pauseUI = GameObject.Find("OverworldCanvas").GetComponent<PauseMenuUI>();
+        pauseUI = GameObject.FindWithTag("Canvas").GetComponent<PauseMenuUI>();
         pauseUI.enabled = false;
         secondMenuOpen = false;
         thirdMenuOpen = false;
