@@ -30489,6 +30489,18 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 517032437}
+    - target: {fileID: 7457188898938781794, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457188898938781794, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457188898938781794, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9196845443709272946, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
