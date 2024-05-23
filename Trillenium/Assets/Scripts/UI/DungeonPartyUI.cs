@@ -47,8 +47,8 @@ public class DungeonPartyUI : MonoBehaviour
         //INITALIZE HP AND TP VALUES TO BE BASED ON ONES IN UNIT STATS//
 
         //ADD SYLVIA AND VAHAN TO PARTY SO THEY CAN SPAWN IN OUTSIDE OF THIS SCENE
-        sylvia = GameObject.Find("Sylvia");
-        vahan = GameObject.Find("Vahan");
+        sylvia = GameObject.Find("DungeonSylvia");
+        vahan = GameObject.Find("DungeonVahan");
         partyMembers.Add(sylvia);
         partyMembers.Add(vahan);
 
