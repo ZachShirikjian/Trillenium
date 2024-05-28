@@ -380,6 +380,7 @@ public void OpenSystem()
     //TODO: Replace this with "Are You Sure You Want to Quit? All Unsaved Progress will be Lost." text
     public void ReturnToTitle()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("TitleScreen");
     }
 
