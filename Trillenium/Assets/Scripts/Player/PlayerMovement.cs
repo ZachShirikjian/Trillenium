@@ -82,28 +82,28 @@ public class PlayerMovement : MonoBehaviour
             //eg when facing right the box is going to be +1 in front of the character 
             
             //RIGHT//
-            if(horizontal >= 1 && vertical == 0)
+            if(horizontal >= .5) //&& vertical < .5
             {
                 lastKey = 1;
                 interactCollider.transform.localPosition = new Vector2(1,0);
             }
 
             //LEFT
-            else if(horizontal <= -1 && vertical == 0)
+            else if(horizontal <= -.5)
             {
                 lastKey = 3;
                 interactCollider.transform.localPosition = new Vector2(-1,0);
             }
 
             //UP
-            else if(horizontal == 0 && vertical >= 1)
+            else if(vertical >= .5)
             {
                 lastKey = 0;
                 interactCollider.transform.localPosition = new Vector2(0,1);
             }
 
             //DOWN
-            else if(horizontal == 0 && vertical <= -1)
+            else if(vertical <= -.5) // horizontal == 0 &&
             {
                 lastKey = 2;
                 interactCollider.transform.localPosition = new Vector2(0,-1);

@@ -65,6 +65,7 @@ public class OverworldCutscene : MonoBehaviour
         playerMove = GameObject.Find("OverworldSylvia").GetComponent<PlayerMovement>();
         interactScript = GameObject.Find("OverworldSylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
         playerMove.enabled = false;
+        playerMove.canMove = false;
         interactScript.enabled = false;
 
         curPlace = 0;
@@ -155,6 +156,7 @@ public class OverworldCutscene : MonoBehaviour
 
             //Enables player movement once dialogue is completed 
             playerMove.enabled = true;
+            playerMove.canMove = true;
             interactScript.enabled = true;
             interactScript.currentlyInteracting = false;
             interactScript.OnEnable();
