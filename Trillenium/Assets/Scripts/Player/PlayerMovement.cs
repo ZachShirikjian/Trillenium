@@ -81,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
             //LocalPosition = the object always gets set to a value relative to its parent so it's constant 
             //eg when facing right the box is going to be +1 in front of the character 
             
+			// Duncan
+			// Old ifs were too precise. Also horizontal and vertical never go above or reach the value of 1 or -1.
+			// So if(horizontal >= 1) or if(vertical >= 1) would never happen because they cannot reach or go over 1.
             //RIGHT//
             if(horizontal >= .2) //&& vertical < .5
             {
