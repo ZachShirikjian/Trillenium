@@ -29439,6 +29439,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5329593640575871738, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
   m_PrefabInstance: {fileID: 3230881272357191679}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2090135286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090135279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c393003751bfe21459edaa1ff7311cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signalMessage: 
 --- !u!1 &2097189700
 GameObject:
   m_ObjectHideFlags: 0
@@ -30448,6 +30461,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4094138466156323808, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -19.000061
+      objectReference: {fileID: 0}
     - target: {fileID: 4364602551279083593, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -30472,6 +30489,18 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 517032437}
+    - target: {fileID: 7457188898938781794, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457188898938781794, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457188898938781794, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9196845443709272946, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30479,7 +30508,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5329593640575871738, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2090135286}
   m_SourcePrefab: {fileID: 100100000, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
 --- !u!1001 &3433268139409834782
 PrefabInstance:
