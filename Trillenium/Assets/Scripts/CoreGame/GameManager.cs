@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
         audioManager = sfxSource.GetComponent<AudioManager>();
         isPaused = false;
         pauseUI = GameObject.FindWithTag("Canvas").GetComponent<PauseMenuUI>();
+
         pauseUI.enabled = false;
         secondMenuOpen = false;
         thirdMenuOpen = false;
@@ -271,7 +272,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("PauseGame");
             pauseMenu.SetActive(true);
             currentMenu = pauseMenu;
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; // Make sure that Time.timeScale is set back to 1 when loading new scenes.
             isPaused = true;
             pauseUI.enabled = true;
         }
@@ -379,6 +380,7 @@ public void OpenSystem()
     //TODO: Replace this with "Are You Sure You Want to Quit? All Unsaved Progress will be Lost." text
     public void ReturnToTitle()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("TitleScreen");
     }
 

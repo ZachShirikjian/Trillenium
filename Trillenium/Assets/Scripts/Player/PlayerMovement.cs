@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5f; //speed of character;
     public bool isMoving = false; //set to true if input is being made
     private Vector2 input; //reference to the input vector which normalizes to prevent awkward movement diagonally
+    public bool canMove = true; // Used to see if the player should be able to move. - Duncan
 
     //REFERENCES//
     private Rigidbody2D rb2d; 
@@ -63,7 +64,8 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         //ONLY MOVE WHEN GAME ISN'T PAUSED
-        if(gm.isPaused == false)
+        // canMove is checked to make sure the player should be able to move. Used to fix NPC interaction bug.
+        if (gm.isPaused == false && canMove) 
         {
             //Detects movement based on D-Pad or WASD input for both horizontal AND vertical
             // movementInput = context.ReadValue<Vector2>();
@@ -79,29 +81,32 @@ public class PlayerMovement : MonoBehaviour
             //LocalPosition = the object always gets set to a value relative to its parent so it's constant 
             //eg when facing right the box is going to be +1 in front of the character 
             
+			// Duncan
+			// Old ifs were too precise. Also horizontal and vertical never go above or reach the value of 1 or -1.
+			// So if(horizontal >= 1) or if(vertical >= 1) would never happen because they cannot reach or go over 1.
             //RIGHT//
-            if(horizontal >= 1 && vertical == 0)
+            if(horizontal >= .2) //&& vertical < .5
             {
                 lastKey = 1;
                 interactCollider.transform.localPosition = new Vector2(1,0);
             }
 
             //LEFT
-            else if(horizontal <= -1 && vertical == 0)
+            else if(horizontal <= -.2)
             {
                 lastKey = 3;
                 interactCollider.transform.localPosition = new Vector2(-1,0);
             }
 
             //UP
-            else if(horizontal == 0 && vertical >= 1)
+            else if(vertical >= .2)
             {
                 lastKey = 0;
                 interactCollider.transform.localPosition = new Vector2(0,1);
             }
 
             //DOWN
-            else if(horizontal == 0 && vertical <= -1)
+            else if(vertical <= -.2) // horizontal == 0 &&
             {
                 lastKey = 2;
                 interactCollider.transform.localPosition = new Vector2(0,-1);
@@ -112,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 lastKey = -1;
             }
-        
+
             //SET POSITION OF VAHAN TO BE BASED ON INPUT VALUES OF PLAYER CHARACTER
             //vahan.transform.position = new Vector2(horizontal, vertical);
         }
@@ -123,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
     public void Animate()
     {
         //If the player is moving at all in ANY direction, set isMoving to be true
-        if(input.magnitude > 0.1f || input.magnitude < -0.1f)
+        if (input.magnitude > 0.1f || input.magnitude < -0.1f)
         {
             isMoving = true;
         }
@@ -133,12 +138,21 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
-        if(isMoving)
+        if (isMoving)
         {
             anim.SetFloat("Horizontal", horizontal);
             anim.SetFloat("Vertical", vertical);
             anim.SetBool("isMoving", true);
         }
+    }
+
+    // Duncan
+    // Stops all player movment. Used to fix sliding bug in NPC interacting.
+    public void stopAllMovement()
+    {
+        horizontal = 0;
+        vertical = 0;
+        input = Vector2.zero;
     }
 
     //FOR DUNGEON 

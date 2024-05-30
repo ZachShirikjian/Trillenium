@@ -88,7 +88,10 @@ public class NPCDialogue : MonoBehaviour
 
          //Invoke("StartDialogue", 0.25f);
          StartDialogue();
-         playerMove.enabled = false;
+        playerMove.stopAllMovement();
+         playerMove.canMove = false;
+        playerMove.isMoving = false;
+         //playerMove.enabled = false; Old way
 
         //ADD DELAY TO PREVENT SPAMMING AND PREVENTING FIRST DIALOGUE FROM APPEARING
         //if(npcRef.alreadySpokenTo == false)
@@ -192,7 +195,8 @@ public class NPCDialogue : MonoBehaviour
             continueButton.SetActive(false);
 
             //Enables player movement once dialogue is completed 
-            playerMove.enabled = true;
+            playerMove.canMove = true;
+            // playerMove.enabled = true; Old way
             interactScript.currentlyInteracting = false;
 
             portraitImage.GetComponent<Animator>().Play("End");
