@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TRI_Tileset (1)_4
+  m_Name: TRI_Tileset (1) 1_32
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -30963429, guid: 17ab79cdec09f413ca1c4af048f199d3, type: 3}
+  m_Sprite: {fileID: 1066238085, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

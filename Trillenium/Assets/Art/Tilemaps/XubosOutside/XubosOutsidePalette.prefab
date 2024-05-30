@@ -42,23 +42,98 @@ Tilemap:
   m_GameObject: {fileID: 1551759390770640869}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -4, y: -8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 40
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: -8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 41
+      m_TileSpriteIndex: 42
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: -7, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 38
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: -7, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 39
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 35
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 36
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -2, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 37
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -4, y: -5, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 30
       m_TileSpriteIndex: 11
+=======
+      m_TileIndex: 29
+      m_TileSpriteIndex: 6
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -3, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 31
+      m_TileIndex: 42
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -66,9 +141,9 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 16
-      m_TileSpriteIndex: 32
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -76,59 +151,68 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 14
-      m_TileSpriteIndex: 33
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 0, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 31
-      m_TileSpriteIndex: 8
+      m_TileIndex: 30
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 1, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 32
-      m_TileSpriteIndex: 5
+      m_TileIndex: 31
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 2, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 33
-      m_TileSpriteIndex: 34
+      m_TileIndex: 32
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 3, y: -5, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 35
       m_TileSpriteIndex: 10
+=======
+      m_TileIndex: 34
+      m_TileSpriteIndex: 13
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -4, y: -4, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 27
+=======
+      m_TileIndex: 26
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -136,9 +220,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 31
+=======
+      m_TileSpriteIndex: 15
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -146,9 +234,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 32
+=======
+      m_TileSpriteIndex: 16
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -156,59 +248,88 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 12
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 33
+=======
+      m_TileSpriteIndex: 17
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 0, y: -4, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 18
       m_TileSpriteIndex: 8
+=======
+      m_TileIndex: 17
+      m_TileSpriteIndex: 18
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 1, y: -4, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 28
       m_TileSpriteIndex: 5
+=======
+      m_TileIndex: 27
+      m_TileSpriteIndex: 19
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 2, y: -4, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 29
       m_TileSpriteIndex: 34
+=======
+      m_TileIndex: 28
+      m_TileSpriteIndex: 20
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 3, y: -4, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 34
       m_TileSpriteIndex: 35
+=======
+      m_TileIndex: 33
+      m_TileSpriteIndex: 21
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -4, y: -3, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 23
       m_TileSpriteIndex: 27
+=======
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -216,9 +337,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 2
+=======
+      m_TileSpriteIndex: 23
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -226,9 +351,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 13
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 17
+=======
+      m_TileSpriteIndex: 24
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -236,9 +365,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 28
+=======
+      m_TileSpriteIndex: 25
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -246,49 +379,73 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 13
+=======
+      m_TileSpriteIndex: 26
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 1, y: -3, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 24
       m_TileSpriteIndex: 12
+=======
+      m_TileIndex: 23
+      m_TileSpriteIndex: 27
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 2, y: -3, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 25
       m_TileSpriteIndex: 16
+=======
+      m_TileIndex: 24
+      m_TileSpriteIndex: 28
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 3, y: -3, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 26
       m_TileSpriteIndex: 1
+=======
+      m_TileIndex: 25
+      m_TileSpriteIndex: 29
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -4, y: -2, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 19
       m_TileSpriteIndex: 3
+=======
+      m_TileIndex: 18
+      m_TileSpriteIndex: 30
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -296,9 +453,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 29
+=======
+      m_TileSpriteIndex: 31
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -306,9 +467,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 4
+=======
+      m_TileSpriteIndex: 32
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -316,9 +481,13 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 6
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 24
+=======
+      m_TileSpriteIndex: 33
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -326,35 +495,50 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 15
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 25
+=======
+      m_TileSpriteIndex: 34
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 1, y: -2, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 20
       m_TileSpriteIndex: 26
+=======
+      m_TileIndex: 19
+      m_TileSpriteIndex: 35
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 2, y: -2, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 21
       m_TileSpriteIndex: 15
+=======
+      m_TileIndex: 20
+      m_TileSpriteIndex: 36
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 3, y: -2, z: 0}
     second:
       serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileIndex: 22
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
@@ -367,8 +551,12 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 37
       m_TileSpriteIndex: 19
+=======
+      m_TileIndex: 21
+      m_TileSpriteIndex: 37
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -376,9 +564,15 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
+=======
+      m_TileSpriteIndex: 38
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 39
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -386,9 +580,15 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 30
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
+=======
+      m_TileSpriteIndex: 39
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 40
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -396,9 +596,15 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 23
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
+=======
+      m_TileSpriteIndex: 40
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 41
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -406,9 +612,15 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
       m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
+=======
+      m_TileSpriteIndex: 41
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 42
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -469,9 +681,13 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 2a4873dc0e9fb5346b5c546715edeb8f, type: 2}
   - m_RefCount: 1
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
     m_Data: {fileID: 11400000, guid: 35b82792b6285eb40a224b76cfe851b8, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 57aa7039c24f40542975d69acdb8ae64, type: 2}
+=======
+    m_Data: {fileID: 11400000, guid: 5f7ceeebf8d724f4d8260ad1ac7effc1, type: 2}
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
   - m_RefCount: 1
     m_Data: {fileID: 0}
   - m_RefCount: 1
@@ -515,6 +731,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: cec7b802806afca4ab496e26d43bf797, type: 2}
   - m_RefCount: 1
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
     m_Data: {fileID: 11400000, guid: c52fa9ced39242841bef7dfafa0b93cb, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 8b72ab0dc73215348b81b138728ab17f, type: 2}
@@ -524,16 +741,34 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: cd86ac5b7ac2d2649acf175518f4ecdc, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 48f47eba182fef540aeb747b010b8617, type: 2}
+=======
+    m_Data: {fileID: 11400000, guid: 2c6b1935f9ee3af4b86b73613f021e8e, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 68c46cf22ada7cd42b301bb6ab5b1811, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 2429d5396f8c060429b61e9aaa62b304, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 303ea868137dfbc42a3d9aef38400fd6, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: de0e1c99504e4e049965d92931a6b308, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: c6ae09bc53be612428339744d7f841db, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 3b21f8a3521b80c48bee02e288baeb20, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 07b18312174a01c4bb3ac73c3eeaf335, type: 2}
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: 1593261385, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 234529633, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 205337846, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 1984729314, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 2143294796, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 586395719, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1515665956, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 1066238085, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
     m_Data: {fileID: -1633794832, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 111552325, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
@@ -557,22 +792,53 @@ Tilemap:
     m_Data: {fileID: -1643969888, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1427328968, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+=======
+    m_Data: {fileID: 1060079110, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 921947385, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 1093587424, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1495142275, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: -1643969888, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -162005804, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
+  - m_RefCount: 1
+    m_Data: {fileID: -826988303, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 482374958, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -464373622, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 111552325, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -338767388, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 927150363, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 343114062, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1291275324, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 2143294796, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 226601160, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 1495142275, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1436370135, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: -569926787, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -261928142, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: -81214801, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
     m_Data: {fileID: 1369648995, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+=======
+    m_Data: {fileID: 638951818, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 921947385, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 205337846, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1515665956, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1500272798, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1633794832, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
   - m_RefCount: 1
     m_Data: {fileID: 1768023261, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
@@ -582,8 +848,9 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1904094270, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -569926787, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: 1593261385, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
     m_Data: {fileID: 1500272798, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -834279021, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
@@ -595,10 +862,39 @@ Tilemap:
     m_Data: {fileID: 482374958, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -338767388, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+=======
+    m_Data: {fileID: 1291275324, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 927150363, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+    m_Data: {fileID: -1455303405, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -834279021, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1369648995, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 226601160, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1436370135, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
+  - m_RefCount: 1
+    m_Data: {fileID: -261928142, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 343114062, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 974086859, guid: 4e6784b2304ad63448c800c951d931a4, type: 3}
   m_TileMatrixArray:
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
   - m_RefCount: 40
+=======
+  - m_RefCount: 43
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
     m_Data:
       e00: 1
       e01: 0
@@ -617,7 +913,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
   - m_RefCount: 40
+=======
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 39
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
@@ -627,11 +929,88 @@ Tilemap:
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
+=======
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 1
+    m_Data: {r: 0.9068215, g: 0.6286923, b: 0.67017883, a: 1}
+  - m_RefCount: 1
+    m_Data: {r: 0.97967225, g: 0.43657696, b: 0.55828595, a: 1}
+  - m_RefCount: 1
+    m_Data: {r: 0.74777746, g: 0.4189868, b: 0.4685431, a: 1}
+  - m_RefCount: 1
+    m_Data: {r: 0.8339284, g: 0.43938938, b: 0.44830433, a: 1}
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -4, y: -5, z: 0}
-  m_Size: {x: 8, y: 5, z: 1}
+  m_Origin: {x: -4, y: -8, z: 0}
+  m_Size: {x: 8, y: 8, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -745,7 +1124,11 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsidePalette.prefab
 --- !u!114 &2790213925159710036
+=======
+--- !u!114 &532483011425302809
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/XubosOutsidePalette.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

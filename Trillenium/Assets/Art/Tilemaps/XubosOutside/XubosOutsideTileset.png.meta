@@ -127,7 +127,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -148,7 +152,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -169,7 +177,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -190,7 +202,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -211,7 +227,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -232,7 +252,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -253,7 +277,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -274,7 +302,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 320
+=======
+        y: 448
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -295,7 +327,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -316,7 +352,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -337,7 +377,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -358,7 +402,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -379,7 +427,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -400,7 +452,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -421,7 +477,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -442,7 +502,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 256
+=======
+        y: 384
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -463,7 +527,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -484,7 +552,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -505,7 +577,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -526,7 +602,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -547,7 +627,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -568,7 +652,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -589,7 +677,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -610,7 +702,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 192
+=======
+        y: 320
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -631,7 +727,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -652,7 +752,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -673,7 +777,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -694,7 +802,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -715,7 +827,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -736,7 +852,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -757,7 +877,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -778,7 +902,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
         y: 128
+=======
+        y: 256
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         width: 64
         height: 64
       alignment: 0
@@ -799,7 +927,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
+=======
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -809,8 +939,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97a1c9995f9224643aa3b202bd2f7645
-      internalID: -177568436
+      spriteID: 2266b278850f2e54ba298a7d8965f26b
+      internalID: 1066238085
       vertices: []
       indices: 
       edges: []
@@ -819,7 +949,92 @@ TextureImporter:
       name: TRI_Tileset (1) 1_33
       rect:
         serializedVersion: 2
-        x: 448
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9de747695eac44b8a2df409df19819
+      internalID: 1060079110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRI_Tileset (1) 1_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8c5504b40b17c48a9aece3c9c942cc
+      internalID: 1093587424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRI_Tileset (1) 1_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0b3358275ac6c4ab5e1ecf7758c5a2
+      internalID: 1984729314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRI_Tileset (1) 1_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a940d5b0796f748bf42c5c48eb8560
+      internalID: 586395719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRI_Tileset (1) 1_37
+      rect:
+        serializedVersion: 2
+        x: 0
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
         y: 64
         width: 64
         height: 64
@@ -830,8 +1045,46 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
+      spriteID: 97a1c9995f9224643aa3b202bd2f7645
+      internalID: -177568436
+=======
+      spriteID: 908db4ab7914940479e9951986919f25
+      internalID: 234529633
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
+      name: TRI_Tileset (1) 1_33
+      rect:
+        serializedVersion: 2
+        x: 448
+=======
+      name: TRI_Tileset (1) 1_38
+      rect:
+        serializedVersion: 2
+        x: 64
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
       spriteID: 83b269e3b204cbe4db6c8b53218f26e6
       internalID: 558051184
+=======
+      spriteID: 66a4107486fec59418d5426088389856
+      internalID: 974086859
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
       vertices: []
       indices: 
       edges: []
@@ -873,8 +1126,18 @@ TextureImporter:
       TRI_Tileset (1) 1_3: 1369648995
       TRI_Tileset (1) 1_30: -338767388
       TRI_Tileset (1) 1_31: 927150363
+<<<<<<< HEAD:Trillenium/Assets/Art/Tilemaps/XubosOutside/XubosOutsideTileset.png.meta
       TRI_Tileset (1) 1_32: -177568436
       TRI_Tileset (1) 1_33: 558051184
+=======
+      TRI_Tileset (1) 1_32: 1066238085
+      TRI_Tileset (1) 1_33: 1060079110
+      TRI_Tileset (1) 1_34: 1093587424
+      TRI_Tileset (1) 1_35: 1984729314
+      TRI_Tileset (1) 1_36: 586395719
+      TRI_Tileset (1) 1_37: 234529633
+      TRI_Tileset (1) 1_38: 974086859
+>>>>>>> TorBranch:Trillenium/Assets/Art/Tilemaps/TRI_Tileset (1) 1.png.meta
       TRI_Tileset (1) 1_4: 226601160
       TRI_Tileset (1) 1_5: 1436370135
       TRI_Tileset (1) 1_6: -261928142
