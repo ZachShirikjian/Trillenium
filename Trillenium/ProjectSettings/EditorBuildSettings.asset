@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OwlsNestCutscene.unity
     guid: a9b450ed7d30a294f99b00ea05d8167c
   - enabled: 1
-    path: Assets/Scenes/DreamersOutside.unity
+    path: Assets/Scenes/DreamersOutside2.unity
     guid: 23159a135a2e912459bb52fba3ff62f0
   - enabled: 0
     path: Assets/Scenes/DreamersInside.unity
