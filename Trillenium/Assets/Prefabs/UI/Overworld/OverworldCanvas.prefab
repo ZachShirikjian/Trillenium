@@ -1654,9 +1654,9 @@ RectTransform:
   - {fileID: 2026312659468761297}
   - {fileID: 5010744142988649274}
   - {fileID: 2145219599400592342}
+  - {fileID: 4134087126678555736}
   - {fileID: 7457188898938781794}
   - {fileID: 5396773403357070696}
-  - {fileID: 4134087126678555736}
   - {fileID: 7526760015093810289}
   - {fileID: 622834319775136780}
   m_Father: {fileID: 0}
@@ -6983,6 +6983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScreenTransition
       objectReference: {fileID: 0}
+    - target: {fileID: 1882110426997343222, guid: 6fd7349a0be70984ca8d172865e35e5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3789037537422698862, guid: 6fd7349a0be70984ca8d172865e35e5e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7013,7 +7017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3789037537422698862, guid: 6fd7349a0be70984ca8d172865e35e5e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 840.916
+      value: 840.60925
       objectReference: {fileID: 0}
     - target: {fileID: 3789037537422698862, guid: 6fd7349a0be70984ca8d172865e35e5e, type: 3}
       propertyPath: m_LocalPosition.x
