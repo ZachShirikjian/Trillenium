@@ -51,6 +51,8 @@ public class Disclaimer : MonoBehaviour
     //Fades screen to black after 15 seconds of reading the disclaimer message
     void Start()
     {
+		Time.timeScale = 1; // Unity hates when you load scenes apparently. Used to make sure the scene is not frozen.
+		
         beganGame = false;
         sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
         audioManager = sfxSource.GetComponent<AudioManager>();

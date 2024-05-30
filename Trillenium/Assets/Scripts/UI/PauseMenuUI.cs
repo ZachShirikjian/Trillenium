@@ -96,6 +96,9 @@ public class PauseMenuUI : MonoBehaviour
 
     public void Scroll(InputAction.CallbackContext context)
     {
+		if (textArea == null) // Fixed Null Bug -Duncan
+            return;
+		
         //Read the Vertical axis from the Gamepad/Keyboard
         vertical = context.ReadValue<Vector2>().y;
 

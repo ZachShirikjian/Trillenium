@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5f; //speed of character;
     public bool isMoving = false; //set to true if input is being made
     private Vector2 input; //reference to the input vector which normalizes to prevent awkward movement diagonally
+	public bool canMove = true; // Used to see if the player should be able to move. - Duncan
 
     //REFERENCES//
     private Rigidbody2D rb2d; 
@@ -63,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         //ONLY MOVE WHEN GAME ISN'T PAUSED
-        if(gm.isPaused == false)
+        if(gm.isPaused == false && canMove)
         {
             //Detects movement based on D-Pad or WASD input for both horizontal AND vertical
             // movementInput = context.ReadValue<Vector2>();
@@ -80,28 +81,28 @@ public class PlayerMovement : MonoBehaviour
             //eg when facing right the box is going to be +1 in front of the character 
             
             //RIGHT//
-            if(horizontal >= 1 && vertical == 0)
+            if(horizontal >= .3)
             {
                 lastKey = 1;
                 interactCollider.transform.localPosition = new Vector2(1,0);
             }
 
             //LEFT
-            else if(horizontal <= -1 && vertical == 0)
+            else if(horizontal <= -.3)
             {
                 lastKey = 3;
                 interactCollider.transform.localPosition = new Vector2(-1,0);
             }
 
             //UP
-            else if(horizontal == 0 && vertical >= 1)
+            else if(vertical >= .3)
             {
                 lastKey = 0;
                 interactCollider.transform.localPosition = new Vector2(0,1);
             }
 
             //DOWN
-            else if(horizontal == 0 && vertical <= -1)
+            else if(vertical <= -.3)
             {
                 lastKey = 2;
                 interactCollider.transform.localPosition = new Vector2(0,-1);
@@ -140,7 +141,15 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isMoving", true);
         }
     }
-
+	
+	// Duncan
+    // Stops all player movement. Used to fix sliding bug in NPC interacting.
+    public void stopAllMovement()
+    {
+        horizontal = 0;
+        vertical = 0;
+        input = Vector2.zero;
+    }
     //FOR DUNGEON 
     //If you're in a dungeon, perform melee attack on enemies
 }
