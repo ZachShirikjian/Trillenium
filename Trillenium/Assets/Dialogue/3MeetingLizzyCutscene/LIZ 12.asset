@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: "People still get canceled nowadays? We\u2019re nearly in the 3rd
     Millennium, I thought we were better than that! "
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: ea1cf4743c7a43240ba5d230f7a0db48, type: 3}
   audioClip: {fileID: 8300000, guid: 7094ba13662745342b07de7f8c1288c0, type: 3}
+  currentObjective: {fileID: 0}

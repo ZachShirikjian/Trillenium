@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: "I\u2019m sure AVA\u2019s development is connected to the Paintblade
     somehow.\r\r"
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}
   audioClip: {fileID: 8300000, guid: fd18bf04f1da3de4ebbb17108aa46e5a, type: 3}
+  currentObjective: {fileID: 0}

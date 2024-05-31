@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: 'Wait, you mean, the Brigala? They were legendary in the artist community,
     and inspired my work! '
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: ef4b5c74ca197744aa0e08693289d4b4, type: 3}
   audioClip: {fileID: 8300000, guid: de4cdf5619d358b4fba7bea27292972f, type: 3}
+  currentObjective: {fileID: 0}

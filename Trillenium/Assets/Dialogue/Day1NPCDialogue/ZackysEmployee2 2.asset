@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ZackysEmployee2 2
   m_EditorClassIdentifier: 
-  speakerText: Especially that poster boy over there.
+  speakerText: Especially not poster boy over there.
   personSpeaking: Zackie's Employee
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}

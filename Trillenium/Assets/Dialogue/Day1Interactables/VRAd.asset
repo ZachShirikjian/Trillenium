@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: VRAd
   m_EditorClassIdentifier: 
-  speakerText: An advertisement for zytorum, a popular drug and energy source for
-    Xubos.
-  personSpeaking: Zytorum Ad
+  speakerText: An advertisement for the newest VR device designed by DREAMERS Technologies.
+  personSpeaking: VR Ad
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 0}

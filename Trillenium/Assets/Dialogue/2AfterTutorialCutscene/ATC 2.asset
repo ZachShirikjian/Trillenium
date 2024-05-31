@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 2
   m_EditorClassIdentifier: 
-  speakerText: "More importantly, the hell did you drag me out here for? The XTrons
-    aren\u2019t something you should mess with!"
-  personSpeaking: Sylvia
+  speakerText: More importantly, who the hell are you to be dragging me in here for?
+  personSpeaking: Violet Woman
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: ea1cf4743c7a43240ba5d230f7a0db48, type: 3}
   audioClip: {fileID: 8300000, guid: a4f4ad6be8ea7a14591e8f1b1ac421d0, type: 3}
+  currentObjective: {fileID: 0}

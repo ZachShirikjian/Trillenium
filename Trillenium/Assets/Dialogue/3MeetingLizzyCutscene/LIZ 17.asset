@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: "He twisted your voice to make you say things you didn\u2019t actually
     say? That\u2019s messed up. "
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 46fb392bc73dcd5458073d5941666e70, type: 3}
   audioClip: {fileID: 8300000, guid: a87ea2a93165d4a4fba657f22d27a32d, type: 3}
+  currentObjective: {fileID: 0}

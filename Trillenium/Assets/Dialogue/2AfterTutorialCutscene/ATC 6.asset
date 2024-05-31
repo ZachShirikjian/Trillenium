@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: "Who\u2019re you talking about? Sorry for your loss, but I can\u2019t
     help you if I don\u2019t know anything. "
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 46fb392bc73dcd5458073d5941666e70, type: 3}
   audioClip: {fileID: 8300000, guid: 1ebcdc2a224150b47903dd0072e19d19, type: 3}
+  currentObjective: {fileID: 0}

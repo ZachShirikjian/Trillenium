@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: VRAddict 1
   m_EditorClassIdentifier: 
   speakerText: "If I knew zyotrum was this cool, I would\u2019ve kicked my home console
-    years ago. \r\n"
+    to the side years ago. \r\n"
   personSpeaking: VR Addict
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}

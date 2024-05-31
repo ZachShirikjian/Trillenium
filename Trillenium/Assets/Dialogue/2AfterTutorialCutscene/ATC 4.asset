@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ATC 4
   m_EditorClassIdentifier: 
   speakerText: "Does it have to do with your commission? \r"
-  personSpeaking: Sylvia
-  newPersonSpeaking: 0
+  personSpeaking: Violet Woman
+  newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 46fb392bc73dcd5458073d5941666e70, type: 3}
   audioClip: {fileID: 8300000, guid: f0feb34ac85249f47b37d8257c535bd0, type: 3}
+  currentObjective: {fileID: 0}

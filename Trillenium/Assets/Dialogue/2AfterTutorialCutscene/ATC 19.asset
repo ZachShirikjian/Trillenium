@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: "I heard the paint it used \u201Ctransformed people\u2019s emotions\u201D.
     Does that sound familiar? "
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}
   audioClip: {fileID: 8300000, guid: c5a34b83276801a4fa5777ebf41b0bb1, type: 3}
+  currentObjective: {fileID: 0}

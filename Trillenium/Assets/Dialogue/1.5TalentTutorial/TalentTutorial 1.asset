@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TalentTutorial 1
   m_EditorClassIdentifier: 
   speakerText: 'What do you mean? My speciality as an artist? '
-  personSpeaking: Sylvia
+  personSpeaking: Violet Woman
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 43cc6a4871ab009428bee9c103f5f548, type: 3}
   audioClip: {fileID: 8300000, guid: f9c87fb0d1018c84e8a03e740f1c088c, type: 3}
+  currentObjective: {fileID: 0}
