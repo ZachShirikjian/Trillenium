@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ATC 13
   m_EditorClassIdentifier: 
   speakerText: "You\u2019re talking about <color=blue>AVA</color>, right? Can\u2019t
-    believe people are going to let that bastard launch it as it is."
+    believe people are going to let that bastard launch it as-is."
   personSpeaking: Violet Woman
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 46fb392bc73dcd5458073d5941666e70, type: 3}

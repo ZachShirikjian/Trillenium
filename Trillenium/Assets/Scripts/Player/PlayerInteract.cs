@@ -15,8 +15,9 @@ public class PlayerInteract : MonoBehaviour
    private GameManager gm; //reference to GameManager
 
    public NPCDialogue npcScript;
-    public NPC soloNPC;
+   public NPC soloNPC;
    public DoorScript doorScript;
+    public ChillTopicShop shopScript;
 
    //FOR NEW INPUT SYSTEM//
     public InputActionAsset controls;
@@ -67,6 +68,14 @@ public class PlayerInteract : MonoBehaviour
             curObject = other.gameObject;
             doorScript = other.gameObject.GetComponent<DoorScript>();
             Debug.Log("CAN ENTER DOOR");
+
+
+            //Enable GameManager's InteractPrompt UI on screen
+            //Set the InteractPromptUI to the other's name/text (if it has one) 
+            gm.interactPrompt.SetActive(true);
+
+            //Set the interactPrompt text's text to the name of the door you can enter;
+            gm.interactPromptText.text = doorScript.buildingName;
         }
 
         else if(other.tag == "Shop")
@@ -74,6 +83,14 @@ public class PlayerInteract : MonoBehaviour
             canInteract = true;
             curObject = other.gameObject;
             Debug.Log("CAN ENTER SHOP");
+            shopScript = other.gameObject.GetComponent<ChillTopicShop>();
+
+            //Enable GameManager's InteractPrompt UI on screen
+            //Set the InteractPromptUI to the other's name/text (if it has one) 
+            gm.interactPrompt.SetActive(true);
+
+            //Set the interactPrompt text's text to the Shop you can interact with.
+            gm.interactPromptText.text = shopScript.shopName;
         }
     }
 

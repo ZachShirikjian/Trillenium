@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
     //PARAMETER IS SCENENAME OF THE BOSS BATTLE SCENE 
     public void LoadBattleScene(string sceneName)
     {
-        StartCoroutine(LoadSceneAsync(sceneName));
+        StartCoroutine(LoadSceneAsync("FirstBattle"));
     }
 
     public void LoadBattle(string sceneName)

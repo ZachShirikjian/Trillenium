@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 5.5
   m_EditorClassIdentifier: 
-  speakerText: "And I wanted to honor them in a way I couldn\u2019t myself. "
+  speakerText: "And I really wanted to honor them in a way I couldn\u2019t myself. "
   personSpeaking: Vahan
   newPersonSpeaking: 0
   speakerPortait: {fileID: 21300000, guid: d6091b66d58c0534a81315f2a15e59fb, type: 3}
   audioClip: {fileID: 8300000, guid: d359f8f993bf4b44ea70cc4992938859, type: 3}
+  currentObjective: {fileID: 0}

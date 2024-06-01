@@ -59,6 +59,7 @@ public class BattleUI : MonoBehaviour
         sylviaTalentUIPrompt.SetActive(false);
         vahanTalentUIPrompt.SetActive(false);
         tutorialDialoguePanel.SetActive(false);
+
         battleDialogue.enabled = false;
         bm = GameObject.Find("BattleManager").GetComponent<BattleManager>();
         EventSystem.current.SetSelectedGameObject(attackButton);

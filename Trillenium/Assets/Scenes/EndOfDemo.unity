@@ -475,9 +475,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "That concludes the Alpha Version Demo!\nFeel free to leave a comment on
-    the Trillenium \nItch.io page with your feedback. \n\nThe full version of Trillenium
-    will release\non Itch.io and Steam in Winter 2025.\n\nThanks For Playing!"
+  m_text: "That concludes the Boston FIG Online Demo!\nFeel free to leave a comment
+    on the Trillenium \nItch.io page with your feedback. \n\nThe full version of
+    Trillenium will release\non Itch.io and Steam in 2025.\n\nThanks For Playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a31af53cc274f48f7ad639666fb33afd, type: 2}
   m_sharedMaterial: {fileID: -8139637183949828704, guid: a31af53cc274f48f7ad639666fb33afd, type: 2}
@@ -1113,7 +1113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: -200}
+  m_AnchoredPosition: {x: -500, y: -160}
   m_SizeDelta: {x: 700, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556372046

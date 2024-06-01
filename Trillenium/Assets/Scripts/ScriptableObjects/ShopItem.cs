@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu]
-public class ShopItem : ScriptableObject
+public class ShopItem: MonoBehaviour
 {
     public string itemName;
     [TextArea]

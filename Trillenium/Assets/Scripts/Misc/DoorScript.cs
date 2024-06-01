@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DoorScript : MonoBehaviour
 {
+
+    //Name of the building you can enter (in the InteractPrompt script) 
+    public string buildingName;
+
     // Start is called before the first frame update
     void Start()
     {

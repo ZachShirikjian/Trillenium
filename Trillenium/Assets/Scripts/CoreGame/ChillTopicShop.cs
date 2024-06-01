@@ -16,7 +16,8 @@ public class ChillTopicShop : MonoBehaviour
     //VARIABLES//
     public int currency; 
     public bool buyingItem = false;
-    public bool shopOpen = false; //prevents curSelectedButton from being set to continue button 
+    public bool shopOpen = false; //prevents curSelectedButton from being set to continue button
+    public string shopName; //name of shop for PlayerInteract script
 
     //REFERENCES//
     public GameObject shopUI; 
