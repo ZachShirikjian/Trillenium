@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_SizeDelta: {x: 1200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &308457228
 Animator:
@@ -203,7 +203,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "TRILLENIUM IS CURRENTLY EARLY IN DEVELOPMENT. \n\nALL CONTENT, INCLUDING
-    GAMEPLAY, ART, AND AUDIO, IS SUBJECT TO CHANGE.\n"
+    GAMEPLAY, ART, AND AUDIO, IS SUBJECT TO CHANGE.\n\nA CONTROLLER IS RECOMMENDED
+    FOR PLAYING THIS GAME.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 83c1984d0a3d6f64c9d7113bf1eafc5f, type: 2}
   m_sharedMaterial: {fileID: 2178326275309406531, guid: 83c1984d0a3d6f64c9d7113bf1eafc5f, type: 2}
@@ -726,6 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c393003751bfe21459edaa1ff7311cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  signalMessage: 
 --- !u!1 &1542889756
 GameObject:
   m_ObjectHideFlags: 0

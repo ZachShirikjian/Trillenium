@@ -37018,7 +37018,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 584558991824283560, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
   m_PrefabInstance: {fileID: 3230881272357191679}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3230881272357191681}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40f5528ae08994b8ea5e170d716b0b5a, type: 3}
@@ -37029,7 +37029,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5880548426056602911, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
   m_PrefabInstance: {fileID: 3230881272357191679}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3230881272357191681}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d946f477547abb4ba6cda3baa567d86, type: 3}
@@ -38736,7 +38736,7 @@ PrefabInstance:
     - target: {fileID: 7869569727043112130, guid: 7f6d74dad09b9284badbf3dc696c5673, type: 3}
       propertyPath: npcDialogue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3230881272357191681}
     - target: {fileID: 7869569727043112130, guid: 7f6d74dad09b9284badbf3dc696c5673, type: 3}
       propertyPath: statsButton
       value: 
@@ -39056,6 +39056,11 @@ PrefabInstance:
 --- !u!1 &3230881272357191680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 420172726972585076, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+  m_PrefabInstance: {fileID: 3230881272357191679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3230881272357191681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2265464789254178183, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
   m_PrefabInstance: {fileID: 3230881272357191679}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3433268139409834782

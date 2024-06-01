@@ -1748,7 +1748,7 @@ MonoBehaviour:
   speaker: {fileID: 2682506079856588543}
   portraitImage: {fileID: 656467996238150226}
   dialogueAnim: {fileID: 4432358063276986136}
-  dialogueBox: {fileID: 918647523736525998}
+  dialogueBox: {fileID: 8730017292766556113}
   sfxSource: {fileID: 0}
   dialogueSource: {fileID: 0}
   audioManager: {fileID: 0}
@@ -7273,11 +7273,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 316122578076720426, guid: f489984b8ce010448962ca67493da894, type: 3}
   m_PrefabInstance: {fileID: 972542109293848440}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &918647523736525998 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 126268926656658390, guid: f489984b8ce010448962ca67493da894, type: 3}
-  m_PrefabInstance: {fileID: 972542109293848440}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1557484190177504202 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1793103882927246514, guid: f489984b8ce010448962ca67493da894, type: 3}
@@ -7310,6 +7305,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8730017292766556113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8383566825821014185, guid: f489984b8ce010448962ca67493da894, type: 3}
+  m_PrefabInstance: {fileID: 972542109293848440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6046113679505156364
 PrefabInstance:
   m_ObjectHideFlags: 0
