@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ZackysEmployee2 2
   m_EditorClassIdentifier: 
   speakerText: Especially not poster boy over there.
-  personSpeaking: Zackie's Employee
+  personSpeaking: Male Zacky's Employee
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 56bc27344e8ebe941b0d976bc434854c, type: 3}

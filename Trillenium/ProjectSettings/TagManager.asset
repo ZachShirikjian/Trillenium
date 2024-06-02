@@ -11,6 +11,7 @@ TagManager:
   - Shop
   - Logos
   - Canvas
+  - Interactable
   layers:
   - Default
   - TransparentFX

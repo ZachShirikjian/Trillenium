@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: I won't lie, its gonna be really boring without you cracking jokes
     all the time.
-  personSpeaking: Zackie's Employee
+  personSpeaking: Male Zacky's Employee
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 8213eb33f4a7b634fa7ef85474965e22, type: 3}

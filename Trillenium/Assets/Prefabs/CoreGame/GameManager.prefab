@@ -52,9 +52,12 @@ MonoBehaviour:
   loadingScreen: {fileID: 0}
   npcDialogue: {fileID: 0}
   pauseMenu: {fileID: 0}
-  itemsButton: {fileID: 0}
   interactPrompt: {fileID: 0}
   interactPromptText: {fileID: 0}
+  talkInteract: {fileID: 21300000, guid: aa94d8c9e7a8efe4881fbdfdc591dc32, type: 3}
+  checkInteract: {fileID: 21300000, guid: 3e2b76e403c9cd34b9a4595e306f2695, type: 3}
+  enterInteract: {fileID: 21300000, guid: 9b3278ec62bd426409604ce3c1b90c05, type: 3}
+  shopUIInteract: {fileID: 21300000, guid: c9689ba31097c2743af2eebc20081080, type: 3}
   objectiveMarker: {fileID: 0}
   currentObjectiveText: {fileID: 0}
   itemMenu: {fileID: 0}
@@ -84,7 +87,6 @@ MonoBehaviour:
   closeMenu: {fileID: 8831244380251110864, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   pauseUI: {fileID: 0}
   dialogueText: {fileID: 0}
-  afraidToBattleDialogue: {fileID: 11400000, guid: dea0b3db157af4548b14694e94c85f4e, type: 2}
   speaker: {fileID: 0}
   portraitImage: {fileID: 0}
   dialogueAnim: {fileID: 0}

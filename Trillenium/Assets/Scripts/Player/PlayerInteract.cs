@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerInteract : MonoBehaviour
 {
 
@@ -17,7 +18,7 @@ public class PlayerInteract : MonoBehaviour
    public NPCDialogue npcScript;
    public NPC soloNPC;
    public DoorScript doorScript;
-    public ChillTopicShop shopScript;
+   public ChillTopicShop shopScript;
 
    //FOR NEW INPUT SYSTEM//
     public InputActionAsset controls;
@@ -49,10 +50,20 @@ public class PlayerInteract : MonoBehaviour
 
             //Enable GameManager's InteractPrompt UI on screen
             //Set the InteractPromptUI to the other's name/text (if it has one) 
-            gm.interactPrompt.SetActive(true);
+            gm.ChangeInteractPrompt(soloNPC.npcName, gm.talkInteract);
+        }
 
-            //Set the interactPrompt text's text to the name of the NPC you can talk to.
-            gm.interactPromptText.text = soloNPC.npcName;
+        if (other.tag == "Interactable")
+        {
+            canInteract = true;
+            curObject = other.gameObject;
+            Debug.Log("CAN SPEAK");
+
+            soloNPC = other.gameObject.GetComponent<NPC>();
+
+            //Enable GameManager's InteractPrompt UI on screen
+            //Set the InteractPromptUI to the other's name/text (if it has one) 
+            gm.ChangeInteractPrompt(soloNPC.npcName, gm.checkInteract);
         }
 
         // else if(other.tag == "Enemy")
@@ -72,10 +83,8 @@ public class PlayerInteract : MonoBehaviour
 
             //Enable GameManager's InteractPrompt UI on screen
             //Set the InteractPromptUI to the other's name/text (if it has one) 
-            gm.interactPrompt.SetActive(true);
+            gm.ChangeInteractPrompt(doorScript.buildingName, gm.enterInteract);
 
-            //Set the interactPrompt text's text to the name of the door you can enter;
-            gm.interactPromptText.text = doorScript.buildingName;
         }
 
         else if(other.tag == "Shop")
@@ -87,10 +96,7 @@ public class PlayerInteract : MonoBehaviour
 
             //Enable GameManager's InteractPrompt UI on screen
             //Set the InteractPromptUI to the other's name/text (if it has one) 
-            gm.interactPrompt.SetActive(true);
-
-            //Set the interactPrompt text's text to the Shop you can interact with.
-            gm.interactPromptText.text = shopScript.shopName;
+            gm.ChangeInteractPrompt(shopScript.shopName, gm.shopUIInteract);
         }
     }
 
@@ -148,14 +154,23 @@ public class PlayerInteract : MonoBehaviour
                 //FOR NPCS//
                 if(canInteract && curObject.tag == "NPC" && gm.isPaused == false)
                 {
-                    Debug.Log("INTERACTING");
+                    Debug.Log("TALKING");
                     // npcScript.enabled = true;
                     npcScript.BeginDialogue();        
                     currentlyInteracting = true;    
                 }
 
+                //FOR NPCS//
+                if (canInteract && curObject.tag == "Interactable" && gm.isPaused == false)
+                {
+                    Debug.Log("INTERACTING");
+                    // npcScript.enabled = true;
+                    npcScript.BeginDialogue();
+                    currentlyInteracting = true;
+                }
+
                 //FOR LIZZY//
-                if(canInteract && curObject.tag == "Shop" && gm.isPaused == false)
+                if (canInteract && curObject.tag == "Shop" && gm.isPaused == false)
                 {
                     Debug.Log("ENTERING SHOP");
                     currentlyInteracting = true;

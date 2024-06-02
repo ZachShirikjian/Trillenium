@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerText: "You\u2019re outta Zacky's? HAH! Good luck paying bills with your
     art or whatever."
-  personSpeaking: Zackie's Employee
+  personSpeaking: Female Zacky's Employee
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 0}
+  currentObjective: {fileID: 0}

@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject interactPrompt;
     public TextMeshProUGUI interactPromptText;
+
+    //INTERACT PROMPT VARIATIONS//
+    public Sprite talkInteract;
+    public Sprite checkInteract;
+    public Sprite enterInteract;
+    public Sprite shopUIInteract;
    // public JournalScrollScript journalScrollScript;
 
     //OBJECTIVE UI//
@@ -202,6 +208,17 @@ public class GameManager : MonoBehaviour
     {
         objectiveMarker.SetActive(true);
         currentObjectiveText.text = currentTask.objectiveText;
+    }
+
+    //UPDATE THE UI TO DISPLAY THE CORRECT INTERACT PROMPT (SHOP, TALK, ENTER, CHECK)
+    //1) Enable the Interact Prompt GameObject
+    //2) Set the Interactable text to the interactable the Player is closest to
+    //3) Set the correct interact prompt to match the type of interactable you're near 
+    public void ChangeInteractPrompt(string interactableName, Sprite interactableSprite)
+    {
+        interactPrompt.SetActive(true);
+        interactPromptText.text = interactableName;
+        interactPrompt.GetComponentInChildren<Image>().sprite = interactableSprite;
     }
 
     //LOAD THE PROPER BATTLE SCENE WHEN INTERACTING WITH A BOSS
