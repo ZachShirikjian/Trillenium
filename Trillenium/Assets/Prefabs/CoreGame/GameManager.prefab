@@ -54,10 +54,10 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   interactPrompt: {fileID: 0}
   interactPromptText: {fileID: 0}
-  talkInteract: {fileID: 21300000, guid: aa94d8c9e7a8efe4881fbdfdc591dc32, type: 3}
-  checkInteract: {fileID: 21300000, guid: 3e2b76e403c9cd34b9a4595e306f2695, type: 3}
+  talkInteract: {fileID: 21300000, guid: 4ba1ccddcc2664c4894ec38050f0987a, type: 3}
+  checkInteract: {fileID: 21300000, guid: 3b64f790cc40cb846a986de6b3f469e7, type: 3}
   enterInteract: {fileID: 21300000, guid: 9b3278ec62bd426409604ce3c1b90c05, type: 3}
-  shopUIInteract: {fileID: 21300000, guid: c9689ba31097c2743af2eebc20081080, type: 3}
+  shopUIInteract: {fileID: 21300000, guid: e3756216c78731f4fa4166d252b54103, type: 3}
   objectiveMarker: {fileID: 0}
   currentObjectiveText: {fileID: 0}
   itemMenu: {fileID: 0}
