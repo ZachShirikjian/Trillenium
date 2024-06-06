@@ -38232,9 +38232,17 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1938926526}
+    - target: {fileID: 1996560815675516732, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2145219599400592342, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -452
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237722323222065998, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265464789254178183, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Name
@@ -38256,6 +38264,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1938926526}
+    - target: {fileID: 4763299708236524182, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4873852288613576511, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -38276,6 +38288,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 517032437}
+    - target: {fileID: 6598312768590828568, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855886692259869414, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7457188898938781794, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -38574,6 +38594,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 1787302182903482765, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72461c2e1dc69bb499eb9f1594ce29e1, type: 3}
+    - target: {fileID: 4111629941460941183, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111629941460941183, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4111629941460941183, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -38630,6 +38662,22 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: db3794c0c78edec4ba13489b95f9783d, type: 2}
+    - target: {fileID: 7277472534024942359, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277472534024942359, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277472534024942359, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277472534024942359, guid: 2c16c7e83ffc0e642899b9241c6710ce, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
