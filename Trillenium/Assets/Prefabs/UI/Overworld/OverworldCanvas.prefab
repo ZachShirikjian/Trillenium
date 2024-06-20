@@ -2309,9 +2309,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 29b2cfb54d6ea6c4fa2fa48815260ee0, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 29b2cfb54d6ea6c4fa2fa48815260ee0, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 29b2cfb54d6ea6c4fa2fa48815260ee0, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 2b3fcd1c9dbc87641b475dad1dc13076, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 2b3fcd1c9dbc87641b475dad1dc13076, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 2b3fcd1c9dbc87641b475dad1dc13076, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3853,7 +3853,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -4}
+  m_AnchoredPosition: {x: 103.6, y: -4}
   m_SizeDelta: {x: 200, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4214816546086087982
@@ -3911,8 +3911,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4060,9 +4060,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 7b84d799eececb84b994b64e18d6ccc1, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 7b84d799eececb84b994b64e18d6ccc1, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 7b84d799eececb84b994b64e18d6ccc1, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 35f3268ff9067b548aed87c5769bf46d, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 35f3268ff9067b548aed87c5769bf46d, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 35f3268ff9067b548aed87c5769bf46d, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4108,9 +4108,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 7942186136326780294}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: ReturnToTitle
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4287,7 +4287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa94d8c9e7a8efe4881fbdfdc591dc32, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ba1ccddcc2664c4894ec38050f0987a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

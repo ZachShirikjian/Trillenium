@@ -38128,6 +38128,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1938926526}
+    - target: {fileID: 95763598831444510, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToTitle
+      objectReference: {fileID: 0}
     - target: {fileID: 584558991824283560, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: sfxSource
       value: 
