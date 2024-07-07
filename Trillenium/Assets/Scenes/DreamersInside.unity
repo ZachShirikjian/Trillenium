@@ -362,7 +362,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.91, y: 10.51}
+    oldSize: {x: 7.69, y: 10.51}
     newSize: {x: 5.91, y: 10.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -31997,6 +31997,7 @@ MonoBehaviour:
   npcScript: {fileID: 1865241277}
   soloNPC: {fileID: 0}
   doorScript: {fileID: 0}
+  shopScript: {fileID: 0}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   interactButton: {fileID: -983230796809572190, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!61 &844748638
@@ -33114,6 +33115,7 @@ MonoBehaviour:
   npcScript: {fileID: 1865241277}
   soloNPC: {fileID: 0}
   doorScript: {fileID: 0}
+  shopScript: {fileID: 0}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   interactButton: {fileID: -983230796809572190, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!1 &1337849046
@@ -33712,6 +33714,7 @@ MonoBehaviour:
   npcScript: {fileID: 1865241277}
   soloNPC: {fileID: 0}
   doorScript: {fileID: 0}
+  shopScript: {fileID: 0}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   interactButton: {fileID: -983230796809572190, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!114 &1459262683
@@ -34092,6 +34095,7 @@ MonoBehaviour:
   npcScript: {fileID: 1865241277}
   soloNPC: {fileID: 0}
   doorScript: {fileID: 0}
+  shopScript: {fileID: 0}
   controls: {fileID: -944628639613478452, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
   interactButton: {fileID: -983230796809572190, guid: 3181556de4f794c65ad8474cffeb6474, type: 3}
 --- !u!95 &1581750448
@@ -44938,6 +44942,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 333370279161434382, guid: 946669dcdc633ac42bc9ae49401c9daf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 725005039018686134, guid: 946669dcdc633ac42bc9ae49401c9daf, type: 3}
       propertyPath: sfxSource
       value: 
@@ -44946,6 +44954,18 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1168086175}
+    - target: {fileID: 2624834098558422230, guid: 946669dcdc633ac42bc9ae49401c9daf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624834098558422230, guid: 946669dcdc633ac42bc9ae49401c9daf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624834098558422230, guid: 946669dcdc633ac42bc9ae49401c9daf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3006649535796763542, guid: 946669dcdc633ac42bc9ae49401c9daf, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
