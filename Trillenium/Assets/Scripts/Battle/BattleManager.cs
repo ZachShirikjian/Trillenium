@@ -174,6 +174,8 @@ public class BattleManager : MonoBehaviour
                         }
                 }
 
+                //CHANGE TO 3 WHEN PETROS JOINS THE PARTY 
+                //2 WOULD CHANGE TO PETROS! 
                 //ENEMY ATTACKS PLAYER
                 //For Enemy's Turn, call the Attack method for each enemy to attack the player (assuming both players are alive) 
                 if(curTurn >= 2 && curTurn < (enemies.Count + partyMembers.Length))

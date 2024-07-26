@@ -157,12 +157,14 @@ public class BattleUI : MonoBehaviour
     //Reference to Attack button in the scene
     //Switches to the Enemy Buttons so players can choose which enemies they want to attack
     //Then after that the player plays the attack animation, and after 3 seconds, it switches to the next person's turn
+
+    //Use InputAction.CallbackContext context inside ()s for method name & reference Controller button pressed to do Attack instead of calling method on button press
     public void Attack()
     {
             Debug.Log("ATTACK ENEMY");
             //Add in option for selecting enemy to target
 
-            //CHANGE LATER so it's set to the first enemySelection UI button in the scene from the enemySpawner//
+            //CHANGE LATER so it's set to the first enemySelection UI button in the scene from the enemySpawner in the enemySelection array (enemySelection[0]//
             EventSystem.current.SetSelectedGameObject(enemySelection);
     }
 
@@ -190,6 +192,7 @@ public class BattleUI : MonoBehaviour
         }
     }
 
+    //DELETE THIS AND JUST MAKE TALENT NOT WORK WHEN PRESSED UNLESS IF AP >= 100
 //TEMP METHOD FOR TALENT TUTORIAL ONLY!!!//
     //Makes talent button interactable after Vahan's dialogue finishes (for now, will change later so it's on when a party member's TP is 100%)
     public void ActivateTalent()
@@ -200,6 +203,7 @@ public class BattleUI : MonoBehaviour
         tutorialDialoguePanel.SetActive(false);
     }
 
+    //CHANGE THIS SO ATTACKS CAN STILL BE PERFORMED WHEN HAVING SOME AP LEFT 
     //AFTER A TALENT IS PERFORMED AND BOTH CHARACTERS HAVE 0 TP, MAKE ATTACKS SELECTABLE AGAIN
     public void ResetAttacks()
     {
@@ -257,6 +261,8 @@ public class BattleUI : MonoBehaviour
     //If backspace pressed while selecting an enemy
     //Return to having the Attack button be the one that's selected
     //Make sure to deactivate talent so talentActivated is false
+
+    //CHANGE BACK TO PREVIOUS SELECTED BUTTON IF PLAYER DID TALENT INSTEAD OF ATTACK
     public void CancelAttack()
     {
         Debug.Log("ATTACK CANCELLED");  
@@ -318,6 +324,8 @@ public class BattleUI : MonoBehaviour
     }
 
     //ONLY FOR FIRST BATTLE
+
+    //CAN RE-USE FOR BATTLES FEATURING DIALOGUE, JUST CHANGE DIALOGUE ARRAY IN BATTLE DIALOGUE OBJECT IN INSPECTOR
     public void TalentTutorial()
     {
         Debug.Log("VAHAN TUTORIAL BEGINS");
