@@ -18,7 +18,11 @@ public class TitleScreen : MonoBehaviour
     public GameObject controlsPanel;
     public GameObject creditsPanel;
 
-  //CONTROLS MENU BUTTONS//
+    //REFERENCE TO THE MENU UI ANIMATORS
+    public Animator menuUIAnimator; 
+    //public Animator canvasAnimator;
+
+    //CONTROLS MENU BUTTONS//
     public Image keyboardButton;
     public Image gamepadButton;
     public Sprite keyboardSelected;
@@ -37,19 +41,44 @@ public class TitleScreen : MonoBehaviour
     public AudioSource sfxSource;
     public AudioManager audioManager;
 
+
     void Start()
     {
        // menuButtons.SetActive(false);
         sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
         audioManager = sfxSource.GetComponent<AudioManager>();
 
-        //TO DO: PRESS ANY BUTTON BEFORE THE MENU BUTTONS APPEAR//
-        
-        //Makes first selected button NEWGAME by default
-        EventSystem.current.SetSelectedGameObject(newGameButton);
+        menuButtons.SetActive(false);
+        //TO-DO: CALL THIS METHOD ONCE A BUTTON IS PRESSED FROM THE GLITCHY SCREEN//
+        //PLAY FADE TO BLACK ANIM FROM MENU BG 
+        //canvasAnimator.Play("FadeFromBlack");
+
+        //IF BUTTON PRESSED
+        //CANVASANIMATOR.PLAY("FADETOWHITE")
+
+        Invoke("LoadMenuUIAfterDelay", 1.5f);
+
+        //MAKES NEW GAME (OR SELECTED BUTTON) INTERACTABLE AFTER ANIMATION HAS COMPLETED 
+        newGameButton.GetComponent<Button>().interactable = false;
+
         controlsPanel.SetActive(false);
         creditsPanel.SetActive(false);
         OnDisable(); //Disables backspace from being pressed until controls OR settings menu is open
+    }
+
+    //TEMP METHOD FOR DISPLAYING MENU BUTTONS AFTER DELAY TO PREVENT MASHING TO DISCLAIMER (1 sec by default)//
+    public void LoadMenuUIAfterDelay()
+    {
+        menuButtons.SetActive(true);
+        Invoke("AllowMenuUIAfterDelay", 1f);
+    }
+
+    //TO PREVENT MASHING, allow New Game to be interactable/pressed AFTER menu animation has completed 
+    public void AllowMenuUIAfterDelay()
+    {
+        //Makes first selected button NEWGAME by default
+        EventSystem.current.SetSelectedGameObject(newGameButton);
+        newGameButton.GetComponent<Button>().interactable = true;
     }
 
     //Enable input for closing out of controls menu using the Backspace button (B on Xbox controller)

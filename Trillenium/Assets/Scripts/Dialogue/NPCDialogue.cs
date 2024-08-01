@@ -78,10 +78,10 @@ public class NPCDialogue : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(continueButton);
     }
 
-    //Call this method every time players speak to a new NPC in the PlayerInteract script when pressing Interact button
+    //Call this method every time players speak to a new NPC OR Interactable in the PlayerInteract script when pressing Interact button
     public void BeginDialogue()
     {
-         if (interactScript.curObject.tag == "NPC")
+         if (interactScript.curObject.tag == "NPC" || interactScript.curObject.tag == "Interactable")
          {
              npcRef = interactScript.curObject.GetComponent<NPC>();
          }

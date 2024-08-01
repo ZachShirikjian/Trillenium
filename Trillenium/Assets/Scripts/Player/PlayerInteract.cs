@@ -47,7 +47,6 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("CAN SPEAK");
 
             soloNPC = other.gameObject.GetComponent<NPC>();
-
             //Enable GameManager's InteractPrompt UI on screen
             //Set the InteractPromptUI to the other's name/text (if it has one) 
             gm.ChangeInteractPrompt(soloNPC.npcName, gm.talkInteract);

@@ -20,6 +20,8 @@ public class NPC : MonoBehaviour
    // public bool alreadySpokenTo = false;
     public bool specialNPC = false; //If this is a special NPC, it has a portrait (eg Vahan talking w/ Brigala memorial)
 
+    //public bool objectInteractable = false; //If this is an Interactable, NOT an NPC, change the InteractPrompt to say CHECK instead of TALK
+
     //REFERENCES//
     public GameObject helpIcon; //Icon to indicate you can talk to this NPC
 
