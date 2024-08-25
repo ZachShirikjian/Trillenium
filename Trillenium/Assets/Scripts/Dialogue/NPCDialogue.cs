@@ -81,35 +81,31 @@ public class NPCDialogue : MonoBehaviour
     //Call this method every time players speak to a new NPC OR Interactable in the PlayerInteract script when pressing Interact button
     public void BeginDialogue()
     {
-         if (interactScript.curObject.tag == "NPC" || interactScript.curObject.tag == "Interactable")
-         {
-             npcRef = interactScript.curObject.GetComponent<NPC>();
-         }
+        if (interactScript.curObject.tag == "NPC" || interactScript.curObject.tag == "Interactable")
+        {
+            npcRef = interactScript.curObject.GetComponent<NPC>();
+        }
 
-         //Invoke("StartDialogue", 0.25f);
-         StartDialogue();
-         playerMove.enabled = false;
+        //Invoke("StartDialogue", 0.25f);
+        StartDialogue();
 
-         //DUNCAN'S CODE FOR PREVENTING MOVEMENT SLIDING 
-		 //playerMove.stopAllMovement();
-		 //playerMove.canMove = false;
-		  
+        playerMove.enabled = false;
 
         //ADD DELAY TO PREVENT SPAMMING AND PREVENTING FIRST DIALOGUE FROM APPEARING
         //if(npcRef.alreadySpokenTo == false)
-       // {
+        // {
         //
 
         //}
 
         //IF ALREADY SPOKEN TOO, PREVENT DIALOGUE FROM STARTING FROM BEGINNING
 
-       // else if(npcRef.alreadySpokenTo == true)
-       // {
-       //     Debug.Log("You already talked to this NPC!");
-       //}
+        // else if(npcRef.alreadySpokenTo == true)
+        // {
+        //     Debug.Log("You already talked to this NPC!");
+        //}
 
-      
+
     }
 
     public void StartDialogue()
@@ -198,7 +194,6 @@ public class NPCDialogue : MonoBehaviour
 
             //Enables player movement once dialogue is completed 
             playerMove.enabled = true;
-			//playerMove.canMove = true;
             interactScript.currentlyInteracting = false;
 
             portraitImage.GetComponent<Animator>().Play("End");

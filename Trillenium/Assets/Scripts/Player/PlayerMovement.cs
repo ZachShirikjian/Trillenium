@@ -79,29 +79,31 @@ public class PlayerMovement : MonoBehaviour
             //LocalPosition = the object always gets set to a value relative to its parent so it's constant 
             //eg when facing right the box is going to be +1 in front of the character 
 
+            // Duncan changes
+
             //RIGHT//
-            if (horizontal >= 1 && vertical == 0)
+            if (horizontal >= .2)
             {
                 lastKey = 1;
                 interactCollider.transform.localPosition = new Vector2(1, 0);
             }
 
             //LEFT
-            else if (horizontal <= -1 && vertical == 0)
+            else if (horizontal <= -.2)
             {
                 lastKey = 3;
                 interactCollider.transform.localPosition = new Vector2(-1, 0);
             }
 
             //UP
-            else if (horizontal == 0 && vertical >= 1)
+            else if (vertical >= .2)
             {
                 lastKey = 0;
                 interactCollider.transform.localPosition = new Vector2(0, 1);
             }
 
             //DOWN
-            else if (horizontal == 0 && vertical <= -1)
+            else if (vertical >= .2)
             {
                 lastKey = 2;
                 interactCollider.transform.localPosition = new Vector2(0, -1);
@@ -115,6 +117,10 @@ public class PlayerMovement : MonoBehaviour
 
             //SET POSITION OF VAHAN TO BE BASED ON INPUT VALUES OF PLAYER CHARACTER
             //vahan.transform.position = new Vector2(horizontal, vertical);
+        }
+        else
+        {
+            Debug.Log("Can move is false!");
         }
     }
 
@@ -139,6 +145,19 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Vertical", vertical);
             anim.SetBool("isMoving", true);
         }
+    }
+
+    // Duncan
+    // Stops all player movment. Used to fix sliding bug in NPC interacting.
+    private void OnDisable()
+    {
+        Debug.Log("Stopped All Movement!");
+        horizontal = 0;
+        vertical = 0;
+        input = Vector2.zero;
+        rb2d.velocity = Vector2.zero;
+        isMoving = false;
+        anim.SetBool("isMoving", false);
     }
 
     //FOR DUNGEON 
