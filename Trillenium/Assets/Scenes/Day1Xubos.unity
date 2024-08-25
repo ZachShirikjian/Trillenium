@@ -38364,6 +38364,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1363005458504069382, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b604245e1a1d9d24cad4eccde070d5c8, type: 3}
+    - target: {fileID: 1363005458504069382, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b604245e1a1d9d24cad4eccde070d5c8, type: 3}
+    - target: {fileID: 1363005458504069382, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b604245e1a1d9d24cad4eccde070d5c8, type: 3}
     - target: {fileID: 1515734956039123703, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -38408,6 +38420,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1938926526}
+    - target: {fileID: 5632006204376629575, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e7e27acf553e8a468a2839a47be4893, type: 3}
     - target: {fileID: 5730484973543949285, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
