@@ -42,8 +42,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (gm.isPaused == false)
         {
-            anim.SetFloat("Horizontal", horizontal);
-            anim.SetFloat("Vertical", vertical);
             Animate();
         }
 
@@ -137,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetFloat("Horizontal", horizontal);
             anim.SetFloat("Vertical", vertical);
-            anim.SetBool("isMoving", true);
+            anim.SetBool("isMoving", isMoving);
         }
     }
 

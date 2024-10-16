@@ -169,11 +169,14 @@ public class OverworldCutscene : MonoBehaviour
             //ADDED CURPLACE -1 TO PREVENT INDEXOUTOFBOUNDSARRAY
 
             //OTHERWISE, LEAVE IT BE.
+
+            Debug.Log("TEST");
+            gm.inCutscene = false;
             if (dialogue[curPlace -1].currentObjective != null)
             {
                 gm.ChangeObjective(dialogue[curPlace -1].currentObjective);
             }
-            gm.inCutscene = false;
+
         }
     }
 

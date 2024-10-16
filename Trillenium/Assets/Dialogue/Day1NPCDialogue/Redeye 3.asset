@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
+  m_Name: Redeye 3
+  m_EditorClassIdentifier: 
+  speakerText: "You look at those pictures trying to find anything fire or trying
+    to find a sense, like a little PINT of ANYTHING that resembles humanity, and
+    it\u2019s just not there. "
+  personSpeaking: Redeye
+  newPersonSpeaking: 0
+  speakerPortait: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: e27697880eca8f54889a706e5e346d8f, type: 3}
+  currentObjective: {fileID: 0}

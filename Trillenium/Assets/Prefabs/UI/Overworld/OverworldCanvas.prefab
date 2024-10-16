@@ -4313,7 +4313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Brigala Memorial
+  m_text: Female Zacky's Employee
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17119ca4f55e53f4786cfbf29dd3ee2a, type: 2}
   m_sharedMaterial: {fileID: -3918985602525181585, guid: 17119ca4f55e53f4786cfbf29dd3ee2a, type: 2}
@@ -4340,8 +4340,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7705,6 +7705,54 @@ PrefabInstance:
     - target: {fileID: 1793103882927246514, guid: f489984b8ce010448962ca67493da894, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765967591397559687, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765967591397559687, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765967591397559687, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765967591397559687, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765967591397559687, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765967591397559687, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279359413055366788, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279359413055366788, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279359413055366788, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279359413055366788, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279359413055366788, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279359413055366788, guid: f489984b8ce010448962ca67493da894, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8383566825821014185, guid: f489984b8ce010448962ca67493da894, type: 3}
       propertyPath: m_Name

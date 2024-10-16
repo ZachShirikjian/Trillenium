@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 14
   m_EditorClassIdentifier: 
-  speakerText: Yeah, once it comes out <color=red>3 days from now</color>, any physical
-    work of art imaginable can be made.
+  speakerText: Yeah, and once it comes out <color=red>3 days from now</color>, any
+    physical work of art imaginable can be made.
   personSpeaking: Vahan
   newPersonSpeaking: 1
   speakerPortait: {fileID: 21300000, guid: 91527bdb8882bd342b221a588073b35e, type: 3}

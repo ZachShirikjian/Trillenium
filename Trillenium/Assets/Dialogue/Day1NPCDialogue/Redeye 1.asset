@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
+  m_Name: Redeye 1
+  m_EditorClassIdentifier: 
+  speakerText: "Everybody\u2019s always talking something about it on the news like
+    \u201COh AI is great! AI is the future! AI is here to stay! But I don\u2019t
+    like it. "
+  personSpeaking: Redeye
+  newPersonSpeaking: 0
+  speakerPortait: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 4c7813c667b0f854c831f02a63ad8890, type: 3}
+  currentObjective: {fileID: 0}

@@ -4000,6 +4000,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2155926468668767132, guid: e1d857639bf66f545b050a21c8d90a55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2972347263631285345, guid: e1d857639bf66f545b050a21c8d90a55, type: 3}
       propertyPath: m_Name
       value: CutsceneCanvas
@@ -4124,6 +4128,10 @@ PrefabInstance:
       propertyPath: currentDialogue
       value: 
       objectReference: {fileID: 203449704}
+    - target: {fileID: 6339636100360316598, guid: e1d857639bf66f545b050a21c8d90a55, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdab8bf5df1f2b24dbf7735e78438ee6, type: 3}
     - target: {fileID: 6459519092670886355, guid: e1d857639bf66f545b050a21c8d90a55, type: 3}
       propertyPath: m_IsActive
       value: 0

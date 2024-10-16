@@ -218,7 +218,12 @@ public class NPCDialogue : MonoBehaviour
                 }
             }
 
-             gm.inCutscene = false;
+            else if(interactScript == null)
+            {
+                Debug.Log("Remove this later.");
+            }
+
+            gm.inCutscene = false;
             // {
             //     Debug.Log("Vahan has joined the party!");
             //     interactScript.curObject.transform.parent = playerParty.transform;
