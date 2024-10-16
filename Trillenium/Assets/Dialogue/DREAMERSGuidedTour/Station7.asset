@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Station7
   m_EditorClassIdentifier: 
-  speakerText: "After Brigala\u2019s untimely death, Khalidi pursued to evolve Brigala\u2019s
-    original philosophies to harmonize art and technology further. For the last 15
-    years, Khalidi has generously worked with his team to complete the research done
-    by Himari and Brigala for completely integrating AI technology into art."
+  speakerText: The future of art can only be reached using AVA, Artistic Virtual
+    Assistant. We hope you're excited for the new revolution of art when AVA launches
+    on January 1st, 3000. The Trillenium shall mark the dawn of AI's perfection within
+    the world of art.
   personSpeaking: Narrator
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
