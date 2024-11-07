@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DreamersOutside.unity
     guid: 23159a135a2e912459bb52fba3ff62f0
   - enabled: 0
-    path: Assets/Scenes/DreamersInside.unity
+    path: Assets/Scenes/DreamersInsideOLD.unity
     guid: cfe62fe41015a6040a0d14bb296e0e8a
   - enabled: 0
     path: Assets/Scenes/EndOfDemo.unity
