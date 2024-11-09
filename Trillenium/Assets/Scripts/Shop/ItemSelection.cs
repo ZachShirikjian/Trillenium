@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemSelection : MonoBehaviour
 {
+    //REFERENCES//
+    [SerializeField] public ChillTopicShop chillTopicScript;
     #region Variables
     #region Cursor
     [SerializeField] private GameObject cursor; // Cursor object.
@@ -93,7 +96,6 @@ public class ItemSelection : MonoBehaviour
                 }
             }
         }
-
         // Use trig functions to calculate both the scaling and transparency of the items and the item lighting repsectively.
         // We use Sin() and Cos() throughout this script because both functions oscillate between -1 and 1 at a non-linear speed, which happens to give us the type of movement we want.
         itemScale = lightingAlpha = Mathf.Abs(Mathf.Sin(itemTheta));
@@ -182,14 +184,19 @@ public class ItemSelection : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return)) // Checks first.
             return "Select";
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) // Checks if last is false, and so on and so forth.
-            return "Up";
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            return "Right";
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            return "Down";
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            return "Left";
+        //IF the PURCHASE CONFIRM WINDOW IS NOT OPEN
+        //Stop the cursor from moving.
+        if (chillTopicScript.buyingItem == false)
+        {
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) // Checks if last is false, and so on and so forth.
+                return "Up";
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                return "Right";
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+                return "Down";
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                return "Left";
+        }
 
         // If none of the above mentioned keys were pressed, return KeyCode.None (checks last; if no available input is pressed).
         return "";

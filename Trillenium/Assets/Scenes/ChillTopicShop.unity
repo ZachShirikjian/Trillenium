@@ -449,7 +449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &132561329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9453e18a8f1fef24f9d9002c76f69bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chillTopicScript: {fileID: 1588307152}
   cursor: {fileID: 1146797505}
   items:
   - {fileID: 261865123}
@@ -4744,7 +4745,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1588307152}
           m_TargetAssemblyTypeName: ChillTopicShop, Assembly-CSharp
           m_MethodName: BuyItem
           m_Mode: 1
@@ -6320,7 +6321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1410815766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7770,8 +7771,8 @@ RectTransform:
   - {fileID: 1192538433}
   - {fileID: 1266176902}
   - {fileID: 132561329}
-  - {fileID: 1410815766}
   - {fileID: 1552817417}
+  - {fileID: 1410815766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7795,6 +7796,7 @@ MonoBehaviour:
   buyingItem: 0
   shopOpen: 0
   shopName: 
+  itemSelectionScript: {fileID: 195411929}
   currencyText: {fileID: 1737290824}
   dialogueText: {fileID: 585880099}
   dialogueSource: {fileID: 1915227275}

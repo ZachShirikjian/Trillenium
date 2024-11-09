@@ -20,6 +20,10 @@ public class ChillTopicShop : MonoBehaviour
     public string shopName; //name of shop for PlayerInteract script
 
     //REFERENCES//
+
+    //References Item Selection script for selecting & handling UI of items 
+    public ItemSelection itemSelectionScript; 
+
     //public GameObject shopUI; 
     private GameManager gm;
     //private GameObject sylvia;
@@ -60,7 +64,7 @@ public class ChillTopicShop : MonoBehaviour
         //shopMenu.SetActive(false);
         OnDisable();
 
-        EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(0).gameObject);
+        EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject);
         Debug.Log(EventSystem.current.currentSelectedGameObject);
         Debug.Log("CLEAR");
     }
@@ -179,10 +183,9 @@ public class ChillTopicShop : MonoBehaviour
   //Prevents you from mashing to buy items right when shop opens
   public void EnableShopMenu()
   {
-   // shopMenu.SetActive(true);
-    EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(0).gameObject);
-
-  }
+        // shopMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject);
+    }
 
     //METHOD FOR CONFIRMING A PURCHASE (put for the submit event on each button)
     public void ConfirmPurchase()
@@ -212,7 +215,7 @@ public class ChillTopicShop : MonoBehaviour
         purchaseConfirmation.SetActive(true);
 
         //Prevents you from selecting other objects while buying
-         EventSystem.current.SetSelectedGameObject(buyItemButton);
+        EventSystem.current.SetSelectedGameObject(buyItemButton);
       }
       else
       {
@@ -273,8 +276,8 @@ public class ChillTopicShop : MonoBehaviour
   //RESETS DIALOGUE AFTER MAKING PURCHASE OR CANCELING PURCHASE
     public void ResetShop()
     {
-       EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(0).GetChild(0).gameObject);
-       dialogueSource.Stop();
+        EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject);
+        dialogueSource.Stop();
        dialogueText.text = lizzyDialogue[7].speakerText;
        dialogueSource.PlayOneShot(lizzyDialogue[7].audioClip);
        buyingItem = false;
