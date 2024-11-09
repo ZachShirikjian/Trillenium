@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ConfirmPurchase
   m_EditorClassIdentifier: 
   speakerText: Dope, thanks for buying!
-  personSpeaking: 
+  personSpeaking: Lizzy
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 4dc6685a5f53fbb4eac4d2d9735e36e3, type: 3}
+  currentObjective: {fileID: 0}

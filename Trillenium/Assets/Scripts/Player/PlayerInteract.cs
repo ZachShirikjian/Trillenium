@@ -173,11 +173,16 @@ public class PlayerInteract : MonoBehaviour
                 {
                     Debug.Log("ENTERING SHOP");
                     currentlyInteracting = true;
-                    curObject.GetComponent<ChillTopicShop>().enabled = true;
-                    curObject.GetComponent<ChillTopicShop>().OpenShop();
+
+                    //OLD CODE//
+                    //curObject.GetComponent<ChillTopicShop>().enabled = true;
+                    //curObject.GetComponent<ChillTopicShop>().OpenShop();
+
+                    //Load Cerulean's Chill Topic Shop Scene//
+                    SceneManager.LoadScene("ChillTopicShop");
 
                     //DISABLE MOVEMENT//
-                    
+
                 }
                     
                 //UNUSED SINCE ALL BOSS FIGHTS AUTOMATICALLY HAPPEN AFTER A CUTSCENE//

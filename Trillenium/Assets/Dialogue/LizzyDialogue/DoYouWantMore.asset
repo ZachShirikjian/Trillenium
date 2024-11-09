@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: DoYouWantMore
   m_EditorClassIdentifier: 
   speakerText: What else do you want?
-  personSpeaking: 
+  personSpeaking: Lizzy
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 0}
+  currentObjective: {fileID: 0}

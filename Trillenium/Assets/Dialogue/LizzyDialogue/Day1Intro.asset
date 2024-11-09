@@ -15,7 +15,8 @@ MonoBehaviour:
   speakerText: 'Wanna fight XTrons? Got just what you need.
 
 '
-  personSpeaking: 
+  personSpeaking: Lizzy
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 8300000, guid: bd5d06b5be1245c468a9d8605038c16a, type: 3}
+  currentObjective: {fileID: 0}

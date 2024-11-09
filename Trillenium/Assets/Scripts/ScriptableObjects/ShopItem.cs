@@ -10,5 +10,4 @@ public class ShopItem: MonoBehaviour
     [TextArea]
     public string itemDescription;
     public int itemCost;
-    public GameObject itemSprite;
 }

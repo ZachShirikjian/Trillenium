@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: MakingChoice 1
   m_EditorClassIdentifier: 
   speakerText: "Want this? \r\n"
-  personSpeaking: 
+  personSpeaking: Lizzy
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 05dbed67082453e4caecbb9641c8ac07, type: 3}
+  currentObjective: {fileID: 0}

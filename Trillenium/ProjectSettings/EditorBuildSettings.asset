@@ -29,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DreamersOutside.unity
     guid: 23159a135a2e912459bb52fba3ff62f0
+  - enabled: 1
+    path: Assets/Scenes/DreamersInside.unity
+    guid: 6878d6524bb7750429181666f6a471b8
+  - enabled: 1
+    path: Assets/Scenes/ChillTopicShop.unity
+    guid: 4384dc18ba6913347826cb0f45e2c67c
   - enabled: 0
     path: Assets/Scenes/DreamersInsideOLD.unity
     guid: cfe62fe41015a6040a0d14bb296e0e8a
