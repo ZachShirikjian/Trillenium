@@ -119,7 +119,7 @@ public class ChillTopicShop : MonoBehaviour
                         Debug.Log("Soul Phrase");
                         shopMenu.itemIndex = -1;
                         shopMenu.cursor.gameObject.SetActive(false);
-                        Invoke("CallCloseShop", 2f); //Automatically closes the shop after 1 second if all items have been purchased.
+                        Invoke("CallCloseShop", 3.5f); //Automatically closes the shop after 1 second if all items have been purchased.
                         return; // Exit while loop.
                     }
                 }
