@@ -149,7 +149,7 @@ MonoBehaviour:
   uiClose: {fileID: 8300000, guid: a036c0215a9387443ace9edcc3e0896b, type: 3}
   uiCancel: {fileID: 8300000, guid: f46ecee35d62c8d4ba71125137c554bf, type: 3}
   buyItem: {fileID: 8300000, guid: ea2fcaac90f4dc7438ba0b0250e11dea, type: 3}
-  battleWon: {fileID: 8300000, guid: 1857e2c3c334ebc4184afbd11a12c414, type: 3}
+  battleWon: {fileID: 8300000, guid: 0af9dba1aea108040b026d1a9fe9f754, type: 3}
   talentAttack: {fileID: 0}
   sylviaTalentAttack: {fileID: 0}
   playerAttack: {fileID: 8300000, guid: 8ad70f8961cc6534a8ca04e48845e7e2, type: 3}

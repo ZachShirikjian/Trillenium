@@ -95,7 +95,7 @@ public class PlayerInteract : MonoBehaviour
 
             //Enable GameManager's InteractPrompt UI on screen
             //Set the InteractPromptUI to the other's name/text (if it has one) 
-            gm.ChangeInteractPrompt(shopScript.shopName, gm.shopUIInteract);
+            gm.ChangeInteractPrompt("Chill Topic", gm.shopUIInteract);
         }
     }
 

@@ -10,6 +10,7 @@ public class ItemSelection : MonoBehaviour
 {
     //REFERENCES//
     [SerializeField] public ChillTopicShop chillTopicScript;
+    public GameObject buyItemButton; //The Purchase Confirm Button
     #region Variables
     #region Cursor
     public GameObject cursor; // Cursor object.
@@ -418,11 +419,16 @@ public class ItemSelection : MonoBehaviour
 
             currentItem = items[itemIndex].gameObject;
 
-            EventSystem.current.SetSelectedGameObject(currentItem); // Set selected object to current selected item.
             
             if (chillTopicScript.buyingItem == false) // If not in purchase prompt, set current selected button to current item.
             {
                 chillTopicScript.curSelectedButton = currentItem; // Important to note that curSelectedButton is a GAME OBJECT and NOT a button.
+                EventSystem.current.SetSelectedGameObject(currentItem); // Set selected object to current selected item.
+            }
+            else if(chillTopicScript.buyingItem == true) //
+            {
+                Debug.Log("TEST");
+                EventSystem.current.SetSelectedGameObject(buyItemButton); // Set selected object to current selected item.
             }
         }
         else

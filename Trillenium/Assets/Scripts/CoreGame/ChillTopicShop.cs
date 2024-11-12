@@ -5,7 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
+//The "GameManager" of the Chill Topic Shop Scene
 public class ChillTopicShop : MonoBehaviour
 {
 
@@ -17,9 +19,13 @@ public class ChillTopicShop : MonoBehaviour
     public int currency; 
     public bool buyingItem = false;
     public bool shopOpen = false; //prevents curSelectedButton from being set to continue button
-    public string shopName; //name of shop for PlayerInteract script
-
+    //public string shopName; //name of shop for PlayerInteract script
+    public string sceneToLoad; //The Scene we want to load once we leave the Chill Topic scene. Allows this script to be used for the Chill Topic stand in multiple scenes.
+    
     //REFERENCES//
+
+    //Reference to the TransitionController for exiting out of the Chill Topic shop when pressing Backspace.
+    public TransitionController transitionController;
 
     //References Item Selection script for selecting & handling UI of items 
     //public ItemSelection itemSelectionScript; Commented out by Cerulean.
@@ -69,6 +75,16 @@ public class ChillTopicShop : MonoBehaviour
         Debug.Log("CLEAR");
 
         curSelectedButton = shopMenu.transform.GetChild(0).gameObject; // Grab first item; added by Cerulean.
+
+        Debug.Log("OPENING SHOP");
+        purchaseConfirmation.SetActive(false);
+        shopOpen = true;
+
+        //Ensures first dialogue line is first one in the list (changes each day)
+        dialogueText.text = lizzyDialogue[0].speakerText;
+        dialogueSource.PlayOneShot(lizzyDialogue[0].audioClip);
+        currencyText.text = currency.ToString();
+        buyingItem = false;
     }
 
 
@@ -76,9 +92,12 @@ public class ChillTopicShop : MonoBehaviour
     void Update()
     {
         Debug.Log(EventSystem.current.currentSelectedGameObject);
+    }
 
+    public void CheckItemActivity()
+    {
         // This is a test to see if the code for disabling the purchased item works, but we use a custom method to make sure it only works if the player only inputs the return/enter key; added by Cerulean.
-        if (IsOnlyReturnPressed())
+        if (IsOnlyReturnPressed() && shopMenu.itemsActive)
         {
             // Only do a thing if there are items available to be purchased.
             if (shopMenu.itemIndex >= 0)
@@ -97,8 +116,10 @@ public class ChillTopicShop : MonoBehaviour
                     if (shopMenu.itemIndex >= shopMenu.items.Length)
                     {
                         // Set item index to -1, disable the cursor, and manually exit the while loop.
+                        Debug.Log("Soul Phrase");
                         shopMenu.itemIndex = -1;
                         shopMenu.cursor.gameObject.SetActive(false);
+                        Invoke("CallCloseShop", 2f); //Automatically closes the shop after 1 second if all items have been purchased.
                         return; // Exit while loop.
                     }
                 }
@@ -162,34 +183,20 @@ public class ChillTopicShop : MonoBehaviour
       }
     }
 
-    //BEGIN SHOPPING SCRIPT//
-    public void OpenShop()
+    //CLOSES THE SHOP AUTOMATICALLY WHEN ALL ITEMS ARE PURCHASED
+    public void CallCloseShop()
     {
-        Debug.Log("OPENING SHOP");
-        purchaseConfirmation.SetActive(false);
-        //shopUI.SetActive(true); //entire UI parent of the Shop UI
-       // shopMenu.SetActive(true); //just the option buttons for buying stuff in the Shop UI 
+            curSelectedButton = EventSystem.current.currentSelectedGameObject;
+            Debug.Log("CLOSING SHOP");
+            sfxSource.PlayOneShot(audioManager.uiClose);
+            //gm.musicSource.Stop();
+            dialogueSource.Stop();
+            dialogueText.text = lizzyDialogue[8].speakerText; //index 8 = leavingshop dialogue
+            dialogueSource.PlayOneShot(lizzyDialogue[8].audioClip);
 
-                //Temporarily Disable Player Movement
-                gm.isPaused = true;
-       // sylvia.GetComponent<PlayerMovement>().canMove = false; //DISABLE MOVEMENT DURING SHOPPING
-        //sylvia.GetComponent<PlayerMovement>().enabled = false; //DISABLE MOVEMENT DURING SHOPPING
-        shopOpen = true;
-
-        //Ensures first dialogue line is first one in the list (changes each day)
-        dialogueText.text = lizzyDialogue[0].speakerText;
-        dialogueSource.PlayOneShot(lizzyDialogue[0].audioClip);
-        currencyText.text = currency.ToString();
-        buyingItem = false;
-
-        //gm.musicSource.Stop();
-        //gm.musicSource.clip = gm.audioManager.shopTheme;
-        //gm.musicSource.Play();
-
-        Invoke("EnableShopMenu", 1f);
-  
+            //Calls TransitionController ExitShop() to exit out of the ChillTopic UI scene and load back to the original scene. 
+            transitionController.ExitShop(sceneToLoad);
     }
-
 
     //UPDATES CURSELECTEDITEM BASED ON ONE THAT'S IN THE CURSELECTEDGAMEOBJECT
     public void CloseShop(InputAction.CallbackContext context)
@@ -200,12 +207,13 @@ public class ChillTopicShop : MonoBehaviour
         curSelectedButton = EventSystem.current.currentSelectedGameObject;
         Debug.Log("CLOSING SHOP");
         sfxSource.PlayOneShot(audioManager.uiClose);
-        gm.musicSource.Stop();
+        //gm.musicSource.Stop();
         dialogueSource.Stop();
         dialogueText.text = lizzyDialogue[8].speakerText; //index 8 = leavingshop dialogue
         dialogueSource.PlayOneShot(lizzyDialogue[8].audioClip);
-        Invoke("ResetMovement", 2f);
-          Debug.Log(curSelectedButton);
+
+        //Calls TransitionController ExitShop() to exit out of the ChillTopic UI scene and load back to the original scene. 
+        transitionController.ExitShop(sceneToLoad);
       }
 
       else if(buyingItem == true)
@@ -221,23 +229,6 @@ public class ChillTopicShop : MonoBehaviour
         Invoke("ResetShop", 1f);
       }
     }
-
-  public void ResetMovement()
-  {
-      //shopUI.SetActive(false);
-      //gm.isPaused = false;
-      //sylvia.GetComponent<PlayerMovement>().enabled = true; //RE-ENABLE MOVEMENT AFTER EXITTING THE SHOP
-      //sylvia.GetComponent<PlayerMovement>().canMove = true; //DISABLE MOVEMENT DURING SHOPPING
-      shopOpen = false;
-      this.enabled = false;
-  }
-
-  //Prevents you from mashing to buy items right when shop opens
-  public void EnableShopMenu()
-  {
-        // shopMenu.SetActive(true);
-        //EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject); Commented out by Cerulean.
-  }
     
     //METHOD FOR CONFIRMING A PURCHASE (put for the submit event on each button)
     public void ConfirmPurchase() // This is the method that brings up the menu that gives the player the option to purchase or cancel purchasing the current selected item; comment added by Cerulean.
@@ -269,8 +260,8 @@ public class ChillTopicShop : MonoBehaviour
                 buyingItem = true;
                 purchaseConfirmation.SetActive(true);
 
-                //Prevents you from selecting other objects while buying
-                EventSystem.current.SetSelectedGameObject(buyItemButton);
+                ////Prevents you from selecting other objects while buying
+                //EventSystem.current.SetSelectedGameObject(buyItemButton);
             }
             else
             {
@@ -295,6 +286,7 @@ public class ChillTopicShop : MonoBehaviour
       //Reset the shop after 1 second
       if(buyingItem == true && shopMenu.itemsActive)
       {
+          CheckItemActivity();
           Debug.Log("Thanks for buying!");
           dialogueSource.Stop();
           dialogueText.text = lizzyDialogue[4].speakerText;

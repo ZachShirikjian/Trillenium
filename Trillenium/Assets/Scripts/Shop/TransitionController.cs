@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TransitionController : MonoBehaviour
 {
     #region Variables
+    private string sceneToLoad; //name of the scene we have to load 
+
     // We connect this script to the script where we store our public (reusable) methods so that we can use them here. We also store the scene value here!
     [SerializeField] private PublicMethods methods;
 
@@ -61,6 +64,7 @@ public class TransitionController : MonoBehaviour
                 active = false;
 
                 // Animation is over, so now we can move on to the over world scene.
+                SceneManager.LoadScene(sceneToLoad);
             }
         }
 
@@ -83,11 +87,12 @@ public class TransitionController : MonoBehaviour
     }
 
     #region Methods
-    private void ExitShop()
+    public void ExitShop(string sceneName)
     {
         if (!enter && !active)
         {
             active = true;
+            sceneToLoad = sceneName;
         }
     }
     #endregion

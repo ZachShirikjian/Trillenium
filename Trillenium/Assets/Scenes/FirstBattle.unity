@@ -398,6 +398,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1374650696}
     m_Modifications:
+    - target: {fileID: 1248597889588016635, guid: a1e29af241326bd4f9add519de5ae980, type: 3}
+      propertyPath: battleWon
+      value: 
+      objectReference: {fileID: 8300000, guid: 0af9dba1aea108040b026d1a9fe9f754, type: 3}
     - target: {fileID: 5264977880319270282, guid: a1e29af241326bd4f9add519de5ae980, type: 3}
       propertyPath: m_Name
       value: SFXSource
@@ -3306,6 +3310,10 @@ PrefabInstance:
     - target: {fileID: 3031877167422623161, guid: f9639941822022f4aac4e137d042db7b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669768469357811715, guid: f9639941822022f4aac4e137d042db7b, type: 3}
+      propertyPath: m_text
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3789602261699428592, guid: f9639941822022f4aac4e137d042db7b, type: 3}
       propertyPath: m_Pivot.x

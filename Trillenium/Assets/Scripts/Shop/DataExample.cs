@@ -12,22 +12,29 @@ public class DataExample : MonoBehaviour
         new int[4]
     };
 
+    #region References
+    //Change this to reference the DontDestroyOnLoad object 
+    private GameObject BattleSylviaRef;
+    private GameObject BattleVahanRef; 
+
+    #endregion
+
     public int moneyData;
     #endregion
 
     void OnEnable()
     {
         // Sylvia stats.
-        statsData[0][0] = 867;
-        statsData[0][1] = 195;
-        statsData[0][2] = 173;
-        statsData[0][3] = 156;
+        statsData[0][0] = 200; //HP
+        statsData[0][1] = 100; //AP
+        statsData[0][2] = 5; //ATK
+        statsData[0][3] = 10; //DEF
 
         // Vahan stats.
-        statsData[1][0] = 743;
-        statsData[1][1] = 206;
-        statsData[1][2] = 224;
-        statsData[1][3] = 131;
+        statsData[1][0] = 250; //HP
+        statsData[1][1] = 100; //AP
+        statsData[1][2] = 10; //ATK
+        statsData[1][3] = 5; //DEF
 
         // Assign all 0s.
         for (int i = 0; i < 4; i++)

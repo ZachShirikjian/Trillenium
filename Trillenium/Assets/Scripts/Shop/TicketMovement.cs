@@ -103,7 +103,7 @@ public class TicketMovement : MonoBehaviour
         statsATK = statsPull.statsData[partyMemberIndex][2].ToString();
         statsDEF = statsPull.statsData[partyMemberIndex][3].ToString();
 
-        statsData = new string[8] { "HP", statsHP, "SP", statsSP, "ATK", statsATK, "DEF", statsDEF };
+        statsData = new string[8] { "HP", statsHP, "AP", statsSP, "ATK", statsATK, "DEF", statsDEF };
 
         statIndex = statsData.Length - 3;
         #endregion
