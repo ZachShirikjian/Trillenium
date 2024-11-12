@@ -145,7 +145,7 @@ public class SwordMovement : MonoBehaviour
             ShadowScaleAnimation(ref shadowScaleThetaY);
 
             // Shadow stretching animation is only active when cursor is on the same row.
-            if (items.itemIndex >= 2 && items.itemIndex < 4)
+            if ((items.itemIndex >= 2 && items.itemIndex < 4) || items.itemIndex < 0)
             {
                 // Only do if not on sword row.
                 shadowScaleThetaX = 0f;

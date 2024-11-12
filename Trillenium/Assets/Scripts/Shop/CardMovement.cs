@@ -206,6 +206,7 @@ public class CardMovement : MonoBehaviour
     {
         moneyUpdated = moneyPull.moneyData.ToString(); // Save money data to variable as a string.
 
+        /*
         // We compare money data to certain values to determine how many digits it has, then add zeros if there are less than four digits.
         if (moneyPull.moneyData < 1000) // Value is less than four digits.
         {
@@ -221,6 +222,7 @@ public class CardMovement : MonoBehaviour
                 }
             }
         }
+        */
 
         // Set money text to the updated money string.
         childText.GetComponent<TextMeshProUGUI>().text = moneyUpdated; // DON'T FORGET, THIS SCRIPT MUST USE TMPro IN ORDER FOR THIS LINE TO WORK (see top of script)!!!

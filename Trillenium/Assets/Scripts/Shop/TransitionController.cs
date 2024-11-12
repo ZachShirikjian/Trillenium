@@ -9,33 +9,33 @@ public class TransitionController : MonoBehaviour
     [SerializeField] private PublicMethods methods;
 
     // Controls enabled.
-    [SerializeField] private GameObject sceneMain;
+    [SerializeField] private GameObject toBeEnabled; // Object group that is parent to all objects that require small delay before starting their movement/animations.
 
-    private float width = 242f;
-    private float height = 369f;
+    private const float width = 242f;
+    private const float height = 369f;
 
-    private float scale;
-    private float scaleBuffer = 2f; // We start off at 2f to give extra time before 0f, allowing us to have a fully black screen for just a little longer.
-    private float scaleMax = 15f;
-    private float scaleFactor;
+    private float scale; // Represents scale value.
+    private const float scaleBuffer = 2f; // We start off at 2f to give extra time before 0f, allowing us to have a fully black screen for just a little longer.
+    private const float scaleMax = 15f; // Essentially our scale limit/bounds (maximum scale amount).
+    private float scaleFactor; // How much we scale by each update.
 
-    private bool enter = true;
-    private bool active = true;
+    private bool enter = true; // Are we entering the scene? If not, then we assume we are exiting the scene.
+    private bool active = true; // Is the screen transition animation active?
     #endregion
 
     void Awake()
     {
-        sceneMain.SetActive(false);
+        toBeEnabled.SetActive(false); // By default, disable the object that we enabled later.
 
-        scale = -scaleBuffer;
-        scaleFactor = methods.DecimalsRounded((scaleMax + scale) / ((scaleMax + scale) * 2.5f));
+        scale = -scaleBuffer; // Assign buffer to scale.
+        scaleFactor = methods.DecimalsRounded((scaleMax + scale) / ((scaleMax + scale) * 2.5f)); // Intialize scale factor relative to scale.
 
-        this.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, 0f);
+        this.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, 0f); // Set default scale offset to 0f.
     }
 
     void FixedUpdate()
     {
-        if (enter)
+        if (enter) // Entering shop.
         {
             if (scale < scaleMax && active)
             {
@@ -48,7 +48,7 @@ public class TransitionController : MonoBehaviour
                 active = false;
             }
         }
-        else
+        else // Leaving shop.
         {
             if (scale > 0f && active)
             {
@@ -59,25 +59,19 @@ public class TransitionController : MonoBehaviour
                 scale = 0f;
                 enter = true;
                 active = false;
+
+                // Animation is over, so now we can move on to the over world scene.
             }
         }
 
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-            //USE THIS CODE FOR WHEN THE SCENE IS BEING EXITED OUT//
-            //if (!active)
-            //{
-            //    active = true;
-            //}
-        //}
-
+        // Enable our disabled object group to begin movement of ToBeEnabled's children objects after scale has gotten big enough.
         if (scale > methods.DecimalsRounded((scaleMax + scale) / 4f))
         {
-            sceneMain.SetActive(true);
+            toBeEnabled.SetActive(true);
         }
 
-        
-        // ---------------------------------------------------------------------------------------------------------------------------------------------
+
+        // When scale goes below 0f, lock scale offset (different from total scaling) to 0f.
         if (scale < 0)
         {
             this.GetComponent<RectTransform>().sizeDelta = new Vector2(0f, 0f);
@@ -87,4 +81,14 @@ public class TransitionController : MonoBehaviour
             this.GetComponent<RectTransform>().sizeDelta = new Vector2(methods.DecimalsRounded(width * scale), methods.DecimalsRounded(height * scale));
         }
     }
+
+    #region Methods
+    private void ExitShop()
+    {
+        if (!enter && !active)
+        {
+            active = true;
+        }
+    }
+    #endregion
 }

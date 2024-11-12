@@ -22,7 +22,7 @@ public class ChillTopicShop : MonoBehaviour
     //REFERENCES//
 
     //References Item Selection script for selecting & handling UI of items 
-    public ItemSelection itemSelectionScript; 
+    //public ItemSelection itemSelectionScript; Commented out by Cerulean.
 
     //public GameObject shopUI; 
     private GameManager gm;
@@ -39,7 +39,7 @@ public class ChillTopicShop : MonoBehaviour
     public GameObject purchaseConfirmation;
     public GameObject buyItemButton;
    // public GameObject cancelItemButton;
-    public GameObject shopMenu; //reference to list of objects/buttons to spawn in 
+    public ItemSelection shopMenu; //reference to list of objects/buttons to spawn in ; Changed from game object to item selection script by Cerulean.
 
     //INPUT//
     public InputActionAsset controls;
@@ -64,9 +64,11 @@ public class ChillTopicShop : MonoBehaviour
         //shopMenu.SetActive(false);
         OnDisable();
 
-        EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject);
+        //EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject); Commented out by Cerulean.
         Debug.Log(EventSystem.current.currentSelectedGameObject);
         Debug.Log("CLEAR");
+
+        curSelectedButton = shopMenu.transform.GetChild(0).gameObject; // Grab first item; added by Cerulean.
     }
 
 
@@ -74,6 +76,36 @@ public class ChillTopicShop : MonoBehaviour
     void Update()
     {
         Debug.Log(EventSystem.current.currentSelectedGameObject);
+
+        // This is a test to see if the code for disabling the purchased item works, but we use a custom method to make sure it only works if the player only inputs the return/enter key; added by Cerulean.
+        if (IsOnlyReturnPressed())
+        {
+            // Only do a thing if there are items available to be purchased.
+            if (shopMenu.itemIndex >= 0)
+            {
+                curSelectedButton.gameObject.SetActive(false); // Current item object becomes inactive to denote that it has vbeen purchased.
+
+                // In order to move the cursor onto the next available item, we start from 0, then iterate from there until we find an active item object.
+                shopMenu.itemIndex = 0;
+
+                // If the current item is inactive, check the next one.
+                while (!shopMenu.items[shopMenu.itemIndex].gameObject.activeSelf)
+                {
+                    shopMenu.itemIndex++;
+
+                    // If we're passed the length and still haven't found an active item, then all items are inactive, meaning there are no more items left to purchase.
+                    if (shopMenu.itemIndex >= shopMenu.items.Length)
+                    {
+                        // Set item index to -1, disable the cursor, and manually exit the while loop.
+                        shopMenu.itemIndex = -1;
+                        shopMenu.cursor.gameObject.SetActive(false);
+                        return; // Exit while loop.
+                    }
+                }
+
+                shopMenu.AssignLighting();
+            }
+        }
     }
 
     //FOR ALLOWING INPUT FOR SHOP MENU UI// (CHANGE LATER?)
@@ -99,11 +131,31 @@ public class ChillTopicShop : MonoBehaviour
       closeShop.action.performed += CloseShop;
     }
 
+    // Method to ensure that the player has pressed ONLY the return/enter key; comment and method added by Cerulean.
+    private bool IsOnlyReturnPressed()
+    {
+        // Has the return/enter key been pressed as an input?
+        bool returnPressed = Input.GetKeyDown(KeyCode.Return);
+
+        // Have any keys that aren't the return/enter key been pressed as an input?
+        bool otherInputPressed = Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Return);
+
+        // If return/enter is pressed as an input and no other input has been pressed, return true.
+        if (returnPressed && !otherInputPressed)
+        {
+            return true;
+        }
+        else // Otherwise, return false.
+        {
+            return false;
+        }
+    }
+
     //UPDATES CURSELECTEDITEM BASED ON ONE THAT'S IN THE CURSELECTEDGAMEOBJECT
     public void UpdateSelectedItem(InputAction.CallbackContext context)
     {
       //Sets currently hovered over button to be one you're selecting for purchase
-      if(shopOpen == true)
+      if(shopOpen == true && shopMenu.itemsActive)
       {
           curSelectedButton = EventSystem.current.currentSelectedGameObject;
           Debug.Log(curSelectedButton);
@@ -143,7 +195,7 @@ public class ChillTopicShop : MonoBehaviour
     public void CloseShop(InputAction.CallbackContext context)
     {
       //Sets currently hovered over button to be one you're selecting for purchase
-      if(shopOpen == true && buyingItem == false)
+      if(shopOpen == true && buyingItem == false && shopMenu.itemsActive)
       {
         curSelectedButton = EventSystem.current.currentSelectedGameObject;
         Debug.Log("CLOSING SHOP");
@@ -184,48 +236,51 @@ public class ChillTopicShop : MonoBehaviour
   public void EnableShopMenu()
   {
         // shopMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject);
-    }
-
+        //EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject); Commented out by Cerulean.
+  }
+    
     //METHOD FOR CONFIRMING A PURCHASE (put for the submit event on each button)
-    public void ConfirmPurchase()
+    public void ConfirmPurchase() // This is the method that brings up the menu that gives the player the option to purchase or cancel purchasing the current selected item; comment added by Cerulean.
     {
-      if(shopOpen == true)
-      {
-          curSelectedButton = EventSystem.current.currentSelectedGameObject;
-          Debug.Log(curSelectedButton);
-      }
-      if(currency >= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost)
-      {
-        Debug.Log("Do you want to purchase this?");
-        OnEnable();
-        //1-3  = Checking to see if you want to purchase (VARIATIONS)
-        //4 = Purchase is made, Lizzy thanks you 
-        //5 = Canceling purchase
-        //6 = Not Enough Money 
-        //7 = Do you want more items?
-        //8 = Leaving Shop
-        
-        //Randomly pick 1 of the variations for seeing if you want to purchase item from Lizzy so it's not just the same line
-        int randomVO = Random.Range(1,3);
-        dialogueSource.Stop();
-        dialogueText.text = lizzyDialogue[randomVO].speakerText;
-        dialogueSource.PlayOneShot(lizzyDialogue[randomVO].audioClip);
-        buyingItem = true;
-        purchaseConfirmation.SetActive(true);
+        if (shopMenu.itemsActive)
+        {
+            if (shopOpen == true)
+            {
+                curSelectedButton = EventSystem.current.currentSelectedGameObject;
+                Debug.Log(curSelectedButton);
+            }
+            
+            if (currency >= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost)
+            {
+                Debug.Log("Do you want to purchase this?");
+                OnEnable();
+                //1-3  = Checking to see if you want to purchase (VARIATIONS)
+                //4 = Purchase is made, Lizzy thanks you 
+                //5 = Canceling purchase
+                //6 = Not Enough Money 
+                //7 = Do you want more items?
+                //8 = Leaving Shop
 
-        //Prevents you from selecting other objects while buying
-        EventSystem.current.SetSelectedGameObject(buyItemButton);
-      }
-      else
-      {
-          Debug.Log("You're out of funds!");
-          dialogueSource.Stop();
-          dialogueText.text = lizzyDialogue[6].speakerText;
-          dialogueSource.PlayOneShot(lizzyDialogue[6].audioClip);
-          buyingItem = false;
-      }
+                //Randomly pick 1 of the variations for seeing if you want to purchase item from Lizzy so it's not just the same line
+                int randomVO = Random.Range(1, 3);
+                dialogueSource.Stop();
+                dialogueText.text = lizzyDialogue[randomVO].speakerText;
+                dialogueSource.PlayOneShot(lizzyDialogue[randomVO].audioClip);
+                buyingItem = true;
+                purchaseConfirmation.SetActive(true);
 
+                //Prevents you from selecting other objects while buying
+                EventSystem.current.SetSelectedGameObject(buyItemButton);
+            }
+            else
+            {
+                Debug.Log("You're out of funds!");
+                dialogueSource.Stop();
+                dialogueText.text = lizzyDialogue[6].speakerText;
+                dialogueSource.PlayOneShot(lizzyDialogue[6].audioClip);
+                buyingItem = false;
+            }
+        }
     }
 
     //FOR PRESSING ENTER IN SHOP MENU WHEN YOU HOVER OVER THE PURCHASE BUTTON
@@ -238,7 +293,7 @@ public class ChillTopicShop : MonoBehaviour
       //Update the currency UI 
       //Remove the button AND object from the scene
       //Reset the shop after 1 second
-      if(buyingItem == true)
+      if(buyingItem == true && shopMenu.itemsActive)
       {
           Debug.Log("Thanks for buying!");
           dialogueSource.Stop();
@@ -248,7 +303,7 @@ public class ChillTopicShop : MonoBehaviour
           currency -= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost; 
           currencyText.text = currency.ToString();
             //urSelectedButton.GetComponentInChildren<ShopItem>().itemSprite.SetActive(false); //prevents button from being interacted with again
-            curSelectedButton.gameObject.SetActive(false);
+            curSelectedButton.gameObject.SetActive(false); // This is where the current selected button (it's actually a game object!!!) is disabled after purchasing; comment added by Cerulean.
            //curSelectedButton.GetComponent<Button>().interactable = false; //prevents button from being interacted with again
           purchaseConfirmation.SetActive(false);
           EventSystem.current.SetSelectedGameObject(null);
@@ -276,7 +331,7 @@ public class ChillTopicShop : MonoBehaviour
   //RESETS DIALOGUE AFTER MAKING PURCHASE OR CANCELING PURCHASE
     public void ResetShop()
     {
-        EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject);
+        //EventSystem.current.SetSelectedGameObject(shopMenu.transform.GetChild(itemSelectionScript.itemIndex).gameObject); Commented out by Cerulean.
         dialogueSource.Stop();
        dialogueText.text = lizzyDialogue[7].speakerText;
        dialogueSource.PlayOneShot(lizzyDialogue[7].audioClip);
