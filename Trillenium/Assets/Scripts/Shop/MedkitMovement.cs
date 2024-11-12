@@ -118,7 +118,7 @@ public class MedkitMovement : MonoBehaviour
             ShadowScaleAnimation(ref shadowScaleThetaY);
 
             // Shadow stretching animation is only active when cursor is on the same row.
-            if (items.itemIndex >= 0 && items.itemIndex < 2)
+            if ((items.itemIndex >= 0 && items.itemIndex < 2) || items.itemIndex < 0)
             {
                 // Only do if not on sword row.
                 shadowScaleThetaX = 0f;

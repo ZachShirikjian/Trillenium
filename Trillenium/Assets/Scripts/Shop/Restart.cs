@@ -15,6 +15,6 @@ public class Restart : MonoBehaviour
 
     void Update()
     {
-        //Reset();
+        Reset();
     }
 }

@@ -38,8 +38,8 @@ public class UIParticleSpawner : MonoBehaviour
 
     void LateUpdate()
     {
-        // Only spawn particles if the items are active.
-        if (items.itemsActive)
+        // Only spawn particles if the items are active and there are still items available for purchase in the shop.
+        if (items.itemsActive && items.itemIndex >= 0)
         {
             SpawnParticles();
         }
