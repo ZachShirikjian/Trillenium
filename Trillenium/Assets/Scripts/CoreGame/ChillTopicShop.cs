@@ -102,6 +102,8 @@ public class ChillTopicShop : MonoBehaviour
                         return; // Exit while loop.
                     }
                 }
+
+                shopMenu.AssignLighting();
             }
         }
     }

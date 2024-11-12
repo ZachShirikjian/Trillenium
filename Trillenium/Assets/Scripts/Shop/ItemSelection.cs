@@ -131,7 +131,7 @@ public class ItemSelection : MonoBehaviour
     }
 
     #region Methods
-    private void AssignLighting()
+    public void AssignLighting()
     {
         for (int i = 0; i < items.Length; i++)
         {
