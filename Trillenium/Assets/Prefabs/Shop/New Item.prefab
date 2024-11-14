@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7848259691864499753}
   m_Layer: 0
-  m_Name: Item_Tag
+  m_Name: Item_PriceTag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5575960361635902359}
   m_Layer: 0
-  m_Name: Item_Tag_Container
+  m_Name: Item_PriceTag_Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,9 +233,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 36
-  m_fontSizeBase: 32
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 36
   m_fontStyle: 1

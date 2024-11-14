@@ -8,10 +8,14 @@ using TMPro; // We use TMPro in order to modify the text representing the price.
 
 public class ItemSelection : MonoBehaviour
 {
-    //REFERENCES//
-    [SerializeField] public ChillTopicShop chillTopicScript;
-    public GameObject buyItemButton; //The Purchase Confirm Button
     #region Variables
+    #region References
+    [SerializeField] private PublicMethods methods; // Public methods.
+    public ChillTopicShop chillTopicScript;
+    
+    public GameObject buyItemButton; //The Purchase Confirm Button
+    #endregion
+
     #region Cursor
     public GameObject cursor; // Cursor object.
 
@@ -22,9 +26,11 @@ public class ItemSelection : MonoBehaviour
     #endregion
 
     #region Items
-    public Button[] items; // Array of item objects.
+    public Button[,] items = new Button[2, 6]; // 2D array of item buttons.
 
-    public int itemIndex = 0; // Item index (read by particle spawner).
+    // Serve as the item index (read by particle spawner).
+    public int itemRow = 0; // Item index for rows (top row and bottom row).
+    public int itemCol = 0; // Item index for columns.
 
     private float itemScale, itemTheta = 0f; // Scale of items and item theta (for trig functions).
 
@@ -36,10 +42,10 @@ public class ItemSelection : MonoBehaviour
     private bool alphaCheck = false; // Checks if alpha value has been set to 1f on all items.
     #endregion
 
-    #region Lighting
-    private GameObject lighting; // Lighting object.
+    #region Highlight
+    private GameObject highlight; // Highlight object.
 
-    private float lightingAlpha = 1f; // Alpha value for lighting transparency.
+    private float highlightAlpha = 1f; // Alpha value for highlight transparency.
     #endregion
 
     #region Input-related
@@ -53,6 +59,8 @@ public class ItemSelection : MonoBehaviour
     [SerializeField] private CardMovement card;
 
     private float tagMovScale = 1.75f; // Scales the movement of the price tag during the fade animation.
+
+    private TextMeshProUGUI itemDesc;
     #endregion
 
     void Start()
@@ -63,14 +71,17 @@ public class ItemSelection : MonoBehaviour
         cursor.SetActive(false); // Cursor object is inactive.
 
         InitializeButtonValues(); // Initialize values for all item buttons in array.
-        
-        SetCursorPosition(); // Set cursor potion.
+
+        // Assign item descritpion for easy access.
+        itemDesc = this.transform.GetChild(this.transform.childCount - 1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
     {
+        //ReturnItemNames(); Debug method.
+        
         // Once items are active, allow control over the cursor and increment thetas for cursor and highlighted item (allows for their respective movements and scaling).
-        if (itemsActive && itemIndex >= 0)
+        if (itemsActive && itemCol >= 0) // itemCol becomes -1 after all items are purchased, so don't run this code if that's the case.
         {
             CursorController(); // Listen for user inputs.
 
@@ -108,45 +119,40 @@ public class ItemSelection : MonoBehaviour
                 cursor.SetActive(true); // Cursor is now active.
             }
         }
-        // Use trig functions to calculate both the scaling and transparency of the items and the item lighting repsectively.
+        // Use trig functions to calculate both the scaling and transparency of the items and the item highlight repsectively.
         // We use Sin() and Cos() throughout this script because both functions oscillate between -1 and 1 at a non-linear speed, which happens to give us the type of movement we want.
-        itemScale = lightingAlpha = Mathf.Abs(Mathf.Sin(itemTheta));
+        itemScale = highlightAlpha = Mathf.Abs(Mathf.Sin(itemTheta));
         itemScale *= itemBounds; // Multiply by respective bounds to clamp the scaling to our liking.
     }
 
     void LateUpdate()
     {
-        if (itemIndex >= 0)
-        {
-            AssignObjectValues(); // Assign our values to the objects and their respective components.
-        }
-        else // Is item index is -1, all items have been purchased, so we set the selected object to null.
-        {
-            EventSystem.current.SetSelectedGameObject(null); // Set selected object null if all items have been purchased.
-
-            if (chillTopicScript.buyingItem == false) // If not in purchase prompt, set current selected button null.
-            {
-                chillTopicScript.curSelectedButton = null;
-            }
-        }
+        // Assign our values to the objects and their respective components.
+        AssignObjectValues();
     }
 
     #region Methods
-    public void AssignLighting()
+    // Cycle through all items to change their respective highlights alpha values to 0f, then set only the currently selected item's highlight to the item highlight object to be modified.
+    private void AssignHighlight()
     {
-        for (int i = 0; i < items.Length; i++)
+        // Use a nested for loop to cycle through all of the elements of our 2D array of items.
+        for (int i = 0; i < items.GetLength(0); i++) // It is assumed that there is an object for each row, so using the set length of rows is appropriate here.
         {
-            items[i].gameObject.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++) // Rather than using the set length for columns, we actually check how many items are in the row parent object and use that as our length.
+            {
+                items[i, j].gameObject.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f); // Make completely transparent.
+            }
         }
 
-        lighting = items[itemIndex].transform.GetChild(0).GetChild(1).gameObject;
+        highlight = items[itemRow, itemCol].transform.GetChild(0).GetChild(1).gameObject; // Currently selected item's respective highlight becomes the item highlight object to be modified.
     }
 
+    // Return cost as a string.
     private string CostStringUpdate(int cost)
     {
         string costStr = cost.ToString(); // Save cost to variable as a string.
 
-        /*
+        /* For adding zeros when less than 1000.
         // We compare cost integer value to other integer values to determine how many digits it has, then add zeros if there are less than four digits.
         if (cost < 1000) // Value is less than four digits.
         {
@@ -167,122 +173,147 @@ public class ItemSelection : MonoBehaviour
         return costStr;
     }
 
+    // Initialize our array of item buttons and assign starting values for certain components.
     private void InitializeButtonValues()
     {
-        AssignLighting(); // Initialize lighting for each item button.
-
-        // Use for loop to iterate through each button in array.
-        for (int i = 0; i < items.Length; i++)
+        // This is where we assign our item buttons to our 2D array of items.
+        for (int i = 0; i < items.GetLength(0); i++) // Index of i is responsible for rows; we use hard-set limit because it is assumed items parent object already contains sufficient number of row objects.
         {
-            items[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f); // Make mask invisible.
-            items[i].transform.GetChild(0).GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f); // Make lighting/highlight invisible.
-
-            // Turn masking off for each items' main image so that we can see the fade animation (if on, mask needs to be visible for masked image to be visible).
-            items[i].transform.GetChild(0).GetChild(0).GetComponent<Image>().maskable = false;
-
-            // Set money text to the updated money string.
-            items[i].transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = CostStringUpdate(items[i].GetComponent<ShopItem>().itemCost);
-
-            // Make price tag in its entirety invisible by default.
-            items[i].transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f); // Set alpha value for tag image to 0f.
-            items[i].transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0f); // Set alpha value for price text to 0f.
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++) // Index of j is responsible for columns; we get number of children in row and use that as limit.
+            {
+                items[i, j] = this.transform.GetChild(i).GetChild(j).GetComponent<Button>();
+            }
         }
+        
+        // Use for loop to iterate through each button in 2D array.
+        for (int i = 0; i < items.GetLength(0); i++)
+        {
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++)
+            {
+                items[i, j].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f); // Make mask invisible.
+                items[i, j].transform.GetChild(0).GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f); // Make lighting/highlight invisible.
+
+                // Turn masking off for each items' main image so that we can see the fade animation (if on, mask needs to be visible for masked image to be visible).
+                items[i, j].transform.GetChild(0).GetChild(0).GetComponent<Image>().maskable = false;
+
+                // Set money text to the updated money string.
+                items[i, j].transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = CostStringUpdate(items[i, j].GetComponent<ShopItem>().itemCost);
+
+                // Make price tag in its entirety invisible by default.
+                items[i, j].transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f); // Set alpha value for tag image to 0f.
+                items[i, j].transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0f); // Set alpha value for price text to 0f.
+            }
+        }
+
+        SetItem(); // Will assign item highlight/lighting, set the cursor position, and set the item in the event system.
     }
 
-    // Sets alpha value for items; for fading them into view.
-    private void FadeAnim()
+    // We use a nested for loop to set the masks of each item to fully opaque and essentially "enable" them.
+    // "Enable", while technically a little misleading, gets the point across and serves the same purpose here.
+    private void EnableMasks()
     {
-        // Offset we use for moving the price tags.
-        float localXOffset = (1f - itemsAlpha) * tagMovScale; // Invert alpha value, then scale amount.
-        
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < items.GetLength(0); i++)
         {
-            // Updates the alpha value of the item's main image.
-            items[i].transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, itemsAlpha);
-
-
-            // Sync alpha values for price tag (tag image and price text) up with item fading in.
-            items[i].transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, itemsAlpha); // Set alpha value for tag image.
-            items[i].transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, itemsAlpha); // Set alpha value for price text.
-
-            // Have price tag move into starting position (local position is 0f), in sync with fade in.
-            items[i].transform.GetChild(1).GetChild(0).localPosition = new Vector3(localXOffset, 0f, 0f);
-        }
-
-        // Check if all of our items are fully opaque so we can stop calling this method.
-        for (int i = 0; i < items.Length; i++)
-        {
-            if (items[i].transform.GetChild(0).GetChild(0).GetComponent<Image>().color.a != 1f) // If item's main image's alpha is not 1f, then return.
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++)
             {
-                return;
-            }
+                // Now that items are fully faded into view, make mask fully visible.
+                items[i, j].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f); // Make mask visible.
 
-            if (i == items.Length - 1) // The only way we can know if all items passed alpha check is if this is the last avaiable index.
-            {
-                for (int j = 0; j < items.Length; j++)
-                {
-                    // Now that items are fully faded into view, make mask fully visible.
-                    items[j].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f); // Make mask visible.
-
-                    // Mask is fully visible, so now we can turn maasking on for the main images.
-                    items[i].transform.GetChild(0).GetChild(0).GetComponent<Image>().maskable = true;
-                }
-                
-                // Assign lighting to lighting object of parent object that identifies with item index (item 0 by default).
-                lighting = items[itemIndex].transform.GetChild(0).GetChild(1).gameObject;
-
-                // Set lighting alpha to items alpha value.
-                lighting.GetComponent<Image>().color = new Color(1f, 1f, 1f, lightingAlpha * 0.65f);
-
-                alphaCheck = true; // If so, we set alpha check to true.
+                // Mask is fully visible, so now we can turn masking on for the main images.
+                items[i, j].transform.GetChild(0).GetChild(0).GetComponent<Image>().maskable = true;
             }
         }
     }
     
-    // Will assign cursor positions to each available input, depending on the current item.
-    private int CursorPlacement(int item0, int item1, int item2, int item3)
+    // Check if all of our items are fully opaque so we can stop calling this method as well as some others.
+    private void CheckAlphaValues()
     {
-        switch (itemIndex)
+        for (int i = 0; i < items.GetLength(0); i++)
         {
-            case 0: // Top-left.
-                return item0;
-            case 1: // Top-right.
-                return item1;
-            case 2: // Bottom-left.
-                return item2;
-            default: // Bottom-right.
-                return item3;
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++)
+            {
+                // If item's main image's alpha is not 1f, then return.
+                if (items[i, j].transform.GetChild(0).GetChild(0).GetComponent<Image>().color.a != 1f)
+                {
+                    break; // Break from inner loop.
+                }
+
+                // The only way we can know if all items passed alpha check is if this is the last avaiable index.
+                if (i == items.GetLength(0) - 1 && j == this.transform.GetChild(i).childCount - 1)
+                {
+                    EnableMasks();
+
+                    // Assign highlight to highlight object of parent object that identifies with item index (item 0 by default).
+                    highlight = items[itemRow, itemCol].transform.GetChild(0).GetChild(1).gameObject;
+
+                    // Set highlight alpha to items alpha value.
+                    highlight.GetComponent<Image>().color = new Color(1f, 1f, 1f, highlightAlpha * 0.65f);
+
+                    alphaCheck = true; // If so, we set alpha check to true.
+                }
+            }
         }
+    }
+    
+    // Sets alpha value for items; for fading them into view.
+    private void FadeAnim()
+    {
+        // Temporary color tracking for description.
+        Color tempColor0 = itemDesc.transform.parent.parent.GetComponent<Image>().color;
+        Color tempColor1 = itemDesc.transform.parent.GetComponent<Image>().color;
+
+        // Offset we use for moving the price tags.
+        float localXOffset = (1f - itemsAlpha) * tagMovScale; // Invert alpha value, then scale amount.
+        
+        for (int i = 0; i < items.GetLength(0); i++)
+        {
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++)
+            {
+                // Updates the alpha value of the item's main image.
+                items[i, j].transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, itemsAlpha);
+
+
+                // Sync alpha values for price tag (tag image and price text) up with item fading in.
+                items[i, j].transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, itemsAlpha); // Set alpha value for tag image.
+                items[i, j].transform.GetChild(1).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, itemsAlpha); // Set alpha value for price text.
+
+                // Have price tag move into starting position (local position is 0f), in sync with fade in.
+                items[i, j].transform.GetChild(1).GetChild(0).localPosition = new Vector3(localXOffset, 0f, 0f);
+            }
+        }
+
+        // Temporary basic item description animation.
+        itemDesc.transform.parent.parent.localPosition = new Vector3(itemDesc.transform.parent.parent.localPosition.x, localXOffset + 8.7f, 0f);
+        itemDesc.transform.parent.parent.GetComponent<Image>().color = new Color(tempColor0.r, tempColor0.g, tempColor0.b, 1f - localXOffset);
+        itemDesc.transform.parent.GetComponent<Image>().color = new Color(tempColor1.r, tempColor1.g, tempColor1.b, 1f - localXOffset);
+
+        // Check if all of our items are fully opaque so we can stop calling this method as well as some others.
+        CheckAlphaValues();
+    }
+    
+    // Will return the cursor offset from the currently selected item.
+    private GameObject GetCurrentItem()
+    {
+        return this.transform.GetChild(itemRow).GetChild(itemCol).gameObject;
     }
 
     // Set cursor position depending on current item index.
     private void SetCursorPosition()
     {
         // Cursor position is based on selected item's position.
-        cursorX = items[itemIndex].transform.position.x;
-        cursorY = items[itemIndex].transform.position.y;
-
-        // Adjust horizontal position a little depending on which item is currently selected.
-        switch (itemIndex)
-        {
-            case 1: // Top-right.
-                cursorX -= 2.5f;
-                break;
-            case 2: // Bottom-left.
-                cursorX -= 3f;
-                break;
-            default: // Top-left and bottom-right.
-                cursorX -= 2f;
-                break;
-        }
+        cursorX = methods.DecimalsRounded(GetCurrentItem().transform.position.x - GetCurrentItem().GetComponent<ShopItem>().cursorOffset); // X position of current item, minus its cursor offset.
+        cursorY = GetCurrentItem().transform.position.y; // Y position of current item.
     }
 
     // Loop through array of items and reset all of their scales to default.
     private void ResetItemScaling()
     {
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < items.GetLength(0); i++)
         {
-            items[i].transform.localScale = new Vector3(1f, 1f, 1f);
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++)
+            {
+                items[i, j].transform.localScale = new Vector3(1f, 1f, 1f);
+            }
         }
     }
 
@@ -294,24 +325,20 @@ public class ItemSelection : MonoBehaviour
             return "Select";
         */
 
-        //IF the PURCHASE CONFIRM WINDOW IS NOT OPEN
-        //Stop the cursor from moving.
-        if (chillTopicScript.buyingItem == false)
-        {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) // Checks if last is false, and so on and so forth.
-                return "Up";
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-                return "Right";
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-                return "Down";
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-                return "Left";
-        }
+        if (Input.GetKeyDown(KeyCode.W)) // Checks if last is false, and so on and so forth.
+            return "Up";
+        if (Input.GetKeyDown(KeyCode.D))
+            return "Right";
+        if (Input.GetKeyDown(KeyCode.S))
+            return "Down";
+        if (Input.GetKeyDown(KeyCode.A))
+            return "Left";
 
         // If none of the above mentioned keys were pressed, return KeyCode.None (checks last; if no available input is pressed).
         return "";
     }
 
+    // Used to allow "press & hold" functionality after a small delay, however, I removed it because it didn't seem necessary and messes with the BGM due to it inputting every single frame.
     private bool InputHoldDelay(int currentInput)
     {
         if (currentInput >= 0) // Directional input?
@@ -359,99 +386,176 @@ public class ItemSelection : MonoBehaviour
         }
     }
 
-    private void SkipInactiveItem(int increment)
+    // Skip over any inactive items while moving cursor horizontally.
+    private void SkipInactiveHorizontal(int modulo, int increment)
     {
-        while (!items[itemIndex].gameObject.activeSelf)
+        // Iterate through columns of same row until we find an active item (cursor is disabled once all items are purchased).
+        while (!items[itemRow, itemCol].gameObject.activeSelf)
         {
-            itemIndex += increment;
-            itemIndex = ((itemIndex % items.Length) + items.Length) % items.Length; // Formula for modulo wrapping when value could be negative.
+            itemCol += increment; // Typically takes either 1 or -1.
+            itemCol = ((itemCol % modulo) + modulo) % modulo; // Formula for modulo wrapping working with negative values.
         }
+    }
+
+    // Skip over any inactive items while moving cursor vertically.
+    private void SkipInactiveVertical(int modulo, int increment)
+    {
+        int startingCol = itemCol; // Track our starting column.
+
+        // Because we could end up in a scenario where we lose access to moving to the next row (depends on which items are available and placed where),
+        // we must check every column of each row we end up on until we either find an active item object or loop back to where we started.
+        while (!items[itemRow, itemCol].gameObject.activeSelf) // Continue until we find an active item object.
+        {
+            // Cycle through every column of current row.
+            while (!items[itemRow, itemCol].gameObject.activeSelf)
+            {
+                itemCol++; // Iterate to the right.
+                itemCol %= this.transform.GetChild(itemRow).childCount; // Modulo wrapping.
+                
+                // If we loop back to our starting column, that means there are no active item objects on this row, so we break out of the inner loop and continue with the outer loop.
+                if (itemCol == startingCol)
+                {
+                    break;
+                }
+            }
+
+            // If the item object we're currently on is inactive, then increment row and modulo wrap it.
+            if (!items[itemRow, itemCol].gameObject.activeSelf)
+            {
+                itemRow += increment; // Increment to either the left or right.
+                itemRow = ((itemRow % modulo) + modulo) % modulo; // Formula for modulo wrapping when working with negative values.
+            }
+            else // If the item object we're currently on is active, break outer loop (active item and can still be item we started with).
+            {
+                break;
+            }
+        }
+    }
+
+    // Handles updating a lot of values whenever a new item has been selected.
+    public void SetItem()
+    {
+        GameObject currentItem = items[itemRow, itemCol].gameObject; // The item currently being hovered over.
+
+        AssignHighlight(); // Reassign which item has highlight/lighting effect (current selected item).
+        ResetItemScaling(); // Reset item scaling.
+        SetCursorPosition(); // Set cursor position relative to current selected item.
+
+        chillTopicScript.curSelectedButton = currentItem; // Important to note that curSelectedButton is a GAME OBJECT and NOT a button.
+        EventSystem.current.SetSelectedGameObject(currentItem); // Set selected object to current selected item.
     }
 
     // Main controller for cursor.
     private void CursorController()
     {
-        GameObject currentItem; // The item currently being hovered over.
+        int currentChildCount = this.transform.GetChild(itemRow).childCount; // Number of items in current row.
         
         if (Input.anyKey) // Listen for user input.
         {
-            switch (GetKeyPressed()) // Filter out unavailable inputs by returning specific strings, then assign further insctuctions based on returned string.
+            if (!chillTopicScript.buyingItem) // Only allow item selection when purchase prompt is NOT up and player is selecting an item.
             {
-                case "Up":
-                    if (InputHoldDelay(0)) // Only allow input to do something here if hold delay returns true.
-                    {
-                        itemIndex = CursorPlacement(2, 3, 0, 1); // Up and down have the exact same outputs.
-                        SkipInactiveItem(1);
-                        AssignLighting();
-                    }
-                    break;
-                case "Right":
-                    if (InputHoldDelay(1)) // Only allow input to do something here if hold delay returns true.
-                    {
-                        itemIndex = CursorPlacement(1, 0, 3, 2); // Left and right also have the exact same outputs.
-                        SkipInactiveItem(1);
-                        AssignLighting();
-                    }
-                    break;
-                case "Down":
-                    if (InputHoldDelay(2)) // Only allow input to do something here if hold delay returns true.
-                    {
-                        itemIndex = CursorPlacement(2, 3, 0, 1); // Up and down have the exact same outputs.
-                        SkipInactiveItem(-1);
-                        AssignLighting();
-                    }
-                    break;
-                case "Left":
-                    if (InputHoldDelay(3)) // Only allow input to do something here if hold delay returns true.
-                    {
-                        itemIndex = CursorPlacement(1, 0, 3, 2); // Left and right also have the exact same outputs.
-                        SkipInactiveItem(-1);
-                        AssignLighting();
-                    }
-                    break;
-                default:
-                    InputHoldDelay(-1); // Resets input hold values if no directional inputs are being pressed.
-                    break;
+                //Control manager for selecting an item.
+                switch (GetKeyPressed()) // Filter out unavailable inputs by returning specific strings, then assign further insctuctions based on returned string.
+                {
+                    case "Up": // Move up.
+                        if (itemRow > 0)
+                        {
+                            itemRow--; // Move to row directly above.
+                            SkipInactiveVertical(items.GetLength(0), -1); // Skip over any inactive item objects.
+                        }
+                        SetItem(); // Update item values.
+                        break;
+                    case "Right": // Move right.
+                        if (itemCol < currentChildCount - 1)
+                        {
+                            itemCol++; // Move to column directly to the right.
+                            SkipInactiveHorizontal(currentChildCount, 1); // Skip over any inactive item objects.
+                        }
+                        SetItem(); // Update item values.
+                        break;
+                    case "Down": // Move down.
+                        if (itemRow < items.GetLength(0) - 1)
+                        {
+                            itemRow++; // Move to row directly below.
+                            SkipInactiveVertical(items.GetLength(0), 1); // Skip over any inactive item objects.
+                        }
+                        SetItem(); // Update item values.
+                        break;
+                    case "Left": // Move left.
+                        if (itemCol > 0)
+                        {
+                            itemCol--; // Move to column directly to the left.
+                            SkipInactiveHorizontal(currentChildCount, -1); // Skip over any inactive item objects.
+                        }
+                        SetItem(); // Update item values.
+                        break;
+                    default:
+                        break;
+                }
             }
-
-            ResetItemScaling(); // Reset item scaling.
-            SetCursorPosition(); // Set the cursor's position.
-
-            currentItem = items[itemIndex].gameObject;
-
-            
-            if (chillTopicScript.buyingItem == false) // If not in purchase prompt, set current selected button to current item.
-            {
-                chillTopicScript.curSelectedButton = currentItem; // Important to note that curSelectedButton is a GAME OBJECT and NOT a button.
-                EventSystem.current.SetSelectedGameObject(currentItem); // Set selected object to current selected item.
-            }
-            else if(chillTopicScript.buyingItem == true) //
-            {
-                Debug.Log("TEST");
-                EventSystem.current.SetSelectedGameObject(buyItemButton); // Set selected object to current selected item.
-            }
-        }
-        else
-        {
-            InputHoldDelay(-1); // Resets input hold values if no directional inputs are being pressed.
         }
     }
 
     // Assign our values to the objects and their respective components.
     void AssignObjectValues()
     {
-        if (!alphaCheck) // If items aren't totally opaque, then update alpha value.
+        // If items aren't totally opaque, then update alpha value.
+        if (!alphaCheck)
         {
             FadeAnim();
         }
 
-        cursor.transform.position = new Vector3(cursorX - (Mathf.Cos(cursorTheta) * cursorBounds), cursorY, 0f); // Position of cursor.
-        
-        items[itemIndex].transform.localScale = lighting.transform.localScale = new Vector3(itemScale + 1f, itemScale + 1f, 1f); // Scale of selected item.
+        // If item row index isn't a negative value, then assign values to these objects and their components.
+        if (itemRow >= 0)
+        {
+            cursor.transform.position = new Vector3(cursorX - (Mathf.Cos(cursorTheta) * cursorBounds), cursorY, 0f); // Position of cursor.
 
-        lighting.transform.position = new Vector3(items[itemIndex].transform.position.x, items[itemIndex].transform.position.y, 0f); // Position of item lighting.
+            items[itemRow, itemCol].transform.localScale = highlight.transform.localScale = new Vector3(itemScale + 1f, itemScale + 1f, 1f); // Scale of selected item.
 
-        lighting.GetComponent<Image>().color = new Color(1f, 1f, 1f, lightingAlpha * 0.65f); // Transparency of lighting sprite.
+            highlight.transform.position = new Vector3(items[itemRow, itemCol].transform.position.x, items[itemRow, itemCol].transform.position.y, 0f); // Position of item highlight.
+
+            highlight.GetComponent<Image>().color = new Color(1f, 1f, 1f, highlightAlpha * 0.65f); // Transparency of highlight sprite.
+        }
+        else // If row is -1, then all items have been purchased, which means we no longer need the above updates and can set these to null.
+        {
+            EventSystem.current.SetSelectedGameObject(null); // Set selected object null if all items have been purchased.
+
+            // If not in purchase prompt, set current selected button null.
+            if (!chillTopicScript.buyingItem)
+            {
+                chillTopicScript.curSelectedButton = null;
+            }
+        }
+
+        // Assign description text the current selected item's correspondering item description unless either items haven't faded in or all items have been purchased, in which case, display no text at all.
+        if (!itemsActive || itemRow < 0)
+        {
+            itemDesc.text = ""; // Assign empty string.
+        }
+        else
+        {
+            // Assigns current selected item's description string.
+            itemDesc.text = items[itemRow, itemCol].GetComponent<ShopItem>().itemDescription;
+        }
+    }
+
+    // Debug method that will give us the name of every entry in our 2D array of items.
+    private void ReturnItemNames()
+    {
+        for (int i = 0; i < items.GetLength(0); i++)
+        {
+            for (int j = 0; j < this.transform.GetChild(i).childCount; j++)
+            {
+                if (items[i, j] != null)
+                {
+                    Debug.Log(i + ", " + j + ": " + items[i, j].gameObject.name);
+                }
+                else
+                {
+                    Debug.Log(i + ", " + j + ": No button.");
+                }
+            }
+        }
     }
     #endregion
 }

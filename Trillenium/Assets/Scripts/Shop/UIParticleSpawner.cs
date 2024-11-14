@@ -39,7 +39,7 @@ public class UIParticleSpawner : MonoBehaviour
     void LateUpdate()
     {
         // Only spawn particles if the items are active and there are still items available for purchase in the shop.
-        if (items.itemsActive && items.itemIndex >= 0)
+        if (items.itemsActive && items.itemRow >= 0)
         {
             SpawnParticles();
         }
@@ -69,15 +69,13 @@ public class UIParticleSpawner : MonoBehaviour
             // Instantiate a new GameObject from existing base prefab to represent the individual particle.
             GameObject particleObj = Instantiate(particlePrefab, transform);
 
-            switch (items.itemIndex)
+            switch (items.itemRow)
             {
-                case 0: // Top-left item.
-                case 1: // Top-right item.
+                case 0: // Top row.
                     particleObj.transform.position = new Vector3(swordPosX - Random.Range(0.0f, 5.0f) + swordParticleOffsetX, swordPosY, 0f);
                     particleObj.GetComponent<UIParticleMovement>().spriteIndex = 0;
                     break;
-                case 2: // Bottom-left item.
-                case 3: // Bottom-right item.
+                case 1: // Bottom row.
                     particleObj.transform.position = new Vector3(medkitPosX - Random.Range(0.0f, 5.0f) + medkitParticleOffsetX, medkitPosY, 0f);
                     particleObj.GetComponent<UIParticleMovement>().spriteIndex = 1;
                     break;

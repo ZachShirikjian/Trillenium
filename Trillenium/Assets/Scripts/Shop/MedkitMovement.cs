@@ -118,19 +118,19 @@ public class MedkitMovement : MonoBehaviour
             ShadowScaleAnimation(ref shadowScaleThetaY);
 
             // Shadow stretching animation is only active when cursor is on the same row.
-            if ((items.itemIndex >= 0 && items.itemIndex < 2) || items.itemIndex < 0)
+            if (items.itemRow == 1)
             {
-                // Only do if not on sword row.
+                // Increment movement theta.
+                movThetaY += Mathf.Deg2Rad * 4f;
+            }
+            else
+            {
+                // Only do if not on medical kit row.
                 shadowScaleThetaX = 0f;
                 shadowScaleThetaY = Mathf.Deg2Rad * 180f;
 
                 // Slowly increment movement theta.
                 movThetaY += Mathf.Deg2Rad * 1f;
-            }
-            else
-            {
-                // Increment movement theta.
-                movThetaY += Mathf.Deg2Rad * 4f;
             }
 
             // Clamp movThetaY to 0 - 360.

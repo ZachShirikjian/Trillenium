@@ -145,7 +145,12 @@ public class SwordMovement : MonoBehaviour
             ShadowScaleAnimation(ref shadowScaleThetaY);
 
             // Shadow stretching animation is only active when cursor is on the same row.
-            if ((items.itemIndex >= 2 && items.itemIndex < 4) || items.itemIndex < 0)
+            if (items.itemRow == 0)
+            {
+                // Increment movement theta.
+                movThetaY += Mathf.Deg2Rad * 4f;
+            }
+            else
             {
                 // Only do if not on sword row.
                 shadowScaleThetaX = 0f;
@@ -154,16 +159,11 @@ public class SwordMovement : MonoBehaviour
                 // Slowly increment movement theta.
                 movThetaY += Mathf.Deg2Rad * 1f;
             }
-            else
-            {
-                // Increment movement theta.
-                movThetaY += Mathf.Deg2Rad * 4f;
-            }
 
             // Clamp movThetaY to 0 - 360.
             while (movThetaY >= Mathf.Deg2Rad * 360f)
             {
-                movThetaY -= Mathf.Deg2Rad * 360f;
+                movThetaY %= Mathf.Deg2Rad * 360f; // Modulo wrapping.
             }
         }
 

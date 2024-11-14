@@ -10,4 +10,5 @@ public class ShopItem: MonoBehaviour
     [TextArea]
     public string itemDescription;
     public int itemCost;
+    public float cursorOffset; // Amount to offset cursor by to the left of the item when highlighted; added by Cerulean.
 }
