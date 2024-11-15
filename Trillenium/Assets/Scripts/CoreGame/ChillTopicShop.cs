@@ -112,43 +112,35 @@ public class ChillTopicShop : MonoBehaviour
         int moduloRow = shopMenu.transform.GetChild(shopMenu.itemCol).childCount; // Based on number of children current row has.
         int moduloCol = shopMenu.items.GetLength(0); // Based on set length of rows.
 
-        // Temporary form of input, but we wait until player has only pressed return/enter; added by Cerulean.
-        if (IsOnlyReturnPressed() && shopMenu.itemsActive) // Items obviously need to have fully faded into view first too.
+        curSelectedButton.gameObject.SetActive(false); // Current item object becomes inactive to denote that it has vbeen purchased.
+
+        // If the current item is inactive, check the next one.
+        while (!shopMenu.items[shopMenu.itemRow, shopMenu.itemCol].gameObject.activeSelf)
         {
-            // Only do a thing if there are items available to be purchased.
-            if (shopMenu.itemRow >= 0)
+            shopMenu.itemCol++; // Increment to the right.
+            shopMenu.itemCol %= moduloCol; // Modulo wrapping.
+
+            // If we have reached our starting column, then all item objects in current row are disabled, so increment row check its columns.
+            if (shopMenu.itemCol == startingCol)
             {
-                curSelectedButton.gameObject.SetActive(false); // Current item object becomes inactive to denote that it has vbeen purchased.
+                shopMenu.itemRow++; // Increment to the bottom (rows go from top to bottom).
+                shopMenu.itemRow %= moduloRow; // Modulo wrapping.
 
-                // If the current item is inactive, check the next one.
-                while (!shopMenu.items[shopMenu.itemRow, shopMenu.itemCol].gameObject.activeSelf)
+                // If we're passed the length and still haven't found an active item, then all items are inactive, meaning there are no more items left to purchase.
+                if (shopMenu.itemRow == startingRow)
                 {
-                    shopMenu.itemCol++; // Increment to the right.
-                    shopMenu.itemCol %= moduloCol; // Modulo wrapping.
-
-                    // If we have reached our starting column, then all item objects in current row are disabled, so increment row check its columns.
-                    if (shopMenu.itemCol == startingCol)
-                    {
-                        shopMenu.itemRow++; // Increment to the bottom (rows go from top to bottom).
-                        shopMenu.itemRow %= moduloRow; // Modulo wrapping.
-
-                        // If we're passed the length and still haven't found an active item, then all items are inactive, meaning there are no more items left to purchase.
-                        if (shopMenu.itemRow == startingRow)
-                        {
-                            // Set item row and column indexes to -1 to signify that there are no more items available for purchase, then disable the cursor and manually exit the while loop.
-                            Debug.Log("Soul Phrase");
-                            shopMenu.cursor.gameObject.SetActive(false); // Disable cursor.
-                            shopMenu.itemRow = shopMenu.itemCol = -1;
-                            buyingItem = false; // Prompt is down.
-                            Invoke("CallCloseShop", 3.5f); // Leave shop for player after delay for audio clip has concluded.
-                            return; // Exit method entirely, skipping SetItem() in order to avoid an out-of-bounds error.
-                        }
-                    }
+                    // Set item row and column indexes to -1 to signify that there are no more items available for purchase, then disable the cursor and manually exit the while loop.
+                    Debug.Log("Soul Phrase");
+                    shopMenu.cursor.gameObject.SetActive(false); // Disable cursor.
+                    shopMenu.itemRow = shopMenu.itemCol = -1;
+                    buyingItem = false; // Prompt is down.
+                    Invoke("CallCloseShop", 3.5f); // Leave shop for player after delay for audio clip has concluded.
+                    return; // Exit method entirely, skipping SetItem() in order to avoid an out-of-bounds error.
                 }
-                
-                shopMenu.SetItem(); // Update values for when new item is selected.
             }
         }
+
+        shopMenu.SetItem(); // Update values for when new item is selected.
     }
 
     //FOR ALLOWING INPUT FOR SHOP MENU UI// (CHANGE LATER?)
@@ -158,7 +150,7 @@ public class ChillTopicShop : MonoBehaviour
      // cancelPurchase.action.performed += CancelPurchase;
 
       Debug.Log("Enable");
-      navigate.action.performed -= UpdateSelectedItem;
+      //navigate.action.performed -= UpdateSelectedItem; // Taken care of in item selection script; Cerulean.
       //closeShop.action.performed -= CloseShop;
 
     }
@@ -170,11 +162,11 @@ public class ChillTopicShop : MonoBehaviour
 
       //This is enabled during normal menu selection, NOT when an item is selected to be purchased
       Debug.Log("Disable");
-      navigate.action.performed += UpdateSelectedItem;
+      //navigate.action.performed += UpdateSelectedItem; // Taken care of in item selection script; Cerulean.
       closeShop.action.performed += CloseShop;
     }
 
-    // Temporary method to ensure that the player has pressed ONLY the return/enter key; comment and method added by Cerulean.
+    // UNUSED: Temporary method to ensure that the player has pressed ONLY the return/enter key; comment and method added by Cerulean.
     private bool IsOnlyReturnPressed()
     {
         // Has the return/enter key been pressed as an input?
@@ -195,7 +187,7 @@ public class ChillTopicShop : MonoBehaviour
     }
 
     //UPDATES CURSELECTEDITEM BASED ON ONE THAT'S IN THE CURSELECTEDGAMEOBJECT
-    public void UpdateSelectedItem(InputAction.CallbackContext context)
+    public void UpdateSelectedItem(InputAction.CallbackContext context) // Taken care of in item selection script; Cerulean.
     {
       //Sets currently hovered over button to be one you're selecting for purchase
       if(shopOpen == true && shopMenu.itemsActive)
@@ -254,7 +246,7 @@ public class ChillTopicShop : MonoBehaviour
     //METHOD FOR CONFIRMING A PURCHASE (put for the submit event on each button)
     public void ConfirmPurchase() // This is the method that brings up the menu that gives the player the option to purchase or cancel purchasing the current selected item; comment added by Cerulean.
     {
-        if (shopMenu.itemsActive)
+        if (shopMenu.itemsActive && shopMenu.itemRow >= 0) // Items had to have faded into view and there must be items available for purchase.
         {
             if (shopOpen == true)
             {
@@ -299,29 +291,33 @@ public class ChillTopicShop : MonoBehaviour
     public void BuyItem()
     {
 
-      //If you pressed Enter once when buying an item AND the PurchaseButton is being hovered over
-      //Play the Thanks for Buying Dialogue audio clip & show text
-      //Subtract item's cost from your current currency
-      //Update the currency UI 
-      //Remove the button AND object from the scene
-      //Reset the shop after 1 second
-      if(buyingItem == true && shopMenu.itemsActive)
-      {
-          Debug.Log("Thanks for buying!");
-          dialogueSource.Stop();
-          dialogueText.text = lizzyDialogue[4].speakerText;
-          dialogueSource.PlayOneShot(lizzyDialogue[4].audioClip);
-          sfxSource.PlayOneShot(audioManager.buyItem);
-          currency -= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost; 
-          currencyText.text = currency.ToString();
-            //urSelectedButton.GetComponentInChildren<ShopItem>().itemSprite.SetActive(false); //prevents button from being interacted with again
-            CheckItemActivity(); // Instead of just setting the item object to inactive here, I placed the whole method that already does that and repositions the selected item and cursor instead; added by Cerulean.
-            //curSelectedButton.GetComponent<Button>().interactable = false; //prevents button from being interacted with again
-            purchaseConfirmation.SetActive(false);
-          EventSystem.current.SetSelectedGameObject(null);
-          Invoke("ResetShop", 3f); //Prevents accidentally buying too quickly 
+        //If you pressed Enter once when buying an item AND the PurchaseButton is being hovered over
+        //Play the Thanks for Buying Dialogue audio clip & show text
+        //Subtract item's cost from your current currency
+        //Update the currency UI 
+        //Remove the button AND object from the scene
+        //Reset the shop after 1 second
+        if (buyingItem == true && shopMenu.itemsActive)
+        {
+            // Only do a thing if there are items available to be purchased.
+            if (shopMenu.itemRow >= 0)
+            {
+                Debug.Log("Thanks for buying!");
+                dialogueSource.Stop();
+                dialogueText.text = lizzyDialogue[4].speakerText;
+                dialogueSource.PlayOneShot(lizzyDialogue[4].audioClip);
+                sfxSource.PlayOneShot(audioManager.buyItem);
+                currency -= curSelectedButton.GetComponentInChildren<ShopItem>().itemCost;
+                currencyText.text = currency.ToString();
+                //urSelectedButton.GetComponentInChildren<ShopItem>().itemSprite.SetActive(false); //prevents button from being interacted with again
+                CheckItemActivity(); // Instead of just setting the item object to inactive here, I placed the whole method that already does that and repositions the selected item and cursor instead; added by Cerulean.
+                                     //curSelectedButton.GetComponent<Button>().interactable = false; //prevents button from being interacted with again
+                purchaseConfirmation.SetActive(false);
+                EventSystem.current.SetSelectedGameObject(null);
+                Invoke("ResetShop", 3f); //Prevents accidentally buying too quickly 
+            }
         }
-      }
+    }
 
         //METHOD FOR CANCELING A PURCHASE (MAKE SURE THIS IS EXACTLY THE SAME AS IN THE BUYITEM() METHOD!)
     public void CancelPurchase()

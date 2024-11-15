@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem; // Use input system.
 using TMPro; // We use TMPro in order to modify the text representing the price.
 
 public class ItemSelection : MonoBehaviour
@@ -39,6 +40,8 @@ public class ItemSelection : MonoBehaviour
 
     private float itemsAlpha = 0f; // Alpha value for items (for animation showing the items fading into view).
 
+    public bool itemsActive = false; // Can the player select an item (also read by particle spawner)?
+
     private bool alphaCheck = false; // Checks if alpha value has been set to 1f on all items.
     #endregion
 
@@ -49,19 +52,38 @@ public class ItemSelection : MonoBehaviour
     #endregion
 
     #region Input-related
+    private InputAction moveCursor; // Our cursor movement inputs.
+
     private float inputCounter = 0f; // A counter that essentially acts as a delay between the user's initial input and "press and hold"-esque control.
     private const float inputCounterLimit = 0.2f; // Limit for counter.
     private int lastInput = -1; // Tracks last input.
     #endregion
 
-    public bool itemsActive = false; // Can the player select an item (also read by particle spawner)?
-
+    #region Misc.
     [SerializeField] private CardMovement card;
 
     private float tagMovScale = 1.75f; // Scales the movement of the price tag during the fade animation.
 
     private TextMeshProUGUI itemDesc;
     #endregion
+    #endregion
+
+    void Awake()
+    {
+        // Assign inputs and what methods to call when pressed.
+        moveCursor = chillTopicScript.navigate; // Assign navigation inputs.
+    }
+    
+    void OnEnable()
+    {
+        moveCursor.performed += CursorController;
+    }
+
+    void OnDisable()
+    {
+        moveCursor.performed -= CursorController;
+    }
+
 
     void Start()
     {
@@ -72,8 +94,10 @@ public class ItemSelection : MonoBehaviour
 
         InitializeButtonValues(); // Initialize values for all item buttons in array.
 
-        // Assign item descritpion for easy access.
+        // Assign item description for easy access.
         itemDesc = this.transform.GetChild(this.transform.childCount - 1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        moveCursor.performed += CursorController; // Subscribe inputs' performed action phase to cursor controller so that whenever I press said inputs, cursor controller is called.
     }
 
     void Update()
@@ -83,8 +107,6 @@ public class ItemSelection : MonoBehaviour
         // Once items are active, allow control over the cursor and increment thetas for cursor and highlighted item (allows for their respective movements and scaling).
         if (itemsActive && itemCol >= 0) // itemCol becomes -1 after all items are purchased, so don't run this code if that's the case.
         {
-            CursorController(); // Listen for user inputs.
-
             // Increment both thetas by their respective speeds (use delta time in case of frame rate issues).
             cursorTheta += cursorSpeed * (Time.deltaTime * 60f);
             itemTheta += itemSpeed * (Time.deltaTime * 60f);
@@ -318,27 +340,23 @@ public class ItemSelection : MonoBehaviour
     }
 
     // Return string depending on user input to filter out unavailable inputs.
-    private string GetKeyPressed()
+    private string GetInput(Vector2 inputVector)
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.Return)) // Checks first.
-            return "Select";
-        */
-
-        if (Input.GetKeyDown(KeyCode.W)) // Checks if last is false, and so on and so forth.
+        // Works with Vector2 and is based on UI Navigate's input (only one direction at a time).
+        if (inputVector.y > 0) // Checks if last is false, and so on and so forth.
             return "Up";
-        if (Input.GetKeyDown(KeyCode.D))
+        if (inputVector.x > 0)
             return "Right";
-        if (Input.GetKeyDown(KeyCode.S))
+        if (inputVector.y < 0)
             return "Down";
-        if (Input.GetKeyDown(KeyCode.A))
+        if (inputVector.x < 0)
             return "Left";
 
         // If none of the above mentioned keys were pressed, return KeyCode.None (checks last; if no available input is pressed).
         return "";
     }
 
-    // Used to allow "press & hold" functionality after a small delay, however, I removed it because it didn't seem necessary and messes with the BGM due to it inputting every single frame.
+    // UNUSED: Used to allow "press & hold" functionality after a small delay, however, I removed it because it didn't seem necessary and messes with the BGM due to it inputting every single frame.
     private bool InputHoldDelay(int currentInput)
     {
         if (currentInput >= 0) // Directional input?
@@ -446,52 +464,51 @@ public class ItemSelection : MonoBehaviour
     }
 
     // Main controller for cursor.
-    private void CursorController()
+    private void CursorController(InputAction.CallbackContext context)
     {
         int currentChildCount = this.transform.GetChild(itemRow).childCount; // Number of items in current row.
-        
-        if (Input.anyKey) // Listen for user input.
+
+        if (!chillTopicScript.buyingItem && itemsActive) // Only allow item selection when purchase prompt is NOT up and player is selecting an item.
         {
-            if (!chillTopicScript.buyingItem) // Only allow item selection when purchase prompt is NOT up and player is selecting an item.
+            Debug.Log(itemsActive);
+            
+            //Control manager for selecting an item.
+            switch (GetInput(context.ReadValue<Vector2>())) // Filter out unavailable inputs by returning specific strings, then assign further insctuctions based on returned string.
             {
-                //Control manager for selecting an item.
-                switch (GetKeyPressed()) // Filter out unavailable inputs by returning specific strings, then assign further insctuctions based on returned string.
-                {
-                    case "Up": // Move up.
-                        if (itemRow > 0)
-                        {
-                            itemRow--; // Move to row directly above.
-                            SkipInactiveVertical(items.GetLength(0), -1); // Skip over any inactive item objects.
-                        }
+                case "Up": // Move up.
+                    if (itemRow > 0)
+                    {
+                        itemRow--; // Move to row directly above.
+                        SkipInactiveVertical(items.GetLength(0), -1); // Skip over any inactive item objects.
                         SetItem(); // Update item values.
-                        break;
-                    case "Right": // Move right.
-                        if (itemCol < currentChildCount - 1)
-                        {
-                            itemCol++; // Move to column directly to the right.
-                            SkipInactiveHorizontal(currentChildCount, 1); // Skip over any inactive item objects.
-                        }
+                    }
+                    break;
+                case "Right": // Move right.
+                    if (itemCol < currentChildCount - 1)
+                    {
+                        itemCol++; // Move to column directly to the right.
+                        SkipInactiveHorizontal(currentChildCount, 1); // Skip over any inactive item objects.
                         SetItem(); // Update item values.
-                        break;
-                    case "Down": // Move down.
-                        if (itemRow < items.GetLength(0) - 1)
-                        {
-                            itemRow++; // Move to row directly below.
-                            SkipInactiveVertical(items.GetLength(0), 1); // Skip over any inactive item objects.
-                        }
+                    }
+                    break;
+                case "Down": // Move down.
+                    if (itemRow < items.GetLength(0) - 1)
+                    {
+                        itemRow++; // Move to row directly below.
+                        SkipInactiveVertical(items.GetLength(0), 1); // Skip over any inactive item objects.
                         SetItem(); // Update item values.
-                        break;
-                    case "Left": // Move left.
-                        if (itemCol > 0)
-                        {
-                            itemCol--; // Move to column directly to the left.
-                            SkipInactiveHorizontal(currentChildCount, -1); // Skip over any inactive item objects.
-                        }
+                    }
+                    break;
+                case "Left": // Move left.
+                    if (itemCol > 0)
+                    {
+                        itemCol--; // Move to column directly to the left.
+                        SkipInactiveHorizontal(currentChildCount, -1); // Skip over any inactive item objects.
                         SetItem(); // Update item values.
-                        break;
-                    default:
-                        break;
-                }
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }
