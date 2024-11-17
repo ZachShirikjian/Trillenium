@@ -243,7 +243,7 @@ public class CardMovement : MonoBehaviour
         // If shadow is active, then set card shadow object's sprite to the card shadow sprite; if shadow is not active, then set to null.
         if (shadowActive)
         {
-            childShadow.GetComponent<SpriteRenderer>().sprite = spritesheet[spritesheet.Length - 1]; // I always have the shadow sprite as the last sprite in the spritesheet.
+            childShadow.GetComponent<SpriteRenderer>().sprite = spritesheet[spritesheet.Length - 1]; // Shadow is consistently the sprite in the spritesheet for similar UI elements (not note).
         }
         else
         {

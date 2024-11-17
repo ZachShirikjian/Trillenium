@@ -38,7 +38,7 @@ public class ItemSelection : MonoBehaviour
     private float itemSpeed = 0.1f; // Item's scale speed.
     private float itemBounds = 0.25f; // Length of bounds items can scale within.
 
-    private float itemsAlpha = 0f; // Alpha value for items (for animation showing the items fading into view).
+    public float itemsAlpha = 0f; // Alpha value for items (for animation showing the items fading into view).
 
     public bool itemsActive = false; // Can the player select an item (also read by particle spawner)?
 
@@ -63,8 +63,6 @@ public class ItemSelection : MonoBehaviour
     [SerializeField] private CardMovement card;
 
     private float tagMovScale = 1.75f; // Scales the movement of the price tag during the fade animation.
-
-    private TextMeshProUGUI itemDesc;
     #endregion
     #endregion
 
@@ -93,9 +91,6 @@ public class ItemSelection : MonoBehaviour
         cursor.SetActive(false); // Cursor object is inactive.
 
         InitializeButtonValues(); // Initialize values for all item buttons in array.
-
-        // Assign item description for easy access.
-        itemDesc = this.transform.GetChild(this.transform.childCount - 1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 
         moveCursor.performed += CursorController; // Subscribe inputs' performed action phase to cursor controller so that whenever I press said inputs, cursor controller is called.
     }
@@ -280,10 +275,6 @@ public class ItemSelection : MonoBehaviour
     // Sets alpha value for items; for fading them into view.
     private void FadeAnim()
     {
-        // Temporary color tracking for description.
-        Color tempColor0 = itemDesc.transform.parent.parent.GetComponent<Image>().color;
-        Color tempColor1 = itemDesc.transform.parent.GetComponent<Image>().color;
-
         // Offset we use for moving the price tags.
         float localXOffset = (1f - itemsAlpha) * tagMovScale; // Invert alpha value, then scale amount.
         
@@ -303,11 +294,6 @@ public class ItemSelection : MonoBehaviour
                 items[i, j].transform.GetChild(1).GetChild(0).localPosition = new Vector3(localXOffset, 0f, 0f);
             }
         }
-
-        // Temporary basic item description animation.
-        itemDesc.transform.parent.parent.localPosition = new Vector3(itemDesc.transform.parent.parent.localPosition.x, localXOffset + 8.7f, 0f);
-        itemDesc.transform.parent.parent.GetComponent<Image>().color = new Color(tempColor0.r, tempColor0.g, tempColor0.b, 1f - localXOffset);
-        itemDesc.transform.parent.GetComponent<Image>().color = new Color(tempColor1.r, tempColor1.g, tempColor1.b, 1f - localXOffset);
 
         // Check if all of our items are fully opaque so we can stop calling this method as well as some others.
         CheckAlphaValues();
@@ -542,17 +528,6 @@ public class ItemSelection : MonoBehaviour
             {
                 chillTopicScript.curSelectedButton = null;
             }
-        }
-
-        // Assign description text the current selected item's correspondering item description unless either items haven't faded in or all items have been purchased, in which case, display no text at all.
-        if (!itemsActive || itemRow < 0)
-        {
-            itemDesc.text = ""; // Assign empty string.
-        }
-        else
-        {
-            // Assigns current selected item's description string.
-            itemDesc.text = items[itemRow, itemCol].GetComponent<ShopItem>().itemDescription;
         }
     }
 

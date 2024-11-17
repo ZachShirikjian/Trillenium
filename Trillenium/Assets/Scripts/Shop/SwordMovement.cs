@@ -28,7 +28,7 @@ public class SwordMovement : MonoBehaviour
     private const float startX = -24.69f; // Starting X position.
     private const float startY = 3.94f; // Starting Y position.
 
-    private float targetX; // Target X position/X position limit.
+    public float targetX; // Target X position/X position limit.
 
     private float childPosX; // This variable specifically refers to the X position of the child object that renders the sword sprite (the parent object that has this script just holds all of the related objects).
 
@@ -60,7 +60,7 @@ public class SwordMovement : MonoBehaviour
     private float shadowSpeed = 1.65f; // Movement speed of shadow.
     private const float shadowAcc = 0.08f; // Acceleration of shadow's movement speed.
 
-    private bool shadowActive = false; // Can we run the shadow movement method?
+    public bool shadowActive = false; // Can we run the shadow movement method?
 
     // Theta for Sin and Cos we use to represent scaling; start half a rotation from each other so that when X stretches outward, Y stretches inward and vice versa.
     private float shadowScaleThetaX = 0f;
@@ -276,7 +276,7 @@ public class SwordMovement : MonoBehaviour
         spriteIndex = 4; // Hard set sprite to un-blurred sprite.
 
         // Update shadow sprite.
-        childShadow.GetComponent<SpriteRenderer>().sprite = spritesheet[spritesheet.Length - 1]; // Shadow is consistently the sprite in the spritesheet for all spritesheets containing a shadow.
+        childShadow.GetComponent<SpriteRenderer>().sprite = spritesheet[spritesheet.Length - 1]; // Shadow is consistently the sprite in the spritesheet for similar UI elements (not note).
 
         // Initialize shadow position data and allow for shadow movement to begin.
         shadowStartX = childShadow.transform.localPosition.x;

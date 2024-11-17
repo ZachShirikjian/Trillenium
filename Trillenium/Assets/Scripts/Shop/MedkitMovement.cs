@@ -275,7 +275,7 @@ public class MedkitMovement : MonoBehaviour
         childShadow.transform.localPosition = new Vector3(methods.DecimalsRounded(shadowPosX), methods.DecimalsRounded(shadowPosY), 0f);
 
         // Update shadow sprite.
-        childShadow.GetComponent<SpriteRenderer>().sprite = spritesheet[spritesheet.Length - 1]; // Shadow is consistently the sprite in the spritesheet for all spritesheets containing a shadow.
+        childShadow.GetComponent<SpriteRenderer>().sprite = spritesheet[spritesheet.Length - 1]; // Shadow is consistently the sprite in the spritesheet for similar UI elements (not note).
     }
 
     // Increment both scale thetas and clamp them to 0-360.
