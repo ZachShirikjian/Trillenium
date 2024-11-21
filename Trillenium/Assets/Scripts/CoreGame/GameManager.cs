@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     //REFERENCES//
     public GameObject loadingScreen; //reference to loading screen transition
-    public GameObject npcDialogue;
+    public GameObject npcDialogue; //the parent of the Dialogue Box & UI used for NPC Dialogue sequences.
     public GameObject pauseMenu; //reference to PauseMenu that opens up once isPaused = true
 
     public GameObject interactPrompt;

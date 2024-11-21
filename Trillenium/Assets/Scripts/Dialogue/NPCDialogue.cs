@@ -49,7 +49,7 @@ public class NPCDialogue : MonoBehaviour
     public NPC npcRef;
 
     //Reference to PlayerMovement script 
-    private PlayerMovement playerMove;
+    [SerializeField] private PlayerMovement playerMove;
 
     //Reference to PlayerInteract script//
     private PlayerInteract interactScript;
@@ -59,8 +59,9 @@ public class NPCDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMove = GameObject.Find("OverworldSylvia").GetComponent<PlayerMovement>();
-        interactScript = GameObject.Find("OverworldSylvia").transform.GetChild(0).GetComponent<PlayerInteract>();
+        //TODO: To Prevent NullRef Error in DREAMERS dungeon scene, instead of Overworld Sylvia, reference the current Player GameObject in the scene.
+        playerMove = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+        interactScript = GameObject.FindWithTag("Player").transform.GetChild(0).GetComponent<PlayerInteract>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     // Update is called once per frame

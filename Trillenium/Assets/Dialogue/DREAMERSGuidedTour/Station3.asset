@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Station3
   m_EditorClassIdentifier: 
-  speakerText: 'Animators once took up the largest portion of the DREAMERS company,
-    when it originally created animated films and video games. However, as immersive
-    experiences and virtual reality became mainstream staples in entertainment, animators
-    were replaced by AI algorithms. '
+  speakerText: 'Animators once made up the largest portion of the DREAMERS company,
+    when it originally created animated films and video games. '
   personSpeaking: Narrator
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
-  audioClip: {fileID: 8300000, guid: 6987692959700304f9093eb3d1e7fdd0, type: 3}
+  audioClip: {fileID: 8300000, guid: d3e70becd64ac934ebca309142f824ca, type: 3}
   currentObjective: {fileID: 0}

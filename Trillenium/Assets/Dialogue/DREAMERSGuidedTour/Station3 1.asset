@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: Station3 1
   m_EditorClassIdentifier: 
-  speakerText: Through prompts, AnimationAI searches through the 1,000+ years of
-    previously created animated content,  and outputs AI-generated films. New movies
-    are released every week to Paradisal Entertainment, to reduce oversaturation
-    in the movie market.
+  speakerText: 'However, as immersive experiences and virtual reality became mainstream
+    staples in entertainment, animators were gradually replaced by AI algorithms. '
   personSpeaking: Narrator
   newPersonSpeaking: 0
   speakerPortait: {fileID: 0}
-  audioClip: {fileID: 8300000, guid: 6987692959700304f9093eb3d1e7fdd0, type: 3}
+  audioClip: {fileID: 8300000, guid: fb1f59cce383f944a9f0cec4ef8bbf95, type: 3}
   currentObjective: {fileID: 0}

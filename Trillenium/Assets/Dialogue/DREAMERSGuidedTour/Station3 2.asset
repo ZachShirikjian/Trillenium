@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
+  m_Name: Station3 2
+  m_EditorClassIdentifier: 
+  speakerText: Through various prompts, AnimationAI searches through over 1,000 years
+    of previously created content, which is compiled to generate brand-new films
+    without the need for human input.
+  personSpeaking: Narrator
+  newPersonSpeaking: 0
+  speakerPortait: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 20aab2600faed514b8eda9229904e748, type: 3}
+  currentObjective: {fileID: 0}
