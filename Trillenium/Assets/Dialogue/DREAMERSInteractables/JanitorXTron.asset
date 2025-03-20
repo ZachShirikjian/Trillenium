@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
-  m_Name: DecayedXTron
+  m_Name: JanitorXTron
   m_EditorClassIdentifier: 
-  speakerText: A long-defunct Guard XTron sits beside a broken bookshelf. Where did
-    that hole come from?
-  personSpeaking: Decayed XTron
+  speakerText: The walls are cleaned thanks to this janitor! But it is still hungry.
+  personSpeaking: Janitor XTron
   newPersonSpeaking: 1
   speakerPortait: {fileID: 0}
   audioClip: {fileID: 0}

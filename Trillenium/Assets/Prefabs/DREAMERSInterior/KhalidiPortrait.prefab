@@ -9,12 +9,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5565181318317720296, guid: 7324b6098ca4e1146b03c70091412ca7, type: 3}
+      propertyPath: npcName
+      value: Khalidi
+      objectReference: {fileID: 0}
+    - target: {fileID: -5565181318317720296, guid: 7324b6098ca4e1146b03c70091412ca7, type: 3}
       propertyPath: helpIcon
       value: 
       objectReference: {fileID: 5253736499071394876}
     - target: {fileID: 52382748475687906, guid: 7324b6098ca4e1146b03c70091412ca7, type: 3}
       propertyPath: m_Name
-      value: BrigalaPortrait (1) Variant
+      value: KhalidiPortrait
       objectReference: {fileID: 0}
     - target: {fileID: 7514425037740070530, guid: 7324b6098ca4e1146b03c70091412ca7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7631513255801279891, guid: 7324b6098ca4e1146b03c70091412ca7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 394a20f753a0e6245b1eddcb8a8f55da, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
