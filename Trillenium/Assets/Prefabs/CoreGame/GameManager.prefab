@@ -56,7 +56,7 @@ MonoBehaviour:
   interactPromptText: {fileID: 0}
   talkInteract: {fileID: 21300000, guid: 4ba1ccddcc2664c4894ec38050f0987a, type: 3}
   checkInteract: {fileID: 21300000, guid: 3b64f790cc40cb846a986de6b3f469e7, type: 3}
-  enterInteract: {fileID: 21300000, guid: 9b3278ec62bd426409604ce3c1b90c05, type: 3}
+  enterInteract: {fileID: 21300000, guid: 57dce5ca1d38a8449936cbeb42653f14, type: 3}
   shopUIInteract: {fileID: 21300000, guid: e3756216c78731f4fa4166d252b54103, type: 3}
   objectiveMarker: {fileID: 0}
   currentObjectiveText: {fileID: 0}

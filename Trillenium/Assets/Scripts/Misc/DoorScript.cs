@@ -9,6 +9,9 @@ public class DoorScript : MonoBehaviour
     //Name of the building you can enter (in the InteractPrompt script) 
     public string buildingName;
 
+    //Name of Scene to Load when entering the Door 
+    public string SceneName; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,6 @@ public class DoorScript : MonoBehaviour
 //TEMP METHOD FOR LOADING NEXT SCENE WHEN PLAYER INTERACTS WITH A DOOR
     public void LoadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(SceneName);
     }
 }

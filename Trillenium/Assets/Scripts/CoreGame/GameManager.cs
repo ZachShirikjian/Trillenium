@@ -152,6 +152,13 @@ public class GameManager : MonoBehaviour
         objectiveMarker.SetActive(false);
         currentObjectiveText.text = "";
 
+        //TEMP FIX FOR THE DUNGEON SCENE, CHANGE LATER//
+        if(SceneManager.GetActiveScene().name == "DreamersInside")
+        {
+            objectiveMarker.SetActive(true);
+            currentObjectiveText.text = "[EXPLORE DREAMERS]";
+        }
+
         //TODO: Get GameObject.FindWithTag("Player") and add it to the PlayerParty so when Vahan and Petros get added they g
 
         //For scenes with shop UI 

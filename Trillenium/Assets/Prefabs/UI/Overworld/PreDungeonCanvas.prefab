@@ -565,7 +565,7 @@ MonoBehaviour:
   itemName: 
   itemDescription: 
   itemCost: 100
-  itemSprite: {fileID: 6776884982592022137}
+  cursorOffset: 0
 --- !u!1 &1500371488731082935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,7 +2158,7 @@ MonoBehaviour:
   itemName: 
   itemDescription: 
   itemCost: 500
-  itemSprite: {fileID: 1006536465141133666}
+  cursorOffset: 0
 --- !u!1 &4011280056259507086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2649,7 @@ MonoBehaviour:
   itemName: 
   itemDescription: 
   itemCost: 500
-  itemSprite: {fileID: 7628485785699343636}
+  cursorOffset: 0
 --- !u!1 &5895080348791760543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2919,7 @@ MonoBehaviour:
   itemName: 
   itemDescription: 
   itemCost: 100
-  itemSprite: {fileID: 3816691036181562192}
+  cursorOffset: 0
 --- !u!1 &6098913017132345142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4708,6 +4708,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4419694745582865370, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 57dce5ca1d38a8449936cbeb42653f14, type: 3}
     - target: {fileID: 6260203587344821768, guid: b350b74e87a78e144aa8a21ab71cf928, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ContinueDialogue

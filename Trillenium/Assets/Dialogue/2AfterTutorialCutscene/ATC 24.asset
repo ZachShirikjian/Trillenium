@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9032675073173417fb18655e217a89e3, type: 3}
   m_Name: ATC 24
   m_EditorClassIdentifier: 
-  speakerText: "At the <color=blue>DREAMERS Technologies Factory</color>, where my
+  speakerText: "At the <color=blue>DREAMERS Technology Factory</color>, where my
     Dad and Brigala used to work.\r"
   personSpeaking: Vahan
   newPersonSpeaking: 1
